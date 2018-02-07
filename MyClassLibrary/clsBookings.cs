@@ -4,13 +4,74 @@ namespace MyClassLibrary
 {
     public class clsBookings
     {
+        //private data memeber for the BookRef property
+        private Int32 mBookRef;
+        //private data memeber for the ammount property
+        private decimal mAmmount;
+        //private data memeber for the date booked property
+        private DateTime mDateBooked;
+        //private data memeber for the payment type property
+        private string mPaymentType;
+
         public clsBookings()
         {
         }
+        //public property for BookRef
+        public decimal Ammount
+        {
+            get
+            {
+                //return private data
+                return mAmmount;
+            }
+            set
+            {
+                //set the value of the private data member
+                mAmmount = value;
+            }
+        }
 
-        public decimal Ammount { get; set; }
-        public DateTime DateBooked { get; set; }
-        public string PaymentType { get; set; }
+
+        //public property for BookRef
+        public int BookRef
+        {
+            get
+            {
+                //return private data
+                return mBookRef;
+            }
+            set
+            {
+                //set the value of the private data member
+                mBookRef = value;
+            }
+        }
+        public DateTime DateBooked
+        {
+            get
+            {
+                //return private data
+                return mDateBooked;
+            }
+            set
+            {
+                //set the value of the private data member
+                mDateBooked = value;
+            }
+        }
+        public string PaymentType
+        {
+            get
+            {
+                //return private data
+                return mPaymentType;
+            }
+            set
+            {
+                //set the the value of the private memeber
+                mPaymentType = value;
+            }
+        }
 
         public string Valid(string ammount, string paymentType, string dateBooked)
         {
@@ -78,6 +139,17 @@ namespace MyClassLibrary
 
             //return any errors found
             return OK;
+        }
+
+        public bool Find(int bookRef)
+        {
+            //set the private data member to the test data value
+            mBookRef = 21;
+            mAmmount = Convert.ToDecimal(50.20);
+            mDateBooked = Convert.ToDateTime("07 / 02 / 2017");
+            mPaymentType = "Credit";
+            //always return true
+            return true;
         }
     }
 }

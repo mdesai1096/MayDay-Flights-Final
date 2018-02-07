@@ -17,16 +17,28 @@ namespace MyTesting
         }
 
         [TestMethod]
+        public void BookRefOK()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //create some test data
+            Int32 BookRef = 1;
+            ABookings.BookRef = BookRef;
+            //test to see if it exists
+            Assert.AreEqual(ABookings.BookRef, BookRef);
+        }
+        [TestMethod]
         public void DateBookedOK()
         {
             //create a new instance of the class we want to create
             clsBookings ABookings = new clsBookings();
             //create some test data
             DateTime DateBooked = DateTime.Now.Date;
-            ABookings.DateBooked = DateBooked;          
-           //test to see if it exists
+            ABookings.DateBooked = DateBooked;
+            //test to see if it exists
             Assert.AreEqual(ABookings.DateBooked, DateBooked);
         }
+
 
         [TestMethod]
         public void PaymentOK()
@@ -67,6 +79,21 @@ namespace MyTesting
             OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
             //test to see if it exists
             Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 BookRef = 1;
+            //invoke method
+            Found = ABookings.Find(BookRef);
+            //test to see if it exists
+            Assert.IsTrue(Found);
         }
 
         /// Payment Type testing ///
@@ -524,6 +551,93 @@ namespace MyTesting
             OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
+        }
+
+        ///Testing Find Method///
+        [TestMethod]
+        public void TestBookingRefNotFound()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 BookRef = 21;
+            //invoke method
+            Found = ABookings.Find(BookRef);
+            //check the booking no
+            if (ABookings.BookRef != 21)
+            {
+                Found = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestAmmountFound()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //bolean value if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to assign to property
+            Int32 BookRef = 21;
+            //invoke method
+            Found = ABookings.Find(BookRef);
+            //check the booking no
+            if (ABookings.Ammount != Convert.ToDecimal(50.20))
+            {
+                OK = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDateBookedFound()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //bolean value if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to assign to property
+            Int32 BookRef = 21;
+            //invoke method
+            Found = ABookings.Find(BookRef);
+            //check the booking no
+            if (ABookings.DateBooked != Convert.ToDateTime("07/02/2017"))
+            {
+                OK = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestPaymentTypeFound()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //bolean value if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to assign to property
+            Int32 BookRef = 21;
+            //invoke method
+            Found = ABookings.Find(BookRef);
+            //check the booking no
+            if (ABookings.PaymentType != "Credit")
+            {
+                OK = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(OK);
         }
 
 
