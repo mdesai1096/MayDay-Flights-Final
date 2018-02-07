@@ -555,18 +555,18 @@ namespace MyTesting
 
         ///Testing Find Method///
         [TestMethod]
-        public void TestBookingRefNotFound()
+        public void TestBookingRefFound()
         {
             //create a new instance of the class we want to create
             clsBookings ABookings = new clsBookings();
             //string variable to store result of validation
             Boolean Found = false;
             //create some test data to assign to property
-            Int32 BookRef = 21;
+            Int32 BookRef = 1;
             //invoke method
             Found = ABookings.Find(BookRef);
             //check the booking no
-            if (ABookings.BookRef != 21)
+            if (ABookings.BookRef != 1)
             {
                 Found = false;
             }
@@ -584,11 +584,11 @@ namespace MyTesting
             //bolean value if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to assign to property
-            Int32 BookRef = 21;
+            Int32 BookRef = 1;
             //invoke method
             Found = ABookings.Find(BookRef);
             //check the booking no
-            if (ABookings.Ammount != Convert.ToDecimal(50.20))
+            if (ABookings.Ammount != Convert.ToDecimal(50.75))
             {
                 OK = false;
             }
@@ -606,11 +606,11 @@ namespace MyTesting
             //bolean value if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to assign to property
-            Int32 BookRef = 21;
+            Int32 BookRef = 1;
             //invoke method
             Found = ABookings.Find(BookRef);
             //check the booking no
-            if (ABookings.DateBooked != Convert.ToDateTime("07/02/2017"))
+            if (ABookings.DateBooked != Convert.ToDateTime("01/02/2017"))
             {
                 OK = false;
             }
@@ -628,7 +628,7 @@ namespace MyTesting
             //bolean value if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to assign to property
-            Int32 BookRef = 21;
+            Int32 BookRef = 1;
             //invoke method
             Found = ABookings.Find(BookRef);
             //check the booking no

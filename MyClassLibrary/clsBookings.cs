@@ -143,13 +143,33 @@ namespace MyClassLibrary
 
         public bool Find(int bookRef)
         {
-            //set the private data member to the test data value
-            mBookRef = 21;
-            mAmmount = Convert.ToDecimal(50.20);
-            mDateBooked = Convert.ToDateTime("07 / 02 / 2017");
-            mPaymentType = "Credit";
-            //always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the book ref to search for
+            DB.AddParameter("@BookRef", bookRef);
+            //execute stored procedure
+            DB.Execute("sproc_tblBookings_FilterbyBookingRef");
+            //if one record is found
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mBookRef = Convert.ToInt32(DB.DataTable.Rows[0]["BookRef"]);
+                mAmmount = Convert.ToDecimal(DB.DataTable.Rows[0]["Ammount"]);
+                mDateBooked = Convert.ToDateTime(DB.DataTable.Rows[0]["DateBooked"]);
+                mPaymentType = Convert.ToString(DB.DataTable.Rows[0]["PaymentType"]);
+                //return an record has been found
+                return true;
+            }
+            //if no record is found
+            else
+            {
+                //record no record has been found
+                return false;
+            }
         }
-    }
-}
+           
+
+            }
+            
+        }
+    
