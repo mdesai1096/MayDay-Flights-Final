@@ -34,7 +34,7 @@ namespace MyTesting
             //create a new instance of the class we want to create
             clsBookings ABookings = new clsBookings();
             //create some test data
-            string PaymentType = "Credit";
+            string PaymentType = "Credi";
             ABookings.PaymentType = PaymentType;
             //test to see if it exists
             Assert.AreEqual(ABookings.PaymentType, PaymentType);
