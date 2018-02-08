@@ -47,6 +47,7 @@ namespace MyClassLibrary
                 mBookRef = value;
             }
         }
+        //public property for DateBooked
         public DateTime DateBooked
         {
             get
@@ -60,6 +61,7 @@ namespace MyClassLibrary
                 mDateBooked = value;
             }
         }
+        //public property for payment type
         public string PaymentType
         {
             get
