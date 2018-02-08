@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace MyClassLibrary
 {
@@ -13,9 +16,7 @@ namespace MyClassLibrary
         //private data memeber for the payment type property
         private string mPaymentType;
 
-        public clsBookings()
-        {
-        }
+       
         //public property for BookRef
         public decimal Ammount
         {
@@ -72,6 +73,7 @@ namespace MyClassLibrary
                 mPaymentType = value;
             }
         }
+
 
         public string Valid(string ammount, string paymentType, string dateBooked)
         {
