@@ -17,7 +17,7 @@ namespace MyClassLibrary
         private string mPaymentType;
 
        
-        //public property for BookRef
+        //public property for ammount
         public decimal Ammount
         {
             get
