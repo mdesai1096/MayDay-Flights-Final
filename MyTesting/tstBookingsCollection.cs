@@ -46,7 +46,7 @@ namespace MyTesting
         //    //create an instance of the class we want to create
         //    clsBookingsCollection AllBookings = new clsBookingsCollection();
         //    //create some test data
-        //    Int32 someCount = 0;
+        //    Int32 someCount = 2;
         //    //assign the data to the property
         //    AllBookings.Count = someCount;//test to see that it exists
         //    Assert.AreEqual(AllBookings.Count, someCount);
@@ -94,7 +94,105 @@ namespace MyTesting
             Assert.AreEqual(AllBookings.Count, TestList.Count);
         }
 
+        //[TestMethod]
+        //public void TwoRecordsPresent()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsBookingsCollection AllBookings = new clsBookingsCollection();
 
+        //    Assert.AreEqual(AllBookings.Count, 2);
+        //}
+
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsBookingsCollection AllBookings = new clsBookingsCollection();
+            //create an instance of test data
+            clsBookings TestItem = new clsBookings();
+            //var to store primary key
+            Int32 PK = 0;
+            //set the properties
+            //TestItem.BookRef = 3;
+            TestItem.Ammount = 80;
+            TestItem.DateBooked = DateTime.Now.Date;
+            TestItem.PaymentType = "Debit";
+            //set ThisBooking to validate test data
+            AllBookings.ThisBookings = TestItem;
+            //add the record
+            PK = AllBookings.Add();
+            //set primary key of test data
+            TestItem.BookRef = PK;
+            //find the record
+            AllBookings.ThisBookings.Find(PK);
+            //test to see that it exists
+            Assert.AreEqual(AllBookings.ThisBookings, TestItem);
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsBookingsCollection AllBookings = new clsBookingsCollection();
+            //create an instance of test data
+            clsBookings TestItem = new clsBookings();
+            //var to store primary key
+            Int32 PK = 0;
+            //set the properties
+            //TestItem.BookRef = 3;
+            TestItem.Ammount = 90;
+            TestItem.DateBooked = DateTime.Now.Date;
+            TestItem.PaymentType = "Debit";
+            //set ThisBooking to validate test data
+            AllBookings.ThisBookings = TestItem;
+            //add the record
+            PK = AllBookings.Add();
+            //set primary key of test data
+            TestItem.BookRef = PK;
+            //find the record
+            AllBookings.ThisBookings.Find(PK);
+            //delete the record
+            AllBookings.Delete();
+            //now find the record
+            Boolean Found = AllBookings.ThisBookings.Find(PK);
+            //test to see that it exists
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsBookingsCollection AllBookings = new clsBookingsCollection();
+            //create an instance of test data
+            clsBookings TestItem = new clsBookings();
+            //var to store primary key
+            Int32 PK = 0;
+            //set the properties
+            //TestItem.BookRef = 3;
+            TestItem.Ammount = 80;
+            TestItem.DateBooked = DateTime.Now.Date;
+            TestItem.PaymentType = "Debit";
+            //set ThisBooking to validate test data
+            AllBookings.ThisBookings = TestItem;
+            //add the record
+            PK = AllBookings.Add();
+            //set primary key of test data
+            TestItem.BookRef = PK;
+            //modify the record
+            //TestItem.BookRef = 3;
+            TestItem.Ammount = 40;
+            TestItem.DateBooked = DateTime.Now.Date;
+            TestItem.PaymentType = "Credit";
+            //set the record based on the new record
+            AllBookings.ThisBookings = TestItem;
+            //update the record
+            AllBookings.Update();
+            //find the record
+            AllBookings.ThisBookings.Find(PK);
+            //test to see that it exists
+            Assert.AreEqual(AllBookings.ThisBookings, TestItem);
+        }
 
     }
 }
