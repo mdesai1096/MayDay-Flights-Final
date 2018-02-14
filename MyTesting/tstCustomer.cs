@@ -43,7 +43,6 @@ namespace MyTesting
             AllOK = AnCustomer.Valid(PostCode, date);
             Assert.IsTrue(AllOK);
 
-            ////Date///////////////////////////////////////
         }
         [TestMethod]
         public void DateBoundary()
