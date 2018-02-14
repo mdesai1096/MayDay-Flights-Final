@@ -40,30 +40,38 @@ namespace MyClassLibrary
        //constructor for the class
         public clsBookingsCollection()
         {
-            //var for the index
-            Int32 Index = 0;
-            //var to store the record count
-            Int32 RecordCount = 0;
-            //object for data connection
+            //object for the data connection
             clsDataConnection DB = new clsDataConnection();
-            //execute the stored procodure
+            //execute the store procedure
             DB.Execute("sproc_tblBookings_SelectAll");
-            //get the count of records
-            RecordCount = DB.Count;
-            //while there are records to process
-            while (Index < RecordCount)
-            {
-                //Create a blank booking
-                clsBookings ABooking = new clsBookings();
-                ABooking.BookRef = Convert.ToInt32(DB.DataTable.Rows[Index]["BookRef"]);
-                ABooking.Ammount = Convert.ToDecimal(DB.DataTable.Rows[Index]["Ammount"]);
-                ABooking.DateBooked = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateBooked"]);
-                ABooking.PaymentType = Convert.ToString(DB.DataTable.Rows[Index]["PaymentType"]);
-                //add the records into a private data member
-                mBookingsList.Add(ABooking);
-                //point to the next record
-                Index++;
-            }
+            //populate the array list
+            PopulateArray(DB);
+
+            ////var for the index
+            //Int32 Index = 0;
+            ////var to store the record count
+            //Int32 RecordCount = 0;
+            ////object for data connection
+            //clsDataConnection DB = new clsDataConnection();
+            ////execute the stored procodure
+            //DB.Execute("sproc_tblBookings_SelectAll");
+            ////get the count of records
+            //RecordCount = DB.Count;
+            ////while there are records to process
+            //while (Index < RecordCount)
+            //{
+            //    //Create a blank booking
+            //    clsBookings ABooking = new clsBookings();
+            //    ABooking.BookRef = Convert.ToInt32(DB.DataTable.Rows[Index]["BookRef"]);
+            //    ABooking.Ammount = Convert.ToDecimal(DB.DataTable.Rows[Index]["Ammount"]);
+            //    ABooking.DateBooked = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateBooked"]);
+            //    ABooking.PaymentType = Convert.ToString(DB.DataTable.Rows[Index]["PaymentType"]);
+            //    //add the records into a private data member
+            //    mBookingsList.Add(ABooking);
+            //    //point to the next record
+            //    Index++;
+       // }
+
 
 
         }
@@ -151,5 +159,46 @@ namespace MyClassLibrary
 
             
         }
+
+      public void FilterbyBookRef(string BookRef)
+        {
+            //filters records based on the primary key 
+            //connect to database
+            clsDataConnection DB = new clsDataConnection();
+            //send the bookref to the database
+            DB.AddParameter("@BookRef", BookRef);
+            //execute the stored procedure
+            DB.Execute("sproc_tblBookings_FilterbyPK");
+            //populate the array list with the data table
+            PopulateArray(DB);
+        }
+        void PopulateArray (clsDataConnection DB)
+        {
+            //populates array list based on the data table in the parameter DB
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount;
+            //get the count of records
+            RecordCount = DB.Count;
+            //clear the private array lsit
+            mBookingsList = new List<clsBookings>();
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //Create a blank booking
+                clsBookings ABooking = new clsBookings();
+                ABooking.BookRef = Convert.ToInt32(DB.DataTable.Rows[Index]["BookRef"]);
+                ABooking.Ammount = Convert.ToDecimal(DB.DataTable.Rows[Index]["Ammount"]);
+                ABooking.DateBooked = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateBooked"]);
+                ABooking.PaymentType = Convert.ToString(DB.DataTable.Rows[Index]["PaymentType"]);
+                //add the records into a private data member
+                mBookingsList.Add(ABooking);
+                //point to the next record
+                Index++;
+            }
+        }
+
+  
     }
 }
