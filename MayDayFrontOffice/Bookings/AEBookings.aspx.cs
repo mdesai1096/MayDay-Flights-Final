@@ -52,6 +52,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         //if the data is OK then add it to the object
         if (Error == "")
         {
+ 
             //get the data entered by the user
             BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmmount.Text);
             BookingsList.ThisBookings.DateBooked= Convert.ToDateTime(txtDateBooked.Text);
@@ -78,6 +79,8 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         //if the data is OK then add it to the object
         if (Error == "")
         {
+            //find the record to update
+            BookingsList.ThisBookings.Find(BookRef);
             //get the data entered by the user
             BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmmount.Text);
             BookingsList.ThisBookings.DateBooked = Convert.ToDateTime(txtDateBooked.Text);
