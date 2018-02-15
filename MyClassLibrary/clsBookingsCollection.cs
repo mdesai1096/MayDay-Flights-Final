@@ -37,7 +37,7 @@ namespace MyClassLibrary
 
         //}
 
-       //constructor for the class
+        //constructor for the class
         public clsBookingsCollection()
         {
             //object for the data connection
@@ -46,7 +46,7 @@ namespace MyClassLibrary
             DB.Execute("sproc_tblBookings_SelectAll");
             //populate the array list
             PopulateArray(DB);
-
+           }
             ////var for the index
             //Int32 Index = 0;
             ////var to store the record count
@@ -70,11 +70,12 @@ namespace MyClassLibrary
             //    mBookingsList.Add(ABooking);
             //    //point to the next record
             //    Index++;
-       // }
+            //}
+    
 
 
 
-        }
+        
 
         //public property for the booking list
         public List<clsBookings> BookingsList
@@ -199,6 +200,20 @@ namespace MyClassLibrary
             }
         }
 
-  
+        public void FilterbyDateBooked(string DateBooked1, string DateBooked)
+        {
+            //filters records based on the primary key 
+            //connect to database
+            clsDataConnection DB = new clsDataConnection();
+            //send the bookref to the database
+            DB.AddParameter("@DateBooked", Convert.ToDateTime(DateBooked));
+            DB.AddParameter("@DateBooked1",Convert.ToDateTime(DateBooked1));
+            //execute the stored procedure
+            DB.Execute("sproc_tblBookings_FilterbyDate");
+            //populate the array list with the data table
+            PopulateArray(DB);
+        }
     }
+
+
 }
