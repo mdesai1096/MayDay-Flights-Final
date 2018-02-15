@@ -6,46 +6,104 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MyClassLibrary;
 
-public partial class AEBookings : System.Web.UI.Page
+public partial class Bookings_AEBookings : System.Web.UI.Page
 {
+    //variable to store the primary key with page level scope
+    Int32 BookRef;
+
+    //event handler for the page load event
     protected void Page_Load(object sender, EventArgs e)
     {
-        //write to textboxes query sting passed from previous page
-        txtRef.Text = Convert.ToString(Request.QueryString["lblRef"]);
-        txtDateBooked.Text = Convert.ToString(Request.QueryString["date"]);
-        txtAmount.Text = Convert.ToString(Request.QueryString["amount"]);
-        txtPayment.Text = Convert.ToString(Request.QueryString["Payment"]);
+        //get the number of the address to be processed
+        BookRef = Convert.ToInt32(Session["BookRef"]);
+        if (IsPostBack == false)
+        {
 
-    }
-
-    protected void btnReturn_Click(object sender, EventArgs e)
-    {
-        //redirect to the filter page
-        Response.Redirect("FilterBooking.aspx");
-
+            //if this is not a new record
+            if (BookRef != -1)
+            {
+                //display the current data for the record
+                DisplayBookings();
+            }
+        }
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
-        //Display an message to indicate task as been done
-        lblError.Text=("Success");
+        if (BookRef == -1)
+        {
+            //add the new record
+            Add();
+        }
+        else
+        {
+            //update the record
+            Update();
+        }
     }
 
-    protected void btnCust_Click(object sender, EventArgs e)
+    //function for adding new records
+    void Add()
     {
-        //Display an message to indicate task as been done
-        lblError.Text = ("1 Customer Found");
+        //create an instance of the address book
+        clsBookingsCollection BookingsList = new clsBookingsCollection();
+        //validate the data on the web form
+        String Error = BookingsList.ThisBookings.Valid(txtAmmount.Text, txtDateBooked.Text, txtPaymentType.Text);
+        //if the data is OK then add it to the object
+        if (Error == "")
+        {
+            //get the data entered by the user
+            BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmmount.Text);
+            BookingsList.ThisBookings.DateBooked= Convert.ToDateTime(txtDateBooked.Text);
+            BookingsList.ThisBookings.PaymentType = txtPaymentType.Text;
+            //add the record
+            BookingsList.Add();
+            //all done so redirect back to the main page
+            Response.Redirect("Default.aspx");
+        }
+        else
+        {
+            //report an error
+            lblError.Text = "There were problems with the data entered " + Error;
+        }
     }
 
-    protected void btnFlights_Click(object sender, EventArgs e)
+    //function for updateing records
+    void Update()
     {
-        //Display an message to indicate task as been done
-        lblError.Text = ("1 Flight Found");
+        //create an instance of the address book
+        clsBookingsCollection BookingsList = new clsBookingsCollection();
+        //validate the data on the web form
+        String Error = BookingsList.ThisBookings.Valid(txtAmmount.Text, txtDateBooked.Text, txtPaymentType.Text);
+        //if the data is OK then add it to the object
+        if (Error == "")
+        {
+            //get the data entered by the user
+            BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmmount.Text);
+            BookingsList.ThisBookings.DateBooked = Convert.ToDateTime(txtDateBooked.Text);
+            BookingsList.ThisBookings.PaymentType = txtPaymentType.Text;
+            //update the record
+            BookingsList.Update();
+            //all done so redirect back to the main page
+            Response.Redirect("Default.aspx");
+        }
+        else
+        {
+            //report an error
+            lblError.Text = "There were problems with the data entered " + Error;
+        }
     }
 
-    protected void btnTourOp_Click(object sender, EventArgs e)
+    void DisplayBookings()
     {
-        //Display an message to indicate task as been done
-        lblError.Text = ("1 Tour found");
+        //create an instance of the address book
+        clsBookingsCollection BookingsList = new clsBookingsCollection();
+        //find the record to update
+        BookingsList.ThisBookings.Find(BookRef);
+        //display the data for this record
+        txtAmmount.Text = BookingsList.ThisBookings.Ammount.ToString();
+        txtDateBooked.Text = BookingsList.ThisBookings.DateBooked.ToString();
+        txtPaymentType.Text = BookingsList.ThisBookings.PaymentType;
+
     }
 }

@@ -9,14 +9,25 @@ namespace MyClassLibrary
     {
         //private data memeber for the BookRef property
         private Int32 mBookRef;
-        //private data memeber for the ammount property
-        private decimal mAmmount;
-        //private data memeber for the date booked property
-        private DateTime mDateBooked;
-        //private data memeber for the payment type property
-        private string mPaymentType;
+        
+        //public property for BookRef
+        public int BookRef
+        {
+            get
+            {
+                //return private data
+                return mBookRef;
+            }
+            set
+            {
+                //set the value of the private data member
+                mBookRef = value;
+            }
+        }        
 
-       
+
+       //private data memeber for the ammount property
+        private decimal mAmmount;
         //public property for ammount
         public decimal Ammount
         {
@@ -31,22 +42,9 @@ namespace MyClassLibrary
                 mAmmount = value;
             }
         }
-
-
-        //public property for BookRef
-        public int BookRef
-        {
-            get
-            {
-                //return private data
-                return mBookRef;
-            }
-            set
-            {
-                //set the value of the private data member
-                mBookRef = value;
-            }
-        }
+        
+        //private data memeber for the date booked property
+        private DateTime mDateBooked;
         //public property for DateBooked
         public DateTime DateBooked
         {
@@ -60,7 +58,10 @@ namespace MyClassLibrary
                 //set the value of the private data member
                 mDateBooked = value;
             }
-        }
+        }        
+        
+        //private data memeber for the payment type property
+        private string mPaymentType;
         //public property for payment type
         public string PaymentType
         {
@@ -77,25 +78,13 @@ namespace MyClassLibrary
         }
 
 
-        public string Valid(string ammount, string paymentType, string dateBooked)
+        public string Valid(string ammount,string dateBooked, string paymentType )
         {
             //temp variable to store date
             DateTime DateTemp;
             //string variable to store any error messages found
-            string OK = "";
-            //If Payment type is blank
-            if (paymentType.Length == 0)
-            {
-                //Flag an error
-                OK = OK + "Payment Blank: Charecter limit 10";
-            }
+            string Error = "";
 
-            //If Payment type is blank
-            if (paymentType.Length > 10)
-            {
-                //Flag an error
-                OK = OK + "Payment Blank: Charecter limit 10";
-            }
 
             try //try to see if the ammount entered is valid
             {
@@ -107,13 +96,27 @@ namespace MyClassLibrary
                 if (Price < 0 | Price > 30000 )
                 {
                     //set the error message
-                    OK = OK + "Ammount must be between £0 and £30,000";
+                    Error = Error + "Ammount must be between £0 and £30,000 : ";
                 }
             }
             catch // if an error has failed to be caught
             {
                 //flag an error
-                OK = OK + "Incorrect charecters entered";
+                Error = Error + "Incorrect currency format entered : ";
+            }
+
+            //If Payment type is blank
+            if (paymentType.Length == 0)
+            {
+                //Flag an error
+                Error = Error + "Payment Blank: Charecter limit 10 : ";
+            }
+
+            //If Payment type is blank
+            if (paymentType.Length > 10)
+            {
+                //Flag an error
+                Error = Error + "Payment too big: Charecter limit 10 : ";
             }
 
             try //try to see if the date entered is valid
@@ -124,25 +127,25 @@ namespace MyClassLibrary
                 if (DateTemp < DateTime.Now.Date)
                 {
                     //flag an error
-                    OK = OK + "Date in past. Please enter todays date";
+                    Error = Error + "Date in past. Please enter todays date : ";
                 }
 
                 //if the datetemp is less then todays date
                 if (DateTemp > DateTime.Now.Date)
                 {
                     //flag an error
-                    OK = OK + "Date in past. Please enter todays date";
+                    Error = Error + "Date in past. Please enter todays date : ";
                 }
 
             }
             catch // if an error has failed to be caught
             {
                 //flag an error
-                OK = OK + "Incorrect charecters entered";
+                Error = Error + "Incorrect Date Format entered : ";
             }
 
             //return any errors found
-            return OK;
+            return Error;
         }
 
         public bool Find(int bookRef)
