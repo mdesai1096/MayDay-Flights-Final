@@ -38,7 +38,7 @@
         <asp:ListItem>Thomas Cook</asp:ListItem>
 </asp:ListBox>
     <asp:Button ID="btnReturn" runat="server" style="z-index: 1; left: 1097px; top: 530px; position: absolute" Text="Return" OnClick="btnReturn_Click" />
-    <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 560px; top: 528px; position: absolute; width: 74px" Text="OK" OnClick="btnOK_Click" />
+    <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 560px; top: 528px; position: absolute; width: 74px; height: 26px;" Text="OK" OnClick="btnOK_Click" />
     <br />
     <asp:Label ID="lblAmount" runat="server" style="z-index: 1; left: 1248px; top: 409px; position: absolute" Text="Amount"></asp:Label>
     <asp:Label ID="lblDate" runat="server" style="z-index: 1; left: 1200px; top: 363px; position: absolute; width: 99px;" Text="Date Booked"></asp:Label>

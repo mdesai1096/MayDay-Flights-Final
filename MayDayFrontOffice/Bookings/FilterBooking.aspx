@@ -15,6 +15,7 @@
 <br />
 <br />
 <asp:ListBox ID="lstBookings" runat="server" style="z-index: 1; left: 411px; top: 348px; position: absolute; height: 155px; width: 1111px">
+    <asp:ListItem>Mohammad Desai 02/10/2017 £500</asp:ListItem>
 </asp:ListBox>
 <br />
 <asp:Button ID="btnSearch" runat="server" style="z-index: 1; left: 682px; top: 307px; position: absolute" Text="Search" />
