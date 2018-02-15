@@ -44,7 +44,7 @@
     <img src="/Images/rsz_mayday.jpg" class="auto-style2" />
         <li><a href="/Misc/Home.aspx">Home</a></li>  
         <li><a href="/Customer/AdminHomepage.aspx">Customers</a></li>  
-        <li><a href="/Bookings/FilterBooking.aspx">Bookings</a></li>  
+        <li><a href="/Bookings/Default.aspx">Bookings</a></li>  
         <li><a href="/Flights/DefaultFlight.aspx">Flights</a></li>  
         <li><a href="/TourOperators/Default.aspx">Tour Operators</a></li>
         <li><a href="/Employees/EmployeeMenu.aspx">Human Resources</a></li>  
