@@ -60,4 +60,25 @@ public partial class Bookings_Default : System.Web.UI.Page
             lblError.Text = "Please select a record to delete from the list";
         }
     }
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        //var to store the primary key value of the record to be deleted
+        Int32 BookRef;
+        //if a record has been selected from the list
+        if (lstBookings.SelectedIndex != -1)
+        {
+            //get the primary key value of the record to delete
+            BookRef = Convert.ToInt32(lstBookings.SelectedValue);
+            //store the data in the session object
+            Session["BookRef"] = BookRef;
+            //redirect to the delete page
+            Response.Redirect("Delete.aspx");
+        }
+        else //if no record has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a record to delete from the list";
+        }
+    }
 }
