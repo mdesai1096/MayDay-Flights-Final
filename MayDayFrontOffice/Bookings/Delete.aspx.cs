@@ -16,6 +16,7 @@ public partial class Bookings_Delete : System.Web.UI.Page
     {
         //get the number of the Booking to be deleted from the session object
         BookRef = Convert.ToInt32(Session["BookRef"]);
+        //display the PK of record to be deleted
         txtBookRef.Text = BookRef.ToString();
     }
 
@@ -37,7 +38,7 @@ public partial class Bookings_Delete : System.Web.UI.Page
     {
         //function to delete the selected record
 
-        //create a new instance of the address book
+        //create a new instance of the bookings collection
         clsBookingsCollection Bookings = new clsBookingsCollection();
         //find the record to delete
         Bookings.ThisBookings.Find(BookRef);

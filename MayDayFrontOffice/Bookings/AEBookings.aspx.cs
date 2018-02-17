@@ -14,7 +14,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
     //event handler for the page load event
     protected void Page_Load(object sender, EventArgs e)
     {
-        //get the number of the address to be processed
+        //get the pk of the booking to be processed
         BookRef = Convert.ToInt32(Session["BookRef"]);
         if (IsPostBack == false)
         {
@@ -24,13 +24,14 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
             {
                 //display the current data for the record
                 DisplayBookings();
+                //display the PK of record to be edited
                 txtRef.Text = BookRef.ToString();
             }
             else //this is a new record
             {
                 //set todays date
                 txtDateBooked.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
-                //hide the refence label and box
+                //hide the reference label and box
                 lblRef.Visible = false;
                 txtRef.Visible = false;
             }
@@ -54,7 +55,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
     //function for adding new records
     void Add()
     {
-        //create an instance of the address book
+        //create an instance of the booking list
         clsBookingsCollection BookingsList = new clsBookingsCollection();
         //validate the data on the web form
         String Error = BookingsList.ThisBookings.Valid(txtAmmount.Text, txtDateBooked.Text, txtPaymentType.Text);
@@ -78,10 +79,10 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         }
     }
 
-    //function for updateing records
+    //function for updating records
     void Update()
     {
-        //create an instance of the address book
+        //create an instance of the booking list
         clsBookingsCollection BookingsList = new clsBookingsCollection();
         //validate the data on the web form
         String Error = BookingsList.ThisBookings.Valid(txtAmmount.Text, txtDateBooked.Text, txtPaymentType.Text);
@@ -108,7 +109,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
 
     void DisplayBookings()
     {
-        //create an instance of the address book
+        //create an instance of the booking list
         clsBookingsCollection BookingsList = new clsBookingsCollection();
         //find the record to update
         BookingsList.ThisBookings.Find(BookRef);
@@ -117,5 +118,11 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         txtDateBooked.Text = BookingsList.ThisBookings.DateBooked.ToString();
         txtPaymentType.Text = BookingsList.ThisBookings.PaymentType;
 
+    }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        //redirect back to default page
+        Response.Redirect("Default.aspx");
     }
 }

@@ -28,9 +28,9 @@ public partial class Bookings_Default : System.Web.UI.Page
 
     void DisplayBookings()
     {
-        //create an instance of the County Collection
+        //create an instance of the booking collection
         clsBookingsCollection Bookings = new clsBookingsCollection();
-        //set the data source to the list of counties in the collection
+        //set the data source to the list of bookings in the collection
         lstBookings.DataSource = Bookings.BookingsList;
         //set the name of the primary key
         lstBookings.DataValueField = "BookRef";
