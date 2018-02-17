@@ -34,7 +34,7 @@
 <asp:Label ID="lblAmmount" runat="server" style="z-index: 1; left: 1343px; top: 422px; position: absolute" Text="Ammount"></asp:Label>
 <asp:Label ID="lblRef" runat="server" style="z-index: 1; left: 1340px; top: 366px; position: absolute" Text="Reference"></asp:Label>
 <asp:Button ID="btnFilterCust" runat="server" style="z-index: 1; left: 553px; top: 311px; position: absolute; width: 106px" Text="Filter Customers" />
-<asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 1073px; top: 529px; position: absolute" Text="Cancel" />
+<asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 1073px; top: 529px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
 <asp:Button ID="btnFilterTourOps" runat="server" EnableViewState="False" style="z-index: 1; left: 1153px; top: 306px; position: absolute; width: 134px" Text="Filter Tour Operators" />
 <asp:Button ID="btnFilterFlights" runat="server" style="z-index: 1; left: 869px; top: 314px; position: absolute" Text="Filter Flights" />
 <br />
