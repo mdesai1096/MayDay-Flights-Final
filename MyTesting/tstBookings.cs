@@ -76,7 +76,7 @@ namespace MyTesting
             string Ammount = "23.50";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if it exists
             Assert.AreEqual(OK, "");
         }
@@ -110,7 +110,7 @@ namespace MyTesting
             string Ammount = "23.50";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -127,7 +127,7 @@ namespace MyTesting
             string Ammount = "23.50";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -144,7 +144,7 @@ namespace MyTesting
             string Ammount = "23.50";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -162,7 +162,7 @@ namespace MyTesting
             string Ammount = "23.50";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -180,7 +180,7 @@ namespace MyTesting
             string Ammount = "23.50";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -198,7 +198,7 @@ namespace MyTesting
             string Ammount = "23.50";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -216,7 +216,7 @@ namespace MyTesting
             string Ammount = "23.50";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -234,7 +234,7 @@ namespace MyTesting
             string Ammount = "23.50";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -260,7 +260,7 @@ namespace MyTesting
             //Convert data  to a string variable
             string DateBooked = SomeDate.ToString();
             //invoke the method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -283,7 +283,7 @@ namespace MyTesting
             //Convert data  to a string variable
             string DateBooked = SomeDate.ToString();
             //invoke the method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -307,7 +307,7 @@ namespace MyTesting
             //Convert data  to a string variable
             string DateBooked = SomeDate.ToString();
             //invoke the method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -331,7 +331,7 @@ namespace MyTesting
             //Convert data  to a string variable
             string DateBooked = SomeDate.ToString();
             //invoke the method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -356,7 +356,7 @@ namespace MyTesting
             //Convert data  to a string variable
             string DateBooked = SomeDate.ToString();
             //invoke the method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -377,7 +377,7 @@ namespace MyTesting
             SomeDate = "ytytyrtyr";
             string DateBooked = SomeDate.ToString();
             //invoke the method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -395,7 +395,7 @@ namespace MyTesting
             string Ammount = "-100000";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -412,7 +412,7 @@ namespace MyTesting
             string Ammount = "-1";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -429,7 +429,7 @@ namespace MyTesting
             string Ammount = "0";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -446,7 +446,7 @@ namespace MyTesting
             string Ammount = "1.50";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -463,7 +463,7 @@ namespace MyTesting
             string Ammount = "29999";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -480,7 +480,7 @@ namespace MyTesting
             string Ammount = "30000";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -497,7 +497,7 @@ namespace MyTesting
             string Ammount = "30001";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -514,7 +514,7 @@ namespace MyTesting
             string Ammount = "25000";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreEqual(OK, "");
         }
@@ -531,7 +531,7 @@ namespace MyTesting
             string Ammount = "100000";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
@@ -548,7 +548,7 @@ namespace MyTesting
             string Ammount = "sddfgthjjfghb";
             string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
-            OK = ABookings.Valid(Ammount, PaymentType, DateBooked);
+            OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
             Assert.AreNotEqual(OK, "");
         }
