@@ -1,0 +1,5 @@
+C:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation3\MyClassLibrary\bin\Debug\MyClassLibrary.dll
+C:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation3\MyClassLibrary\bin\Debug\MyClassLibrary.pdb
+C:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation3\MyClassLibrary\obj\Debug\MyClassLibrary.dll
+C:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation3\MyClassLibrary\obj\Debug\MyClassLibrary.pdb
+C:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation3\MyClassLibrary\obj\Debug\MyClassLibrary.csprojResolveAssemblyReference.cache
