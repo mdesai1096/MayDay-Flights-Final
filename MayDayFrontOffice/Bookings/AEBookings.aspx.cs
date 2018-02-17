@@ -24,6 +24,15 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
             {
                 //display the current data for the record
                 DisplayBookings();
+                txtRef.Text = BookRef.ToString();
+            }
+            else //this is a new record
+            {
+                //set todays date
+                txtDateBooked.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
+                //hide the refence label and box
+                lblRef.Visible = false;
+                txtRef.Visible = false;
             }
         }
     }
