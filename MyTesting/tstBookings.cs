@@ -610,7 +610,7 @@ namespace MyTesting
             //invoke method
             Found = ABookings.Find(BookRef);
             //check the booking no
-            if (ABookings.DateBooked != Convert.ToDateTime("01/02/2017"))
+            if (ABookings.DateBooked != Convert.ToDateTime("17/02/2018"))
             {
                 OK = false;
             }
