@@ -84,6 +84,7 @@ public partial class Bookings_Default : System.Web.UI.Page
 
     protected void btnFilter_Click(object sender, EventArgs e)
     {
+    
         FilterBookingsRef(txtFilter.Text);
     }
 
@@ -105,6 +106,7 @@ public partial class Bookings_Default : System.Web.UI.Page
     protected void btnFDate_Click(object sender, EventArgs e)
     {
         FilterBookingsDateRange(txtDate1.Text, txtDate2.Text);
+       
     }
 
     void FilterBookingsDateRange(string Date1, string Date2)
@@ -121,4 +123,5 @@ public partial class Bookings_Default : System.Web.UI.Page
         //bind the data to the list
         lstBookings.DataBind();
     }
+
 }
