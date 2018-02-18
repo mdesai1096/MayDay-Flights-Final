@@ -81,4 +81,44 @@ public partial class Bookings_Default : System.Web.UI.Page
             lblError.Text = "Please select a record to delete from the list";
         }
     }
+
+    protected void btnFilter_Click(object sender, EventArgs e)
+    {
+        FilterBookingsRef(txtFilter.Text);
+    }
+
+    void FilterBookingsRef(string BookRef)
+    {
+        //create an instance of the booking collection
+        clsBookingsCollection Bookings = new clsBookingsCollection();
+        Bookings.FilterbyBookRef(BookRef);
+        //set the data source to the list of bookings in the collection
+        lstBookings.DataSource = Bookings.BookingsList;
+        //set the name of the primary key
+        lstBookings.DataValueField = "BookRef";
+        //set the data field to display
+        lstBookings.DataTextField = "BookRef";
+        //bind the data to the list
+        lstBookings.DataBind();
+    }
+
+    protected void btnFDate_Click(object sender, EventArgs e)
+    {
+        FilterBookingsDateRange(txtDate1.Text, txtDate2.Text);
+    }
+
+    void FilterBookingsDateRange(string Date1, string Date2)
+    {
+        //create an instance of the booking collection
+        clsBookingsCollection Bookings = new clsBookingsCollection();
+        Bookings.FilterbyDateBooked(Date1,Date2);
+        //set the data source to the list of bookings in the collection
+        lstBookings.DataSource = Bookings.BookingsList;
+        //set the name of the primary key
+        lstBookings.DataValueField = "BookRef";
+        //set the data field to display
+        lstBookings.DataTextField = "DateBooked";
+        //bind the data to the list
+        lstBookings.DataBind();
+    }
 }
