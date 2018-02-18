@@ -7,9 +7,13 @@
     <br />
 </p>
 <asp:TextBox ID="txtFilter" runat="server" style="z-index: 1; left: 406px; top: 291px; position: absolute; width: 187px"></asp:TextBox>
-<asp:Button ID="btnFilter" runat="server" style="z-index: 1; left: 626px; top: 290px; position: absolute" Text="Filter" />
+<asp:Button ID="btnFilter" runat="server" style="z-index: 1; left: 618px; top: 290px; position: absolute" Text="Filter" OnClick="btnFilter_Click" />
+    <asp:TextBox ID="txtDate2" runat="server" style="z-index: 1; left: 953px; top: 293px; position: absolute">End Date</asp:TextBox>
+    <asp:TextBox ID="txtDate1" runat="server" style="z-index: 1; left: 756px; top: 292px; position: absolute">Start Date</asp:TextBox>
+    <asp:Button ID="btnFDate" runat="server" OnClick="btnFDate_Click" style="z-index: 1; left: 1093px; top: 291px; position: absolute; margin-bottom: 0px" Text="Filter By Date" />
 <br />
-<asp:Label ID="lblError" runat="server" style="z-index: 1; left: 924px; top: 294px; position: absolute"></asp:Label>
+<asp:Label ID="lblError" runat="server" style="z-index: 1; left: 1453px; top: 295px; position: absolute"></asp:Label>
+    <asp:Label ID="lblDash" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 915px; top: 285px; position: absolute; width: 17px; height: 26px" Text="-"></asp:Label>
 <br />
 <br />
 <br />
