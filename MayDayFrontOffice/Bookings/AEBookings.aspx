@@ -42,7 +42,7 @@
 <asp:TextBox ID="txtDateBooked" runat="server" style="z-index: 1; left: 1416px; top: 478px; position: absolute"></asp:TextBox>
 <asp:TextBox ID="txtAmmount" runat="server" style="z-index: 1; left: 1416px; top: 420px; position: absolute; margin-top: 0px"></asp:TextBox>
 <br />
-<asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 909px; top: 253px; position: absolute; width: 255px" Text="New/Edit Booking"></asp:Label>
+<asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 911px; top: 242px; position: absolute; width: 255px" Text="New/Edit Booking" Font-Underline="True"></asp:Label>
 <asp:ListBox ID="lstCust" runat="server" style="z-index: 1; left: 412px; top: 348px; position: absolute; height: 110px; width: 243px"></asp:ListBox>
 </asp:Content>
 
