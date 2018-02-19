@@ -103,5 +103,27 @@ namespace MaydayBackend
                 childForm.Close();
             }
         }
+
+        
+
+        private void displayBookingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mdiBackend_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void displayBookingsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //creat an object based on frmMaydayMain
+            frmBookingMain BookingsList = new frmBookingMain();
+            //make the object of a child the midi parent
+            BookingsList.MdiParent = this;
+            //make the form visible
+            BookingsList.Visible = true;
+        }
     }
 }

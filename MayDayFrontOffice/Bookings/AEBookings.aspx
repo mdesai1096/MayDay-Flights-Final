@@ -31,7 +31,7 @@
 <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 511px; top: 541px; position: absolute; margin-bottom: 0px" Text="OK" OnClick="btnOK_Click" />
 <asp:Label ID="lblDateBooked" runat="server" style="z-index: 1; left: 1322px; top: 481px; position: absolute" Text="DateBooked"></asp:Label>
 <asp:Label ID="lblPaymentType" runat="server" style="z-index: 1; left: 1314px; top: 538px; position: absolute; width: 89px" Text="Payment Type"></asp:Label>
-<asp:Label ID="lblAmmount" runat="server" style="z-index: 1; left: 1343px; top: 422px; position: absolute" Text="Ammount"></asp:Label>
+<asp:Label ID="lblAmount" runat="server" style="z-index: 1; left: 1343px; top: 422px; position: absolute" Text="Amount"></asp:Label>
 <asp:Label ID="lblRef" runat="server" style="z-index: 1; left: 1340px; top: 366px; position: absolute" Text="Reference"></asp:Label>
 <asp:Button ID="btnFilterCust" runat="server" style="z-index: 1; left: 553px; top: 311px; position: absolute; width: 106px" Text="Filter Customers" />
 <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 1073px; top: 529px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
