@@ -78,6 +78,7 @@ namespace MyClassLibrary
         }
 
 
+
         public string Valid(string ammount,string dateBooked, string paymentType )
         {
             //temp variable to store date
@@ -147,6 +148,8 @@ namespace MyClassLibrary
             //return any errors found
             return Error;
         }
+
+
 
         public bool Find(int bookRef)
         {
