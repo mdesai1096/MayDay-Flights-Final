@@ -37,5 +37,46 @@ namespace MaydayBackend
             //return the count of records in the list
             return Bookings.Count;
         }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+           lblError.Text = FilterBookingsRef(txtBookRef.Text) + " Found";
+             
+        }
+
+        Int32 FilterBookingsRef(string BookRef)
+        {
+            //create an instance of the booking collection
+            clsBookingsCollection Bookings = new clsBookingsCollection();
+            Bookings.FilterbyBookRef(BookRef);
+            //set the data source to the list of bookings in the collection
+            lstBookings.DataSource = Bookings.BookingsList;
+            //set the name of the primary key
+            lstBookings.ValueMember = "BookRef";
+            //set the data field to display
+            lstBookings.DisplayMember = "BookRef";
+            //bind the data to the list
+            return Bookings.Count;
+        }
+
+        Int32 FilterBookingsDateRange(string Date1, string Date2)
+        {
+            //create an instance of the booking collection
+            clsBookingsCollection Bookings = new clsBookingsCollection();
+            Bookings.FilterbyDateBooked(Date1, Date2);
+            //set the data source to the list of bookings in the collection
+            lstBookings.DataSource = Bookings.BookingsList;
+            //set the name of the primary key
+            lstBookings.ValueMember = "BookRef";
+            //set the data field to display
+            lstBookings.DisplayMember = "DateBooked";
+            //bind the data to the list
+            return Bookings.Count;
+        }
+
+        private void btnDFilter_Click(object sender, EventArgs e)
+        {
+            lblError.Text = FilterBookingsDateRange(txtDate1.Text, txtDate2.Text) + " Found";
+        }
     }
 }

@@ -22,6 +22,8 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
             //if this is not a new record
             if (BookRef != -1)
             {
+                //change the title of the page
+                lblTitle.Text = "Edit Booking";
                 //display the current data for the record
                 DisplayBookings();
                 //display the PK of record to be edited
@@ -29,6 +31,8 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
             }
             else //this is a new record
             {
+                //change the title of the page
+                lblTitle.Text = "New Booking";
                 //set todays date
                 txtDateBooked.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
                 //hide the reference label and box
