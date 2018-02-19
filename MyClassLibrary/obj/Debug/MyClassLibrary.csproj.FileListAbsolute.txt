@@ -13,3 +13,8 @@ D:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyClassLi
 D:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyClassLibrary\obj\Debug\MyClassLibrary.csprojResolveAssemblyReference.cache
 D:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyClassLibrary\obj\Debug\MyClassLibrary.dll
 D:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyClassLibrary\obj\Debug\MyClassLibrary.pdb
+D:\Users\mdesa\Desktop\MayDay-Flights-TDD-Coding-SQL-Presentation-master\MyClassLibrary\bin\Debug\MyClassLibrary.dll
+D:\Users\mdesa\Desktop\MayDay-Flights-TDD-Coding-SQL-Presentation-master\MyClassLibrary\bin\Debug\MyClassLibrary.pdb
+D:\Users\mdesa\Desktop\MayDay-Flights-TDD-Coding-SQL-Presentation-master\MyClassLibrary\obj\Debug\MyClassLibrary.csprojResolveAssemblyReference.cache
+D:\Users\mdesa\Desktop\MayDay-Flights-TDD-Coding-SQL-Presentation-master\MyClassLibrary\obj\Debug\MyClassLibrary.dll
+D:\Users\mdesa\Desktop\MayDay-Flights-TDD-Coding-SQL-Presentation-master\MyClassLibrary\obj\Debug\MyClassLibrary.pdb
