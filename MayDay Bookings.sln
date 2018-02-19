@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyClassLibrary", "MyClassLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTesting", "MyTesting\MyTesting.csproj", "{2C3D00E3-B218-44E6-A8E3-CD11F70B4C47}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MayDayFrontOffice(1)", "MayDayFrontOffice\", "{DF64AEA7-E582-4754-9DB4-BA5A00F63344}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MayDayFrontOffice", "MayDayFrontOffice\", "{DF64AEA7-E582-4754-9DB4-BA5A00F63344}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
 		ProjectReferences = "{4e507ace-829c-49ec-9fbf-1fedcde1afd3}|MyClassLibrary.dll;"
