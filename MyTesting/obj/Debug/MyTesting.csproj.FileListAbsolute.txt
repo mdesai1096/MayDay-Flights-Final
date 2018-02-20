@@ -26,3 +26,10 @@ D:\Users\mdesa\Desktop\MayDay-Flights-TDD-Coding-SQL-Presentation-master\MyTesti
 D:\Users\mdesa\Desktop\MayDay-Flights-TDD-Coding-SQL-Presentation-master\MyTesting\obj\Debug\MyTesting.csprojResolveAssemblyReference.cache
 D:\Users\mdesa\Desktop\MayDay-Flights-TDD-Coding-SQL-Presentation-master\MyTesting\obj\Debug\MyTesting.dll
 D:\Users\mdesa\Desktop\MayDay-Flights-TDD-Coding-SQL-Presentation-master\MyTesting\obj\Debug\MyTesting.pdb
+C:\Users\p1619777x\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyTesting\bin\Debug\MyTesting.dll
+C:\Users\p1619777x\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyTesting\bin\Debug\MyTesting.pdb
+C:\Users\p1619777x\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyTesting\bin\Debug\MyClassLibrary.dll
+C:\Users\p1619777x\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyTesting\bin\Debug\MyClassLibrary.pdb
+C:\Users\p1619777x\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyTesting\obj\Debug\MyTesting.csprojResolveAssemblyReference.cache
+C:\Users\p1619777x\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyTesting\obj\Debug\MyTesting.dll
+C:\Users\p1619777x\Source\Repos\MayDay-Flights-TDD-Coding-SQL-Presentation\MyTesting\obj\Debug\MyTesting.pdb
