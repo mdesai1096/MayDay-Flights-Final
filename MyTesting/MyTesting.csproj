@@ -58,6 +58,7 @@
     <Compile Include="tstEmployee.cs" />
     <Compile Include="tstBookingsCollection.cs" />
     <Compile Include="tstFlights.cs" />
+    <Compile Include="tstCustomerCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyClassLibrary\MyClassLibrary.csproj">
