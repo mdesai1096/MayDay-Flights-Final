@@ -112,7 +112,7 @@ namespace MyClassLibrary
                 Error = Error + "Payment Blank: Charecter limit 10 : ";
             }
 
-            //If Payment type is blank
+            //If Payment type greater then 10 charecters
             if (paymentType.Length > 10)
             {
                 //Flag an error
