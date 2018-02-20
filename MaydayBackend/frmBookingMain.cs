@@ -18,8 +18,9 @@ namespace MaydayBackend
         public frmBookingMain()
         {
             InitializeComponent();
-            //on load initalize 
+            //on load initalize list box
             DisplayBookings();
+         
         }
 
         private void btnPopulate_Click(object sender, EventArgs e)
