@@ -30,6 +30,143 @@ namespace MyTesting
         }
 
         [TestMethod]
+        public void FlightNoMinPlus1()
+        {
+            //create an instance of new class we want to create
+            clsFlights AFlight = new clsFlights();
+            //string variable to store the results of the validation
+            string OK = "";
+            //create some test data to assign to property
+            string FlightNo = "A1";
+            string Airline = "Air India";
+            string ArrivalAirport = "Dubai Airport";
+            string Arrival = DateTime.Now.Date.ToString();
+            string Departure = DateTime.Now.Date.ToString();
+            string DepartureAirport = "Birmingham Airport";
+            string Destination = "Dubai";
+            Boolean Active = true;
+            //invoke method
+            OK = AFlight.Valid(ArrivalAirport, Arrival, Airline, Departure, DepartureAirport, Destination, Active,FlightNo);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void FlightNoMaxMinus1()
+        {
+            //create an instance of new class we want to create
+            clsFlights AFlight = new clsFlights();
+            //string variable to store the results of the validation
+            string OK = "";
+            //create some test data to assign to property
+            string FlightNo = "AI 11";
+            string Airline = "Air India";
+            string ArrivalAirport = "Dubai Airport";
+            string Arrival = DateTime.Now.Date.ToString();
+            string Departure = DateTime.Now.Date.ToString();
+            string DepartureAirport = "Birmingham Airport";
+            string Destination = "Dubai";
+            Boolean Active = true;
+            //invoke method
+            OK = AFlight.Valid(ArrivalAirport, Arrival, Airline, Departure, DepartureAirport, Destination, Active, FlightNo);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void FlightNoBoundryMax()
+        {
+            //create an instance of new class we want to create
+            clsFlights AFlight = new clsFlights();
+            //string variable to store the results of the validation
+            string OK = "";
+            //create some test data to assign to property
+            string FlightNo = "AI 111";
+            string Airline = "Air India";
+            string ArrivalAirport = "Dubai Airport";
+            string Arrival = DateTime.Now.Date.ToString();
+            string Departure = DateTime.Now.Date.ToString();
+            string DepartureAirport = "Birmingham Airport";
+            string Destination = "Dubai";
+            Boolean Active = true;
+            //invoke method
+            OK = AFlight.Valid(ArrivalAirport, Arrival, Airline, Departure, DepartureAirport, Destination, Active, FlightNo);
+            //test to see if result correct
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void FlightNoMaxPlus1()
+        {
+            //create an instance of new class we want to create
+            clsFlights AFlight = new clsFlights();
+            //string variable to store the results of the validation
+            string OK = "";
+            //create some test data to assign to property
+            string FlightNo = "AI 1111";
+            string Airline = "Air India";
+            string ArrivalAirport = "Dubai Airport";
+            string Arrival = DateTime.Now.Date.ToString();
+            string Departure = DateTime.Now.Date.ToString();
+            string DepartureAirport = "Birmingham Airport";
+            string Destination = "Dubai";
+            Boolean Active = true;
+            //invoke method
+            OK = AFlight.Valid(ArrivalAirport, Arrival, Airline, Departure, DepartureAirport, Destination, Active, FlightNo);
+            //test to see if result correct
+            Assert.AreNotEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void FlightNoMid()
+        {
+            //create an instance of new class we want to create
+            clsFlights AFlight = new clsFlights();
+            //string variable to store the results of the validation
+            string OK = "";
+            //create some test data to assign to property
+            string FlightNo = "AI 1234567 ;
+            string Airline = "Air India";
+            string ArrivalAirport = "Dubai Airport";
+            string Arrival = DateTime.Now.Date.ToString();
+            string Departure = DateTime.Now.Date.ToString();
+            string DepartureAirport = "Birmingham Airport";
+            string Destination = "Dubai";
+            Boolean Active = true;
+            //invoke method
+            OK = AFlight.Valid(ArrivalAirport, Arrival, Airline, Departure, DepartureAirport, Destination, Active, FlightNo);
+            //test to see if result correct
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void FlightNoExtremeMax()
+        {
+            //create an instance of new class we want to create
+            clsFlights AFlight = new clsFlights();
+            //string variable to store the results of the validation
+            string OK = "";
+            //create some test data to assign to property
+            string FlightNo = "AI 1234567891011121319";
+            string Airline = "Air India";
+            string ArrivalAirport = "Dubai Airport";
+            string Arrival = DateTime.Now.Date.ToString();
+            string Departure = DateTime.Now.Date.ToString();
+            string DepartureAirport = "Birmingham Airport";
+            string Destination = "Dubai";
+            Boolean Active = true;
+            //invoke method
+            OK = AFlight.Valid(ArrivalAirport, Arrival, Airline, Departure, DepartureAirport, Destination, Active, FlightNo);
+            //test to see if result correct
+            Assert.AreNotEqual(OK, "");
+        }
+
+
+
+
+
+
+        [TestMethod]
         public void AirlineID()
         {
             //create instance of class we want to create
@@ -75,6 +212,7 @@ namespace MyTesting
             //string variable to store result of validation
             string OK = "";
             //create some test data to assign to property
+            string FlightNo = "AI114";
             string Airline = "Air India";
             string ArrivalAirport = "Birmingham Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -83,7 +221,7 @@ namespace MyTesting
             string Destination = "Dubai";
             Boolean Active = true;
             //invoke method
-            OK = AFlight.Valid(ArrivalAirport, Arrival, Airline, Departure, DepartureAirport, Destination, Active);
+            OK = AFlight.Valid(ArrivalAirport, Arrival, Airline, Departure, DepartureAirport, Destination, Active, FlightNo);
             //test to see if it exists
             Assert.AreEqual(OK, "");
         }
