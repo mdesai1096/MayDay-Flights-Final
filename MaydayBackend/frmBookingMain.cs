@@ -13,9 +13,13 @@ namespace MaydayBackend
 {
     public partial class frmBookingMain : Form
     {
+        //var to store the primary key value of the record selected
+        Int32 BookRef;
         public frmBookingMain()
         {
             InitializeComponent();
+            //on load initalize 
+            DisplayBookings();
         }
 
         private void btnPopulate_Click(object sender, EventArgs e)
@@ -78,5 +82,42 @@ namespace MaydayBackend
         {
             lblError.Text = FilterBookingsDateRange(txtDate1.Text, txtDate2.Text) + " Found";
         }
-    }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+      
+                //get the primary key value of the record to edit
+                BookRef = Convert.ToInt32(lstBookings.SelectedIndex);
+                
+
+            
+         
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+             //get the primary key value of the record to delete   
+             BookRef = Convert.ToInt32(lstBookings.SelectedValue);   
+             //delete the record   
+             lblError.Text = "Booking Reference " +  DeleteBooking() + " Canceled";   
+             //refesh list box   
+             DisplayBookings();   
+
+        }
+
+
+        Int32 DeleteBooking()
+        {
+            //function to delete the selected record
+            //create a new instance of the bookings collection
+            clsBookingsCollection Bookings = new clsBookingsCollection();
+            //find the record to delete
+            Bookings.ThisBookings.Find(BookRef);
+            //delete the record
+            Bookings.Delete();
+            return BookRef;
+        }
 }
+}
+
