@@ -13,7 +13,7 @@ namespace MyClassLibrary
         public DateTime DepartureDate { get; set; }
         public string FlightNo { get; set; }
 
-        public string Valid(string arrivalAirport, string arrival, string airline, string departure, string departureAirport, string destination, bool active)
+        public string Valid(string arrivalAirport, string arrival, string airline, string departure, string departureAirport, string destination, bool active, string flightno)
         {
             string OK = "";
             return OK;
