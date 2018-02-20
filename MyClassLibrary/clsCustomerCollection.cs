@@ -2,5 +2,8 @@
 {
     public class clsCustomerCollection
     {
+        public clsCustomerCollection()
+        {
+        }
     }
 }
