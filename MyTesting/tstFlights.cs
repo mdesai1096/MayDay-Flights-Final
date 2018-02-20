@@ -125,7 +125,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AI 1234567 ;
+            string FlightNo = "AI 1234567" ;
             string Airline = "Air India";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
