@@ -125,5 +125,15 @@ namespace MaydayBackend
             //make the form visible
             BookingsList.Visible = true;
         }
+
+        private void newBookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //creat an object based on frmMaydayMain
+            FrmAEBookings BookingsList = new FrmAEBookings();
+            //make the object of a child the midi parent
+            BookingsList.MdiParent = this;
+            //make the form visible
+            BookingsList.Visible = true;
+        }
     }
 }

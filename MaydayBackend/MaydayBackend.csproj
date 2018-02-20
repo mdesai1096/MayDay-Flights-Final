@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAEBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAEBookings.Designer.cs">
+      <DependentUpon>FrmAEBookings.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBookingMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAEBookings.resx">
+      <DependentUpon>FrmAEBookings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBookingMain.resx">
       <DependentUpon>frmBookingMain.cs</DependentUpon>
     </EmbeddedResource>
