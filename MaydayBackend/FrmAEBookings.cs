@@ -16,7 +16,8 @@ namespace MaydayBackend
         public FrmAEBookings()
         {
             InitializeComponent();
-            
+            txtDateBo.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
+
         }
 
         private void btnOK_Click(object sender, EventArgs e)
