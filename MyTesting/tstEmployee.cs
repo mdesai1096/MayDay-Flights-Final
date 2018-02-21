@@ -123,8 +123,235 @@ namespace MyTesting
             Assert.AreEqual(AnEmployee.EmployeeSalary, TestData);
         }
 
-       
-    }
-}
+        [TestMethod]
+        public void ValidExist()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "Some Address";
+            string EmployeeContactNumber = "07666666666";
+            string EmployeeDOB = DateTime.Now.Date.ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "Accountant";
+            string EmployeeSalary = "1800";
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
 
+        [TestMethod]
+        public void AddressMinLessOne()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "";
+            string EmployeeContactNumber = "07666666666";
+            string EmployeeDOB = DateTime.Now.Date.ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "Accountant";
+            string EmployeeSalary = "1800";
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void AddressMinBoundary()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "f";
+            string EmployeeContactNumber = "07666666666";
+            string EmployeeDOB = DateTime.Now.Date.ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "Accountant";
+            string EmployeeSalary = "1800";
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+
+        }
+
+        [TestMethod]
+        public void AddressMinPlusOne()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "ff";
+            string EmployeeContactNumber = "07666666666";
+            string EmployeeDOB = DateTime.Now.Date.ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "Accountant";
+            string EmployeeSalary = "1800";
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+
+        }
+
+        [TestMethod]
+        public void AddressMaxMinusOne()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "";
+            EmployeeAddress = EmployeeAddress.PadRight(29, 'a');
+            string EmployeeContactNumber = "07666666666";
+            string EmployeeDOB = DateTime.Now.Date.ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "Accountant";
+            string EmployeeSalary = "1800";
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+
+        }
+
+        [TestMethod]
+        public void AddressMaxBoundary()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "";
+            EmployeeAddress = EmployeeAddress.PadRight(30, 'a');
+            string EmployeeContactNumber = "07666666666";
+            string EmployeeDOB = DateTime.Now.Date.ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "Accountant";
+            string EmployeeSalary = "1800";
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+
+        }
+
+        [TestMethod]
+        public void AddressMaxPlusOne()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "";
+            EmployeeAddress = EmployeeAddress.PadRight(31, 'a');
+            string EmployeeContactNumber = "07666666666";
+            string EmployeeDOB = DateTime.Now.Date.ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "Accountant";
+            string EmployeeSalary = "1800";
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void AddressMid()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "";
+            EmployeeAddress = EmployeeAddress.PadRight(15, 'a');
+            string EmployeeContactNumber = "07666666666";
+            string EmployeeDOB = DateTime.Now.Date.ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "Accountant";
+            string EmployeeSalary = "1800";
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void AddressExtremeMax()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "";
+            EmployeeAddress = EmployeeAddress.PadRight(90, 'a');
+            string EmployeeContactNumber = "07666666666";
+            string EmployeeDOB = DateTime.Now.Date.ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "Accountant";
+            string EmployeeSalary = "1800";
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void ContactNumberExtremeMin()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "";
+            string EmployeeDOB = DateTime.Now.Date.ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "Accountant";
+            string EmployeeSalary = "1800";
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+    }
+
+}
 
