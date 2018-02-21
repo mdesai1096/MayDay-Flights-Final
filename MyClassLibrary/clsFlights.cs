@@ -24,7 +24,14 @@ namespace MyClassLibrary
             {
                 return OK = OK + "Flight no must be less than 4 characters";
             }
-
+            if (airline.Length == 0)
+            {
+                return OK = OK + "Airline is blank";
+            }
+            if (airline.Length > 20)
+            {
+                return OK = OK + "Flight no must be less than 20 characters";
+            }
             return OK;
         }
     }
