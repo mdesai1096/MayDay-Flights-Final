@@ -33,3 +33,8 @@ C:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP\MyClassLibrary\bin\Debu
 C:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP\MyClassLibrary\obj\Debug\MyClassLibrary.csprojResolveAssemblyReference.cache
 C:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP\MyClassLibrary\obj\Debug\MyClassLibrary.dll
 C:\Users\mdesa\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP\MyClassLibrary\obj\Debug\MyClassLibrary.pdb
+C:\Users\P16219823\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP\MyClassLibrary\bin\Debug\MyClassLibrary.dll
+C:\Users\P16219823\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP\MyClassLibrary\bin\Debug\MyClassLibrary.pdb
+C:\Users\P16219823\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP\MyClassLibrary\obj\Debug\MyClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\P16219823\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP\MyClassLibrary\obj\Debug\MyClassLibrary.dll
+C:\Users\P16219823\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP\MyClassLibrary\obj\Debug\MyClassLibrary.pdb

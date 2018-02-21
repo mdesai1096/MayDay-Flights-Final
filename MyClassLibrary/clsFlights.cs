@@ -13,13 +13,19 @@ namespace MyClassLibrary
         public DateTime DepartureDate { get; set; }
         public string FlightNo { get; set; }
 
-        public string Valid(string arrivalAirport, string arrival, string airline, string departure, string departureAirport, string destination, bool active, string flightno)
+        public string Valid(string flightNo, string airline, string destination, string arrival, string arrivalAirport, string departure, string departureAirport)
         {
             string OK = "";
-
+           if (flightNo.Length == 0)
+            {
+                return OK = OK + "Flight no is blank";
+            }
+           if(flightNo.Length>4)
+            {
+                return OK = OK + "Flight no must be less than 4 characters";
+            }
 
             return OK;
         }
-
     }
 }

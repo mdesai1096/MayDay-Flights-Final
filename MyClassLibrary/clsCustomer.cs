@@ -16,7 +16,7 @@ namespace MyClassLibrary
         {
             DateTime DateTemp;
             Boolean OK = false;
-            if (postCode.Length < 0)
+            if (postCode.Length < 20)
             {
                 OK = false;
             }
