@@ -92,51 +92,52 @@ namespace MyTesting
             AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
             Assert.AreNotEqual(AllOK, "");
         }
-        //[TestMethod]
-        //public void DateMin()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string PostCode = "Today- 18 years";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(-1000);
-        //    string DateT = Date.ToString();
+        [TestMethod]
+        public void MaxDateBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-150).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(PostCode, DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void DateMinPlusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string PostCode = "18 years,1 day";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(-1000);
-        //    string DateT = Date.ToString();
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+        [TestMethod]
+        public void DateMinPlusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-18).AddDays(+1).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(PostCode, DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
         //[TestMethod]
         //public void DateMaxMinusOne()
         //{
         //    clsCustomer AnCustomer = new clsCustomer();
         //    string Error = "";
         //    string PostCode = "Today – 149 years 364 day";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(-1000);
-        //    string DateT = Date.ToString();
-
-        //    Error = AnCustomer.Valid(PostCode, DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void DateMax()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string PostCode = "Today – 150 years ";
         //    DateTime Date = DateTime.Now.Date;
         //    Date.AddYears(-1000);
         //    string DateT = Date.ToString();
@@ -156,20 +157,28 @@ namespace MyTesting
 
         //    Error = AnCustomer.Valid(PostCode, DateT);
         //    Assert.AreNotEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void DateMid()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string PostCode = "Today – 75 Years";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(-1000);
-        //    string DateT = Date.ToString();
+        ///}
+        ///
+        [TestMethod]
+        public void DateMid()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-75).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(PostCode, DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
         //[TestMethod]
         //public void DateExtremeMax()
         //{
@@ -183,59 +192,90 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(PostCode, DateT);
         //    Assert.AreNotEqual(Error, "");
         //}
-        //[TestMethod]
 
-        //public void PostcodeMin()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string PostCode = "LE212";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(-1000);
-        //    string DateT = Date.ToString();
+        [TestMethod]
+        public void PostcodeMinBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5 12";
 
-        //    Error = AnCustomer.Valid(PostCode, DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void PostcodeMinPlusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string PostCode = "LE2123";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
 
-        //    Error = AnCustomer.Valid(PostCode, DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void PostcodeMaxMinusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string PostCode = "LE21234";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
+        [TestMethod]
+        public void PostcodeMinPlusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5 123";
 
-        //    Error = AnCustomer.Valid(PostCode, DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void PostcodeMax()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string PostCode = "LE20AW";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
 
-        //    Error = AnCustomer.Valid(PostCode, DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void PostcodeMaxMinusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5 12345";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
+        [TestMethod]
+        public void PostcodeMaxBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5 123456";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
         //[TestMethod]
         //public void PostcodeMaxPlusOne()
         //{
@@ -249,19 +289,28 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(PostCode, DateT);
         //    Assert.AreNotEqual(Error, "");
         //}
-        //[TestMethod]
-        //public void PostcodeMid()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string PostCode = "LE21234";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
 
-        //    Error = AnCustomer.Valid(PostCode, DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void PostcodeMid()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5 1234";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
         //[TestMethod]
         //public void PostcodeExtremeMax()
         //{
@@ -685,102 +734,90 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
         //    Assert.AreNotEqual(Error, "");
         //}
-        //[TestMethod]
-        //public void Email()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    string Email = "Dean";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
 
-        //    Error = AnCustomer.Valid(Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void EmailMinBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "m@.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //[TestMethod]
-        //public void EmailMin()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    string Email = "123456";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
 
-        //    Error = AnCustomer.Valid(Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void EmailMinPlusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    string Email = "1234567";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
+        [TestMethod]
+        public void EmailMinPlusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void EmailMaxMinusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    string Email = "Samsung1234567@Samsung1234567";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
 
-        //    Error = AnCustomer.Valid(Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void EmailMax()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    string Email = "Samsung1234567@Samsung12345671";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
+        [TestMethod]
+        public void EmailMaxMinusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "anasdfghjkloikmnbcasdfgh@.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
+        [TestMethod]
+        public void EmailMaxBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "anasdfghjkloikmnbcasdfgdh@.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
         //[TestMethod]
         //public void EmailMaxPlusOne()
         //{
@@ -800,25 +837,28 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
         //    Assert.AreNotEqual(Error, "");
         //}
-        //[TestMethod]
-        //public void EmailMid()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    string Email = "Samsung123454";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
 
-        //    Error = AnCustomer.Valid(Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void EmailMid()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "asdfghjk@.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
         //[TestMethod]
         //public void EmailExtremeMax()
         //{
@@ -838,6 +878,7 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
         //    Assert.AreNotEqual(Error, "");
         //}
+
         //[TestMethod]
         //public void CustomerID()
         //{
@@ -857,106 +898,92 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
         //    Assert.AreEqual(Error, "");
         //}
-        //[TestMethod]
-        //public void ContactNo()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String ContactNo = "2622345";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
-        //    string CustomerID = "Dean";
 
-        //    Error = AnCustomer.Valid(ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void ContactNoMin()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String ContactNo = "000";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
-        //    string CustomerID = "Dean";
+        [TestMethod]
+        public void ContactNoMinBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "123";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void ContactNoMinPlusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String ContactNo = "0001";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
-        //    string CustomerID = "Dean";
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
 
-        //    Error = AnCustomer.Valid(ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void ContactNoMaxMinusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String ContactNo = "2232232231";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
-        //    string CustomerID = "Dean";
+        [TestMethod]
+        public void ContactNoMinPlusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "1234";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void ContactNoMax()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String ContactNo = "12345671211";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
-        //    string CustomerID = "Dean";
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
 
-        //    Error = AnCustomer.Valid(ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void ContactNoMaxMinusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "1234567890";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
+        [TestMethod]
+        public void ContactNoMaxBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "12345678910";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+
+        }
+
         //[TestMethod]
         //public void ContactNoMaxPlusOne()
         //{
@@ -977,26 +1004,29 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
         //    Assert.AreNotEqual(Error, "");
         //}
-        //[TestMethod]
-        //public void ContactNoMid()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String ContactNo = "154361";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Samsung65325621478583254441251";
-        //    string CustomerID = "Dean";
 
-        //    Error = AnCustomer.Valid(ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void ContactNoMid()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "123456";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+
+        }
+
         //[TestMethod]
         //public void ContactNoExtremeMax()
         //{
@@ -1017,111 +1047,91 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
         //    Assert.AreNotEqual(Error, "");
         //}
-        //[TestMethod]
-        //public void Username()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Username = "mjdeandmu";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
 
-        //    Error = AnCustomer.Valid(Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void UsernameMin()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Username = "12345";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
+        [TestMethod]
+        public void UsernameMinBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fredo";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void UsernameMinPlusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Username = "123456";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
 
-        //    Error = AnCustomer.Valid(Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void UsernameMaxMinusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Username = "1234567890123456789";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
+        [TestMethod]
+        public void UsernameMinPlusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fredos";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void UsernameMax()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Username = "12345678901234567890";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
 
-        //    Error = AnCustomer.Valid(Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void UsernameMaxMinusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "abcdefghijklnopluhg";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
+        [TestMethod]
+        public void UsernameMaxBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "abcdefghijklnopluhgg";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
         //[TestMethod]
         //public void UsernameMaxPlusOne()
         //{
@@ -1143,27 +1153,28 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
         //    Assert.AreNotEqual(Error, "");
         //}
-        //[TestMethod]
-        //public void UsernameMid()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Username = "1234567890123";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
 
-        //    Error = AnCustomer.Valid(Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void UsernameMid()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fredoasdfger";
+            string Password = "password";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
         //[TestMethod]
         //public void UsernameExtremeMax()
         //{
@@ -1185,111 +1196,91 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
         //    Assert.AreNotEqual(Error, "");
         //}
-        //[TestMethod]
-        //public void Password()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Password = "mjdeandmu";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
 
-        //    Error = AnCustomer.Valid(Password, Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void PasswordMin()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Password = "12345";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
+        [TestMethod]
+        public void PasswordMinBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "passw";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(Password, Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void PasswordMinPlusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Password = "123456";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
 
-        //    Error = AnCustomer.Valid(Password, Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void PasswordMaxMinusOne()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Password = "1234567890123456789";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
+        [TestMethod]
+        public void PasswordMinPlusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "passwo";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
 
-        //    Error = AnCustomer.Valid(Password, Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void PasswordMax()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Password = "12345678901234567890";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
 
-        //    Error = AnCustomer.Valid(Password, Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void PasswordMaxMinusOne()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "abcdefghiklodfgbhjk";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
+        [TestMethod]
+        public void PasswordMaxBoundary()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "abcdefghiklodfgbhjkl";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
         //[TestMethod]
         //public void PasswordMaxPlusOne()
         //{
@@ -1311,27 +1302,28 @@ namespace MyTesting
         //    Error = AnCustomer.Valid(Password, Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
         //    Assert.AreNotEqual(Error, "");
         //}
-        //[TestMethod]
-        //public void PasswordMid()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string Error = "";
-        //    string Gender = "Male";
-        //    String Password = "1234567890123";
-        //    DateTime Date = DateTime.Now.Date;
-        //    Date.AddYears(+1000);
-        //    string DateT = Date.ToString();
-        //    string FlatNo = "1000000000000000000";
-        //    string Surname = "Samsung65325621478583254441251";
-        //    string PostCode = "LE20AWLE200000000000";
-        //    Int32 HouseNo = 40;
-        //    string Forename = "Dean";
-        //    string CustomerID = "Dean";
-        //    String ContactNo = "26661216461662612616111";
 
-        //    Error = AnCustomer.Valid(Password, Username, ContactNo, CustomerID, Email, FlatNo, Forename, Gender, Surname, PostCode, HouseNo.ToString(), DateT);
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void PasswordMid()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string AllOK = "";
+            string UserName = "fred";
+            string Password = "password12345";
+            string ForeName = "fred";
+            string Surname = "bloggs";
+            string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
+            string Gender = "male";
+            string ContactNumber = "01161234567";
+            string EMail = "me@me.com";
+            string FlatNo = "1";
+            string HouseNo = "2";
+            string PostCode = "LE5";
+
+            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            Assert.AreEqual(AllOK, "");
+        }
+
         //[TestMethod]
         //public void PasswordExtremeMax()
         //{
