@@ -212,31 +212,95 @@ namespace MyTesting
         {
             //create an instance of the filtered data
             clsBookingsCollection FilteredBookings = new clsBookingsCollection();
-            //apply a blank string (should return all records)
+            //apply a filter (should return no records)
             FilteredBookings.FilterbyDateBooked(DateTime.Now.Date.ToString(), DateTime.Now.Date.AddYears(-50).ToString());
             //test to see the two values are the same
             Assert.AreEqual(0, FilteredBookings.Count);
         }
 
         [TestMethod]
-        public void FilterbyDateBookedTestDataFound()
+        public void FilterbyDateBookedTestDataFoundBoundry()
         {
             //create an instance of the filtered data
             clsBookingsCollection FilteredBookings = new clsBookingsCollection();
             //var to store outcome
             Boolean OK = true;
-            //apply a blank string (should return all records)
-            FilteredBookings.FilterbyDateBooked("15/02/2018","05/03/2018");
+            //apply a filter string (should return some records)
+            FilteredBookings.FilterbyDateBooked("03/02/2017","29/11/2017");
             //check the correct number of records are found
             if (FilteredBookings.Count == 16)
             {
-                //check the first record is ID 36
-                if (FilteredBookings.BookingsList[0].BookRef != 3)
+                //check the first record is ID 8
+                if (FilteredBookings.BookingsList[0].BookRef != 8)
                 {
                     OK = false;
                 }
-                //check that the first record is ID 36
-                if (FilteredBookings.BookingsList[15].BookRef != 1068)
+                //check that the first record is ID 23
+                if (FilteredBookings.BookingsList[15].BookRef != 23)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+
+            //test to see there are records
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void FilterbyDateBookedTestDataFoundMin()
+        {
+            //create an instance of the filtered data
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a filter string (should return some records)
+            FilteredBookings.FilterbyDateBooked("13/08/2016", "15/12/2016");
+            //check the correct number of records are found
+            if (FilteredBookings.Count == 5)
+            {
+                //check the first record is ID 2
+                if (FilteredBookings.BookingsList[0].BookRef != 2)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 6
+                if (FilteredBookings.BookingsList[4].BookRef != 6)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+
+            //test to see there are records
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void FilterbyDateBookedTestDataFoundMax()
+        {
+            //create an instance of the filtered data
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a filter string (should return some records)
+            FilteredBookings.FilterbyDateBooked("03/12/2017", "23/02/2018");
+            //check the correct number of records are found
+            if (FilteredBookings.Count == 7)
+            {
+                //check the first record is ID 25
+                if (FilteredBookings.BookingsList[0].BookRef != 25)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 31
+                if (FilteredBookings.BookingsList[6].BookRef != 31)
                 {
                     OK = false;
                 }
@@ -263,49 +327,45 @@ namespace MyTesting
         //    Assert.AreEqual(AllBookings.Count, FilteredBookings.Count);
         //}
 
-        //[TestMethod]
-        //public void FilterbyReferenceNotFound()
-        //{
-        //    //create an instance of the filtered data
-        //    clsBookingsCollection FilteredBookings = new clsBookingsCollection();
-        //    //apply a blank string (should return all records)
-        //    FilteredBookings.FilterbyBookRef("1000000");
-        //    //test to see the two values are the same
-        //    Assert.AreEqual(0, FilteredBookings.Count);
-        //}
+        [TestMethod]
+        public void FilterbyReferenceNotFound()
+        {
+            //create an instance of the filtered data
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            //apply a blank string (should return no records)
+            FilteredBookings.FilterbyBookRef("1000000");
+            //test to see the two values are the same
+            Assert.AreEqual(0, FilteredBookings.Count);
+        }
 
 
-        //[TestMethod]
-        //public void FilterbyReferenceTestDataFound()
-        //{
-        //    //create an instance of the filtered data
-        //    clsBookingsCollection FilteredBookings = new clsBookingsCollection();
-        //    //var to store outcome
-        //    Boolean OK = true;
-        //    //apply a blank string (should return all records)
-        //    FilteredBookings.FilterbyBookRef("1000000");
-        //    //check the correct number of records are found
-        //    if (FilteredBookings.Count == 2)
-        //    {
-        //        //check the first record is ID 36
-        //        if (FilteredBookings.BookingsList[0].BookRef != 3)
-        //        {
-        //            OK = false;
-        //        }
-        //        //check that the first record is ID 36
-        //        if (FilteredBookings.BookingsList[1].BookRef != 4)
-        //        {
-        //            OK = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        OK = false;
-        //    }
+        [TestMethod]
+        public void FilterbyReferenceTestDataFound()
+        {
+            //create an instance of the filtered data
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a primary key value 
+            FilteredBookings.FilterbyBookRef("2");
+            //check the correct number of records are found
+            if (FilteredBookings.Count == 1)
+            {
+                //check the first record is ID 2
+                if (FilteredBookings.BookingsList[0].BookRef != 2)
+                {
+                    OK = false;
+                }
 
-        //    //test to see there are records
-        //    Assert.IsTrue(OK);
-        //}
+            }
+            else
+            {
+                OK = false;
+            }
+
+            //test to see there are records
+            Assert.IsTrue(OK);
+        }
 
     }
 
