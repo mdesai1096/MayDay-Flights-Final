@@ -439,14 +439,13 @@
             this.bookingsToolStripMenuItem.Name = "bookingsToolStripMenuItem";
             this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.bookingsToolStripMenuItem.Text = "&Bookings";
-            this.bookingsToolStripMenuItem.Click += new System.EventHandler(this.displayBookingsToolStripMenuItem_Click_1);
             // 
             // displayBookingsToolStripMenuItem
             // 
             this.displayBookingsToolStripMenuItem.Name = "displayBookingsToolStripMenuItem";
             this.displayBookingsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.displayBookingsToolStripMenuItem.Text = "&Display Bookings";
-            this.displayBookingsToolStripMenuItem.Click += new System.EventHandler(this.displayBookingsToolStripMenuItem_Click_1);
+            this.displayBookingsToolStripMenuItem.Click += new System.EventHandler(this.displayBookingsToolStripMenuItem_Click);
             // 
             // newBookingToolStripMenuItem
             // 
