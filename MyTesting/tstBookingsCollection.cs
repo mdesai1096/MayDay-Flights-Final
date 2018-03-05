@@ -226,17 +226,17 @@ namespace MyTesting
             //var to store outcome
             Boolean OK = true;
             //apply a blank string (should return all records)
-            FilteredBookings.FilterbyDateBooked(DateTime.Now.Date.AddYears(-50).ToString(), DateTime.Now.Date.ToString());
+            FilteredBookings.FilterbyDateBooked("15/02/2018","05/03/2018");
             //check the correct number of records are found
-            if (FilteredBookings.Count == 14)
+            if (FilteredBookings.Count == 16)
             {
                 //check the first record is ID 36
-                if (FilteredBookings.BookingsList[0].BookRef != 1)
+                if (FilteredBookings.BookingsList[0].BookRef != 3)
                 {
                     OK = false;
                 }
                 //check that the first record is ID 36
-                if (FilteredBookings.BookingsList[13].BookRef != 69)
+                if (FilteredBookings.BookingsList[15].BookRef != 1068)
                 {
                     OK = false;
                 }
