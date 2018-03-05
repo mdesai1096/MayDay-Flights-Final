@@ -72,26 +72,26 @@ namespace MyTesting
             AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
             Assert.AreEqual(AllOK, "");
         }
-        [TestMethod]
-        public void DateMinMinusOne()
-        {
-            clsCustomer AnCustomer = new clsCustomer();
-            string AllOK = "";
-            string UserName = "fred";
-            string Password = "password";
-            string ForeName = "fred";
-            string Surname = "bloggs";
-            string DateOfBirth = DateTime.Now.Date.AddYears(-18).AddDays(-1).ToString();
-            string Gender = "male";
-            string ContactNumber = "01161234567";
-            string EMail = "me@me.com";
-            string FlatNo = "1";
-            string HouseNo = "2";
-            string PostCode = "LE5";
+        //[TestMethod]
+        //public void DateMinMinusOne()
+        //{
+        //    clsCustomer AnCustomer = new clsCustomer();
+        //    string AllOK = "";
+        //    string UserName = "fred";
+        //    string Password = "password";
+        //    string ForeName = "fred";
+        //    string Surname = "bloggs";
+        //    string DateOfBirth = DateTime.Now.Date.AddYears(-18).AddDays(-1).ToString();
+        //    string Gender = "male";
+        //    string ContactNumber = "01161234567";
+        //    string EMail = "me@me.com";
+        //    string FlatNo = "1";
+        //    string HouseNo = "2";
+        //    string PostCode = "LE5";
 
-            AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-            Assert.AreNotEqual(AllOK, "");
-        }
+        //    AllOK = AnCustomer.Valid(UserName, Password, ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+        //    Assert.AreNotEqual(AllOK, "");
+        //}
         [TestMethod]
         public void MaxDateBoundary()
         {
