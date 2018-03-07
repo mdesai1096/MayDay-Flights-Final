@@ -13,16 +13,38 @@ namespace MaydayBackend
 {
     public partial class FrmAEBookings : Form
     {
-        public FrmAEBookings()
-        {
-            InitializeComponent();
-            txtDateBo.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
+        public int BookingRef { get; private set; }
 
+        public FrmAEBookings( Int32 BookRef)
+        {
+            this.BookingRef = BookRef;
+            InitializeComponent();
+            if (BookingRef != -1)
+            {
+                lblTitle.Text = "Edit Booking";
+                DisplayBookings();
+            }
+            else
+            {
+                lblTitle.Text = "New Booking";
+                txtDateBo.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
+
+            }
+            
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            Add();
+            if (BookingRef == -1)
+            {
+                Add();
+            }
+            else
+            {
+                Update1();
+
+            }
+            
         }
 
         //function for adding new records
@@ -52,13 +74,59 @@ namespace MaydayBackend
             }
         }
 
+        //function for updating records
+        void Update1()
+        {
+            //create an instance of the booking list
+            clsBookingsCollection BookingsList = new clsBookingsCollection();
+            //validate the data on the web form
+            String Error = BookingsList.ThisBookings.Valid(txtAmount.Text, txtDateBo.Text, txtPayType.Text);
+            //if the data is OK then add it to the object
+            if (Error == "")
+            {
+                //find the record to update
+                BookingsList.ThisBookings.Find(BookingRef);
+                //get the data entered by the user
+                BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmount.Text);
+                BookingsList.ThisBookings.DateBooked = Convert.ToDateTime(txtDateBo.Text);
+                BookingsList.ThisBookings.PaymentType = txtPayType.Text;
+                //update the record
+                BookingsList.Update();
+                //all done so redirect back to the main page
+                lblError.Text = "Sucessfully Updated";
+            }
+            else
+            {
+                //report an error
+                lblError.Text = "There were problems with the data entered " + Error;
+            }
+        }
         private void FrmAEBookings_Load(object sender, EventArgs e)
         {
 
         }
 
-        public Int32 BookinsRef;
+
+
+
         
+
+        void DisplayBookings()
+        {
+            //create an instance of the booking list
+            clsBookingsCollection BookingsList = new clsBookingsCollection();
+            //find the record to update
+            BookingsList.ThisBookings.Find(BookingRef);
+            //display the data for this record
+            txtBookRef.Text = BookingsList.ThisBookings.BookRef.ToString();
+            txtAmount.Text = BookingsList.ThisBookings.Ammount.ToString();
+            txtDateBo.Text = BookingsList.ThisBookings.DateBooked.ToString();
+            txtPayType.Text = BookingsList.ThisBookings.PaymentType;
+
+        }
+
+
+
 
     }
 }

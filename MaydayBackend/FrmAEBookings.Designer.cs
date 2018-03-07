@@ -35,9 +35,10 @@
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblBookRef = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.lblPaytype = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOK
@@ -96,14 +97,14 @@
             this.lblAmount.TabIndex = 6;
             this.lblAmount.Text = "Amount";
             // 
-            // label3
+            // lblDate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(240, 216);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Date Booked";
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(240, 216);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(70, 13);
+            this.lblDate.TabIndex = 7;
+            this.lblDate.Text = "Date Booked";
             // 
             // lblPaytype
             // 
@@ -122,14 +123,24 @@
             this.lblError.Size = new System.Drawing.Size(0, 13);
             this.lblError.TabIndex = 9;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(396, 22);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(0, 26);
+            this.lblTitle.TabIndex = 10;
+            // 
             // FrmAEBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 434);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblPaytype);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblBookRef);
             this.Controls.Add(this.txtAmount);
@@ -154,8 +165,9 @@
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblBookRef;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblPaytype;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

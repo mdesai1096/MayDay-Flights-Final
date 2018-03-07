@@ -35,7 +35,7 @@ public partial class Bookings_Default : System.Web.UI.Page
         //set the name of the primary key
         lstBookings.DataValueField = "BookRef";
         //set the data field to display
-        lstBookings.DataTextField = "BookRef";
+        lstBookings.DataTextField = "AllDetails";
         //bind the data to the list
         lstBookings.DataBind();
     }
@@ -98,7 +98,7 @@ public partial class Bookings_Default : System.Web.UI.Page
         //set the name of the primary key
         lstBookings.DataValueField = "BookRef";
         //set the data field to display
-        lstBookings.DataTextField = "BookRef";
+        lstBookings.DataTextField = "AllDetails";
         //bind the data to the list
         lstBookings.DataBind();
     }
@@ -119,7 +119,7 @@ public partial class Bookings_Default : System.Web.UI.Page
         //set the name of the primary key
         lstBookings.DataValueField = "BookRef";
         //set the data field to display
-        lstBookings.DataTextField = "DateBooked";
+        lstBookings.DataTextField = "AllDetails";
         //bind the data to the list
         lstBookings.DataBind();
     }

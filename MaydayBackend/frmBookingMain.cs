@@ -15,6 +15,7 @@ namespace MaydayBackend
     {
         //var to store the primary key value of the record selected
         Int32 BookRef;
+   
         public frmBookingMain()
         {
             InitializeComponent();
@@ -38,14 +39,15 @@ namespace MaydayBackend
             //set the name of the primary key
             lstBookings.ValueMember = "BookRef";
             //set the data field to display
-            lstBookings.DisplayMember = "BookRef";
+            lstBookings.DisplayMember = "AllDetails";
             //return the count of records in the list
             return Bookings.Count;
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-           lblError.Text = FilterBookingsRef(txtBookRef.Text) + " Found";
+            //display the number of record found after filtering has been applied
+            lblError.Text = FilterBookingsRef(txtBookRef.Text) + " Found";
              
         }
 
@@ -59,7 +61,7 @@ namespace MaydayBackend
             //set the name of the primary key
             lstBookings.ValueMember = "BookRef";
             //set the data field to display
-            lstBookings.DisplayMember = "BookRef";
+            lstBookings.DisplayMember = "AllDetails";
             //bind the data to the list
             return Bookings.Count;
         }
@@ -81,23 +83,17 @@ namespace MaydayBackend
 
         private void btnDFilter_Click(object sender, EventArgs e)
         {
+            //display the number of record found after filtering has been applied
             lblError.Text = FilterBookingsDateRange(txtDate1.Text, txtDate2.Text) + " Found";
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            //get the primary key value of the record to edit
-            FrmAEBookings ABooking = new FrmAEBookings();
-            ABooking.BookinsRef = BookRef;
+            //get the primary key value of the record to edit and pass it onto edit form
+            FrmAEBookings ABooking = new FrmAEBookings(Convert.ToInt32(lstBookings.SelectedValue));  
+            //make the form visible 
             ABooking.Visible = true;
-            
-                BookRef = Convert.ToInt32(lstBookings.SelectedIndex);
-                
-
-            
-         
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -121,6 +117,7 @@ namespace MaydayBackend
             Bookings.ThisBookings.Find(BookRef);
             //delete the record
             Bookings.Delete();
+            //return the primary key of the value
             return BookRef;
         }
 }
