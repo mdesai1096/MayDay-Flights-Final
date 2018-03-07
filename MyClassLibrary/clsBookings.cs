@@ -77,6 +77,19 @@ namespace MyClassLibrary
             }
         }
 
+        private string mAllDetails;
+        public string AllDetails
+        {
+            get
+            {
+                return mPaymentType + " " + mDateBooked.ToString() +" " + mAmmount;
+            }
+
+            set
+            {
+                mAllDetails = value;
+            }
+        }
 
         public string Valid(string ammount,string dateBooked, string paymentType )
         {
@@ -134,7 +147,7 @@ namespace MyClassLibrary
                 if (DateTemp > DateTime.Now.Date)
                 {
                     //flag an error
-                    Error = Error + "Date in past. Please enter todays date : ";
+                    Error = Error + "Date in Future. Please enter todays date : ";
                 }
 
             }
@@ -155,15 +168,15 @@ namespace MyClassLibrary
             //add the parameter for the book ref to search for
             DB.AddParameter("@BookRef", bookRef);
             //execute stored procedure
-            DB.Execute("sproc_tblBookings_FilterbyBookingRef");
+            DB.Execute("sproc_FiltertblBookings|tblCust");
             //if one record is found
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
-                mBookRef = Convert.ToInt32(DB.DataTable.Rows[0]["BookRef"]);
-                mAmmount = Convert.ToDecimal(DB.DataTable.Rows[0]["Ammount"]);
-                mDateBooked = Convert.ToDateTime(DB.DataTable.Rows[0]["DateBooked"]);
-                mPaymentType = Convert.ToString(DB.DataTable.Rows[0]["PaymentType"]);
+                mBookRef = Convert.ToInt32(DB.DataTable.Rows[0]["Book_Ref"]);
+                mAmmount = Convert.ToDecimal(DB.DataTable.Rows[0]["Book_Ammount"]);
+                mDateBooked = Convert.ToDateTime(DB.DataTable.Rows[0]["Book_Date"]);
+                mPaymentType = Convert.ToString(DB.DataTable.Rows[0]["Book_Payment"]);
                 //return an record has been found
                 return true;
             }
