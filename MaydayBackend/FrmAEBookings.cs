@@ -51,5 +51,14 @@ namespace MaydayBackend
                 lblError.Text = "There were problems with the data entered " + Error;
             }
         }
+
+        private void FrmAEBookings_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public Int32 BookinsRef;
+        
+
     }
 }
