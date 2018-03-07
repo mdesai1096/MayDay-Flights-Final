@@ -169,7 +169,7 @@ namespace MyClassLibrary
             //send the bookref to the database
             DB.AddParameter("@BookRef", BookRef);
             //execute the stored procedure
-            DB.Execute("sproc_tblBookings_FilterbyPK");
+            DB.Execute("sproc_FiltertblBookings|tblCust");
             //populate the array list with the data table
             PopulateArray(DB);
         }
@@ -189,10 +189,10 @@ namespace MyClassLibrary
             {
                 //Create a blank booking
                 clsBookings ABooking = new clsBookings();
-                ABooking.BookRef = Convert.ToInt32(DB.DataTable.Rows[Index]["BookRef"]);
-                ABooking.Ammount = Convert.ToDecimal(DB.DataTable.Rows[Index]["Ammount"]);
-                ABooking.DateBooked = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateBooked"]);
-                ABooking.PaymentType = Convert.ToString(DB.DataTable.Rows[Index]["PaymentType"]);
+                ABooking.BookRef = Convert.ToInt32(DB.DataTable.Rows[Index]["Book_Ref"]);
+                ABooking.Ammount = Convert.ToDecimal(DB.DataTable.Rows[Index]["Book_Ammount"]);
+                ABooking.DateBooked = Convert.ToDateTime(DB.DataTable.Rows[Index]["Book_Date"]);
+                ABooking.PaymentType = Convert.ToString(DB.DataTable.Rows[Index]["Book_Payment"]);
                 //add the records into a private data member
                 mBookingsList.Add(ABooking);
                 //point to the next record
