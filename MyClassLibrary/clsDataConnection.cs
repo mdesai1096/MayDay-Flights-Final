@@ -27,7 +27,7 @@ public class clsDataConnection
 
     public clsDataConnection()
     {
-        GetConString("H:\\Documents\\Year Two\\App_Data\\mayday2.mdf");
+        GetConString("D:\\Users\\mdesa\\Documents\\mayday2.mdf");
 
 
     }

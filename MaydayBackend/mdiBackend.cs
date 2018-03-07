@@ -116,7 +116,7 @@ namespace MaydayBackend
         private void newBookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //creat an object based on frmMaydayMain
-            FrmAEBookings BookingsList = new FrmAEBookings();
+            FrmAEBookings BookingsList = new FrmAEBookings(-1);
             //make the object of a child the midi parent
             BookingsList.MdiParent = this;
             //make the form visible

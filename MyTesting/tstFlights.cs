@@ -130,7 +130,7 @@ namespace MyTesting
             //invoke method
             OK = AFlight.Valid(FlightNo, Airline, Destination, Arrival, ArrivalAirport, Departure, DepartureAirport);
             //test to see if it exists
-            Assert.AreNotEqual(OK, "");
+            Assert.AreEqual(OK, "");
         }
 
         [TestMethod]
