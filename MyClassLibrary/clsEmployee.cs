@@ -30,8 +30,22 @@ namespace MyClassLibrary
             }
             if (employeeContactNumber.Length == 0)
             {
-                Error = Error + "Contact number can't be wrong ";
+                Error = Error + "Contact number can't be empty ";
             }
+
+            if (employeeContactNumber.Length < 11 | employeeContactNumber.Length > 15)
+            {
+                //set the error message
+                Error = Error + "Ammount must be between 11 and 15 : ";
+            }
+            //if (employeeContactNumber.Length < 11)
+            //{
+            //    Error = Error + "Contact number can't be less than 11";
+            //}
+            //if (employeeContactNumber.Length < 15)
+            //{
+            //    Error = Error + "Contact number has to be less than 15 ";
+            //}
             return Error;
         }
 

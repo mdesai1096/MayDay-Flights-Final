@@ -24,3 +24,16 @@ C:\Users\P16219823\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP4\MaydayBackend\obj\
 C:\Users\P16219823\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP4\MaydayBackend\obj\Debug\MaydayBackend.csproj.GenerateResource.Cache
 C:\Users\P16219823\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP4\MaydayBackend\obj\Debug\MaydayBackend.exe
 C:\Users\P16219823\Source\Repos\MayDay-Flights-TDD-C-SQL-ASP4\MaydayBackend\obj\Debug\MaydayBackend.pdb
+H:\Desktop\Clean\MaydayBackend\bin\Debug\MaydayBackend.exe.config
+H:\Desktop\Clean\MaydayBackend\bin\Debug\MaydayBackend.exe
+H:\Desktop\Clean\MaydayBackend\bin\Debug\MaydayBackend.pdb
+H:\Desktop\Clean\MaydayBackend\bin\Debug\MyClassLibrary.dll
+H:\Desktop\Clean\MaydayBackend\bin\Debug\MyClassLibrary.pdb
+H:\Desktop\Clean\MaydayBackend\obj\Debug\MaydayBackend.csprojResolveAssemblyReference.cache
+H:\Desktop\Clean\MaydayBackend\obj\Debug\MaydayBackend.FrmAEBookings.resources
+H:\Desktop\Clean\MaydayBackend\obj\Debug\MaydayBackend.frmBookingMain.resources
+H:\Desktop\Clean\MaydayBackend\obj\Debug\MaydayBackend.mdiBackend.resources
+H:\Desktop\Clean\MaydayBackend\obj\Debug\MaydayBackend.Properties.Resources.resources
+H:\Desktop\Clean\MaydayBackend\obj\Debug\MaydayBackend.csproj.GenerateResource.Cache
+H:\Desktop\Clean\MaydayBackend\obj\Debug\MaydayBackend.exe
+H:\Desktop\Clean\MaydayBackend\obj\Debug\MaydayBackend.pdb
