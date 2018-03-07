@@ -16,21 +16,25 @@ namespace MyClassLibrary
         public string Valid(string flightNo, string airline, string destination, string arrival, string arrivalAirport, string departure, string departureAirport)
         {
             string OK = "";
-           if (flightNo.Length == 0)
+            if (flightNo.Length == 0)
             {
                 return OK = OK + "Flight no is blank";
             }
-           if(flightNo.Length>4)
+            if (flightNo.Length > 5)
             {
-                return OK = OK + "Flight no must be less than 4 characters";
+                return OK = OK + "Flight no must be less than 5 characters";
+            }
+            if (flightNo.Length < 1)
+            {
+                return OK = OK + "Flight no must be 5 characters";
             }
             if (airline.Length == 0)
             {
                 return OK = OK + "Airline is blank";
             }
-            if (airline.Length > 20)
+            if (airline.Length > 10)
             {
-                return OK = OK + "Flight no must be less than 20 characters";
+                return OK = OK + "Airline must be less than 10 characters";
             }
             return OK;
         }
