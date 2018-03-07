@@ -130,7 +130,7 @@ namespace MyTesting
             //invoke method
             OK = AFlight.Valid(FlightNo, Airline, Destination, Arrival, ArrivalAirport, Departure, DepartureAirport);
             //test to see if it exists
-            Assert.AreEqual(OK, "");
+            Assert.AreNotEqual(OK, "");
         }
 
         [TestMethod]
@@ -207,7 +207,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AAaaa";
+            string FlightNo = "AAaaaa";
             string Airline = "Air India";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -509,6 +509,29 @@ namespace MyTesting
             string Departure = DateTime.Now.Date.ToString();
             string DepartureAirport = "Birmingham Airport";
             string Destination = "Du";
+            //Boolean Active = true;
+            //invoke method
+            OK = AFlight.Valid(FlightNo, Airline, Destination, Arrival, ArrivalAirport, Departure, DepartureAirport);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void DestinationMaxMinus1()
+        {
+            //create an instance of new class we want to create
+            clsFlights AFlight = new clsFlights();
+            //string variable to store the results of the validation
+            string OK = "";
+            //create some test data to assign to property
+            string FlightNo = "AAa";
+            string Airline = "";
+            Airline = Airline.PadRight(9, 'a');
+            string ArrivalAirport = "Dubai Airport";
+            string Arrival = DateTime.Now.Date.ToString();
+            string Departure = DateTime.Now.Date.ToString();
+            string DepartureAirport = "Birmingham Airport";
+            string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
             OK = AFlight.Valid(FlightNo, Airline, Destination, Arrival, ArrivalAirport, Departure, DepartureAirport);
