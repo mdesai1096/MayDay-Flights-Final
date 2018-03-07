@@ -139,6 +139,7 @@
             this.Controls.Add(this.btnOK);
             this.Name = "FrmAEBookings";
             this.Text = "FrmAEBookings";
+            this.Load += new System.EventHandler(this.FrmAEBookings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

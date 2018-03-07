@@ -77,6 +77,19 @@ namespace MyClassLibrary
             }
         }
 
+        private string mAllDetails;
+        public string AllDetails
+        {
+            get
+            {
+                return mPaymentType + " " + mDateBooked.ToString() +" " + mAmmount;
+            }
+
+            set
+            {
+                mAllDetails = value;
+            }
+        }
 
         public string Valid(string ammount,string dateBooked, string paymentType )
         {

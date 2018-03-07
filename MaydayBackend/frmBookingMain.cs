@@ -74,7 +74,7 @@ namespace MaydayBackend
             //set the name of the primary key
             lstBookings.ValueMember = "BookRef";
             //set the data field to display
-            lstBookings.DisplayMember = "DateBooked";
+            lstBookings.DisplayMember = "AllDetails";
             //bind the data to the list
             return Bookings.Count;
         }
@@ -86,8 +86,12 @@ namespace MaydayBackend
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-      
-                //get the primary key value of the record to edit
+
+            //get the primary key value of the record to edit
+            FrmAEBookings ABooking = new FrmAEBookings();
+            ABooking.BookinsRef = BookRef;
+            ABooking.Visible = true;
+            
                 BookRef = Convert.ToInt32(lstBookings.SelectedIndex);
                 
 
