@@ -546,7 +546,7 @@ namespace MyTesting
             //create some test data to assign to property
             string PaymentType = "a";
             string Ammount = "sddfgthjjfghb";
-            string DateBooked = "blah";
+            string DateBooked = DateTime.Now.Date.ToString();
             //invoke method
             OK = ABookings.Valid(Ammount, DateBooked, PaymentType);
             //test to see if result correct
@@ -588,7 +588,7 @@ namespace MyTesting
             //invoke method
             Found = ABookings.Find(BookRef);
             //check the booking no
-            if (ABookings.Ammount != Convert.ToDecimal(50.75))
+            if (ABookings.Ammount != Convert.ToDecimal(75))
             {
                 OK = false;
             }
@@ -610,7 +610,7 @@ namespace MyTesting
             //invoke method
             Found = ABookings.Find(BookRef);
             //check the booking no
-            if (ABookings.DateBooked != Convert.ToDateTime("17/02/2018"))
+            if (ABookings.DateBooked != Convert.ToDateTime("01/06/2016"))
             {
                 OK = false;
             }
