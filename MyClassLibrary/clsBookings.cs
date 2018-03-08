@@ -82,7 +82,7 @@ namespace MyClassLibrary
         {
             get
             {
-                return "BookRef " + mBookRef + " Payment: " + mPaymentType + " DateBooked: " + mDateBooked.ToString() +" Ammount: " + mAmmount;
+                return "BookRef " + mBookRef + "  Payment: " + mPaymentType + "  DateBooked: " + mDateBooked.ToString() + "  Ammount: " + mAmmount;
             }
 
             set
