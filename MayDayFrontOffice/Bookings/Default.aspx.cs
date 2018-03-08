@@ -15,6 +15,11 @@ public partial class Bookings_Default : System.Web.UI.Page
         {
             //update the list box
             DisplayBookings();
+            //write whatever the date was is 1 year in the past in the start date text box
+            txtDate1.Text = DateTime.Today.Date.AddYears(-1).ToString("dd/MM/yyyy");
+            //write whatever the date was is today in the end date text box
+            txtDate2.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
+
         }
     }
 
