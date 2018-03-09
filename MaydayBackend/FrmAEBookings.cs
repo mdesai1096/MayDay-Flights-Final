@@ -22,11 +22,22 @@ namespace MaydayBackend
             if (BookingRef != -1)
             {
                 lblTitle.Text = "Edit Booking";
+                this.Text = "Edit Booking";
+                //make the text box read only so it the pk cannot be changed.
+                txtBookRef.ReadOnly = true;
+                //populate the text boxes with the selected data
                 DisplayBookings();
             }
             else
             {
+                //make the textbox and label invisible
+                txtBookRef.Visible = false;
+                lblBookRef.Visible = false;
+                //change the title of the from
+                this.Text = "New Booking";
+                //change the title displayed in the form
                 lblTitle.Text = "New Booking";
+                //populate the text box with todays date
                 txtDateBo.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
 
             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAEBookings));
             this.btnOK = new System.Windows.Forms.Button();
             this.txtPayType = new System.Windows.Forms.TextBox();
             this.txtDateBo = new System.Windows.Forms.TextBox();
@@ -148,8 +149,9 @@
             this.Controls.Add(this.txtDateBo);
             this.Controls.Add(this.txtPayType);
             this.Controls.Add(this.btnOK);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAEBookings";
-            this.Text = "FrmAEBookings";
+            this.Text = "New/Update Booking";
             this.Load += new System.EventHandler(this.FrmAEBookings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

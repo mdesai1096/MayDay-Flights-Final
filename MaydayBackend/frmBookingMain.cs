@@ -20,7 +20,7 @@ namespace MaydayBackend
         {
             InitializeComponent();
             //on load initalize list box
-            DisplayBookings();
+            lblError.Text = DisplayBookings() + " Found";
             //write whatever the date was one year ago in the start date text box
             txtDate1.Text = DateTime.Today.Date.AddYears(-1).ToString("dd/MM/yyyy");
             //write whatever the date was is today in the end date text box
