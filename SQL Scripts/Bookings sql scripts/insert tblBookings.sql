@@ -1,3 +1,4 @@
+
 INSERT INTO tblBookings VALUES ('258.38', '20170428', 'Credit'); 
 INSERT INTO tblBookings VALUES ('125.36', '20170503', 'Debit'); 
 INSERT INTO tblBookings VALUES ('179.55', '20170521', 'Credit'); 
