@@ -119,10 +119,13 @@
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(378, 319);
+            this.lblError.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lblError.Location = new System.Drawing.Point(87, 336);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.Size = new System.Drawing.Size(0, 20);
             this.lblError.TabIndex = 9;
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // lblTitle
             // 
