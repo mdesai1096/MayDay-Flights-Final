@@ -13,27 +13,32 @@ namespace MaydayBackend
 {
     public partial class FrmAEBookings : Form
     {
+        //public property for BookingRef
         public int BookingRef { get; private set; }
 
         public FrmAEBookings( Int32 BookRef)
         {
+            //get the selected index from frmBooking main and set it as the bookref
             this.BookingRef = BookRef;
             InitializeComponent();
+            //if this is not a new record
             if (BookingRef != -1)
             {
+                //chnange the title of the form
                 lblTitle.Text = "Edit Booking";
+                //chnange the title bar of the form
                 this.Text = "Edit Booking";
                 //make the text box read only so it the pk cannot be changed.
                 txtBookRef.ReadOnly = true;
                 //populate the text boxes with the selected data
                 DisplayBookings();
             }
-            else
+            else //this is a new record
             {
                 //make the textbox and label invisible
                 txtBookRef.Visible = false;
                 lblBookRef.Visible = false;
-                //change the title of the from
+                //change the title bar of the from
                 this.Text = "New Booking";
                 //change the title displayed in the form
                 lblTitle.Text = "New Booking";
@@ -46,12 +51,15 @@ namespace MaydayBackend
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            //if the Booking is equal the -1
             if (BookingRef == -1)
             {
+                //this is a new record call the ADD fucntion
                 Add();
             }
-            else
+            else //this is an exisitng record
             {
+                //call the fucntion to update the record
                 Update1();
 
             }
@@ -135,8 +143,6 @@ namespace MaydayBackend
             txtPayType.Text = BookingsList.ThisBookings.PaymentType;
 
         }
-
-
 
 
     }
