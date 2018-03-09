@@ -103,7 +103,6 @@
             this.txtDate1.Name = "txtDate1";
             this.txtDate1.Size = new System.Drawing.Size(100, 20);
             this.txtDate1.TabIndex = 8;
-            
             // 
             // txtDate2
             // 

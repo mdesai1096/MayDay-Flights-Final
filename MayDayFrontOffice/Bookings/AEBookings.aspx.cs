@@ -26,6 +26,8 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
                 lblTitle.Text = "Edit Booking";
                 //display the current data for the record
                 DisplayBookings();
+                //make the text box read only so it the pk cannot be changed.
+                txtRef.ReadOnly = true;
                 //display the PK of record to be edited
                 txtRef.Text = BookRef.ToString();
             }
