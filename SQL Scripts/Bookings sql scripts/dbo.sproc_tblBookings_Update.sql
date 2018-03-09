@@ -9,8 +9,8 @@ AS
 update tblBookings
 	
 set 
-	Ammount=@Ammount,
-	DateBooked=@DateBooked,
-	PaymentType=@PaymentType
+	Book_ammount=@Ammount,
+	Book_date=@DateBooked,
+	Book_payment=@PaymentType
 
-	where BookRef=@BookRef
+	where Book_Ref=@BookRef

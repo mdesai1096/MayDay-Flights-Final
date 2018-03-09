@@ -588,7 +588,7 @@ namespace MyTesting
             //invoke method
             Found = ABookings.Find(BookRef);
             //check the booking no
-            if (ABookings.Ammount != Convert.ToDecimal(75))
+            if (ABookings.Ammount != Convert.ToDecimal(7500))
             {
                 OK = false;
             }
