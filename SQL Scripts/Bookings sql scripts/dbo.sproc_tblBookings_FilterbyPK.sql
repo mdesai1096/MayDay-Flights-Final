@@ -8,4 +8,5 @@
 AS
 
 	--select all fields from any records that match or like the BookRef
+
 	select * from tblBookings where BookRef like @BookRef;

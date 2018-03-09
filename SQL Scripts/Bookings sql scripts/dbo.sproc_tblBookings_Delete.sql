@@ -10,4 +10,5 @@ AS
 	--delete the FK realtionship
 	delete from  tblIitinerary where FK_Book_Ref = @BookRef;
 	--delete the record in tblBookings specified by the value @BookRef
+
 	delete from tblBookings where Book_Ref = @BookRef
