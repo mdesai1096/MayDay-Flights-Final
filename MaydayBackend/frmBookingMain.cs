@@ -22,9 +22,9 @@ namespace MaydayBackend
             //on load initalize list box
             lblError.Text = DisplayBookings() + " Found";
             //write whatever the date was one year ago in the start date text box
-            txtDate1.Text = DateTime.Today.Date.AddYears(-1).ToString("dd/MM/yyyy");
+            txtStartDate.Text = DateTime.Today.Date.AddYears(-1).ToString("dd/MM/yyyy");
             //write whatever the date was is today in the end date text box
-            txtDate2.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
+            txtEndDate.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
         }
 
         private void btnPopulate_Click(object sender, EventArgs e)
@@ -69,11 +69,11 @@ namespace MaydayBackend
             return Bookings.Count;
         }
 
-        Int32 FilterBookingsDateRange(string Date1, string Date2)
+        Int32 FilterBookingsDateRange(string StartDate, string EndDate)
         {
             //create an instance of the booking collection
             clsBookingsCollection Bookings = new clsBookingsCollection();
-            Bookings.FilterbyDateBooked(Date1, Date2);
+            Bookings.FilterbyDateBooked(StartDate, EndDate);
             //set the data source to the list of bookings in the collection
             lstBookings.DataSource = Bookings.BookingsList;
             //set the name of the primary key
@@ -87,7 +87,7 @@ namespace MaydayBackend
         private void btnDFilter_Click(object sender, EventArgs e)
         {
             //display the number of record found after filtering has been applied
-            lblError.Text = FilterBookingsDateRange(txtDate1.Text, txtDate2.Text) + " Found";
+            lblError.Text = FilterBookingsDateRange(txtStartDate.Text, txtEndDate.Text) + " Found";
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

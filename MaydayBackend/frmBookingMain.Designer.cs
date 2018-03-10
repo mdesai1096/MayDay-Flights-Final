@@ -35,8 +35,8 @@
             this.txtBookRef = new System.Windows.Forms.TextBox();
             this.lblFilterT = new System.Windows.Forms.Label();
             this.lblfrom = new System.Windows.Forms.Label();
-            this.txtDate1 = new System.Windows.Forms.TextBox();
-            this.txtDate2 = new System.Windows.Forms.TextBox();
+            this.txtStartDate = new System.Windows.Forms.TextBox();
+            this.txtEndDate = new System.Windows.Forms.TextBox();
             this.lblTo = new System.Windows.Forms.Label();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnDFilter = new System.Windows.Forms.Button();
@@ -58,10 +58,10 @@
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.Location = new System.Drawing.Point(246, 338);
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Location = new System.Drawing.Point(140, 333);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 25);
+            this.lblError.Size = new System.Drawing.Size(0, 24);
             this.lblError.TabIndex = 3;
             // 
             // lblFRef
@@ -98,19 +98,19 @@
             this.lblfrom.TabIndex = 7;
             this.lblfrom.Text = "from";
             // 
-            // txtDate1
+            // txtStartDate
             // 
-            this.txtDate1.Location = new System.Drawing.Point(192, 39);
-            this.txtDate1.Name = "txtDate1";
-            this.txtDate1.Size = new System.Drawing.Size(100, 20);
-            this.txtDate1.TabIndex = 8;
+            this.txtStartDate.Location = new System.Drawing.Point(192, 39);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(100, 20);
+            this.txtStartDate.TabIndex = 8;
             // 
-            // txtDate2
+            // txtEndDate
             // 
-            this.txtDate2.Location = new System.Drawing.Point(316, 39);
-            this.txtDate2.Name = "txtDate2";
-            this.txtDate2.Size = new System.Drawing.Size(100, 20);
-            this.txtDate2.TabIndex = 9;
+            this.txtEndDate.Location = new System.Drawing.Point(316, 39);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.Size = new System.Drawing.Size(100, 20);
+            this.txtEndDate.TabIndex = 9;
             // 
             // lblTo
             // 
@@ -179,8 +179,8 @@
             this.Controls.Add(this.btnDFilter);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.lblTo);
-            this.Controls.Add(this.txtDate2);
-            this.Controls.Add(this.txtDate1);
+            this.Controls.Add(this.txtEndDate);
+            this.Controls.Add(this.txtStartDate);
             this.Controls.Add(this.lblfrom);
             this.Controls.Add(this.lblFilterT);
             this.Controls.Add(this.txtBookRef);
@@ -203,8 +203,8 @@
         private System.Windows.Forms.TextBox txtBookRef;
         private System.Windows.Forms.Label lblFilterT;
         private System.Windows.Forms.Label lblfrom;
-        private System.Windows.Forms.TextBox txtDate1;
-        private System.Windows.Forms.TextBox txtDate2;
+        private System.Windows.Forms.TextBox txtStartDate;
+        private System.Windows.Forms.TextBox txtEndDate;
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Button btnDFilter;
