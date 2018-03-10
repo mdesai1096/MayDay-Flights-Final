@@ -114,7 +114,7 @@ namespace MyTesting
             Int32 PK = 0;
             //set the properties
             //TestItem.BookRef = 3;
-            TestItem.Ammount = 80;
+            TestItem.Ammount = Convert.ToInt32(8000.50);
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.PaymentType = "Debit";
             //set ThisBooking to validate test data
@@ -140,7 +140,7 @@ namespace MyTesting
             Int32 PK = 0;
             //set the properties
             //TestItem.BookRef = 3;
-            TestItem.Ammount = 90;
+            TestItem.Ammount = Convert.ToInt32(9756.24);
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.PaymentType = "Debit";
             //set ThisBooking to validate test data
@@ -170,7 +170,7 @@ namespace MyTesting
             Int32 PK = 0;
             //set the properties
             //TestItem.BookRef = 3;
-            TestItem.Ammount = 80;
+            TestItem.Ammount = Convert.ToInt32(20568.25);
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.PaymentType = "Debit";
             //set ThisBooking to validate test data
@@ -181,7 +181,7 @@ namespace MyTesting
             TestItem.BookRef = PK;
             //modify the record
             //TestItem.BookRef = 3;
-            TestItem.Ammount = 40;
+            TestItem.Ammount = Convert.ToInt32(25478.25);
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.PaymentType = "Credit";
             //set the record based on the new record

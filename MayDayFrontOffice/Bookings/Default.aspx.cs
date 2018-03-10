@@ -16,9 +16,9 @@ public partial class Bookings_Default : System.Web.UI.Page
             //update the list box
             DisplayBookings();
             //write whatever the date was is 1 year in the past in the start date text box
-            txtDate1.Text = DateTime.Today.Date.AddYears(-1).ToString("dd/MM/yyyy");
+            txtStartDate.Text = DateTime.Today.Date.AddYears(-1).ToString("dd/MM/yyyy");
             //write whatever the date was is today in the end date text box
-            txtDate2.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
+            txtEndDate.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
 
         }
     }
@@ -110,15 +110,15 @@ public partial class Bookings_Default : System.Web.UI.Page
 
     protected void btnFDate_Click(object sender, EventArgs e)
     {
-        FilterBookingsDateRange(txtDate1.Text, txtDate2.Text);
+        FilterBookingsDateRange(txtStartDate.Text, txtEndDate.Text);
        
     }
 
-    void FilterBookingsDateRange(string Date1, string Date2)
+    void FilterBookingsDateRange(string StartDate, string EndDate)
     {
         //create an instance of the booking collection
         clsBookingsCollection Bookings = new clsBookingsCollection();
-        Bookings.FilterbyDateBooked(Date1,Date2);
+        Bookings.FilterbyDateBooked(StartDate, EndDate);
         //set the data source to the list of bookings in the collection
         lstBookings.DataSource = Bookings.BookingsList;
         //set the name of the primary key

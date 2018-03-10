@@ -47,6 +47,7 @@ namespace MyClassLibrary
             //populate the array list
             PopulateArray(DB);
            }
+
             ////var for the index
             //Int32 Index = 0;
             ////var to store the record count
