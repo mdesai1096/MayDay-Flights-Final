@@ -55,6 +55,114 @@ namespace MyTesting
         }
 
         [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomer AnCustomer = new clsCustomer();
+            //boolean variable to store the result of the validisation
+            Boolean Found = false;
+            //create some test data to use the method 
+            Int32 CustomerID = 1;
+            //Invoke the method
+            Found = AnCustomer.Find(CustomerID);
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
+
+        }
+
+
+
+        [TestMethod]
+        public void UserNameExist()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string UserName = "freda";
+            AnCustomer.UserName = UserName;
+            Assert.AreEqual(AnCustomer.UserName, UserName);
+
+        }
+
+        [TestMethod]
+        public void PasswordExist()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string Password = "password";
+            AnCustomer.Password = Password;
+            Assert.AreEqual(AnCustomer.Password, Password);
+
+        }
+
+        [TestMethod]
+        public void ForeNameExist()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string ForeName = "fred";
+            AnCustomer.ForeName = ForeName;
+            Assert.AreEqual(AnCustomer.ForeName, ForeName);
+
+        }
+
+        [TestMethod]
+        public void SurnameExist()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string Surname = "bloggs";
+            AnCustomer.Surname = Surname;
+            Assert.AreEqual(AnCustomer.Surname, Surname);
+
+        }
+
+        [TestMethod]
+        public void GenderExist()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string Gender = "male";
+            AnCustomer.Gender = Gender;
+            Assert.AreEqual(AnCustomer.Gender, Gender);
+
+        }
+
+        [TestMethod]
+        public void ContactNumberExist()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string ContactNumber = "01161234567";
+            AnCustomer.ContactNumber = ContactNumber;
+            Assert.AreEqual(AnCustomer.ContactNumber, ContactNumber);
+
+        }
+
+        [TestMethod]
+        public void EMailExist()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string EMail = "me@me.com";
+            AnCustomer.EMail = EMail;
+            Assert.AreEqual(AnCustomer.EMail, EMail);
+
+        }
+
+        [TestMethod]
+        public void FlatNoExist()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string FlatNo = "1";
+            AnCustomer.FlatNo = FlatNo;
+            Assert.AreEqual(AnCustomer.FlatNo, FlatNo);
+
+        }
+
+        [TestMethod]
+        public void HouseNoExist()
+        {
+            clsCustomer AnCustomer = new clsCustomer();
+            string HouseNo = "2";
+            AnCustomer.HouseNo = HouseNo;
+            Assert.AreEqual(AnCustomer.HouseNo, HouseNo);
+
+        }
+
+        [TestMethod]
         public void UsernameExtremeMin()
         {
             clsCustomer AnCustomer = new clsCustomer();
