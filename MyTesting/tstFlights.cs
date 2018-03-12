@@ -75,8 +75,8 @@ namespace MyTesting
             //string variable to store result of validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AI11";
-            string Airline = "Air India";
+            string FlightNo = "AI111";
+            string Airline = "AirIndiaaa";
             string ArrivalAirport = "Birmingham Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
@@ -119,8 +119,8 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "A";
-            string Airline = "Air India";
+            string FlightNo = "AAAAA";
+            string Airline = "AirIndiaaa";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
@@ -141,7 +141,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AA";
+            string FlightNo = "AAAAAA";
             string Airline = "Air India";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -152,7 +152,7 @@ namespace MyTesting
             //invoke method
             OK = AFlight.Valid(FlightNo, Airline, Destination, Arrival, ArrivalAirport, Departure, DepartureAirport);
             //test to see if it exists
-            Assert.AreEqual(OK, "");
+            Assert.AreNotEqual(OK, "");
         }
 
         [TestMethod]
@@ -163,7 +163,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AAa";
+            string FlightNo = "AAAA";
             string Airline = "Air India";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -174,7 +174,7 @@ namespace MyTesting
             //invoke method
             OK = AFlight.Valid(FlightNo, Airline, Destination, Arrival, ArrivalAirport, Departure, DepartureAirport);
             //test to see if it exists
-            Assert.AreEqual(OK, "");
+            Assert.AreNotEqual(OK, "");
         }
 
         [TestMethod]
@@ -185,7 +185,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AAaa";
+            string FlightNo = "AAAAA";
             string Airline = "Air India";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -240,7 +240,7 @@ namespace MyTesting
             //invoke method
             OK = AFlight.Valid(FlightNo, Airline, Destination, Arrival, ArrivalAirport, Departure, DepartureAirport);
             //test to see if it exists
-            Assert.AreEqual(OK, "");
+            Assert.AreNotEqual(OK, "");
         }
 
         [TestMethod]
@@ -274,7 +274,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AA";
+            string FlightNo = "AAAAA";
             string Airline = "";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -299,7 +299,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "A";
+            string FlightNo = "AAAAA";
             string Airline = "B";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -321,7 +321,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AA";
+            string FlightNo = "AAAAA";
             string Airline = "AI";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -343,7 +343,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AAa";
+            string FlightNo = "AAAAA";
             string Airline = "";
             Airline = Airline.PadRight(9, 'a');
             string ArrivalAirport = "Dubai Airport";
@@ -366,7 +366,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AAaa";
+            string FlightNo = "AAAAA";
             string Airline = "Air India";
             Airline = Airline.PadRight(10, 'a');
             string ArrivalAirport = "Dubai Airport";
@@ -389,7 +389,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AAaaa";
+            string FlightNo = "AAAAA";
             string Airline = "";
             Airline = Airline.PadRight(11, 'a');
             string ArrivalAirport = "Dubai Airport";
@@ -412,7 +412,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AA";
+            string FlightNo = "AAAAA";
             string Airline = "AAAAA";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -434,7 +434,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "";
+            string FlightNo = "AAAAA";
             string Airline = "";
             Airline = Airline.PadRight(20, 'a');
             string ArrivalAirport = "Dubai Airport";
@@ -457,7 +457,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "";
+            string FlightNo = "AAAAA";
             string Airline = "Air India";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -480,7 +480,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "A";
+            string FlightNo = "AAAAA";
             string Airline = "Air India";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -502,7 +502,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AA";
+            string FlightNo = "AAAAA";
             string Airline = "Air India";
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
@@ -524,7 +524,7 @@ namespace MyTesting
             //string variable to store the results of the validation
             string OK = "";
             //create some test data to assign to property
-            string FlightNo = "AAa";
+            string FlightNo = "AAAAA";
             string Airline = "";
             Airline = Airline.PadRight(9, 'a');
             string ArrivalAirport = "Dubai Airport";
