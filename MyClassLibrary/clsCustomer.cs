@@ -9,8 +9,17 @@ namespace MyClassLibrary
         {
         }
 
+        public string ContactNumber { get; set; }
         public string dateOfBirth { get; set; }
+        public string EMail { get; set; }
+        public string FlatNo { get; set; }
+        public string ForeName { get; set; }
+        public string Gender { get; set; }
+        public string HouseNo { get; set; }
+        public string Password { get; set; }
         public string PostCode { get; set; }
+        public string Surname { get; set; }
+        public string UserName { get; set; }
 
         public string Valid(string userName, string password, string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode)
         {
@@ -59,14 +68,14 @@ namespace MyClassLibrary
                 OK = OK + "surname is too long";
             }
 
-            
-          
+
+
             try
-            {  DateTemp = Convert.ToDateTime(dateOfBirth);
+            { DateTemp = Convert.ToDateTime(dateOfBirth);
 
                 if (DateTemp >= DateTime.Now.Date.AddYears(-18))
                 {
-                OK = OK + "You must be over 18 years old";
+                    OK = OK + "You must be over 18 years old";
                 }
 
                 if (DateTemp <= DateTime.Now.Date.AddYears(-150))
@@ -144,6 +153,12 @@ namespace MyClassLibrary
 
             return OK;
 
-            }
+        }
+
+        public bool Find(int CustomerID)
+        {
+            //Always return true
+            return true;
+        }
         }
     }
