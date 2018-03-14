@@ -2137,5 +2137,194 @@ namespace MyTesting
             AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
             Assert.AreNotEqual(AllOK, "");
         }
+
+        ///Testing Find Method///
+        [TestMethod]
+        public void TestcustIDFound()
+        {
+            //create a new instance of the class we want to create
+            clsCustomer AC = new clsCustomer();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 CustomerID = 1;
+            //invoke method
+            Found = AC.Find(CustomerID);
+            //check the booking no
+            if (AC.CustomerID != 1)
+            {
+                Found = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(Found);
+        }
+
+        ///Testing Find Method///
+        [TestMethod]
+        public void TestSurnameFound()
+        {
+            //create a new instance of the class we want to create
+            clsCustomer AC = new clsCustomer();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 CustomerID = 1;
+            //invoke method
+            Found = AC.Find(CustomerID);
+            //check the booking no
+            if (AC.Surname != "osman")
+            {
+                Found = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(Found);
+        }
+
+        ///Testing Find Method///
+        [TestMethod]
+        public void TestForenameFound()
+        {
+            //create a new instance of the class we want to create
+            clsCustomer AC = new clsCustomer();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 CustomerID = 1;
+            //invoke method
+            Found = AC.Find(CustomerID);
+            //check the booking no
+            if (AC.ForeName != "ayub")
+            {
+                Found = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(Found);
+        }
+
+        ///Testing Find Method///
+        [TestMethod]
+        public void TestdateOfBirthFound()
+        {
+            //create a new instance of the class we want to create
+            clsCustomer AC = new clsCustomer();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 CustomerID = 1;
+            //invoke method
+            Found = AC.Find(CustomerID);
+            //check the booking no
+            if (AC.dateOfBirth != Convert.ToDateTime("19/09/1996"))
+            {
+                Found = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(Found);
+        }
+
+        ///Testing Find Method///
+        [TestMethod]
+        public void TestPostCodeFound()
+        {
+            //create a new instance of the class we want to create
+            clsCustomer AC = new clsCustomer();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 CustomerID = 1;
+            //invoke method
+            Found = AC.Find(CustomerID);
+            //check the booking no
+            if (AC.PostCode != "LE2 2AE")
+            {
+                Found = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(Found);
+        }
+
+        ///Testing Find Method///
+        [TestMethod]
+        public void TestEMailFound()
+        {
+            //create a new instance of the class we want to create
+            clsCustomer AC = new clsCustomer();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 CustomerID = 1;
+            //invoke method
+            Found = AC.Find(CustomerID);
+            //check the booking no
+            if (AC.EMail != "a@de.com")
+            {
+                Found = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(Found);
+        }
+
+        ///Testing Find Method///
+        [TestMethod]
+        public void TestHouseNoFound()
+        {
+            //create a new instance of the class we want to create
+            clsCustomer AC = new clsCustomer();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 CustomerID = 1;
+            //invoke method
+            Found = AC.Find(CustomerID);
+            //check the booking no
+            if (AC.HouseNo != "71")
+            {
+                Found = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(Found);
+        }
+
+        ///Testing Find Method///
+        [TestMethod]
+        public void TestFlatNoFound()
+        {
+            //create a new instance of the class we want to create
+            clsCustomer AC = new clsCustomer();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 CustomerID = 1;
+            //invoke method
+            Found = AC.Find(CustomerID);
+            //check the booking no
+            if (AC.FlatNo != "0")
+            {
+                Found = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(Found);
+        }
+
+        ///Testing Find Method///
+        [TestMethod]
+        public void TestContactNumberFound()
+        {
+            //create a new instance of the class we want to create
+            clsCustomer AC = new clsCustomer();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //create some test data to assign to property
+            Int32 CustomerID = 1;
+            //invoke method
+            Found = AC.Find(CustomerID);
+            //check the booking no
+            if (AC.ContactNumber != "0116")
+            {
+                Found = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(Found);
+        }
     }
 }
