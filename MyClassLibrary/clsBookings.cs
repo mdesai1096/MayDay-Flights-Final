@@ -91,6 +91,9 @@ namespace MyClassLibrary
             }
         }
 
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+
         public string Valid(string ammount,string dateBooked, string paymentType )
         {
             //temp variable to store date
@@ -187,9 +190,29 @@ namespace MyClassLibrary
                 return false;
             }
         }
-           
+
+        public string ValidDateFilter(string startDate, string endDate)
+        {
+           string OK = "";
+            try
+            {
+                //temp variable to store start date
+                DateTime StartTemp = Convert.ToDateTime(startDate);
+                DateTime EndTemp = Convert.ToDateTime(endDate);
+
+                if (StartTemp > EndTemp)
+                {
+                    OK = OK + "The start date must be earlier then the end date";
+                }
 
             }
+            catch// if an error has failed to be caught
+            {
+                OK = OK + "Incorrect date format entered must be in dd/mm/yyyy";
+            }
+            return OK;
+        }
+    }
             
         }
     

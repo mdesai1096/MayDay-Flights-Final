@@ -640,6 +640,97 @@ namespace MyTesting
             Assert.IsTrue(OK);
         }
 
+        //testing for date filter ensuring a date is entered in the correct order and format
+        [TestMethod]
+        public void StartDateOK()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //create some test data
+            DateTime StartDate = DateTime.Now.Date.AddDays(-365);
+            ABookings.StartDate = StartDate;
+            //test to see if it exists
+            Assert.AreEqual(ABookings.StartDate, StartDate);
+        }
+
+        [TestMethod]
+        public void EndDateOK()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //create some test data
+            DateTime EndDate = DateTime.Now.Date;
+            ABookings.EndDate = EndDate;
+            //test to see if it exists
+            Assert.AreEqual(ABookings.EndDate, EndDate);
+        }
+
+        [TestMethod]
+        public void ValidDateFilterExist()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string StartDate = DateTime.Now.Date.AddYears(-1).ToString();
+            string EndDate = DateTime.Now.Date.ToString();
+            //invoke method
+            OK = ABookings.ValidDateFilter(StartDate, EndDate);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void ValidDateFilterCorrectOrder()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string StartDate = DateTime.Now.Date.AddYears(-1).ToString();
+            string EndDate = DateTime.Now.Date.ToString();
+            //invoke method
+            OK = ABookings.ValidDateFilter(StartDate, EndDate);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void ValidDateFilterInCorrectOrder()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string StartDate = DateTime.Now.Date.ToString();
+            string EndDate = DateTime.Now.Date.AddYears(-1).ToString();
+            //invoke method
+            OK = ABookings.ValidDateFilter(StartDate, EndDate);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void ValidDateFilterInvalidData()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string StartDate = "dsffdsf";
+            string EndDate = "jdsjfjhdf";
+            //invoke method
+            OK = ABookings.ValidDateFilter(StartDate, EndDate);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+
+
+
 
     }
 }
