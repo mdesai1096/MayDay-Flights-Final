@@ -207,8 +207,8 @@ namespace MyClassLibrary
             //connect to database
             clsDataConnection DB = new clsDataConnection();
             //send the bookref to the database
-            DB.AddParameter("@StartDate", Convert.ToDateTime(StartDate));
-            DB.AddParameter("@EndDate",Convert.ToDateTime(EndDate));
+            DB.AddParameter("@StartDate", Convert.ToDateTime(mThisBooking.StartDate));
+            DB.AddParameter("@EndDate",Convert.ToDateTime(mThisBooking.EndDate));
             //execute the stored procedure
             DB.Execute("sproc_tblBookings_FilterbyDate");
             //populate the array list with the data table

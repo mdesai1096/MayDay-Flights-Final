@@ -47,11 +47,29 @@ namespace MaydayBackend
             return Bookings.Count;
         }
 
+        //display the number of record found after filtering has been applied
+       
+
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            //display the number of record found after filtering has been applied
-            lblError.Text = FilterBookingsRef(txtBookRef.Text) + " Found";
-             
+            {
+                //create an instance of the booking list
+                clsBookingsCollection BookingsList = new clsBookingsCollection();
+                //validate the data on the web form
+                String Error = BookingsList.ThisBookings.ValidDateFilter(txtStartDate.Text, txtEndDate.Text);
+                //if the data is OK then add it to the object
+                if (Error == "")
+                {
+
+                    lblError.Text = FilterBookingsDateRange(txtStartDate.Text, txtEndDate.Text) + " Found";
+                }
+                else
+                {
+                    //report an error
+                    lblError.Text = "There were problems with the data entered " + Error;
+                }
+            }
+
         }
 
         Int32 FilterBookingsRef(string BookRef)
@@ -73,7 +91,7 @@ namespace MaydayBackend
         {
             //create an instance of the booking collection
             clsBookingsCollection Bookings = new clsBookingsCollection();
-            Bookings.FilterbyDateBooked(StartDate, EndDate);
+            Bookings.FilterbyDateBooked(boo, EndDate);
             //set the data source to the list of bookings in the collection
             lstBookings.DataSource = Bookings.BookingsList;
             //set the name of the primary key
