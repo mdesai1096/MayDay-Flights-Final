@@ -2235,7 +2235,7 @@ namespace MyTesting
             //invoke method
             Found = AC.Find(CustomerID);
             //check the booking no
-            if (AC.PostCode != "LE2 2AE")
+            if (AC.PostCode != "LE2 5LP")
             {
                 Found = false;
             }

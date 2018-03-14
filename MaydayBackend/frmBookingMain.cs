@@ -91,7 +91,7 @@ namespace MaydayBackend
         {
             //create an instance of the booking collection
             clsBookingsCollection Bookings = new clsBookingsCollection();
-            Bookings.FilterbyDateBooked(boo, EndDate);
+            Bookings.FilterbyDateBooked(StartDate, EndDate);
             //set the data source to the list of bookings in the collection
             lstBookings.DataSource = Bookings.BookingsList;
             //set the name of the primary key
