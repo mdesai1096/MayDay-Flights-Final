@@ -46,6 +46,42 @@ namespace MyClassLibrary
             //{
             //    Error = Error + "Contact number has to be less than 15 ";
             //}
+            if (employeeEmail.Length == 0)
+            {
+                Error = Error + "The employee email may bot be blank : ";
+            }
+
+            if (employeeEmail.Length < 5)
+            {
+                Error = Error + "The employee address must be 5 characters or more : ";
+            }
+            if (employeeEmail.Length > 27)
+            {
+                Error = Error + "The employee address must be less than 27 characters : ";
+            }
+
+            try
+            {
+
+                DateTime DateTemp;
+                DateTemp = Convert.ToDateTime(employeeDOB);
+
+                if (DateTemp > DateTime.Now.Date.AddYears(-18))
+                {
+                    Error = Error + "You must be over 18 years old";
+                }
+
+                if (DateTemp < DateTime.Now.Date.AddYears(-150))
+                {
+                    Error = Error + "You must be under 150 years old";
+                }
+
+            }
+            catch
+            {
+                Error = Error + "Incorrect date entered";
+            }
+
             return Error;
         }
 
