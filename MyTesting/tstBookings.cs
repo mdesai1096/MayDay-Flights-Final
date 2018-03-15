@@ -728,6 +728,21 @@ namespace MyTesting
             //test to see if it exists
             Assert.AreNotEqual(OK, "");
         }
+        [TestMethod]
+        public void ValidDateFilterEndDateinFuture()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string StartDate = DateTime.Now.Date.AddYears(-1).ToString();
+            string EndDate = DateTime.Now.Date.AddYears(1).ToString();
+            //invoke method
+            OK = ABookings.ValidDateFilter(StartDate, EndDate);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
 
 
 

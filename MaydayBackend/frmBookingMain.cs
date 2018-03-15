@@ -52,23 +52,7 @@ namespace MaydayBackend
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            {
-                //create an instance of the booking list
-                clsBookingsCollection BookingsList = new clsBookingsCollection();
-                //validate the data on the web form
-                String Error = BookingsList.ThisBookings.ValidDateFilter(txtStartDate.Text, txtEndDate.Text);
-                //if the data is OK then add it to the object
-                if (Error == "")
-                {
-
-                    lblError.Text = FilterBookingsDateRange(txtStartDate.Text, txtEndDate.Text) + " Found";
-                }
-                else
-                {
-                    //report an error
-                    lblError.Text = "There were problems with the data entered " + Error;
-                }
-            }
+            lblError.Text = DisplayBookings() + " Records";
 
         }
 
@@ -91,7 +75,7 @@ namespace MaydayBackend
         {
             //create an instance of the booking collection
             clsBookingsCollection Bookings = new clsBookingsCollection();
-            Bookings.FilterbyDateBooked(boo, EndDate);
+            Bookings.FilterbyDateBooked(StartDate, EndDate);
             //set the data source to the list of bookings in the collection
             lstBookings.DataSource = Bookings.BookingsList;
             //set the name of the primary key
@@ -104,8 +88,21 @@ namespace MaydayBackend
 
         private void btnDFilter_Click(object sender, EventArgs e)
         {
-            //display the number of record found after filtering has been applied
-            lblError.Text = FilterBookingsDateRange(txtStartDate.Text, txtEndDate.Text) + " Found";
+                //create an instance of the booking list
+                clsBookingsCollection BookingsList = new clsBookingsCollection();
+                //validate the data on the web form
+                String Error = BookingsList.ThisBookings.ValidDateFilter(txtStartDate.Text, txtEndDate.Text);
+                //if the data is OK then add it to the object
+                if (Error == "")
+                {
+                    //display the number of record found after filtering has been applied
+                    lblError.Text = FilterBookingsDateRange(txtStartDate.Text, txtEndDate.Text) + " Found";
+                }
+                else
+                {
+                    //report an error
+                    lblError.Text = "There were problems with the data entered " + Error;
+                }    
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

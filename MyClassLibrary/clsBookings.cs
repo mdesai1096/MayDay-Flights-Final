@@ -91,8 +91,30 @@ namespace MyClassLibrary
             }
         }
 
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        private DateTime mStartDate;
+        public DateTime StartDate
+        {
+            get
+            {
+                return mStartDate;
+            }
+            set
+            {
+                mStartDate = value;
+            }
+        }
+        private DateTime mEndDate;
+        public DateTime EndDate
+        {
+            get
+            {
+                return mEndDate;
+            }
+            set
+            {
+                mEndDate = value;
+            }
+        }
 
         public string Valid(string ammount,string dateBooked, string paymentType )
         {
@@ -205,6 +227,10 @@ namespace MyClassLibrary
                     OK = OK + "The start date must be earlier then the end date";
                 }
 
+                if (EndTemp > DateTime.Now.Date)
+                {
+                    OK = OK + "End date cannot be in the future";
+                }
             }
             catch// if an error has failed to be caught
             {

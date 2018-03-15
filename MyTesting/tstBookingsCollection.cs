@@ -197,12 +197,13 @@ namespace MyTesting
         [TestMethod]
         public void FilterbyDateOK()
         {
+            clsBookings TestItem = new clsBookings();
             //create an instance of the class we want to create
             clsBookingsCollection AllBookings = new clsBookingsCollection();
             //create an instance of the filtered data
             clsBookingsCollection FilteredBookings = new clsBookingsCollection();
             //apply a blank string (should return all records)
-            FilteredBookings.FilterbyDateBooked(DateTime.Now.Date.AddYears(-50).ToString(), DateTime.Now.Date.ToString());
+            FilteredBookings.FilterbyDateBooked( DateTime.Now.Date.AddYears(-50).ToString(), DateTime.Now.Date.ToString());
             //test to see the two values are the same
             Assert.AreEqual(AllBookings.Count, FilteredBookings.Count);
         }
