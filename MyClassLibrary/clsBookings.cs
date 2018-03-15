@@ -227,6 +227,10 @@ namespace MyClassLibrary
                     OK = OK + "The start date must be earlier then the end date";
                 }
 
+                if (EndTemp > DateTime.Now.Date)
+                {
+                    OK = OK + "End date cannot be in the future";
+                }
             }
             catch// if an error has failed to be caught
             {

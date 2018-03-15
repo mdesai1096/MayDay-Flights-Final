@@ -110,8 +110,27 @@ public partial class Bookings_Default : System.Web.UI.Page
 
     protected void btnFDate_Click(object sender, EventArgs e)
     {
-        FilterBookingsDateRange(txtStartDate.Text, txtEndDate.Text);
-       
+
+        //create an instance of the booking list
+        clsBookingsCollection BookingsList = new clsBookingsCollection();
+        //validate the data on the web form
+        String Error = BookingsList.ThisBookings.ValidDateFilter(txtStartDate.Text, txtEndDate.Text);
+        //if the data is OK then add it to the object
+        if (Error == "")
+        {
+            //display the number of record found after filtering has been applied
+             FilterBookingsDateRange(txtStartDate.Text, txtEndDate.Text);
+            //clear the label
+            lblError.Text = "";
+        }
+        else
+        {
+            //report an error
+            lblError.Text = "There were problems with the data entered " + Error;
+            //display all bookings
+            DisplayBookings();
+        }
+
     }
 
     void FilterBookingsDateRange(string StartDate, string EndDate)
