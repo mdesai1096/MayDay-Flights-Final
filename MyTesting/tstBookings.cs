@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyClassLibrary;
 
+//Author Mohammad Desai
+
 namespace MyTesting
 {
     [TestClass]
