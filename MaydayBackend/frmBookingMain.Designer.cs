@@ -191,6 +191,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBookingMain";
             this.Text = "Display Bookings";
+            this.Load += new System.EventHandler(this.frmBookingMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

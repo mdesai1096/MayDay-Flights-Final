@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+//Author Mohammad Desai
+
 namespace MyClassLibrary
 {
     public class clsBookingsCollection
