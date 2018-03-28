@@ -5,12 +5,9 @@ namespace MyClassLibrary
     public class clsCustomer
     {
 
-        public clsCustomer()
-        {
-        }
-
         private string mContactNumber;
-        public string ContactNumber {
+        public string ContactNumber
+        {
             get
             {
                 return mContactNumber;
@@ -24,7 +21,8 @@ namespace MyClassLibrary
 
 
         private DateTime mdateOfBirth;
-        public DateTime dateOfBirth {
+        public DateTime dateOfBirth
+        {
             get
             {
                 return mdateOfBirth;
@@ -37,7 +35,8 @@ namespace MyClassLibrary
         }
 
         private string mEmail;
-        public string EMail {
+        public string EMail
+        {
 
             get
             {
@@ -52,12 +51,13 @@ namespace MyClassLibrary
 
 
         private string mFlatNo;
-        public string FlatNo {
-              get
+        public string FlatNo
+        {
+            get
             {
                 return mFlatNo;
             }
-    set
+            set
             {
                 mFlatNo = value;
             }
@@ -65,7 +65,8 @@ namespace MyClassLibrary
         }
 
         private string mForeName;
-        public string ForeName {
+        public string ForeName
+        {
             get
             {
                 return mForeName;
@@ -79,7 +80,8 @@ namespace MyClassLibrary
 
 
         private string mGender;
-        public string Gender {
+        public string Gender
+        {
             get
             {
                 return mGender;
@@ -92,7 +94,8 @@ namespace MyClassLibrary
         }
 
         private string mHouseNo;
-        public string HouseNo {
+        public string HouseNo
+        {
             get
             {
                 return mHouseNo;
@@ -105,7 +108,8 @@ namespace MyClassLibrary
         }
 
         private string mPassword;
-        public string Password {
+        public string Password
+        {
             get
             {
                 return mPassword;
@@ -118,7 +122,8 @@ namespace MyClassLibrary
         }
 
         private string mPostCode;
-        public string PostCode {
+        public string PostCode
+        {
             get
             {
                 return mPostCode;
@@ -131,7 +136,8 @@ namespace MyClassLibrary
         }
 
         private string mSurname;
-        public string Surname {
+        public string Surname
+        {
             get
             {
                 return mSurname;
@@ -144,7 +150,8 @@ namespace MyClassLibrary
         }
 
         private string mUserName;
-        public string UserName {
+        public string UserName
+        {
             get
             {
                 return mUserName;
@@ -170,32 +177,13 @@ namespace MyClassLibrary
 
         }
 
-        public string Valid( string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode)
+        public string DateOfBirth { get; set; }
+
+        public string Valid(string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode)
         {
             DateTime DateTemp;
             string OK = "";
 
-            //if (userName.Length < 5)
-            //{
-            //    OK = OK + "Username is too short";
-            //}
-            //if (userName.Length > 20)
-            //{
-            //    OK = OK + "Username is too long";
-            //}
-
-            //////////////////////////////////
-
-            //if (password.Length < 5)
-            //{
-            //    OK = OK + "Password is too short";
-            //}
-            //if (password.Length > 20)
-            //{
-            //    OK = OK + "Password is too long";
-            //}
-
-            //////////////////////////////////
 
             if (foreName.Length < 1)
             {
@@ -220,7 +208,8 @@ namespace MyClassLibrary
 
 
             try
-            { DateTemp = Convert.ToDateTime(dateOfBirth);
+            {
+                DateTemp = Convert.ToDateTime(dateOfBirth);
 
                 if (DateTemp >= DateTime.Now.Date.AddYears(-18))
                 {
@@ -337,5 +326,5 @@ namespace MyClassLibrary
                 return false;
             }
         }
-        }
     }
+}
