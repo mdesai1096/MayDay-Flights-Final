@@ -38,8 +38,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            ////string UserName = "freda";
-            ////string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -69,28 +67,6 @@ namespace MyTesting
             Assert.IsTrue(Found);
 
         }
-
-
-
-        //[TestMethod]
-        //public void UserNameExist()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    //string UserName = "freda";
-        //    AnCustomer.UserName = UserName;
-        //    Assert.AreEqual(AnCustomer.UserName, UserName);
-
-        //}
-
-        //[TestMethod]
-        //public void PasswordExist()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    //string Password = "password";
-        //    AnCustomer.Password = Password;
-        //    Assert.AreEqual(AnCustomer.Password, Password);
-
-        //}
 
         [TestMethod]
         public void ForeNameExist()
@@ -162,404 +138,11 @@ namespace MyTesting
 
         }
 
-        //[TestMethod]
-        //public void UsernameExtremeMin()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "";
-        //    //string Password = "password";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreNotEqual(AllOK, "");
-        //}
-
-        //[TestMethod]
-        //public void UsernameMinMinus1()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "aaaa";
-        //    //string Password = "password";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreNotEqual(AllOK, "");
-        //}
-
-        //[TestMethod]
-        //public void UsernameBoundryMin()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "aaaaa";
-        //    //string Password = "password";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreEqual(AllOK, "");
-        //}
-
-        //[TestMethod]
-        //public void UsernameBoundryMinPlus1()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "aaaaaa";
-        //    //string Password = "password";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreEqual(AllOK, "");
-        //}
-
-        //[TestMethod]
-        //public void UsernameBoundryMaxMinus1()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "";
-        //    UserName = UserName.PadRight(19, 'a');
-        //    //string Password = "password";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreEqual(AllOK, "");
-        //}
-
-        //[TestMethod]
-        //public void UsernameBoundryMaxBoundry()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "";
-        //    UserName = UserName.PadRight(20, 'a');
-        //    //string Password = "password";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreEqual(AllOK, "");
-        //}
-
-        //[TestMethod]
-        //public void UsernameBoundryMaxPlus1()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "";
-        //    UserName = UserName.PadRight(21, 'a');
-        //    //string Password = "password";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreNotEqual(AllOK, "");
-        //}
-
-        //[TestMethod]
-        //public void UsernameBoundryMid()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "";
-        //    UserName = UserName.PadRight(13, 'a');
-        //    //string Password = "password";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreEqual(AllOK, "");
-        //}
-
-
-        //[TestMethod]
-        //public void UsernameExtremeMax()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "";
-        //    UserName = UserName.PadRight(100, 'a');
-        //    //string Password = "password";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreNotEqual(AllOK, "");
-        //}
-        //[TestMethod]
-        //public void PasswordExtremeMin()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "freda";
-        //    //string Password = "";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreNotEqual(AllOK, "");
-        //}
-
-        //[TestMethod]
-        //public void PasswordMinMinus1()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "freda";
-        //    //string Password = "aaaa";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreNotEqual(AllOK, "");
-
-        //}
-
-        //[TestMethod]
-        //public void PasswordBoundaryMin()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "freda";
-        //    //string Password = "aaaaa";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreEqual(AllOK, "");
-
-        //}
-
-        //[TestMethod]
-        //public void PasswordBoundaryMinPlus1()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "freda";
-        //    //string Password = "aaaaaa";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreEqual(AllOK, "");
-
-        //}
-
-        //[TestMethod]
-        //public void PasswordBoundaryMaxMinus1()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "freda";
-        //    //string Password = "ashjklkjmnhjklikjhg";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreEqual(AllOK, "");
-
-        //}
-
-        //[TestMethod]
-        //public void PasswordBoundaryMaxBoundary()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "freda";
-        //    //string Password = "ashjklkjmnhjklikjhga";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreEqual(AllOK, "");
-
-        //}
-
-        //[TestMethod]
-        //public void PasswordBoundaryMaxPlus1()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "freda";
-        //    //string Password = "ashjklkjmnhjklikjhgaa";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreNotEqual(AllOK, "");
-
-        //}
-
-        //[TestMethod]
-        //public void PasswordBoundaryMid()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "freda";
-        //    //string Password = "ashasdfghjklo";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreEqual(AllOK, "");
-
-        //}
-
-        //[TestMethod]
-        //public void PasswordExtremeMax()
-        //{
-        //    clsCustomer AnCustomer = new clsCustomer();
-        //    string AllOK = "";
-        //    //string UserName = "freda";
-        //    //string Password = "asdfghjkloasdfghjkloasdfghjkloasdfghjklo";
-        //    string ForeName = "fred";
-        //    string Surname = "bloggs";
-        //    string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
-        //    string Gender = "male";
-        //    string ContactNumber = "01161234567";
-        //    string EMail = "me@me.com";
-        //    string FlatNo = "1";
-        //    string HouseNo = "2";
-        //    string PostCode = "LE5 6HP";
-
-        //    AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
-        //    Assert.AreNotEqual(AllOK, "");
-
-        //}
-
         [TestMethod]
         public void ForenameMinMinus1()
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            ////string UserName = "freda";
-            ////string Password = "password";
             string ForeName = "";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -579,8 +162,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            ////string UserName = "freda";
-            ////string Password = "password";
             string ForeName = "A";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -600,8 +181,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            ////string UserName = "freda";
-            ////string Password = "password";
             string ForeName = "ab";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -621,8 +200,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            ////string UserName = "freda";
-            ////string Password = "password";
             string ForeName = "Abcdefhjklmnjhsaqwe";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -642,8 +219,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            ////string UserName = "freda";
-            ////string Password = "password";
             string ForeName = "Abcdefhjklmnjhsaqweh";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -663,8 +238,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "";
             ForeName = ForeName.PadRight(26, 'a');
             string Surname = "bloggs";
@@ -685,8 +258,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "";
             ForeName = ForeName.PadRight(13, 'a');
             string Surname = "bloggs";
@@ -707,8 +278,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "";
             ForeName = ForeName.PadRight(30, 'a');
             string Surname = "bloggs";
@@ -729,8 +298,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -750,8 +317,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "A";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -771,8 +336,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "JB";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -792,8 +355,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhjklmnjhsaqweasasa";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -813,8 +374,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhjklmnjhsaqweasasaa";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -835,8 +394,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhjklmnjhsaqweasasaas";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -856,8 +413,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhjkasav";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -877,8 +432,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhjklmnjhsaqweaabdfvdfgvc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -898,8 +451,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-17).AddDays(+364).ToString();
@@ -919,8 +470,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-18).ToString();
@@ -940,8 +489,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-18).AddDays(+1).ToString();
@@ -961,8 +508,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-149).AddDays(+364).ToString();
@@ -982,8 +527,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-150).ToString();
@@ -1003,8 +546,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-150).AddDays(+1).ToString();
@@ -1025,8 +566,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-75).ToString();
@@ -1047,8 +586,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = "123";
@@ -1068,8 +605,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1089,8 +624,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1110,8 +643,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1131,8 +662,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1152,8 +681,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1173,8 +700,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1194,8 +719,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1215,8 +738,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1236,8 +757,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1257,8 +776,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1278,8 +795,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1299,8 +814,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1320,8 +833,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1341,8 +852,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1362,8 +871,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1383,8 +890,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1405,8 +910,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1426,8 +929,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1447,8 +948,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1468,8 +967,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1489,8 +986,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1510,8 +1005,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1531,8 +1024,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1552,8 +1043,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1573,8 +1062,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1594,8 +1081,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1615,8 +1100,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1636,8 +1119,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1657,8 +1138,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1678,8 +1157,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1700,8 +1177,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1722,8 +1197,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1743,8 +1216,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1764,8 +1235,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1785,8 +1254,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1806,8 +1273,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1827,8 +1292,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1848,8 +1311,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1869,8 +1330,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1890,8 +1349,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1911,8 +1368,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1932,8 +1387,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1954,8 +1407,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1975,8 +1426,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1996,8 +1445,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -2017,8 +1464,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -2038,8 +1483,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -2059,8 +1502,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -2080,8 +1521,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -2101,8 +1540,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -2122,8 +1559,6 @@ namespace MyTesting
         {
             clsCustomer AnCustomer = new clsCustomer();
             string AllOK = "";
-            //string UserName = "freda";
-            //string Password = "password";
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
