@@ -177,7 +177,8 @@ namespace MyClassLibrary
 
         }
 
-        public string DateOfBirth { get; set; }
+
+        
 
         public string Valid(string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode)
         {
@@ -309,7 +310,7 @@ namespace MyClassLibrary
                 mSurname = Convert.ToString(DB.DataTable.Rows[0]["surName"]);
                 mForeName = Convert.ToString(DB.DataTable.Rows[0]["Forename"]);
                 mGender = Convert.ToString(DB.DataTable.Rows[0]["Gender"]);
-                mdateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[0]["Date of Birth"]);
+                mdateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[0]["DateofBirth"]);
                 mPostCode = Convert.ToString(DB.DataTable.Rows[0]["Postcode"]);
                 mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
                 mHouseNo = Convert.ToString(DB.DataTable.Rows[0]["HouseNo"]);

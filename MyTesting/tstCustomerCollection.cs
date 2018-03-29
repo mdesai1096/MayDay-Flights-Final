@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyClassLibrary;
 using System.Collections.Generic;
-using Class_Library;
 
 namespace MyTesting
 {
@@ -32,9 +31,9 @@ namespace MyTesting
             //set its properties
             TestItem.ForeName = "fred";
             TestItem.Surname = "bloggs";
-            TestItem.DateOfBirth = DateTime.Now.Date.AddYears(-18).ToString();
+            TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
             TestItem.Gender = "male";
-            TestItem.ContactNumber = "01161234567";
+            TestItem.ContactNumber = "01167";
             TestItem.EMail = "me@me.com";
             TestItem.FlatNo = "1";
             TestItem.HouseNo = "2";
@@ -46,17 +45,18 @@ namespace MyTesting
             Assert.AreEqual(AllCustomer.CustomerList, TestList);
         }
 
-        [TestMethod]
-        public void CountPropertyOK()
-        {
-            //create an instance of the class we want to create
-            clsCustomerCollection AllCustomer = new clsCustomerCollection();
-            //create some test data
-            Int32 someCount = 0;
-            //assign the data to the property
-            AllCustomer.Count = someCount;//test to see that it exists
-            Assert.AreEqual(AllCustomer.Count, someCount);
-        }
+
+        //[TestMethod]
+        //public void CountPropertyOK()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsCustomerCollection AllCustomer = new clsCustomerCollection();
+        //    //create some test data
+        //    Int32 someCount = 2;
+        //    //assign the data to the property
+        //    AllCustomer.Count = someCount;//test to see that it exists
+        //    Assert.AreEqual(AllCustomer.Count, someCount);
+        //}
 
         [TestMethod]
         public void ThisCustomerPropertyOK()
@@ -69,9 +69,9 @@ namespace MyTesting
             //set its properties
             TestCustomer.ForeName = "fred";
             TestCustomer.Surname = "bloggs";
-            TestCustomer.DateOfBirth = DateTime.Now.Date.AddYears(-18).ToString();
+            TestCustomer.dateOfBirth = DateTime.Now.Date.AddYears(-19);
             TestCustomer.Gender = "male";
-            TestCustomer.ContactNumber = "01161234567";
+            TestCustomer.ContactNumber = "12354";
             TestCustomer.EMail = "me@me.com";
             TestCustomer.FlatNo = "1";
             TestCustomer.HouseNo = "2";
@@ -95,9 +95,9 @@ namespace MyTesting
             //set its properties
             TestItem.ForeName = "fred";
             TestItem.Surname = "bloggs";
-            TestItem.DateOfBirth = DateTime.Now.Date.AddYears(-18).ToString();
+            TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
             TestItem.Gender = "male";
-            TestItem.ContactNumber = "01161234567";
+            TestItem.ContactNumber = "12314";
             TestItem.EMail = "me@me.com";
             TestItem.FlatNo = "1";
             TestItem.HouseNo = "2";
@@ -109,5 +109,52 @@ namespace MyTesting
             Assert.AreEqual(AllCustomer.Count, TestList.Count);
         }
 
+        //[TestMethod]
+        //public void TwoRecordsPresent()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsCustomerCollection AllCustomer = new clsCustomerCollection();
+        //    //test to see that the two values are the same
+        //    Assert.AreEqual(AllCustomer.Count, 2);
+        //}
     }
+
+    [TestMethod]
+    public void AddMethodOK()
+    {
+        //create an instance of the class we want to create
+        clsCustomerCollection AllCustomer = new clsCustomerCollection();
+        //create an instance of test data
+        clsCustomer TestItem = new clsCustomer();
+        //var to store primary key
+        Int32 PK = 0;
+        //set the properties
+        //TestItem.BookRef = 3;
+        TestItem.ForeName = "fred";
+        TestItem.Surname = "bloggs";
+        TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
+        TestItem.Gender = "male";
+        TestItem.ContactNumber = "12314";
+        TestItem.EMail = "me@me.com";
+        TestItem.FlatNo = "1";
+        TestItem.HouseNo = "2";
+        TestItem.PostCode = "LE5 6HP";
+        //set ThisBooking to validate test data
+        AllCustomer.ThisCustomer = TestItem;
+        //add the record
+        PK = AllCustomer.Add();
+        //set primary key of test data
+        TestItem.CustomerID = PK;
+        //find the record
+        AllCustomer.ThisCustomer.Find(PK);
+        //test to see that it exists
+        Assert.AreEqual(AllCustomer.ThisCustomer, TestItem);
+    }
+
+
 }
+
+
+
+
+

@@ -1754,7 +1754,7 @@ namespace MyTesting
             //invoke method
             Found = AC.Find(CustomerID);
             //check the booking no
-            if (AC.ContactNumber != "0116")
+            if (AC.ContactNumber != "01162156")
             {
                 Found = false;
             }
