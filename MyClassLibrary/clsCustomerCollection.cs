@@ -41,7 +41,7 @@ namespace Class_Library
             }
         }
 
-                    public clsCustomer ThisCustomer
+        public clsCustomer ThisCustomer
         {
             get
             {
