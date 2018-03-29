@@ -4,8 +4,8 @@
      <h2>
          <asp:Label ID="lblAdminHomePage" runat="server" style="text-decoration: underline" Text="Admin Home Page"></asp:Label>
      </h2>
+     <asp:ListBox ID="lstCust" runat="server" Height="110px" Width="890px"></asp:ListBox>
      <br />
-            <asp:ListBox ID="lstAddresses" runat="server" style="z-index: 1; height: 155px; width: 1090px; left: 382px; top: 246px; position: absolute;" OnSelectedIndexChanged="lstAddresses_SelectedIndexChanged"></asp:ListBox>
                         <br />
             <asp:Label ID="lblError" runat="server" style="z-index: 1; width: 88px; left: 845px; top: 524px; position: absolute;"></asp:Label>
 

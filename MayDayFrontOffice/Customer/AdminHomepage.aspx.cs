@@ -4,13 +4,37 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using MyClassLibrary;
 
 public partial class admin_customer : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
+
+//this function handles the load event for the page
+protected void Page_Load(object sender, EventArgs e)
     {
+        //if this is the first time the page is displayed
+        if (IsPostBack == false)
+        {
+            //update the list box
+            DisplayCustomers();
+        }
 
     }
+
+    void DisplayCustomers()
+    {
+        //create an instancew of the Customer Collection
+        clsCustomerCollection Customers = new clsCustomerCollection();
+        // set the data source to the list of countries in the collection
+        lstCust.DataSource = Customers.CustomerList;
+        // set the name of the primary key
+        lstCust.DataValueField = "CustomerID";
+        // set the data field to display
+        lstCust.DataTextField = "PostCode";
+        //bind the data to the list 
+        lstCust.DataBind();
+      
+      }
 
     protected void btnDelete_Click(object sender, EventArgs e)
     {
@@ -47,8 +71,5 @@ public partial class admin_customer : System.Web.UI.Page
         //will display all the customers on the table
     }
 
-    protected void lstAddresses_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
+ 
 }
