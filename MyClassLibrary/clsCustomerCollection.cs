@@ -125,6 +125,26 @@ namespace MyClassLibrary
                 Index++;
             }
         }
+
+        public int Add()
+        {
+            //adds a new record in to the database depending on the values of mThisBooking
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@surname", mThisCustomer.Surname);
+            DB.AddParameter("@forename", mThisCustomer.ForeName);
+            DB.AddParameter("@gender", mThisCustomer.Gender);
+            DB.AddParameter("@dob", mThisCustomer.dateOfBirth);
+            DB.AddParameter("@postcode", mThisCustomer.PostCode);
+            DB.AddParameter("@email", mThisCustomer.EMail);
+            DB.AddParameter("@HouseNo", mThisCustomer.HouseNo);
+            DB.AddParameter("@FlatNo", mThisCustomer.FlatNo);
+            DB.AddParameter("@ContactNo", mThisCustomer.ContactNumber);
+            //execute the query returning primary key of new record
+            return DB.Execute("Sproc_tblCustomer_Insert");
+
+        }
     }
 }
 

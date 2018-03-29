@@ -109,6 +109,8 @@ namespace MyTesting
             Assert.AreEqual(AllCustomer.Count, TestList.Count);
         }
 
+        [TestMethod]
+
         //[TestMethod]
         //public void TwoRecordsPresent()
         //{
@@ -117,39 +119,39 @@ namespace MyTesting
         //    //test to see that the two values are the same
         //    Assert.AreEqual(AllCustomer.Count, 2);
         //}
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            //create an instance of test data
+            clsCustomer TestItem = new clsCustomer();
+            //var to store primary key
+            Int32 PK = 0;
+            //set the properties
+            //TestItem.CustomerID = 3;
+            TestItem.ForeName = "fred";
+            TestItem.Surname = "bloggs";
+            TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
+            TestItem.Gender = "male";
+            TestItem.ContactNumber = "12314";
+            TestItem.EMail = "me@me.com";
+            TestItem.FlatNo = "1";
+            TestItem.HouseNo = "2";
+            TestItem.PostCode = "LE5 6HP";
+            //set ThisBooking to validate test data
+            AllCustomer.ThisCustomer = TestItem;
+            //add the record
+            PK = AllCustomer.Add();
+            //set primary key of test data
+            TestItem.CustomerID = PK;
+            //find the record
+            AllCustomer.ThisCustomer.Find(PK);
+            //test to see that it exists
+            Assert.AreEqual(AllCustomer.ThisCustomer, TestItem);
+        }
     }
 
-    [TestMethod]
-    public void AddMethodOK()
-    {
-        //create an instance of the class we want to create
-        clsCustomerCollection AllCustomer = new clsCustomerCollection();
-        //create an instance of test data
-        clsCustomer TestItem = new clsCustomer();
-        //var to store primary key
-        Int32 PK = 0;
-        //set the properties
-        //TestItem.BookRef = 3;
-        TestItem.ForeName = "fred";
-        TestItem.Surname = "bloggs";
-        TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
-        TestItem.Gender = "male";
-        TestItem.ContactNumber = "12314";
-        TestItem.EMail = "me@me.com";
-        TestItem.FlatNo = "1";
-        TestItem.HouseNo = "2";
-        TestItem.PostCode = "LE5 6HP";
-        //set ThisBooking to validate test data
-        AllCustomer.ThisCustomer = TestItem;
-        //add the record
-        PK = AllCustomer.Add();
-        //set primary key of test data
-        TestItem.CustomerID = PK;
-        //find the record
-        AllCustomer.ThisCustomer.Find(PK);
-        //test to see that it exists
-        Assert.AreEqual(AllCustomer.ThisCustomer, TestItem);
-    }
+ 
 
 
 }
