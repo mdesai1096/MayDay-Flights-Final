@@ -203,7 +203,7 @@ namespace MyClassLibrary
             //populates array list based on the data table in the parameter DB
             //var for the index
             Int32 Index = 0;
-            //var to store the record count
+            //var to store the record count.
             Int32 RecordCount;
             //get the count of records
             RecordCount = DB.Count;
