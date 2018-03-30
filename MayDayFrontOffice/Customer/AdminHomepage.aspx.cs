@@ -9,8 +9,8 @@ using MyClassLibrary;
 public partial class admin_customer : System.Web.UI.Page
 {
 
-//this function handles the load event for the page
-protected void Page_Load(object sender, EventArgs e)
+    //this function handles the load event for the page
+    protected void Page_Load(object sender, EventArgs e)
     {
         //if this is the first time the page is displayed
         if (IsPostBack == false)
@@ -33,14 +33,29 @@ protected void Page_Load(object sender, EventArgs e)
         lstCust.DataTextField = "PostCode";
         //bind the data to the list 
         lstCust.DataBind();
-      
-      }
+
+    }
 
     protected void btnDelete_Click(object sender, EventArgs e)
     {
-        //redirect to the delete page, where the customer that has been chosen will be deleted
-        // there is not page for delete customer as you can select from the list who to delete and that customer will then be deleted. 
-        Response.Redirect("Delete.aspx");
+        //var to store the primary key value of the record to be deleted
+        Int32 CustomerID;
+        //if a record has been selected from the list
+        if (lstCust.SelectedIndex != -1)
+        {
+            //get the primary key value of the record to delete
+            CustomerID = Convert.ToInt32(lstCust.SelectedValue);
+            //store the data in the session object
+            Session["CustomerID"] = CustomerID;
+            //redirect to the delete page
+            Response.Redirect("Delete.aspx");
+        }
+        else //if no record has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a record to delete from the list";
+        }
+
     }
 
     protected void btnBacktoHomePage_Click(object sender, EventArgs e)
@@ -51,14 +66,31 @@ protected void Page_Load(object sender, EventArgs e)
 
     protected void btnAdd_Click1(object sender, EventArgs e)
     {
-        //directs back to the form page where a customer can be added 
+        //store -1 into the session object to indicate this is a new record
+        Session["BookRef"] = -1;
+        //redirect to the data entry page
         Response.Redirect("FormPage.aspx");
     }
 
     protected void btnEdit_Click1(object sender, EventArgs e)
     {
-        //redirect to the edit page, where a customers details can be edited
-        Response.Redirect("FormPage.aspx");
+        //var to store the primary key value of the record to be edited
+        Int32 CustomerID;
+        //if a record has been selected from the list
+        if (lstCust.SelectedIndex != -1)
+        {
+            //get the primary key value of the record to edit
+            CustomerID = Convert.ToInt32(lstCust.SelectedValue);
+            //store the data in the session object
+            Session["CustomerID"] = CustomerID;
+            //redirect to the edit page
+            Response.Redirect("FormPage.aspx");
+        }
+        else//if no record has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a record to delete from the list";
+        }
     }
 
     protected void btnApply_Click(object sender, EventArgs e)

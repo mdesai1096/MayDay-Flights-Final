@@ -4,7 +4,7 @@
      <h2>
          <asp:Label ID="lblAdminHomePage" runat="server" style="text-decoration: underline" Text="Admin Home Page"></asp:Label>
      </h2>
-     <asp:ListBox ID="lstCust" runat="server" Height="110px" Width="890px"></asp:ListBox>
+     <asp:ListBox ID="lstCust" runat="server" Height="95px" Width="342px"></asp:ListBox>
      <br />
                         <br />
             <asp:Label ID="lblError" runat="server" style="z-index: 1; width: 88px; left: 845px; top: 524px; position: absolute;"></asp:Label>

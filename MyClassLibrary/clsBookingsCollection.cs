@@ -217,6 +217,4 @@ namespace MyClassLibrary
             PopulateArray(DB);
         }
     }
-
-
 }
