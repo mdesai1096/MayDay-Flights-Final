@@ -67,7 +67,7 @@ public partial class admin_customer : System.Web.UI.Page
     protected void btnAdd_Click1(object sender, EventArgs e)
     {
         //store -1 into the session object to indicate this is a new record
-        Session["BookRef"] = -1;
+        Session["CustomerID"] = -1;
         //redirect to the data entry page
         Response.Redirect("FormPage.aspx");
     }
@@ -96,12 +96,29 @@ public partial class admin_customer : System.Web.UI.Page
     protected void btnApply_Click(object sender, EventArgs e)
     {
         //apply will filter by surname and/or postcode 
+        FilterPostCode(txtPostCode.Text);
     }
 
     protected void btnDisplayAll_Click(object sender, EventArgs e)
     {
         //will display all the customers on the table
+        
     }
 
- 
+    void FilterPostCode(string PostCode)
+    {
+        //create an instance of the booking collection
+        clsCustomerCollection C = new clsCustomerCollection();
+        C.FilterbyPostCode(PostCode);
+        //set the data source to the list of bookings in the collection
+        lstCust.DataSource = C.CustomerList;
+        //set the name of the primary key
+        lstCust.DataValueField = "CustomerID";
+        //set the data field to display
+        lstCust.DataTextField = "PostCode";
+        //bind the data to the list
+        lstCust.DataBind();
+    }
+
+
 }
