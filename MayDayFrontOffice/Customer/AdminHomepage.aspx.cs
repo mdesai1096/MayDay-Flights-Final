@@ -67,7 +67,7 @@ public partial class admin_customer : System.Web.UI.Page
     protected void btnAdd_Click1(object sender, EventArgs e)
     {
         //store -1 into the session object to indicate this is a new record
-        Session["BookRef"] = -1;
+        Session["CustomerID"] = -1;
         //redirect to the data entry page
         Response.Redirect("FormPage.aspx");
     }
