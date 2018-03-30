@@ -85,6 +85,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.displayCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -99,7 +102,8 @@
             this.toolsMenu,
             this.windowsMenu,
             this.helpMenu,
-            this.bookingsToolStripMenuItem});
+            this.bookingsToolStripMenuItem,
+            this.customersToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
@@ -553,6 +557,29 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // customersToolStripMenuItem
+            // 
+            this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.displayCustomersToolStripMenuItem,
+            this.newCustomerToolStripMenuItem});
+            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.customersToolStripMenuItem.Text = "&Customers";
+            // 
+            // displayCustomersToolStripMenuItem
+            // 
+            this.displayCustomersToolStripMenuItem.Name = "displayCustomersToolStripMenuItem";
+            this.displayCustomersToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.displayCustomersToolStripMenuItem.Text = "&Display Customers";
+            this.displayCustomersToolStripMenuItem.Click += new System.EventHandler(this.displayCustomersToolStripMenuItem_Click);
+            // 
+            // newCustomerToolStripMenuItem
+            // 
+            this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.newCustomerToolStripMenuItem.Text = "&New Customer";
+            this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click);
+            // 
             // mdiBackend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,6 +662,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newBookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem displayCustomersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newCustomerToolStripMenuItem;
     }
 }
 
