@@ -137,8 +137,8 @@ namespace MyTesting
             TestItem.EMail = "me@me.com";
             TestItem.FlatNo = "1";
             TestItem.HouseNo = "2";
-            TestItem.PostCode = "LE5 6HP";
-            //set ThisBooking to validate test data
+            TestItem.PostCode = "LE56HP";
+            //set ThisCustomer to validate test data
             AllCustomer.ThisCustomer = TestItem;
             //add the record
             PK = AllCustomer.Add();
@@ -149,11 +149,115 @@ namespace MyTesting
             //test to see that it exists
             Assert.AreEqual(AllCustomer.ThisCustomer, TestItem);
         }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            //create an instance of test data
+            clsCustomer TestItem = new clsCustomer();
+            //var to store primary key
+            Int32 PK = 0;
+            //set the properties
+            //TestItem.CustomerID = 3;
+            TestItem.ForeName = "fred";
+            TestItem.Surname = "bloggs";
+            TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
+            TestItem.Gender = "male";
+            TestItem.ContactNumber = "12314";
+            TestItem.EMail = "me@me.com";
+            TestItem.FlatNo = "1";
+            TestItem.HouseNo = "2";
+            TestItem.PostCode = "LE56HP";
+            //set ThisCustomer to validate test data
+            AllCustomer.ThisCustomer = TestItem;
+            //add the record
+            PK = AllCustomer.Add();
+            //set primary key of test data
+            TestItem.CustomerID = PK;
+            //find the record
+            AllCustomer.ThisCustomer.Find(PK);
+            //delete the record
+            AllCustomer.Delete();
+            //now find the record
+            Boolean Found = AllCustomer.ThisCustomer.Find(PK);
+            //test to see that it exists
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            //create an instance of test data
+            clsCustomer TestItem = new clsCustomer();
+            //var to store primary key
+            Int32 PK = 0;
+            //set the properties
+            //TestItem.BookRef = 3;
+            TestItem.ForeName = "fred";
+            TestItem.Surname = "bloggs";
+            TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
+            TestItem.Gender = "male";
+            TestItem.ContactNumber = "12314";
+            TestItem.EMail = "me@me.com";
+            TestItem.FlatNo = "1";
+            TestItem.HouseNo = "2";
+            TestItem.PostCode = "LE56HP";
+            //set ThisBooking to validate test data
+            AllCustomer.ThisCustomer = TestItem;
+            //add the record
+            PK = AllCustomer.Add();
+            //set primary key of test data
+            TestItem.CustomerID = PK;
+            //modify the record
+            //TestItem.BookRef = 3;
+            TestItem.ForeName = "Lisa";
+            TestItem.Surname = "Smith";
+            TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-20);
+            TestItem.Gender = "Female";
+            TestItem.ContactNumber = "000010";
+            TestItem.EMail = "you@you.com";
+            TestItem.FlatNo = "2";
+            TestItem.HouseNo = "3";
+            TestItem.PostCode = "LE1234";
+            //set the record based on the new record
+            AllCustomer.ThisCustomer = TestItem;
+            //update the record
+            AllCustomer.Update();
+            //find the record
+            AllCustomer.ThisCustomer.Find(PK);
+            //test to see that it exists
+            Assert.AreEqual(AllCustomer.ThisCustomer, TestItem);
+        }
+
+        [TestMethod]
+        public void FilterbyPostCodeMethodOK()
+        {
+            clsCustomer TestItem = new clsCustomer();
+            //create an instance of the class we want to create
+            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //apply a blank string (should return all records)
+            FilteredCustomers.FilterbyPostCode("");
+            //test to see the two values are the same
+            Assert.AreEqual(AllCustomer.Count, FilteredCustomers.Count);
+        }
+
+        [TestMethod]
+        public void FilterbyPostCodeNoneFound()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //apply a blank string (should return all records)
+            FilteredCustomers.FilterbyPostCode("xxx xxx");
+            //test to see the two values are the same
+            Assert.AreEqual(0, FilteredCustomers.Count);
+        }
     }
-
- 
-
-
 }
 
 
