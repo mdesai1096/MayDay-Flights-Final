@@ -257,6 +257,94 @@ namespace MyTesting
             //test to see the two values are the same
             Assert.AreEqual(0, FilteredCustomers.Count);
         }
+
+        [TestMethod]
+        public void FilterbyPostcodeTestDataFound()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a primary key value 
+            FilteredCustomers.FilterbyPostCode("yyy yyy");
+            //check the correct number of records are found
+            if (FilteredCustomers.Count == 2)
+            {
+                //check the first record is ID 2
+                if (FilteredCustomers.CustomerList[0].CustomerID != 8)
+                {
+                    OK = false;
+                }
+                // check that the first record is ID
+                if (FilteredCustomers.CustomerList[1].CustomerID != 17)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+
+            //test to see there are records
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void FilterbysurNameMethodOK()
+        {
+            clsCustomer TestItem = new clsCustomer();
+            //create an instance of the class we want to create
+            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //apply a blank string (should return all records)
+            FilteredCustomers.FilterbysurName("");
+            //test to see the two values are the same
+            Assert.AreEqual(AllCustomer.Count, FilteredCustomers.Count);
+        }
+
+        [TestMethod]
+        public void FilterbysurNameNoneFound()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //apply a blank string (should return all records)
+            FilteredCustomers.FilterbysurName("xxx xxx");
+            //test to see the two values are the same
+            Assert.AreEqual(0, FilteredCustomers.Count);
+        }
+
+        [TestMethod]
+        public void FilterbysurNameTestDataFound()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a primary key value 
+            FilteredCustomers.FilterbysurName("yyyyyy");
+            //check the correct number of records are found
+            if (FilteredCustomers.Count == 2)
+            {
+                //check the first record is ID 2
+                if (FilteredCustomers.CustomerList[0].CustomerID != 22)
+                {
+                    OK = false;
+                }
+                // check that the first record is ID
+                if (FilteredCustomers.CustomerList[1].CustomerID != 26)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+
+            //test to see there are records
+            Assert.IsTrue(OK);
+        }
     }
 }
 

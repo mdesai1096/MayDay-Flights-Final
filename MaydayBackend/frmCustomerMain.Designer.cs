@@ -32,10 +32,12 @@
             this.lstCust = new System.Windows.Forms.ListBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnFilter = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnFilterbyPostcode = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
+            this.btnFilterbySurname = new System.Windows.Forms.Button();
+            this.btnDisplayAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -50,76 +52,98 @@
             // lstCust
             // 
             this.lstCust.FormattingEnabled = true;
-            this.lstCust.Location = new System.Drawing.Point(33, 62);
+            this.lstCust.Location = new System.Drawing.Point(33, 75);
             this.lstCust.Name = "lstCust";
-            this.lstCust.Size = new System.Drawing.Size(666, 160);
+            this.lstCust.Size = new System.Drawing.Size(666, 173);
             this.lstCust.TabIndex = 1;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(91, 263);
+            this.btnAdd.Location = new System.Drawing.Point(33, 317);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(162, 43);
             this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "button1";
+            this.btnAdd.Text = "Add Customer";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(368, 262);
+            this.btnEdit.Location = new System.Drawing.Point(33, 259);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.Size = new System.Drawing.Size(169, 43);
             this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "button2";
+            this.btnEdit.Text = "Edit Customer";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnCancel
+            // btnDelete
             // 
-            this.btnCancel.Location = new System.Drawing.Point(622, 261);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "button3";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnDelete.Location = new System.Drawing.Point(544, 254);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(155, 43);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete Customer";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnFilter
+            // btnFilterbyPostcode
             // 
-            this.btnFilter.Location = new System.Drawing.Point(227, 33);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnFilter.TabIndex = 5;
-            this.btnFilter.Text = "button4";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            this.btnFilterbyPostcode.Location = new System.Drawing.Point(203, 36);
+            this.btnFilterbyPostcode.Name = "btnFilterbyPostcode";
+            this.btnFilterbyPostcode.Size = new System.Drawing.Size(134, 33);
+            this.btnFilterbyPostcode.TabIndex = 5;
+            this.btnFilterbyPostcode.Text = "Filter by PostCode";
+            this.btnFilterbyPostcode.UseVisualStyleBackColor = true;
+            this.btnFilterbyPostcode.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(77, 36);
+            this.txtFilter.Location = new System.Drawing.Point(33, 43);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(100, 20);
+            this.txtFilter.Size = new System.Drawing.Size(153, 20);
             this.txtFilter.TabIndex = 6;
             // 
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(577, 42);
+            this.lblError.Location = new System.Drawing.Point(383, 284);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(35, 13);
+            this.lblError.Size = new System.Drawing.Size(39, 13);
             this.lblError.TabIndex = 7;
-            this.lblError.Text = "label1";
+            this.lblError.Text = "lblError";
+            // 
+            // btnFilterbySurname
+            // 
+            this.btnFilterbySurname.Location = new System.Drawing.Point(343, 36);
+            this.btnFilterbySurname.Name = "btnFilterbySurname";
+            this.btnFilterbySurname.Size = new System.Drawing.Size(135, 33);
+            this.btnFilterbySurname.TabIndex = 8;
+            this.btnFilterbySurname.Text = "Filter by Surname";
+            this.btnFilterbySurname.UseVisualStyleBackColor = true;
+            this.btnFilterbySurname.Click += new System.EventHandler(this.btnFilterbySurname_Click);
+            // 
+            // btnDisplayAll
+            // 
+            this.btnDisplayAll.Location = new System.Drawing.Point(600, 39);
+            this.btnDisplayAll.Name = "btnDisplayAll";
+            this.btnDisplayAll.Size = new System.Drawing.Size(75, 23);
+            this.btnDisplayAll.TabIndex = 9;
+            this.btnDisplayAll.Text = "Display All";
+            this.btnDisplayAll.UseVisualStyleBackColor = true;
+            this.btnDisplayAll.Click += new System.EventHandler(this.btnDisplayAll_Click);
             // 
             // frmCustomerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 324);
+            this.ClientSize = new System.Drawing.Size(736, 372);
+            this.Controls.Add(this.btnDisplayAll);
+            this.Controls.Add(this.btnFilterbySurname);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.txtFilter);
-            this.Controls.Add(this.btnFilter);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnFilterbyPostcode);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lstCust);
@@ -138,9 +162,11 @@
         private System.Windows.Forms.ListBox lstCust;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnFilterbyPostcode;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Button btnFilterbySurname;
+        private System.Windows.Forms.Button btnDisplayAll;
     }
 }

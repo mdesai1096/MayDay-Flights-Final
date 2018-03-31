@@ -144,7 +144,7 @@ namespace MaydayBackend
 
         private void newCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddEditCust CList = new frmAddEditCust();
+            frmAddEditCust CList = new frmAddEditCust(-1);
             CList.MdiParent = this;
             CList.Visible = true;
         }

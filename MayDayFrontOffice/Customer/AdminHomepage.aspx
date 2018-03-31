@@ -13,18 +13,21 @@
             <br />
             <asp:Label ID="lblPostCode" runat="server" style="z-index: 1; width: 307px; left: 400px; top: 416px; position: absolute;" Text="Please Enter a Surname and Postcode"></asp:Label>
             &nbsp;<br />
-            <asp:TextBox ID="txtPostCode" runat="server" style="z-index: 1; left: 390px; top: 441px; position: absolute; margin-top: 1px;" Width="239px"></asp:TextBox>
+            <asp:TextBox ID="txtFilter" runat="server" style="z-index: 1; left: 390px; top: 441px; position: absolute; margin-top: 1px;" Width="239px"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="btnApply" runat="server" style="z-index: 1; left: 579px; top: 480px; position: absolute;" Text="Apply"  Height="27px" Width="162px" OnClick="btnApply_Click" />
+            <asp:Button ID="btnPCFilter" runat="server" style="z-index: 1; left: 579px; top: 480px; position: absolute;" Text="Filter PC"  Height="27px" Width="162px" OnClick="btnApply_Click" />
             <asp:Button ID="btnDisplayAll" runat="server" height="25px" style="z-index: 1; left: 389px; top: 483px; position: absolute;" Text="Display All"  Width="174px" OnClick="btnDisplayAll_Click"/>
             <br />
+            <asp:Button ID="btnSurname" runat="server" OnClick="btnSurname_Click" Text="Filter SN" />
             <br />
      <asp:Button ID="btnAdd" runat="server" Height="30px" OnClick="btnAdd_Click1" Text="Add Customer" Width="115px" style="z-index: 1; left: 906px; top: 459px; position: absolute" />
            
             <asp:Button ID="btnEdit" runat="server" style="z-index: 1; left: 1052px; top: 459px; position: absolute;" Text="Edit Customer" height="30px" width="115px" OnClick="btnEdit_Click1"  />
             <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" style="z-index: 1; right: 214px; left: 1181px; top: 459px; position: absolute;" Text="Delete Customer" height="30px" width="115px"/>
+            <asp:Button ID="btnPCFilter1" runat="server" style="z-index: 1; left: 579px; top: 480px; position: absolute;" Text="Filter PC"  Height="27px" Width="162px" OnClick="btnApply_Click" />
      <br />
+            <asp:Button ID="btnPCFilter0" runat="server" style="z-index: 1; left: 579px; top: 480px; position: absolute;" Text="Filter PC"  Height="27px" Width="162px" OnClick="btnApply_Click" />
      <br />
      <br />
      <br />

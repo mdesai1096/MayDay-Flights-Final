@@ -65,12 +65,14 @@ namespace MaydayBackend
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            frmAddEditCust Add = new frmAddEditCust(-1);
+            Add.Visible = true;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            frmAddEditCust Edit = new frmAddEditCust(Convert.ToInt32(lstCust.SelectedValue));
+            Edit.Visible = true ;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -89,6 +91,31 @@ namespace MaydayBackend
             CustList.ThisCustomer.Find(custID);
             CustList.Delete();
             return custID;
+        }
+
+        private void btnDisplayAll_Click(object sender, EventArgs e)
+        {
+            lblError.Text = DisplayCustomers() + " found";
+        }
+
+        private void btnFilterbySurname_Click(object sender, EventArgs e)
+        {
+            lblError.Text = FilterSname(txtFilter.Text) + "Found";
+        }
+
+        Int32 FilterSname(string sname)
+        {
+            //create an instance of the booking collection
+            clsCustomerCollection C = new clsCustomerCollection();
+            C.FilterbysurName(sname);
+            //set the data source to the list of bookings in the collection
+            lstCust.DataSource = C.CustomerList;
+            //set the name of the primary key
+            lstCust.ValueMember = "CustomerID";
+            //set the data field to display
+            lstCust.DisplayMember = "surName";
+            //bind the data to the list
+            return C.Count;
         }
     }
 }
