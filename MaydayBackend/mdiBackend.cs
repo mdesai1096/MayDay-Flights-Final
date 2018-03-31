@@ -134,5 +134,19 @@ namespace MaydayBackend
             //make the form visible
             BookingsList.Visible = true;
         }
+
+        private void displayCustomersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCustomerMain CustList = new frmCustomerMain();
+            CustList.MdiParent = this;
+            CustList.Visible = true;
+        }
+
+        private void newCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditCust CList = new frmAddEditCust(-1);
+            CList.MdiParent = this;
+            CList.Visible = true;
+        }
     }
 }
