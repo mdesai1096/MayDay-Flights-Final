@@ -132,6 +132,7 @@ namespace MyClassLibrary
             DB.AddParameter("@Ammount", mThisBooking.Ammount);
             DB.AddParameter("@DateBooked", mThisBooking.DateBooked);
             DB.AddParameter("@PaymentType", mThisBooking.PaymentType);
+            DB.AddParameter("@cust", mThisBooking.CustID);
             //execute the query returning primary key of new record
             return DB.Execute("Sproc_tblBookings_Insert");
             
@@ -158,6 +159,7 @@ namespace MyClassLibrary
             DB.AddParameter("@Ammount", mThisBooking.Ammount);
             DB.AddParameter("@DateBooked", mThisBooking.DateBooked);
             DB.AddParameter("@PaymentType", mThisBooking.PaymentType);
+            DB.AddParameter("@CustID", mThisBooking.CustID);
             //execute the query returning primary key of new record
             DB.Execute("sproc_tblBookings_Update");
 

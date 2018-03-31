@@ -79,6 +79,23 @@ namespace MyClassLibrary
             }
         }
 
+        //private data memeber for the fkcystomer type property
+        private Int32 mCustID;
+        //public property for payment type
+        public Int32 CustID
+        {
+            get
+            {
+                //return private data
+                return mCustID;
+            }
+            set
+            {
+                //set the the value of the private memeber
+                mCustID = value;
+            }
+        }
+
         private string mAllDetails;
         public string AllDetails
         {
@@ -204,6 +221,7 @@ namespace MyClassLibrary
                 mAmmount = Convert.ToDecimal(DB.DataTable.Rows[0]["Book_Ammount"]);
                 mDateBooked = Convert.ToDateTime(DB.DataTable.Rows[0]["Book_Date"]);
                 mPaymentType = Convert.ToString(DB.DataTable.Rows[0]["Book_Payment"]);
+                mCustID = Convert.ToInt32(DB.DataTable.Rows[0]["FKCustomerID"]);
                 //return an record has been found
                 return true;
             }

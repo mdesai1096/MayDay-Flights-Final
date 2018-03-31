@@ -119,6 +119,7 @@ namespace MyTesting
             TestItem.Ammount = Convert.ToInt32(8000.50);
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.PaymentType = "Debit";
+            TestItem.CustID = 1;
             //set ThisBooking to validate test data
             AllBookings.ThisBookings = TestItem;
             //add the record
@@ -145,6 +146,7 @@ namespace MyTesting
             TestItem.Ammount = Convert.ToInt32(9756.24);
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.PaymentType = "Debit";
+            TestItem.CustID = '2';
             //set ThisBooking to validate test data
             AllBookings.ThisBookings = TestItem;
             //add the record
@@ -175,6 +177,7 @@ namespace MyTesting
             TestItem.Ammount = Convert.ToInt32(20568.25);
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.PaymentType = "Debit";
+            TestItem.CustID = 1;
             //set ThisBooking to validate test data
             AllBookings.ThisBookings = TestItem;
             //add the record
@@ -186,6 +189,7 @@ namespace MyTesting
             TestItem.Ammount = Convert.ToInt32(25478.25);
             TestItem.DateBooked = DateTime.Now.Date;
             TestItem.PaymentType = "Credit";
+            TestItem.CustID = 2;
             //set the record based on the new record
             AllBookings.ThisBookings = TestItem;
             //update the record
