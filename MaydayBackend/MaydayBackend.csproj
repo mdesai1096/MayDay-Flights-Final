@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddEditCust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEditCust.Designer.cs">
+      <DependentUpon>frmAddEditCust.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAEBookings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     <Compile Include="frmBookingMain.Designer.cs">
       <DependentUpon>frmBookingMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustomerMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerMain.Designer.cs">
+      <DependentUpon>frmCustomerMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="mdiBackend.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,11 +78,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddEditCust.resx">
+      <DependentUpon>frmAddEditCust.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAEBookings.resx">
       <DependentUpon>FrmAEBookings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBookingMain.resx">
       <DependentUpon>frmBookingMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerMain.resx">
+      <DependentUpon>frmCustomerMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mdiBackend.resx">
       <DependentUpon>mdiBackend.cs</DependentUpon>
