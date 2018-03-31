@@ -96,15 +96,28 @@ public partial class admin_customer : System.Web.UI.Page
     protected void btnApply_Click(object sender, EventArgs e)
     {
         //apply will filter by surname and/or postcode 
-        FilterPostCode(txtPostCode.Text);
+        FilterPostCode(txtFilter.Text);
     }
 
     protected void btnDisplayAll_Click(object sender, EventArgs e)
     {
-        //will display all the customers on the table
+        DisplayCustomers();
         
     }
-
+    void FilterSname(string sname)
+    {
+        //create an instance of the booking collection
+        clsCustomerCollection C = new clsCustomerCollection();
+        C.FilterbysurName(sname);
+        //set the data source to the list of bookings in the collection
+        lstCust.DataSource = C.CustomerList;
+        //set the name of the primary key
+        lstCust.DataValueField = "CustomerID";
+        //set the data field to display
+        lstCust.DataTextField = "surName";
+        //bind the data to the list
+        lstCust.DataBind();
+    }
     void FilterPostCode(string PostCode)
     {
         //create an instance of the booking collection
@@ -121,4 +134,9 @@ public partial class admin_customer : System.Web.UI.Page
     }
 
 
+
+    protected void btnSurname_Click(object sender, EventArgs e)
+    {
+        FilterSname(txtFilter.Text);
+    }
 }
