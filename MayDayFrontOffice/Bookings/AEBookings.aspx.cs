@@ -10,6 +10,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
 {
     //variable to store the primary key with page level scope
     Int32 BookRef;
+    
 
     //event handler for the page load event
     protected void Page_Load(object sender, EventArgs e)
@@ -18,6 +19,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         BookRef = Convert.ToInt32(Session["BookRef"]);
         if (IsPostBack == false)
         {
+            DisplayCustomers();
 
             //if this is not a new record
             if (BookRef != -1)
@@ -30,6 +32,8 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
                 txtRef.ReadOnly = true;
                 //display the PK of record to be edited
                 txtRef.Text = BookRef.ToString();
+                
+
             }
             else //this is a new record
             {
@@ -40,6 +44,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
                 //hide the reference label and box
                 lblRef.Visible = false;
                 txtRef.Visible = false;
+                
             }
         }
     }
@@ -73,6 +78,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
             BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmmount.Text);
             BookingsList.ThisBookings.DateBooked= Convert.ToDateTime(txtDateBooked.Text);
             BookingsList.ThisBookings.PaymentType = txtPaymentType.Text;
+            BookingsList.ThisBookings.CustID = Convert.ToInt32(lstCust.SelectedValue);
             //add the record
             BookingsList.Add();
             //all done so redirect back to the main page
@@ -101,6 +107,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
             BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmmount.Text);
             BookingsList.ThisBookings.DateBooked = Convert.ToDateTime(txtDateBooked.Text);
             BookingsList.ThisBookings.PaymentType = txtPaymentType.Text;
+            BookingsList.ThisBookings.CustID = Convert.ToInt32(lstCust.SelectedValue);
             //update the record
             BookingsList.Update();
             //all done so redirect back to the main page
@@ -123,12 +130,48 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         txtAmmount.Text = BookingsList.ThisBookings.Ammount.ToString();
         txtDateBooked.Text = BookingsList.ThisBookings.DateBooked.ToString();
         txtPaymentType.Text = BookingsList.ThisBookings.PaymentType;
-
+        lstCust.SelectedValue = BookingsList.ThisBookings.CustID.ToString();
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
         //redirect back to default page
         Response.Redirect("Default.aspx");
+    }
+
+    void DisplayCustomers()
+    {
+        //create an instancew of the Customer Collection
+        clsCustomerCollection Customers = new clsCustomerCollection();
+        // set the data source to the list of countries in the collection
+        lstCust.DataSource = Customers.CustomerList;
+        // set the name of the primary key
+        lstCust.DataValueField = "CustomerID";
+        // set the data field to display
+        lstCust.DataTextField = "Surname";
+        //bind the data to the list 
+        lstCust.DataBind();
+
+    }
+
+    protected void btnFilterCust_Click(object sender, EventArgs e)
+    {
+        //apply will filter by surname and/or postcode 
+        FilterSurname(txtFilterCust.Text);
+    }
+
+    void FilterSurname(string PostCode)
+    {
+        //create an instance of the booking collection
+        clsCustomerCollection C = new clsCustomerCollection();
+        C.FilterbyPostCode(PostCode);
+        //set the data source to the list of bookings in the collection
+        lstCust.DataSource = C.CustomerList;
+        //set the name of the primary key
+        lstCust.DataValueField = "CustomerID";
+        //set the data field to display
+        lstCust.DataTextField = "PostCode";
+        //bind the data to the list
+        lstCust.DataBind();
     }
 }
