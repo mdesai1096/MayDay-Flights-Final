@@ -32,7 +32,7 @@
     </strong>&nbsp;<strong><asp:TextBox ID="txtHouseNumber" runat="server" Width="108px" CssClass="auto-style7"></asp:TextBox>
     <asp:TextBox ID="txtFlatNo" runat="server"></asp:TextBox>
     <asp:Button ID="btnBacktoCustomerHomePage" runat="server" OnClick="btnBacktoCustomerHomePage_Click" style="position: relative; top: -106px; left: 256px; width: 292px; height: 27px" Text="Back to Customer Home Page" />
-    <asp:Button ID="btnBackToAdminHomePage" runat="server" OnClick="btnBackToAdminHomePage_Click" Text="Back to Admin Home Page" style="margin-left: 146px; margin-bottom: 0px; position: absolute; top: 348px; left: 847px; width: 291px; height: 28px; margin-top: 0px;" />
+    <asp:Button ID="btnBackToAdminHomePage" runat="server" OnClick="btnBackToAdminHomePage_Click" Text="Back to Admin Home Page" style="margin-left: 146px; margin-bottom: 0px; position: absolute; top: 410px; left: 824px; width: 291px; height: 28px; margin-top: 0px;" />
     </strong>
 </p>
 <p style="font-size: large">
@@ -42,7 +42,7 @@
     </strong></span><strong>
     <asp:TextBox ID="txtPostCode" runat="server" Width="87px" CssClass="auto-style7"></asp:TextBox>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btnBacktoLoginPage" runat="server" OnClick="btnBacktoLoginPage_Click" style="text-align: center; position: relative; top: -120px; left: 159px; width: 289px; margin-top: 0px; height: 29px;" Text="Back to Login Page " />
+    <asp:Button ID="btnBacktoLoginPage" runat="server" OnClick="btnBacktoLoginPage_Click" style="text-align: center; position: relative; top: -101px; left: 159px; width: 289px; margin-top: 0px; height: 29px;" Text="Back to Login Page " />
     <asp:Label ID="lblError" runat="server"></asp:Label>
     </strong>
 </p>
