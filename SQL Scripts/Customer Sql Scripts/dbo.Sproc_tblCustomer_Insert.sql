@@ -1,3 +1,4 @@
+
 ﻿CREATE PROCEDURE [dbo].[Sproc_tblCustomer_Insert]
 --create parameters for the store procedure
 	@surname Varchar (50),
@@ -15,4 +16,5 @@ AS
 	Values (@surname, @forename,@gender, @dob, @postcode, @email, @HouseNo, @FlatNo, @ContactNo)
 
 --return the primary key value of the new record
+
 RETURN  @@Identity

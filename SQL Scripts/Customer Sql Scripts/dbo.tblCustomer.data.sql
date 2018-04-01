@@ -46,3 +46,4 @@ INSERT INTO [dbo].[tblCustomer] ([Customer_ID], [surName], [Forename], [Gender],
 INSERT INTO [dbo].[tblCustomer] ([Customer_ID], [surName], [Forename], [Gender], [DateofBirth], [Postcode], [Email], [HouseNo], [FlatNo], [ContactNo]) VALUES (68, N'bloggs', N'fred', N'male', N'1999-04-01', N'LE56HP', N'me@me.com', N'2', N'1', N'12314')
 INSERT INTO [dbo].[tblCustomer] ([Customer_ID], [surName], [Forename], [Gender], [DateofBirth], [Postcode], [Email], [HouseNo], [FlatNo], [ContactNo]) VALUES (70, N'Smith', N'Lisa', N'Female', N'1998-04-01', N'LE1234', N'you@you.com', N'3', N'2', N'000010')
 SET IDENTITY_INSERT [dbo].[tblCustomer] OFF
+

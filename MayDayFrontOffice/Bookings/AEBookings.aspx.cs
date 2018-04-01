@@ -130,7 +130,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         txtAmmount.Text = BookingsList.ThisBookings.Ammount.ToString();
         txtDateBooked.Text = BookingsList.ThisBookings.DateBooked.ToString();
         txtPaymentType.Text = BookingsList.ThisBookings.PaymentType;
-        lstCust.SelectedValue = BookingsList.ThisBookings.CustID.ToString();
+        lstCust.SelectedIndex = BookingsList.ThisBookings.CustID;
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)

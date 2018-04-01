@@ -90,3 +90,4 @@ INSERT INTO [dbo].[tblBookings] ([Book_Ref], [Book_ammount], [Book_date], [Book_
 INSERT INTO [dbo].[tblBookings] ([Book_Ref], [Book_ammount], [Book_date], [Book_payment], [FKItineraryNo], [FKCustomerID], [FKEmployeeNo]) VALUES (271, CAST(8000.00 AS Decimal(18, 2)), N'2018-04-01', N'Debit', NULL, 1, NULL)
 INSERT INTO [dbo].[tblBookings] ([Book_Ref], [Book_ammount], [Book_date], [Book_payment], [FKItineraryNo], [FKCustomerID], [FKEmployeeNo]) VALUES (273, CAST(25478.00 AS Decimal(18, 2)), N'2018-04-01', N'Credit', NULL, 2, NULL)
 SET IDENTITY_INSERT [dbo].[tblBookings] OFF
+
