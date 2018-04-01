@@ -1,3 +1,4 @@
+
 ﻿CREATE PROCEDURE [dbo].[sproc_FiltertblCustomerbyPostCode]
 -- this stored uses the like function to find post codes that match the value
 -- stored in the parameter @PostCode
@@ -11,4 +12,5 @@
 AS
 
 	--select all fields from any records that has a post code like this post code 
+
 	select * from tblCustomer where Postcode like @Postcode+'%';

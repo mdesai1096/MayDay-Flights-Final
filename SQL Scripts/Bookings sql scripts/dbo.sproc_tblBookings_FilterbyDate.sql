@@ -1,3 +1,4 @@
+
 ﻿CREATE PROCEDURE [dbo].[sproc_tblBookings_FilterbyDate]
 	--Parameter to store the date ranges we are looking for
 	@StartDate date,
@@ -8,5 +9,6 @@ AS
 
 	--order by the book date
 	Order By Book_date
+
 
 RETURN 0

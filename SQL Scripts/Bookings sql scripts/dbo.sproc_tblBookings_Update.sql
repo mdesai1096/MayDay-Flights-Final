@@ -1,3 +1,4 @@
+=
 ﻿CREATE PROCEDURE sproc_tblBookings_Update
 --create the parameters for the stored procedure
 	@BookRef int,
@@ -14,5 +15,5 @@ set
 	Book_date=@DateBooked,
 	Book_payment=@PaymentType,
 	FKCustomerID = @CustId
-
+  
 	where Book_Ref=@BookRef

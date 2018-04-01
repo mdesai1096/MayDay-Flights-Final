@@ -1,3 +1,4 @@
+
 ﻿CREATE PROCEDURE sproc_tblCustomer_Update
 --create parameters for the store procedure
 	@CustomerID int,
@@ -24,5 +25,6 @@
 		HouseNo=@HouseNo,
 		FlatNo=@FlatNo,
 		ContactNo=@ContactNo
+
 
 	where Customer_ID=@CustomerID

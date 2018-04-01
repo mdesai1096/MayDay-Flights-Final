@@ -8,4 +8,5 @@
 	@CustomerID int
 AS
 	--delete the record in tblCustomer specified by the value @CustomerID
+
 	delete from tblCustomer where Customer_ID = @CustomerID;
