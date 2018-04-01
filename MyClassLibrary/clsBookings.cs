@@ -79,6 +79,40 @@ namespace MyClassLibrary
             }
         }
 
+        //private data memeber for the payment type property
+        private string mSurname;
+        //public property for payment type
+        public string Surname
+        {
+            get
+            {
+                //return private data
+                return mSurname;
+            }
+            set
+            {
+                //set the the value of the private memeber
+                mSurname = value;
+            }
+        }
+
+        //private data memeber for the payment type property
+        private string mForename;
+        //public property for payment type
+        public string Forename
+        {
+            get
+            {
+                //return private data
+                return mForename;
+            }
+            set
+            {
+                //set the the value of the private memeber
+                mForename = value;
+            }
+        }
+
         //private data memeber for the fkcystomer type property
         private Int32 mCustID;
         //public property for payment type
@@ -93,6 +127,20 @@ namespace MyClassLibrary
             {
                 //set the the value of the private memeber
                 mCustID = value;
+            }
+        }
+
+        private string mAllCDetails;
+        public string AllCDetails
+        {
+            get
+            {
+                return "BookRef " + mBookRef + "  Surname: " + mSurname + "  Forename: " + mForename;
+            }
+
+            set
+            {
+                mAllCDetails = value;
             }
         }
 
@@ -222,6 +270,8 @@ namespace MyClassLibrary
                 mDateBooked = Convert.ToDateTime(DB.DataTable.Rows[0]["Book_Date"]);
                 mPaymentType = Convert.ToString(DB.DataTable.Rows[0]["Book_Payment"]);
                 mCustID = Convert.ToInt32(DB.DataTable.Rows[0]["FKCustomerID"]);
+               // mForename = Convert.ToString(DB.DataTable.Rows[0]["Forename"]);
+                //mSurname = Convert.ToString(DB.DataTable.Rows[0]["surName"]);
                 //return an record has been found
                 return true;
             }

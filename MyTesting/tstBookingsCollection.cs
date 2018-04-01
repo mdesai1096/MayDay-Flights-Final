@@ -374,6 +374,66 @@ namespace MyTesting
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
+        public void FilterbySurnameOK()
+        {
+            clsBookings TestItem = new clsBookings();
+            //create an instance of the class we want to create
+            clsBookingsCollection AllBookings = new clsBookingsCollection();
+            //create an instance of the filtered data
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            //apply a blank string (should return all records)
+            FilteredBookings.FilterSurname("");
+            //test to see the two values are the same
+            Assert.AreEqual(AllBookings.Count, FilteredBookings.Count);
+        }
+
+        [TestMethod]
+        public void FilterbySurnameNotFound()
+        {
+            clsBookings TestItem = new clsBookings();
+            //create an instance of the class we want to create
+            clsBookingsCollection AllBookings = new clsBookingsCollection();
+            //create an instance of the filtered data
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            //apply a blank string (should return all records)
+            FilteredBookings.FilterSurname("!");
+            //test to see the two values are the same
+            Assert.AreEqual(0, FilteredBookings.Count);
+        }
+
+        [TestMethod]
+        public void FilterbysurNameTestDataFound()
+        {
+            //create an instance of the filtered data
+            clsBookingsCollection FilteredCustomers = new clsBookingsCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a primary key value 
+            FilteredCustomers.FilterSurname("yyyyyy");
+            //check the correct number of records are found
+            if (FilteredCustomers.Count == 2)
+            {
+                //check the first record is ID 2
+                if (FilteredCustomers.BookingsList[0].BookRef != 18)
+                {
+                    OK = false;
+                }
+                // check that the first record is ID
+                if (FilteredCustomers.BookingsList[1].BookRef != 27)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+
+            //test to see there are records
+            Assert.IsTrue(OK);
+        }
+
     }
 
 }

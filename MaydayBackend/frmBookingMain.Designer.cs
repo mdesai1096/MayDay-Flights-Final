@@ -32,7 +32,7 @@
             this.btnPopulate = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
             this.lblFRef = new System.Windows.Forms.Label();
-            this.txtBookRef = new System.Windows.Forms.TextBox();
+            this.txtFilter = new System.Windows.Forms.TextBox();
             this.lblFilterT = new System.Windows.Forms.Label();
             this.lblfrom = new System.Windows.Forms.Label();
             this.txtStartDate = new System.Windows.Forms.TextBox();
@@ -43,11 +43,12 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lstBookings = new System.Windows.Forms.ListBox();
+            this.btnSurname = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPopulate
             // 
-            this.btnPopulate.Location = new System.Drawing.Point(504, 24);
+            this.btnPopulate.Location = new System.Drawing.Point(642, 19);
             this.btnPopulate.Name = "btnPopulate";
             this.btnPopulate.Size = new System.Drawing.Size(75, 39);
             this.btnPopulate.TabIndex = 1;
@@ -67,23 +68,23 @@
             // lblFRef
             // 
             this.lblFRef.AutoSize = true;
-            this.lblFRef.Location = new System.Drawing.Point(4, 19);
+            this.lblFRef.Location = new System.Drawing.Point(27, 9);
             this.lblFRef.Name = "lblFRef";
-            this.lblFRef.Size = new System.Drawing.Size(63, 13);
+            this.lblFRef.Size = new System.Drawing.Size(120, 13);
             this.lblFRef.TabIndex = 4;
-            this.lblFRef.Text = "Filter by Ref";
+            this.lblFRef.Text = "Filter by Ref or Surname";
             // 
-            // txtBookRef
+            // txtFilter
             // 
-            this.txtBookRef.Location = new System.Drawing.Point(4, 43);
-            this.txtBookRef.Name = "txtBookRef";
-            this.txtBookRef.Size = new System.Drawing.Size(100, 20);
-            this.txtBookRef.TabIndex = 5;
+            this.txtFilter.Location = new System.Drawing.Point(30, 29);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(100, 20);
+            this.txtFilter.TabIndex = 5;
             // 
             // lblFilterT
             // 
             this.lblFilterT.AutoSize = true;
-            this.lblFilterT.Location = new System.Drawing.Point(188, 10);
+            this.lblFilterT.Location = new System.Drawing.Point(326, 5);
             this.lblFilterT.Name = "lblFilterT";
             this.lblFilterT.Size = new System.Drawing.Size(104, 13);
             this.lblFilterT.TabIndex = 6;
@@ -92,7 +93,7 @@
             // lblfrom
             // 
             this.lblfrom.AutoSize = true;
-            this.lblfrom.Location = new System.Drawing.Point(188, 26);
+            this.lblfrom.Location = new System.Drawing.Point(326, 21);
             this.lblfrom.Name = "lblfrom";
             this.lblfrom.Size = new System.Drawing.Size(27, 13);
             this.lblfrom.TabIndex = 7;
@@ -100,14 +101,14 @@
             // 
             // txtStartDate
             // 
-            this.txtStartDate.Location = new System.Drawing.Point(192, 39);
+            this.txtStartDate.Location = new System.Drawing.Point(330, 34);
             this.txtStartDate.Name = "txtStartDate";
             this.txtStartDate.Size = new System.Drawing.Size(100, 20);
             this.txtStartDate.TabIndex = 8;
             // 
             // txtEndDate
             // 
-            this.txtEndDate.Location = new System.Drawing.Point(316, 39);
+            this.txtEndDate.Location = new System.Drawing.Point(454, 34);
             this.txtEndDate.Name = "txtEndDate";
             this.txtEndDate.Size = new System.Drawing.Size(100, 20);
             this.txtEndDate.TabIndex = 9;
@@ -115,7 +116,7 @@
             // lblTo
             // 
             this.lblTo.AutoSize = true;
-            this.lblTo.Location = new System.Drawing.Point(298, 42);
+            this.lblTo.Location = new System.Drawing.Point(436, 37);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(16, 13);
             this.lblTo.TabIndex = 10;
@@ -123,7 +124,7 @@
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(107, 43);
+            this.btnFilter.Location = new System.Drawing.Point(133, 29);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(73, 21);
             this.btnFilter.TabIndex = 11;
@@ -133,7 +134,7 @@
             // 
             // btnDFilter
             // 
-            this.btnDFilter.Location = new System.Drawing.Point(423, 26);
+            this.btnDFilter.Location = new System.Drawing.Point(561, 21);
             this.btnDFilter.Name = "btnDFilter";
             this.btnDFilter.Size = new System.Drawing.Size(75, 38);
             this.btnDFilter.TabIndex = 12;
@@ -166,14 +167,25 @@
             this.lstBookings.FormattingEnabled = true;
             this.lstBookings.Location = new System.Drawing.Point(7, 70);
             this.lstBookings.Name = "lstBookings";
-            this.lstBookings.Size = new System.Drawing.Size(572, 251);
+            this.lstBookings.Size = new System.Drawing.Size(710, 251);
             this.lstBookings.TabIndex = 0;
+            // 
+            // btnSurname
+            // 
+            this.btnSurname.Location = new System.Drawing.Point(212, 29);
+            this.btnSurname.Name = "btnSurname";
+            this.btnSurname.Size = new System.Drawing.Size(97, 21);
+            this.btnSurname.TabIndex = 15;
+            this.btnSurname.Text = "Filter By Surname";
+            this.btnSurname.UseVisualStyleBackColor = true;
+            this.btnSurname.Click += new System.EventHandler(this.btnSurname_Click);
             // 
             // frmBookingMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 374);
+            this.ClientSize = new System.Drawing.Size(721, 374);
+            this.Controls.Add(this.btnSurname);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDFilter);
@@ -183,7 +195,7 @@
             this.Controls.Add(this.txtStartDate);
             this.Controls.Add(this.lblfrom);
             this.Controls.Add(this.lblFilterT);
-            this.Controls.Add(this.txtBookRef);
+            this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.lblFRef);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnPopulate);
@@ -201,7 +213,7 @@
         private System.Windows.Forms.Button btnPopulate;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblFRef;
-        private System.Windows.Forms.TextBox txtBookRef;
+        private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Label lblFilterT;
         private System.Windows.Forms.Label lblfrom;
         private System.Windows.Forms.TextBox txtStartDate;
@@ -212,5 +224,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ListBox lstBookings;
+        private System.Windows.Forms.Button btnSurname;
     }
 }

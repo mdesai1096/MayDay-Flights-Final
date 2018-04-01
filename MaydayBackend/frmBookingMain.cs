@@ -54,7 +54,7 @@ namespace MaydayBackend
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            lblError.Text = DisplayBookings() + " Records";
+            lblError.Text = FilterBookingsRef(txtFilter.Text) + " Records";
 
         }
 
@@ -152,6 +152,27 @@ namespace MaydayBackend
         private void frmBookingMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSurname_Click(object sender, EventArgs e)
+        {
+            //call the display user fumction
+            lblError.Text = FilterSurnane(txtFilter.Text) + " found";
+        }
+
+        Int32 FilterSurnane(string Surnane)
+        {
+            //create an instance of the booking collection
+            clsBookingsCollection Bookings = new clsBookingsCollection();
+            Bookings.FilterSurname(Surnane);
+            //set the data source to the list of bookings in the collection
+            lstBookings.DataSource = Bookings.BookingsList;
+            //set the name of the primary key
+            lstBookings.ValueMember = "BookRef";
+            //set the data field to display
+            lstBookings.DisplayMember = "AllCDetails";
+            //bind the data to the list
+            return Bookings.Count;
         }
     }
 }
