@@ -3,7 +3,8 @@
 	@BookRef int,
 	@Ammount decimal(18,2),
 	@DateBooked date,
-	@PaymentType varchar(10)
+	@PaymentType varchar(10),
+	@CustId int
 AS
 --update the records as specificied by @BookRef value
 update tblBookings
@@ -11,6 +12,7 @@ update tblBookings
 set 
 	Book_ammount=@Ammount,
 	Book_date=@DateBooked,
-	Book_payment=@PaymentType
+	Book_payment=@PaymentType,
+	FKCustomerID = @CustId
 
 	where Book_Ref=@BookRef
