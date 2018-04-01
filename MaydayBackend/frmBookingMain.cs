@@ -118,12 +118,20 @@ namespace MaydayBackend
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-             //get the primary key value of the record to delete   
+            if (lstBookings.SelectedIndex != -1)
+            {
+            //get the primary key value of the record to delete   
              BookRef = Convert.ToInt32(lstBookings.SelectedValue);   
              //delete the record   
              lblError.Text = "Booking Reference " +  DeleteBooking() + " Canceled";   
              //refesh list box   
-             DisplayBookings();   
+             DisplayBookings();  
+            }
+            else
+            {
+                lblError.Text = "Select an Booking to Delete";
+            }
+              
 
         }
 

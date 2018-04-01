@@ -40,6 +40,9 @@
             this.lblPaytype = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lstCust = new System.Windows.Forms.ListBox();
+            this.txtFilterCust = new System.Windows.Forms.TextBox();
+            this.btnFilterCust = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnOK
@@ -54,28 +57,28 @@
             // 
             // txtPayType
             // 
-            this.txtPayType.Location = new System.Drawing.Point(454, 271);
+            this.txtPayType.Location = new System.Drawing.Point(655, 248);
             this.txtPayType.Name = "txtPayType";
             this.txtPayType.Size = new System.Drawing.Size(100, 20);
             this.txtPayType.TabIndex = 1;
             // 
             // txtDateBo
             // 
-            this.txtDateBo.Location = new System.Drawing.Point(454, 216);
+            this.txtDateBo.Location = new System.Drawing.Point(655, 193);
             this.txtDateBo.Name = "txtDateBo";
             this.txtDateBo.Size = new System.Drawing.Size(100, 20);
             this.txtDateBo.TabIndex = 2;
             // 
             // txtBookRef
             // 
-            this.txtBookRef.Location = new System.Drawing.Point(454, 93);
+            this.txtBookRef.Location = new System.Drawing.Point(655, 70);
             this.txtBookRef.Name = "txtBookRef";
             this.txtBookRef.Size = new System.Drawing.Size(100, 20);
             this.txtBookRef.TabIndex = 3;
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(454, 157);
+            this.txtAmount.Location = new System.Drawing.Point(655, 134);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(100, 20);
             this.txtAmount.TabIndex = 4;
@@ -83,7 +86,7 @@
             // lblBookRef
             // 
             this.lblBookRef.AutoSize = true;
-            this.lblBookRef.Location = new System.Drawing.Point(240, 100);
+            this.lblBookRef.Location = new System.Drawing.Point(553, 77);
             this.lblBookRef.Name = "lblBookRef";
             this.lblBookRef.Size = new System.Drawing.Size(96, 13);
             this.lblBookRef.TabIndex = 5;
@@ -92,7 +95,7 @@
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(240, 157);
+            this.lblAmount.Location = new System.Drawing.Point(553, 134);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(43, 13);
             this.lblAmount.TabIndex = 6;
@@ -101,7 +104,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(240, 216);
+            this.lblDate.Location = new System.Drawing.Point(553, 193);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(70, 13);
             this.lblDate.TabIndex = 7;
@@ -110,7 +113,7 @@
             // lblPaytype
             // 
             this.lblPaytype.AutoSize = true;
-            this.lblPaytype.Location = new System.Drawing.Point(240, 278);
+            this.lblPaytype.Location = new System.Drawing.Point(553, 255);
             this.lblPaytype.Name = "lblPaytype";
             this.lblPaytype.Size = new System.Drawing.Size(75, 13);
             this.lblPaytype.TabIndex = 8;
@@ -136,11 +139,39 @@
             this.lblTitle.Size = new System.Drawing.Size(0, 26);
             this.lblTitle.TabIndex = 10;
             // 
+            // lstCust
+            // 
+            this.lstCust.FormattingEnabled = true;
+            this.lstCust.Location = new System.Drawing.Point(27, 86);
+            this.lstCust.Name = "lstCust";
+            this.lstCust.Size = new System.Drawing.Size(187, 238);
+            this.lstCust.TabIndex = 11;
+            // 
+            // txtFilterCust
+            // 
+            this.txtFilterCust.Location = new System.Drawing.Point(27, 60);
+            this.txtFilterCust.Name = "txtFilterCust";
+            this.txtFilterCust.Size = new System.Drawing.Size(100, 20);
+            this.txtFilterCust.TabIndex = 12;
+            // 
+            // btnFilterCust
+            // 
+            this.btnFilterCust.Location = new System.Drawing.Point(133, 50);
+            this.btnFilterCust.Name = "btnFilterCust";
+            this.btnFilterCust.Size = new System.Drawing.Size(97, 30);
+            this.btnFilterCust.TabIndex = 13;
+            this.btnFilterCust.Text = "Filter by Surname";
+            this.btnFilterCust.UseVisualStyleBackColor = true;
+            this.btnFilterCust.Click += new System.EventHandler(this.btnFilterCust_Click);
+            // 
             // FrmAEBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 434);
+            this.Controls.Add(this.btnFilterCust);
+            this.Controls.Add(this.txtFilterCust);
+            this.Controls.Add(this.lstCust);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblPaytype);
@@ -174,5 +205,8 @@
         private System.Windows.Forms.Label lblPaytype;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.ListBox lstCust;
+        private System.Windows.Forms.TextBox txtFilterCust;
+        private System.Windows.Forms.Button btnFilterCust;
     }
 }

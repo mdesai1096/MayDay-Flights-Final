@@ -22,7 +22,9 @@ namespace MaydayBackend
         {
             //get the selected index from frmBooking main and set it as the bookref
             this.BookingRef = BookRef;
+            
             InitializeComponent();
+            DisplayCustomers();
             //if this is not a new record
             if (BookingRef != -1)
             {
@@ -53,6 +55,7 @@ namespace MaydayBackend
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            
             //if the Booking is equal the -1
             if (BookingRef == -1)
             {
@@ -83,6 +86,7 @@ namespace MaydayBackend
                 BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmount.Text);
                 BookingsList.ThisBookings.DateBooked = Convert.ToDateTime(txtDateBo.Text);
                 BookingsList.ThisBookings.PaymentType = txtPayType.Text;
+                BookingsList.ThisBookings.CustID = Convert.ToInt32(lstCust.SelectedValue);
                 //add the record
                 BookingsList.Add();
                 //all done so redirect back to the main page
@@ -111,6 +115,7 @@ namespace MaydayBackend
                 BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmount.Text);
                 BookingsList.ThisBookings.DateBooked = Convert.ToDateTime(txtDateBo.Text);
                 BookingsList.ThisBookings.PaymentType = txtPayType.Text;
+                BookingsList.ThisBookings.CustID = Convert.ToInt32(lstCust.SelectedValue);
                 //update the record
                 BookingsList.Update();
                 //all done so redirect back to the main page
@@ -143,9 +148,47 @@ namespace MaydayBackend
             txtAmount.Text = BookingsList.ThisBookings.Ammount.ToString();
             txtDateBo.Text = BookingsList.ThisBookings.DateBooked.ToString();
             txtPayType.Text = BookingsList.ThisBookings.PaymentType;
+            lstCust.SelectedIndex = BookingsList.ThisBookings.CustID;
 
         }
 
+        Int32 DisplayCustomers()
+        {
+            //create an instancew of the Customer Collection
+            clsCustomerCollection Customers = new clsCustomerCollection();
+            // set the data source to the list of countries in the collection
+            lstCust.DataSource = Customers.CustomerList;
+            // set the name of the primary key
+            lstCust.ValueMember = "CustomerID";
+            // set the data field to display
+            lstCust.DisplayMember = "Surname";
+            //bind the data to the list 
+            return Customers.Count;
+           
+
+        }
+
+        protected void btnFilterCust_Click(object sender, EventArgs e)
+        {
+            //apply will filter by surname and/or postcode 
+            FilterSurname(txtFilterCust.Text);
+        }
+
+        Int32 FilterSurname(string Surname)
+        {
+            //create an instance of the booking collection
+            clsCustomerCollection C = new clsCustomerCollection();
+            C.FilterbysurName(Surname);
+            //set the data source to the list of bookings in the collection
+            lstCust.DataSource = C.CustomerList;
+            //set the name of the primary key
+            lstCust.ValueMember = "CustomerID";
+            //set the data field to display
+            lstCust.DisplayMember = "Surname";
+            //bind the data to the list
+            return C.Count;
+
+        }
 
     }
 }

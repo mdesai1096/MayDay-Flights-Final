@@ -9,5 +9,4 @@ AS
 	--order by the book date
 	Order By Book_date
 
-
 RETURN 0

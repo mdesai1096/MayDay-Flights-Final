@@ -642,6 +642,28 @@ namespace MyTesting
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
+        public void TestFKCustIdFound()
+        {
+            //create a new instance of the class we want to create
+            clsBookings ABookings = new clsBookings();
+            //string variable to store result of validation
+            Boolean Found = false;
+            //bolean value if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to assign to property
+            Int32 BookRef = 1;
+            //invoke method
+            Found = ABookings.Find(BookRef);
+            //check the booking no
+            if (ABookings.CustID != 2)
+            {
+                OK = false;
+            }
+            //test to see if it exists
+            Assert.IsTrue(OK);
+        }
+
         //testing for date filter ensuring a date is entered in the correct order and format
         [TestMethod]
         public void StartDateOK()

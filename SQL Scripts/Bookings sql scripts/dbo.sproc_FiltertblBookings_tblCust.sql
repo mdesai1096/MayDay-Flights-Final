@@ -3,7 +3,7 @@
 	@BookRef int
 AS
 	--select 3 columns were want
-	SELECT Book_Ref, Book_ammount, Book_date, Book_payment--, Forename, surName
+	SELECT Book_Ref, Book_ammount, Book_date, Book_payment, FKCustomerID--, Forename, surName
 	-- from the table tblBookings
 	FROM tblBookings --join tblCustomer
 	--on the FK relationship with tblCustomer 
