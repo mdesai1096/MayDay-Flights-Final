@@ -11,7 +11,6 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
     //variable to store the primary key with page level scope
     Int32 BookRef;
     
-
     //event handler for the page load event
     protected void Page_Load(object sender, EventArgs e)
     {
