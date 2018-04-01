@@ -7,7 +7,7 @@
     <br />
 </p>
 <asp:TextBox ID="txtFilter" runat="server" style="z-index: 1; left: 406px; top: 291px; position: absolute; width: 187px"></asp:TextBox>
-<asp:Button ID="btnFilter" runat="server" style="z-index: 1; left: 618px; top: 290px; position: absolute" Text="Filter" OnClick="btnFilter_Click" />
+<asp:Button ID="btnFilter" runat="server" style="z-index: 1; left: 618px; top: 290px; position: absolute; width: 53px;" Text="Filter" OnClick="btnFilter_Click" />
     <asp:TextBox ID="txtEndDate" runat="server" style="z-index: 1; left: 953px; top: 293px; position: absolute">End Date</asp:TextBox>
     <asp:TextBox ID="txtStartDate" runat="server" style="z-index: 1; left: 753px; top: 292px; position: absolute"></asp:TextBox>
     <asp:Button ID="btnFDate" runat="server" OnClick="btnFDate_Click" style="z-index: 1; left: 1105px; top: 291px; position: absolute; margin-bottom: 0px" Text="Filter By Date" />

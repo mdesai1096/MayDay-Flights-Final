@@ -148,7 +148,7 @@ namespace MaydayBackend
             txtAmount.Text = BookingsList.ThisBookings.Ammount.ToString();
             txtDateBo.Text = BookingsList.ThisBookings.DateBooked.ToString();
             txtPayType.Text = BookingsList.ThisBookings.PaymentType;
-            lstCust.SelectedIndex = BookingsList.ThisBookings.CustID;
+            lstCust.SelectedValue = BookingsList.ThisBookings.CustID;
 
         }
 

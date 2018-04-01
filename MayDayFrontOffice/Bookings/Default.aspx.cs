@@ -90,7 +90,7 @@ public partial class Bookings_Default : System.Web.UI.Page
     protected void btnFilter_Click(object sender, EventArgs e)
     {
     
-        FilterBookingsRef(txtFilter.Text);
+        FilterSurname(txtFilter.Text);
     }
 
     void FilterBookingsRef(string BookRef)
@@ -104,6 +104,21 @@ public partial class Bookings_Default : System.Web.UI.Page
         lstBookings.DataValueField = "BookRef";
         //set the data field to display
         lstBookings.DataTextField = "AllDetails";
+        //bind the data to the list
+        lstBookings.DataBind();
+    }
+
+    void FilterSurname (string Surname)
+    {
+        //create an instance of the booking collection
+        clsBookingsCollection Bookings = new clsBookingsCollection();
+        Bookings.FilterSurname(Surname);
+        //set the data source to the list of bookings in the collection
+        lstBookings.DataSource = Bookings.BookingsList;
+        //set the name of the primary key
+        lstBookings.DataValueField = "BookRef";
+        //set the data field to display
+        lstBookings.DataTextField = "AllCDetails";
         //bind the data to the list
         lstBookings.DataBind();
     }

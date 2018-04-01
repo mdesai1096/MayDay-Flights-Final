@@ -18,6 +18,8 @@ public partial class Bookings_Delete : System.Web.UI.Page
         BookRef = Convert.ToInt32(Session["BookRef"]);
         //display the PK of record to be deleted
         txtBookRef.Text = BookRef.ToString();
+        //make the text box read only for security reasons
+        txtBookRef.ReadOnly=true;
     }
 
     protected void btnOK_Click(object sender, EventArgs e)

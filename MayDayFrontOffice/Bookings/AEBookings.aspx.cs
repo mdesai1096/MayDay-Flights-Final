@@ -74,15 +74,25 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         if (Error == "")
         {
  
-            //get the data entered by the user
-            BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmmount.Text);
-            BookingsList.ThisBookings.DateBooked= Convert.ToDateTime(txtDateBooked.Text);
-            BookingsList.ThisBookings.PaymentType = txtPaymentType.Text;
-            BookingsList.ThisBookings.CustID = Convert.ToInt32(lstCust.SelectedValue);
-            //add the record
-            BookingsList.Add();
-            //all done so redirect back to the main page
-            Response.Redirect("Default.aspx");
+
+            if (lstCust.SelectedIndex != -1)
+            {
+                //get the data entered by the user
+                BookingsList.ThisBookings.Ammount = Convert.ToDecimal(txtAmmount.Text);
+                BookingsList.ThisBookings.DateBooked = Convert.ToDateTime(txtDateBooked.Text);
+                BookingsList.ThisBookings.PaymentType = txtPaymentType.Text;
+                BookingsList.ThisBookings.CustID = Convert.ToInt32(lstCust.SelectedValue);
+                //add the record
+                BookingsList.Add();
+                //all done so redirect back to the main page
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                lblError.Text = "Select a cust";
+            }
+            
+
         }
         else
         {
@@ -130,7 +140,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         txtAmmount.Text = BookingsList.ThisBookings.Ammount.ToString();
         txtDateBooked.Text = BookingsList.ThisBookings.DateBooked.ToString();
         txtPaymentType.Text = BookingsList.ThisBookings.PaymentType;
-        lstCust.SelectedIndex = BookingsList.ThisBookings.CustID;
+        lstCust.SelectedValue= BookingsList.ThisBookings.CustID.ToString();
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
