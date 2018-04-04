@@ -21,7 +21,7 @@ namespace MaydayBackend
         public FrmAEBookings( Int32 BookRef)
         {
             //get the selected index from frmBooking main and set it as the bookref
-            this.BookingRef = BookRef;
+            BookingRef = BookRef;
             
             InitializeComponent();
             DisplayCustomers();
@@ -132,11 +132,6 @@ namespace MaydayBackend
 
         }
 
-
-
-
-        
-
         void DisplayBookings()
         {
             //create an instance of the booking list
@@ -146,7 +141,7 @@ namespace MaydayBackend
             //display the data for this record
             txtBookRef.Text = BookingsList.ThisBookings.BookRef.ToString();
             txtAmount.Text = BookingsList.ThisBookings.Ammount.ToString();
-            txtDateBo.Text = BookingsList.ThisBookings.DateBooked.ToString();
+            txtDateBo.Text = BookingsList.ThisBookings.DateBooked.ToString("dd/MM/yyyy");
             txtPayType.Text = BookingsList.ThisBookings.PaymentType;
             lstCust.SelectedValue = BookingsList.ThisBookings.CustID;
 
