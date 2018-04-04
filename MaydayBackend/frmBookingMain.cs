@@ -49,11 +49,12 @@ namespace MaydayBackend
             return Bookings.Count;
         }
 
-        //display the number of record found after filtering has been applied
+        
        
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
+            //display the number of record found after filtering has been applied
             lblError.Text = FilterBookingsRef(txtFilter.Text) + " Records";
 
         }
