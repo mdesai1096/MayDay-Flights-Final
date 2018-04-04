@@ -122,7 +122,7 @@ namespace MaydayBackend
  
             //get the primary key value of the record to delete   
              BookRef = Convert.ToInt32(lstBookings.SelectedValue);   
-             //delete the record   
+             //delete the record displaying a meaning full dialogue 
              lblError.Text = "Booking Reference " +  DeleteBooking() + " Canceled";   
              //refesh list box   
              DisplayBookings();     
