@@ -177,8 +177,20 @@ namespace MyClassLibrary
 
         }
 
+        private string mName;
+        public string Name
+        {
+            get
+            {
+                return mSurname + " " + mForeName;
+            }
+            set
+            {
+                mName = value;
+            }
 
-        
+        }
+
 
         public string Valid(string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode)
         {

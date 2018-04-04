@@ -137,7 +137,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         BookingsList.ThisBookings.Find(BookRef);
         //display the data for this record
         txtAmmount.Text = BookingsList.ThisBookings.Ammount.ToString();
-        txtDateBooked.Text = BookingsList.ThisBookings.DateBooked.ToString();
+        txtDateBooked.Text = BookingsList.ThisBookings.DateBooked.ToString("dd/MM/yyyy");
         txtPaymentType.Text = BookingsList.ThisBookings.PaymentType;
         lstCust.SelectedValue= BookingsList.ThisBookings.CustID.ToString();
     }
@@ -157,7 +157,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         // set the name of the primary key
         lstCust.DataValueField = "CustomerID";
         // set the data field to display
-        lstCust.DataTextField = "Surname";
+        lstCust.DataTextField = "Name";
         //bind the data to the list 
         lstCust.DataBind();
 
@@ -169,17 +169,17 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         FilterSurname(txtFilterCust.Text);
     }
 
-    void FilterSurname(string PostCode)
+    void FilterSurname(string surName)
     {
         //create an instance of the booking collection
         clsCustomerCollection C = new clsCustomerCollection();
-        C.FilterbyPostCode(PostCode);
+        C.FilterbysurName(surName);
         //set the data source to the list of bookings in the collection
         lstCust.DataSource = C.CustomerList;
         //set the name of the primary key
         lstCust.DataValueField = "CustomerID";
         //set the data field to display
-        lstCust.DataTextField = "PostCode";
+        lstCust.DataTextField = "Name";
         //bind the data to the list
         lstCust.DataBind();
     }
