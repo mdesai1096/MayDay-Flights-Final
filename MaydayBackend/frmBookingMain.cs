@@ -49,11 +49,12 @@ namespace MaydayBackend
             return Bookings.Count;
         }
 
-        //display the number of record found after filtering has been applied
+        
        
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
+            //display the number of record found after filtering has been applied
             lblError.Text = FilterBookingsRef(txtFilter.Text) + " Records";
 
         }
@@ -121,7 +122,7 @@ namespace MaydayBackend
  
             //get the primary key value of the record to delete   
              BookRef = Convert.ToInt32(lstBookings.SelectedValue);   
-             //delete the record   
+             //delete the record displaying a meaning full dialogue 
              lblError.Text = "Booking Reference " +  DeleteBooking() + " Canceled";   
              //refesh list box   
              DisplayBookings();     
