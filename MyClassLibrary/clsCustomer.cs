@@ -191,6 +191,19 @@ namespace MyClassLibrary
 
         }
 
+        private string mAllDetails;
+        public string AllDetails
+        {
+            get
+            {
+                return mForeName  + " " + mSurname + " " + mPostCode;
+            }
+            set
+            {
+                mAllDetails = value;
+            }
+
+        }
 
         public string Valid(string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode)
         {

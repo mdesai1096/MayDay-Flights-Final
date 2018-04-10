@@ -36,7 +36,7 @@ namespace MaydayBackend
             // set the name of the primary key
             lstCust.ValueMember = "CustomerID";
             // set the data field to display
-            lstCust.DisplayMember = "PostCode";
+            lstCust.DisplayMember = "AllDetails";
             //bind the data to the list 
             
             return Customers.Count ;
