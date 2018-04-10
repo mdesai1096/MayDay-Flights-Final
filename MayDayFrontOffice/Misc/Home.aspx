@@ -21,13 +21,7 @@
     <br />
     <br />
     <br />
-    <img alt="" class="auto-style7" src="../Images/56d704988c1d8.jpeg" /><asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 1481px; top: 255px; position: absolute" Text="Register" />
-<asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" style="z-index: 1; left: 1407px; top: 255px; position: absolute" Text="Login" />
-<asp:Label ID="lblError" runat="server" style="z-index: 1; left: 1328px; top: 261px; position: absolute"></asp:Label>
-<asp:Label ID="lblUser" runat="server" style="z-index: 1; left: 1175px; top: 221px; position: absolute" Text="Username"></asp:Label>
-<asp:Label ID="lblPassword" runat="server" style="z-index: 1; left: 1359px; top: 220px; position: absolute" Text="Password"></asp:Label>
-<asp:TextBox ID="txtUser" runat="server" style="z-index: 1; left: 1240px; top: 218px; position: absolute; width: 98px;"></asp:TextBox>
-<asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 1431px; top: 219px; position: absolute; width: 94px;"></asp:TextBox>
+    <img alt="" class="auto-style7" src="../Images/56d704988c1d8.jpeg" /><asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" style="z-index: 1; left: 1407px; top: 255px; position: absolute" Text="Login" />
 <br />
     <br />
 

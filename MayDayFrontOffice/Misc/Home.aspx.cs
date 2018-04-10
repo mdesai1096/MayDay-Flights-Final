@@ -22,33 +22,8 @@ public partial class Home : System.Web.UI.Page
 
     protected void btnLogin_Click(object sender, EventArgs e)
     {
-        // if the username and password are true then
-        if (txtUser.Text == "Admin" && txtPassword.Text == "Admin")
-        {
-            //This line of code redirects to the Admin default page
-            
-           
-            Response.Redirect("/Employees/EmployeeMenu.aspx");
-        }
-        // if the username and password are true then
-        else if (txtPassword.Text == "Admin1" && txtPassword.Text == "Admin")
-        {
-            ///This line of code redirects to the Admin default page
-
-           
-            Response.Redirect("/Bookings/AEBookings.aspx");
-        }
-
-        //else
-        //{
-        //    if the statement fails display the message
-        //    lblError.Text = "User OR Password not found";
-        //}
+        Response.Redirect("~/Login.aspx");
     }
 
-    void Login(Boolean State)
-    {
 
-        btnRegister.Visible = State;
-    }
 }
