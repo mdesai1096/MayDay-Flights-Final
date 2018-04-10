@@ -30,7 +30,7 @@ public partial class admin_customer : System.Web.UI.Page
         // set the name of the primary key
         lstCust.DataValueField = "CustomerID";
         // set the data field to display
-        lstCust.DataTextField = "PostCode";
+        lstCust.DataTextField = "AllDetails";
         //bind the data to the list 
         lstCust.DataBind();
 
