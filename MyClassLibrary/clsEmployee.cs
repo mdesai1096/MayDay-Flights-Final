@@ -36,7 +36,7 @@ namespace MyClassLibrary
             if (employeeContactNumber.Length < 11 | employeeContactNumber.Length > 15)
             {
                 //set the error message
-                Error = Error + "Ammount must be between 11 and 15 : ";
+                Error = Error + "Length must be between 11 and 15 : ";
             }
             //if (employeeContactNumber.Length < 11)
             //{
@@ -81,7 +81,30 @@ namespace MyClassLibrary
             {
                 Error = Error + "Incorrect date entered";
             }
-
+            if (employeeRole.Length == 0)
+            {
+                Error = Error + "The employee role may bot be blank : ";
+            }
+            if (employeeRole.Length < 3)
+            {
+                Error = Error + "The employee role not be less than 3 characters : ";
+            }
+            if (employeeRole.Length > 12)
+            {
+                Error = Error + "The employee role not be more than 12 characters : ";
+            }
+            if (employeeSalary.Length < 3)
+            {
+                Error = Error + "The employee salary can't be less than 3 characters : ";
+            }
+            if (employeeSalary.Length == 0)
+            {
+                Error = Error + "The employee salary can't be blank ";
+            }
+            if (employeeSalary.Length > 8)
+            {
+                Error = Error + "The employee salary can't more than 8 characters ";
+            }
             return Error;
         }
 
