@@ -18,7 +18,7 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         BookRef = Convert.ToInt32(Session["BookRef"]);
         if (IsPostBack == false)
         {
-            //FilterUsername();
+            FilterUsername();
 
             //if this is not a new record
             if (BookRef != -1)
@@ -169,18 +169,18 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         //FilterSurname(txtFilterCust.Text);
     }
 
-    //void FilterUsername()
-    //{
-    //    //create an instance of the booking collection
-    //    clsCustomerCollection C = new clsCustomerCollection();
-    //    C.FilterbyUserName();
-    //    //set the data source to the list of bookings in the collection
-    //    lstCust.DataSource = C.CustomerList;
-    //    //set the name of the primary key
-    //    lstCust.DataValueField = "CustomerID";
-    //    //set the data field to display
-    //    lstCust.DataTextField = "Name";
-    //    //bind the data to the list
-    //    lstCust.DataBind();
-    //}
+    void FilterUsername()
+    {
+        //create an instance of the booking collection
+        clsCustomerCollection C = new clsCustomerCollection(User.Identity.Name);
+        C.FilterbyUserName();
+        //set the data source to the list of bookings in the collection
+        lstCust.DataSource = C.CustomerList;
+        //set the name of the primary key
+        lstCust.DataValueField = "CustomerID";
+        //set the data field to display
+        lstCust.DataTextField = "Name";
+        //bind the data to the list
+        lstCust.DataBind();
+    }
 }

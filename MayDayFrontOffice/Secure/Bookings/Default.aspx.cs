@@ -127,7 +127,7 @@ public partial class Bookings_Default : System.Web.UI.Page
     {
 
         //create an instance of the booking list
-        clsBookingsCollection BookingsList = new clsBookingsCollection();
+        clsBookingsCollection BookingsList = new clsBookingsCollection(User.Identity.Name);
         //validate the data on the web form
         String Error = BookingsList.ThisBookings.ValidDateFilter(txtStartDate.Text, txtEndDate.Text);
         //if the data is OK then add it to the object
@@ -151,7 +151,7 @@ public partial class Bookings_Default : System.Web.UI.Page
     void FilterBookingsDateRange(string StartDate, string EndDate)
     {
         //create an instance of the booking collection
-        clsBookingsCollection Bookings = new clsBookingsCollection();
+        clsBookingsCollection Bookings = new clsBookingsCollection(User.Identity.Name);
         Bookings.FilterbyDateBooked(StartDate, EndDate);
         //set the data source to the list of bookings in the collection
         lstBookings.DataSource = Bookings.BookingsList;

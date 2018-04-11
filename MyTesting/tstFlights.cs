@@ -1386,11 +1386,11 @@ namespace MyTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 Flight_No = 21;
+            Int32 Flight_No = 1;
             //invoke the method
             Found = AnFlight.Find(Flight_No);
             //check the flight no
-            if (AnFlight.Flight_No != 21)
+            if (AnFlight.Flight_No != 1)
             {
                 OK = false;
             }
@@ -1408,17 +1408,128 @@ namespace MyTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 Flight_No = 21;
+            Int32 Flight_No = 1;
             //invoke the method
             Found = AnFlight.Find(Flight_No);
             //check the flight no
-            if (AnFlight.Airline !="Air India")
+            if (AnFlight.Airline != "Air India")
             {
                 OK = false;
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
+        public void TestDestinationFound()
+        {
+            //create an instance of the class we want to create
+            clsFlights AnFlight = new clsFlights();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 Flight_No = 1;
+            //invoke the method
+            Found = AnFlight.Find(Flight_No);
+            //check the flight no
+            if (AnFlight.Destination != "India")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestArrivalFound()
+        {
+            //create an instance of the class we want to create
+            clsFlights AnFlight = new clsFlights();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 Flight_No = 1;
+            //invoke the method
+            Found = AnFlight.Find(Flight_No);
+            //check the flight no
+            if (AnFlight.Arrival != Convert.ToDateTime("21/06/2018"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDepartureFound()
+        {
+            //create an instance of the class we want to create
+            clsFlights AnFlight = new clsFlights();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 Flight_No = 1;
+            //invoke the method
+            Found = AnFlight.Find(Flight_No);
+            //check the flight no
+            if (AnFlight.Departure != Convert.ToDateTime("22/06/2018"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestArrivalAirportFound()
+        {
+            //create an instance of the class we want to create
+            clsFlights AnFlight = new clsFlights();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 Flight_No = 1;
+            //invoke the method
+            Found = AnFlight.Find(Flight_No);
+            //check the flight no
+            if (AnFlight.ArrivalAirport != "BHX")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDepartureAirportFound()
+        {
+            //create an instance of the class we want to create
+            clsFlights AnFlight = new clsFlights();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 Flight_No = 1;
+            //invoke the method
+            Found = AnFlight.Find(Flight_No);
+            //check the flight no
+            if (AnFlight.DepartureAirport != "BHX")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+
     }
 }
-
