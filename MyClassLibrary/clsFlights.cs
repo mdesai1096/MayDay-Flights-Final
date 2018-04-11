@@ -5,8 +5,10 @@ namespace MyClassLibrary
 {
     public class clsFlights
     {
+        //private data member for FlightID property
+        private Int32 mFlightID;
         //private data member for the FlightNo property
-        private Int32 mFlight_No;
+        private string mFlightNo;
         //private data member for Airline
         private string mAirline;
         //private data member for Destination
@@ -20,20 +22,35 @@ namespace MyClassLibrary
         //private data memeber for Departure Airport
         private string mDepartureAirport;
 
-
         //public property for FlightNo
-        public int Flight_No
+        public Int32 FlightID
         {
             get
             {
                 //return the private data
-                return mFlight_No;
+                return mFlightID;
             }
             set
             {
                 //set the value of the private data member 
-                mFlight_No = value;
+                mFlightID = value;
 
+            }
+        }
+
+        //public property for FlightNo
+        public string FlightNo
+        {
+            get
+            {
+                //return the private data
+                return mFlightNo;
+            }
+            set
+            {
+                //set the value of the private data member 
+                mFlightNo = value;
+            
             }
         }
 
@@ -132,17 +149,17 @@ namespace MyClassLibrary
 
 
 
-        public string Valid(string airline, string destination, string arrival, string arrivalAirport, string departure, string departureAirport)
+        public string Valid(string flightNo, string airline, string destination, string arrival, string arrivalAirport, string departure, string departureAirport)
         {
             string OK = "";
-            //if (flightNo.Length == 0)
-            //{
-            //    return OK = OK + "Flight no is blank";
-            //}
-            //if (flightNo.Length != 5)
-            //{
-            //    return OK = OK + "Flight no must be less than 5 characters";
-            //}
+            if (flightNo.Length == 0)
+            {
+                return OK = OK + "Flight no is blank";
+            }
+            if (flightNo.Length != 5)
+            {
+                return OK = OK + "Flight no must be less than 5 characters";
+            }
 
             //if (flightNo.Length < 1)
             //{
@@ -228,7 +245,8 @@ namespace MyClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
-                mFlight_No = Convert.ToInt32(DB.DataTable.Rows[0]["Flight_No"]);
+                mFlightID = Convert.ToInt32(DB.DataTable.Rows[0]["FlightID"]);
+                mFlightNo = Convert.ToString(DB.DataTable.Rows[0]["FlightNo"]);
                 mAirline = Convert.ToString(DB.DataTable.Rows[0]["Airline"]);
                 mDestination = Convert.ToString(DB.DataTable.Rows[0]["Destination"]);
                 mArrivalDate = Convert.ToDateTime(DB.DataTable.Rows[0]["ArrivalDate"]);

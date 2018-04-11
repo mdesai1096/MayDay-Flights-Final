@@ -22,9 +22,10 @@ public partial class AddFlight : System.Web.UI.Page
     void Add()
     {
         clsFlightCollection Flights = new clsFlightCollection();
-        string Error = Flights.ThisFlight.Valid(txtAirline.Text, txtDestination.Text, txtArrivalTime.Text, txtArrival.Text, txtDepartureTime.Text, txtDeparture.Text);
+        string Error = Flights.ThisFlight.Valid(txtFlightNo.Text, txtAirline.Text, txtDestination.Text, txtArrivalTime.Text, txtArrival.Text, txtDepartureTime.Text, txtDeparture.Text);
         if (Error == "")
         {
+            Flights.ThisFlight.FlightNo = txtFlightNo.Text;
             Flights.ThisFlight.Airline = txtAirline.Text;
             Flights.ThisFlight.Destination = txtDestination.Text;
             Flights.ThisFlight.ArrivalAirport = txtArrival.Text;
