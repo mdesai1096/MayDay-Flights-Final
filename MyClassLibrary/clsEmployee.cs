@@ -4,15 +4,37 @@ namespace MyClassLibrary
 {
     public class clsEmployee
     {
+        private string mAddrss;
         public string Address { get; set; }
+        private string mEmployeeContactNumber;
         public string EmployeeContactNumber { get; set; }
+        private DateTime mEmployeeDOB;
         public DateTime EmployeeDOB { get; set; }
+        private string mEmployeeEmail;
         public string EmployeeEmail { get; set; }
+        private DateTime mEmployeeJoinDate;
         public DateTime EmployeeJoinDate { get; set; }
+        private string mEmployeeName;
         public string EmployeeName { get; set; }
+        private string mEmployeeRole;
         public string EmployeeRole { get; set; }
+        private string mEmployeeSalary;
         public string EmployeeSalary { get; set; }
-        public int EmployeeNo { get; set; }
+
+        private Int32 mEmployeeNo;
+        public int EmployeeNo
+        {
+            get
+            {
+                return mEmployeeNo;
+            }
+            set
+            {
+                mEmployeeNo = value;
+            }
+        }
+
+
 
         public string Valid(string employeeAddress, string employeeContactNumber, string employeeDOB, string employeeEmail, string employeeJoinDate, string employeeName, string employeeRole, string employeeSalary)
         {
@@ -117,17 +139,17 @@ namespace MyClassLibrary
             try
             {
 
-                DateTime DateTemp;
-                DateTemp = Convert.ToDateTime(employeeJoinDate);
+                DateTime DateTemp1;
+                DateTemp1 = Convert.ToDateTime(employeeJoinDate);
 
-                if (DateTemp > DateTime.Now.Date.AddMonths(-1))
+                if (DateTemp1 < DateTime.Now.Date.AddMonths(-1))
                 {
                     Error = Error + "Join date must be over one month ago";
                 }
 
-                if (DateTemp < DateTime.Now.Date.AddMonths(-1))
+                if (DateTemp1 > DateTime.Now.Date)
                 {
-                    Error = Error + "Join date must be under next month";
+                    Error = Error + "Join date cannot be in the future";
                 }
 
             }
@@ -138,8 +160,9 @@ namespace MyClassLibrary
             return Error;
         }
 
-        public bool Find(int employeeNo)
+        public bool Find(int EmployeeNo)
         {
+            mEmployeeNo = 21;
             //always return true
             return true;
         }
