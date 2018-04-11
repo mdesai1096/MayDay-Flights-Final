@@ -44,11 +44,11 @@ namespace MyTesting
             //boolean to record if data is ok
             Boolean OK = true;
             //create sme test to use with methood
-            Int32 EmployeeNo = 21;
+            Int32 EmployeeNo = 1;
             //invoke method 
             Found = AnEmployee.Find(EmployeeNo);
             //check employee no
-            if (AnEmployee.EmployeeNo != 21)
+            if (AnEmployee.EmployeeNo != 1)
             {
                 OK = false;
 
@@ -64,9 +64,9 @@ namespace MyTesting
             clsEmployee AnEmployee = new clsEmployee();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 EmployeeNo = 21;
+            Int32 EmployeeNo = 1;
             Found = AnEmployee.Find(EmployeeNo);
-            if (AnEmployee.EmployeeName != "Vinay")
+            if (AnEmployee.EmployeeName != "Vinay Kumar")
             {
                 OK = false;
             }
@@ -79,9 +79,9 @@ namespace MyTesting
             clsEmployee AnEmployee = new clsEmployee();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 EmployeeNo = 21;
+            Int32 EmployeeNo = 1;
             Found = AnEmployee.Find(EmployeeNo);
-            if (AnEmployee.EmployeeDOB != Convert.ToDateTime("11/04/2002"))
+            if (AnEmployee.EmployeeDOB != Convert.ToDateTime("19/09/1985"))
             {
                 OK = false;
             }

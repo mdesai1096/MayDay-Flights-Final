@@ -2,6 +2,8 @@
 using MyClassLibrary;
 using System;
 
+//Author Ayub Osman
+
 namespace MyTesting
 {
     [TestClass]
@@ -10,15 +12,20 @@ namespace MyTesting
         [TestMethod]
         public void InstanceOK()
         {
+            //create a new instance of the class we want to create
             clsCustomer AnCustomer = new clsCustomer();
+            //test to see if it exists
             Assert.IsNotNull(AnCustomer);
         }
         [TestMethod]
         public void PostCodeExist()
         {
+            //create a new instance of the class we want to create
             clsCustomer AnCustomer = new clsCustomer();
+            //create some test data
             string PostCode = "LE5";
             AnCustomer.PostCode = PostCode;
+            //test to see if it exists
             Assert.AreEqual(AnCustomer.PostCode, PostCode);
         }
 
@@ -26,9 +33,12 @@ namespace MyTesting
         [TestMethod]
         public void DateExist()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer AnCustomer = new clsCustomer(); ;
+            //create some test data
             DateTime Date = DateTime.Now.Date;
             AnCustomer.dateOfBirth = Date;
+            //test to see if it exists
             Assert.AreEqual(AnCustomer.dateOfBirth, Date);
 
         }
@@ -36,8 +46,11 @@ namespace MyTesting
         [TestMethod]
         public void ValidExist()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store result of validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -47,8 +60,9 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if it exists
             Assert.AreEqual(AllOK, "");
         }
 
@@ -56,14 +70,14 @@ namespace MyTesting
         public void FindMethodOK()
         {
             //create an instance of the class we want to create
-            clsCustomer AnCustomer = new clsCustomer();
+            clsCustomer TestItem = new clsCustomer(); ;
             //boolean variable to store the result of the validisation
             Boolean Found = false;
             //create some test data to use the method 
             Int32 CustomerID = 1;
             //Invoke the method
-            Found = AnCustomer.Find(CustomerID);
-            //test to see that the result is correct
+            Found = TestItem.Find(CustomerID);
+            //test to see if it exists 
             Assert.IsTrue(Found);
 
         }
@@ -71,39 +85,51 @@ namespace MyTesting
         [TestMethod]
         public void ForeNameExist()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //create some test data
             string ForeName = "fred";
-            AnCustomer.ForeName = ForeName;
-            Assert.AreEqual(AnCustomer.ForeName, ForeName);
+            TestItem.ForeName = ForeName;
+            //test to see if it exists
+            Assert.AreEqual(TestItem.ForeName, ForeName);
 
         }
 
         [TestMethod]
         public void SurnameExist()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //create some test data
             string Surname = "bloggs";
-            AnCustomer.Surname = Surname;
-            Assert.AreEqual(AnCustomer.Surname, Surname);
+            TestItem.Surname = Surname;
+            //test to see if it exists
+            Assert.AreEqual(TestItem.Surname, Surname);
 
         }
 
         [TestMethod]
         public void GenderExist()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //create some test data
             string Gender = "male";
-            AnCustomer.Gender = Gender;
-            Assert.AreEqual(AnCustomer.Gender, Gender);
+            TestItem.Gender = Gender;
+            //test to see if it exists
+            Assert.AreEqual(TestItem.Gender, Gender);
 
         }
 
         [TestMethod]
         public void ContactNumberExist()
         {
+            //create a new instance of the class we want to create
             clsCustomer AnCustomer = new clsCustomer();
+            //create some test data
             string ContactNumber = "01161234567";
             AnCustomer.ContactNumber = ContactNumber;
+            //test to see if it exists
             Assert.AreEqual(AnCustomer.ContactNumber, ContactNumber);
 
         }
@@ -111,38 +137,50 @@ namespace MyTesting
         [TestMethod]
         public void EMailExist()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //create some test data
             string EMail = "me@me.com";
-            AnCustomer.EMail = EMail;
-            Assert.AreEqual(AnCustomer.EMail, EMail);
+            TestItem.EMail = EMail;
+            //test to see if it exists
+            Assert.AreEqual(TestItem.EMail, EMail);
 
         }
 
         [TestMethod]
         public void FlatNoExist()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //create some test data
             string FlatNo = "1";
-            AnCustomer.FlatNo = FlatNo;
-            Assert.AreEqual(AnCustomer.FlatNo, FlatNo);
+            TestItem.FlatNo = FlatNo;
+            //test to see if it exists
+            Assert.AreEqual(TestItem.FlatNo, FlatNo);
 
         }
 
         [TestMethod]
         public void HouseNoExist()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //create some test data
             string HouseNo = "2";
-            AnCustomer.HouseNo = HouseNo;
-            Assert.AreEqual(AnCustomer.HouseNo, HouseNo);
+            TestItem.HouseNo = HouseNo;
+            //test to see if it exists
+            Assert.AreEqual(TestItem.HouseNo, HouseNo);
 
         }
 
         [TestMethod]
         public void ForenameMinMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -152,16 +190,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ForenameBoundaryMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "A";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -171,16 +213,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ForenameBoundaryMinPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "ab";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -190,16 +236,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ForenameBoundaryMaxMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "Abcdefhjklmnjhsaqwe";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -209,16 +259,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ForenameBoundaryMaxBoundary()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "Abcdefhjklmnjhsaqweh";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -228,16 +282,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ForenameBoundaryMaxPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "";
             ForeName = ForeName.PadRight(26, 'a');
             string Surname = "bloggs";
@@ -248,16 +306,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ForenameBoundaryMid()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "";
             ForeName = ForeName.PadRight(13, 'a');
             string Surname = "bloggs";
@@ -268,16 +330,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ForenameExtremeMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "";
             ForeName = ForeName.PadRight(30, 'a');
             string Surname = "bloggs";
@@ -288,16 +354,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void SurnameMinMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -307,16 +377,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void SurnameBoundaryMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "A";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -326,16 +400,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void SurnameBoundaryMinPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "JB";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -345,16 +423,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void SurnameBoundaryMaxMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhjklmnjhsaqweasasa";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -364,16 +446,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void SurnameBoundaryMaxBoundary()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhjklmnjhsaqweasasaa";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -383,8 +469,9 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
@@ -392,8 +479,11 @@ namespace MyTesting
         [TestMethod]
         public void SurnameBoundaryMaxPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhjklmnjhsaqweasasaas";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -403,16 +493,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void SurnameBoundaryMid()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhjkasav";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -422,16 +516,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void SurnameExtremeMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhjklmnjhsaqweaabdfvdfgvc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -441,16 +539,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void DateTestMinMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-17).AddDays(+364).ToString();
@@ -460,16 +562,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void DateTestBoundryMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-18).ToString();
@@ -479,16 +585,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void DateTestBoundryMinPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-18).AddDays(+1).ToString();
@@ -498,16 +608,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void DateTestMaxMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-149).AddDays(+364).ToString();
@@ -517,16 +631,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void DateTestMaxBoundary()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-150).ToString();
@@ -536,16 +654,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void DateTestBoundryMaxPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-150).AddDays(+1).ToString();
@@ -555,8 +677,9 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
 
         }
@@ -564,8 +687,11 @@ namespace MyTesting
         [TestMethod]
         public void DateTestBoundryMid()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = DateTime.Now.Date.AddYears(-75).ToString();
@@ -575,8 +701,9 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
 
         }
@@ -584,8 +711,11 @@ namespace MyTesting
         [TestMethod]
         public void DateTestInvalidData()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "Abcdefhc";
             string DateOfBirth = "123";
@@ -595,16 +725,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void GenderMinMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -614,16 +748,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void GenderBoundaryMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -633,16 +771,21 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void GenderBoundaryMinPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -652,16 +795,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void GenderBoundaryMaxMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -671,16 +818,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void GenderBoundaryMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -690,16 +841,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void GenderBoundaryMaxPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -709,16 +864,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void GenderBoundaryMid()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -728,16 +887,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void GenderExtremeMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -747,16 +910,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ContactNumberExtremeMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -766,16 +933,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ContactNumberBoundaryMinMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -785,16 +956,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ContactNumberBoundaryMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -804,16 +979,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ContactNumberBoundaryMinPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -823,16 +1002,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ContactNumberBoundaryMaxMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -842,16 +1025,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ContactNumberBoundaryMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -861,16 +1048,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ContactNumberBoundaryMaxPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -880,16 +1071,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void ContactNumberBoundaryMid()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -899,8 +1094,9 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
@@ -908,8 +1104,11 @@ namespace MyTesting
         [TestMethod]
         public void ContactNumberExtremeMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -919,16 +1118,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void EmailExtremeMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -938,16 +1141,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void EmailBoundaryMinMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -957,16 +1164,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void EmailBoundaryMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -976,16 +1187,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void EmailBoundaryMinPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -995,16 +1210,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void EmailBoundaryMaxMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1014,16 +1233,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void EmailBoundaryMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1033,16 +1256,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void EmailBoundaryMaxPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1052,16 +1279,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void EmailBoundaryMid()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1071,16 +1302,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void EmailExtremeMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1090,16 +1325,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void FlatNoBoundaryMinMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1109,16 +1348,20 @@ namespace MyTesting
             string FlatNo = "";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void FlatNoBoundaryMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1128,16 +1371,20 @@ namespace MyTesting
             string FlatNo = "6";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void FlatNoBoundaryMinPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1147,16 +1394,20 @@ namespace MyTesting
             string FlatNo = "62";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void FlatNoBoundaryMaxMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1166,8 +1417,9 @@ namespace MyTesting
             string FlatNo = "10000";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
@@ -1175,8 +1427,11 @@ namespace MyTesting
         [TestMethod]
         public void FlatNoBoundaryMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1186,8 +1441,9 @@ namespace MyTesting
             string FlatNo = "100000";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
@@ -1195,8 +1451,11 @@ namespace MyTesting
         [TestMethod]
         public void FlatNoBoundaryMaxPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1206,16 +1465,20 @@ namespace MyTesting
             string FlatNo = "1000001";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void FlatNoBoundaryMid()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1225,16 +1488,20 @@ namespace MyTesting
             string FlatNo = "100";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void FlatNoExtremeMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1244,16 +1511,20 @@ namespace MyTesting
             string FlatNo = "10000000000000000000";
             string HouseNo = "2";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void HouseNoBoundaryMinMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1263,16 +1534,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void HouseNoBoundaryMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1282,16 +1557,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "6";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void HouseNoBoundaryMinPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1301,16 +1580,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "62";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void HouseNoBoundaryMaxMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1320,16 +1603,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "10000";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void HouseNoBoundaryMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1339,16 +1626,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "100000";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void HouseNoBoundaryMaxPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1358,16 +1649,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "1000001";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void HouseNoBoundaryMid()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1377,16 +1672,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "100";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void HouseNoExtremeMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1396,8 +1695,9 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "10000000000000000000";
             string PostCode = "LE5 6HP";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
 
         }
@@ -1405,8 +1705,11 @@ namespace MyTesting
         [TestMethod]
         public void PostCodeExtremeMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1416,16 +1719,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void PostCodeBoundaryMinMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1435,16 +1742,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE11";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void PostCodeBoundaryMin()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1454,16 +1765,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE212";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void PostCodeBoundaryMinPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1473,16 +1788,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE2122";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void PostCodeBoundaryMaxMinus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1492,16 +1811,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE212232";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void PostCodeBoundaryMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1511,16 +1834,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE2122321";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void PostCodeBoundaryMaxPlus1()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1530,16 +1857,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE21223211";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
         [TestMethod]
         public void PostCodeBoundaryMid()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1549,16 +1880,20 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE221369";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreEqual(AllOK, "");
         }
 
         [TestMethod]
         public void PostCodeExtremeMax()
         {
-            clsCustomer AnCustomer = new clsCustomer();
+            //create a new instance of the class we want to create
+            clsCustomer TestItem = new clsCustomer(); ;
+            //string variable to store the results of the validation
             string AllOK = "";
+            //create some test data to assign to property
             string ForeName = "fred";
             string Surname = "bloggs";
             string DateOfBirth = DateTime.Now.Date.AddYears(-21).ToString();
@@ -1568,8 +1903,9 @@ namespace MyTesting
             string FlatNo = "1";
             string HouseNo = "2";
             string PostCode = "LE20AWLE200000000000";
-
-            AllOK = AnCustomer.Valid( ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //invoke method
+            AllOK = TestItem.Valid(ForeName, Surname, DateOfBirth, Gender, ContactNumber, EMail, FlatNo, HouseNo, PostCode);
+            //test to see if result correct
             Assert.AreNotEqual(AllOK, "");
         }
 
@@ -1585,7 +1921,7 @@ namespace MyTesting
             Int32 CustomerID = 1;
             //invoke method
             Found = AC.Find(CustomerID);
-            //check the booking no
+            //check the Customer ID
             if (AC.CustomerID != 1)
             {
                 Found = false;
@@ -1606,7 +1942,7 @@ namespace MyTesting
             Int32 CustomerID = 1;
             //invoke method
             Found = AC.Find(CustomerID);
-            //check the booking no
+            //check the Customer ID
             if (AC.Surname != "osman")
             {
                 Found = false;
@@ -1627,7 +1963,7 @@ namespace MyTesting
             Int32 CustomerID = 1;
             //invoke method
             Found = AC.Find(CustomerID);
-            //check the booking no
+            //check the Customer ID
             if (AC.ForeName != "ayub")
             {
                 Found = false;
@@ -1648,7 +1984,7 @@ namespace MyTesting
             Int32 CustomerID = 1;
             //invoke method
             Found = AC.Find(CustomerID);
-            //check the booking no
+            //check the Customer ID
             if (AC.dateOfBirth != Convert.ToDateTime("19/09/1996"))
             {
                 Found = false;
@@ -1669,7 +2005,7 @@ namespace MyTesting
             Int32 CustomerID = 1;
             //invoke method
             Found = AC.Find(CustomerID);
-            //check the booking no
+            //check the Customer ID
             if (AC.PostCode != "LE2 5LP")
             {
                 Found = false;
@@ -1690,7 +2026,7 @@ namespace MyTesting
             Int32 CustomerID = 1;
             //invoke method
             Found = AC.Find(CustomerID);
-            //check the booking no
+            //check the Customer ID
             if (AC.EMail != "a@de.com")
             {
                 Found = false;
@@ -1711,7 +2047,7 @@ namespace MyTesting
             Int32 CustomerID = 1;
             //invoke method
             Found = AC.Find(CustomerID);
-            //check the booking no
+            //check the Customer ID
             if (AC.HouseNo != "71")
             {
                 Found = false;
@@ -1732,7 +2068,7 @@ namespace MyTesting
             Int32 CustomerID = 1;
             //invoke method
             Found = AC.Find(CustomerID);
-            //check the booking no
+            //check the Customer ID
             if (AC.FlatNo != "0")
             {
                 Found = false;
@@ -1753,7 +2089,7 @@ namespace MyTesting
             Int32 CustomerID = 1;
             //invoke method
             Found = AC.Find(CustomerID);
-            //check the booking no
+            //check the Customer ID
             if (AC.ContactNumber != "01162156")
             {
                 Found = false;

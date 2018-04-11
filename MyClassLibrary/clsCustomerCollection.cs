@@ -185,13 +185,14 @@ namespace MyClassLibrary
 
         }
 
-        public void FilterbyPostCode(string PostCode)
+        public void FilterbyPostCode(string PostCode) //string UserName)
         {
             //filters the records based on a full or partial code
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //send the PostCode parameter to the database
             DB.AddParameter("@PostCode", PostCode);
+            //DB.AddParameter("@username", UserName);
             // execute the stored procedure 
             DB.Execute("sproc_tblCustomer_FilterByPostcode");
             //populate the array list with the data table
@@ -247,4 +248,3 @@ namespace MyClassLibrary
 
     }
 }
-
