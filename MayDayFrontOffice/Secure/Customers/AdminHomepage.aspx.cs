@@ -137,7 +137,7 @@ public partial class admin_customer : System.Web.UI.Page
     void FilterPostCode(string PostCode)
     {
         //create an instance of the booking collection
-        clsCustomerCollection C = new clsCustomerCollection(User.Identity.Name);
+        clsCustomerCollection C = new clsCustomerCollection();
         C.FilterbyPostCode(PostCode);
         //set the data source to the list of bookings in the collection
         lstCust.DataSource = C.CustomerList;

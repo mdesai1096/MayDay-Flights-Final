@@ -12,6 +12,7 @@ namespace MyClassLibrary
         public string EmployeeName { get; set; }
         public string EmployeeRole { get; set; }
         public string EmployeeSalary { get; set; }
+        public int EmployeeNo { get; set; }
 
         public string Valid(string employeeAddress, string employeeContactNumber, string employeeDOB, string employeeEmail, string employeeJoinDate, string employeeName, string employeeRole, string employeeSalary)
         {
@@ -105,9 +106,42 @@ namespace MyClassLibrary
             {
                 Error = Error + "The employee salary can't more than 8 characters ";
             }
+            if (employeeName.Length == 0)
+            {
+                Error = Error + "The employee name cant be blank ";
+            }
+            if (employeeName.Length > 40)
+            {
+                Error = Error + "The employee name cant more than 40 characters ";
+            }
+            try
+            {
+
+                DateTime DateTemp;
+                DateTemp = Convert.ToDateTime(employeeJoinDate);
+
+                if (DateTemp > DateTime.Now.Date.AddMonths(-1))
+                {
+                    Error = Error + "Join date must be over one month ago";
+                }
+
+                if (DateTemp < DateTime.Now.Date.AddMonths(-1))
+                {
+                    Error = Error + "Join date must be under next month";
+                }
+
+            }
+            catch
+            {
+                Error = Error + "Incorrect date entered";
+            }
             return Error;
         }
 
-
+        public bool Find(int employeeNo)
+        {
+            //always return true
+            return true;
+        }
     }
 }

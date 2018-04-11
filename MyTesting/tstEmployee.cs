@@ -17,6 +17,46 @@ namespace MyTesting
         }
 
         [TestMethod]
+        public void FindMethodOK()
+        {
+            //create instance of class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            AnEmployee.Find(2);
+            string EmployeeName = AnEmployee.EmployeeName;
+            //boolean variable to store result of validation
+            Boolean Found = false;
+            //create some test to use with data
+            Int32 EmployeeNo = 1;
+            //invoke method
+            Found = AnEmployee.Find(EmployeeNo);
+            //test to see results correct 
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestEmployeeNoFound()
+        {
+            //create instance of class
+            clsEmployee AnEmployee = new clsEmployee();
+            //boolean variable to store results
+            Boolean Found = false;
+            //boolean to record if data is ok
+            Boolean OK = true;
+            //create sme test to use with methood
+            Int32 EmployeeNo = 21;
+            //invoke method 
+            Found = AnEmployee.Find(EmployeeNo);
+            //check employee no
+            if (AnEmployee.EmployeeNo != 21)
+            {
+                OK = false;
+
+            }
+            //test
+            Assert.IsTrue(OK);
+
+        }
+        [TestMethod]
         public void EmployeeAddressOK()
         {
             //create instance of class we want to create
@@ -135,7 +175,7 @@ namespace MyTesting
             string EmployeeContactNumber = "076666666661";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -179,7 +219,7 @@ namespace MyTesting
             string EmployeeContactNumber = "076666666661";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -202,7 +242,7 @@ namespace MyTesting
             string EmployeeContactNumber = "076666666661";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -226,7 +266,7 @@ namespace MyTesting
             string EmployeeContactNumber = "076666666661";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -250,7 +290,7 @@ namespace MyTesting
             string EmployeeContactNumber = "076666666661";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -297,7 +337,7 @@ namespace MyTesting
             string EmployeeContactNumber = "076666666661";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -386,7 +426,7 @@ namespace MyTesting
             string EmployeeContactNumber = "07666666666";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -408,7 +448,7 @@ namespace MyTesting
             string EmployeeContactNumber = "333333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -430,7 +470,7 @@ namespace MyTesting
             string EmployeeContactNumber = "233333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -453,7 +493,7 @@ namespace MyTesting
             string EmployeeContactNumber = "2222222222222";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -476,7 +516,7 @@ namespace MyTesting
             string EmployeeContactNumber = "22222222222222";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -499,7 +539,7 @@ namespace MyTesting
             string EmployeeContactNumber = "076666666661";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -589,7 +629,7 @@ namespace MyTesting
             string EmployeeContactNumber = "07666666666";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "fffff";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -611,7 +651,7 @@ namespace MyTesting
             string EmployeeContactNumber = "07666666666";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ffffff";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -634,7 +674,7 @@ namespace MyTesting
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "";
             EmployeeEmail = EmployeeEmail.PadRight(25, 'a');
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -657,7 +697,7 @@ namespace MyTesting
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "";
             EmployeeEmail = EmployeeEmail.PadRight(26, 'a');
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -703,7 +743,7 @@ namespace MyTesting
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "";
             EmployeeEmail = EmployeeEmail.PadRight(13, 'a');
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -784,7 +824,7 @@ namespace MyTesting
             string EmployeeDOB = SomeDate.ToString();
             string EmployeeEmail = "ffffffffffffffffffffff";
             EmployeeEmail.PadRight(12, 'a');
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -841,7 +881,7 @@ namespace MyTesting
             string EmployeeDOB = SomeDate.ToString();
             string EmployeeEmail = "ffffff@ffff.com";
             EmployeeEmail.PadRight(12, 'a');
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -871,7 +911,7 @@ namespace MyTesting
             string EmployeeDOB = SomeDate.ToString();
             string EmployeeEmail = "ffffff@ffff.com";
             EmployeeEmail.PadRight(12, 'a');
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -900,7 +940,7 @@ namespace MyTesting
             string EmployeeDOB = SomeDate.ToString();
             string EmployeeEmail = "ffffff@ffff.com";
             EmployeeEmail.PadRight(12, 'a');
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "Accountant";
             string EmployeeSalary = "1800";
@@ -995,7 +1035,7 @@ namespace MyTesting
             string EmployeeContactNumber = "333333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "aaa";
             string EmployeeSalary = "1800";
@@ -1017,7 +1057,7 @@ namespace MyTesting
             string EmployeeContactNumber = "333333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "aaaa";
             string EmployeeSalary = "1800";
@@ -1039,7 +1079,7 @@ namespace MyTesting
             string EmployeeContactNumber = "333333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "aaaaaaaaaaa";
             string EmployeeSalary = "1800";
@@ -1061,7 +1101,7 @@ namespace MyTesting
             string EmployeeContactNumber = "333333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "aaaaaaaaaaaa";
             string EmployeeSalary = "1800";
@@ -1105,7 +1145,7 @@ namespace MyTesting
             string EmployeeContactNumber = "333333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "aaaaaa";
             string EmployeeSalary = "1800";
@@ -1150,7 +1190,7 @@ namespace MyTesting
             string EmployeeContactNumber = "333333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "aaaaaa";
             string EmployeeSalary = "130";
@@ -1216,7 +1256,7 @@ namespace MyTesting
             string EmployeeContactNumber = "333333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "aaaaaa";
             string EmployeeSalary = "1301";
@@ -1239,7 +1279,7 @@ namespace MyTesting
             string EmployeeContactNumber = "333333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "aaaaaa";
             string EmployeeSalary = "1234567";
@@ -1262,7 +1302,7 @@ namespace MyTesting
             string EmployeeContactNumber = "333333333333";
             string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
             string EmployeeEmail = "ddddd@hotmail.com";
-            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "aaaaaa";
             string EmployeeSalary = "13000000";
@@ -1296,7 +1336,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void EmployeeSalaryMid()
+        public void EmployeeSalaryExMax()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -1310,7 +1350,372 @@ namespace MyTesting
             string EmployeeJoinDate = DateTime.Now.Date.ToString();
             string EmployeeName = "Vinay";
             string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "";
+            EmployeeSalary = EmployeeSalary.PadRight(60, 'a');
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeSalaryMid()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
+            string EmployeeName = "Vinay";
+            string EmployeeRole = "aaaaaa";
             string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeNameExMin()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "";
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+
+
+        }
+
+        [TestMethod]
+        public void EmployeeNameMinBoundary()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
+            string EmployeeName = "a";
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeNameMinBoundaryPlusOne()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
+            string EmployeeName = "aa";
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeNameMaxBoundary()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
+            string EmployeeName = "";
+            EmployeeName = EmployeeName.PadRight(40, 'a');
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeNameMaxBoundaryMinusOne()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
+            string EmployeeName = "";
+            EmployeeName = EmployeeName.PadRight(39, 'a');
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeNameMaxBoundaryPlusOne()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "";
+            EmployeeName = EmployeeName.PadRight(41, 'a');
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeNameMid()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.AddMonths(-1).ToString();
+            string EmployeeName = "";
+            EmployeeName = EmployeeName.PadRight(25, 'a');
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeNameExMax()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            string EmployeeJoinDate = DateTime.Now.Date.ToString();
+            string EmployeeName = "";
+            EmployeeName = EmployeeName.PadRight(100, 'a');
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeJoinDateExMin()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            //create variable to store the data
+            DateTime SomeDate;
+            //set date to todays date
+            SomeDate = DateTime.Now.Date;
+
+            SomeDate = SomeDate.AddMonths(-2);
+            string EmployeeJoinDate = SomeDate.ToString();
+            string EmployeeName = "";
+            EmployeeName = EmployeeName.PadRight(10, 'a');
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeJoinDateMinMinusOne()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            //create variable to store the data
+            DateTime SomeDate;
+            //set date to todays date
+            SomeDate = DateTime.Now.Date;
+
+            SomeDate = SomeDate.AddMonths(-1).AddDays(-1);
+            string EmployeeJoinDate = SomeDate.ToString();
+            string EmployeeName = "";
+            EmployeeName = EmployeeName.PadRight(10, 'a');
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreNotEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeJoinDateMinBoundary()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            //create variable to store the data
+            DateTime SomeDate;
+            //set date to todays date
+            SomeDate = DateTime.Now.Date;
+
+            SomeDate = SomeDate.AddMonths(-1);
+            string EmployeeJoinDate = SomeDate.ToString();
+            string EmployeeName = "";
+            EmployeeName = EmployeeName.PadRight(10, 'a');
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeJoinDateMinPlusOne()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            //create variable to store the data
+            DateTime SomeDate;
+            //set date to todays date
+            SomeDate = DateTime.Now.Date;
+            //change date to -17 years & -364 days
+            SomeDate = SomeDate.AddMonths(-1).AddDays(-1);
+            string EmployeeJoinDate = SomeDate.ToString();
+            string EmployeeName = "";
+            EmployeeName = EmployeeName.PadRight(10, 'a');
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
+            //invoke method
+            OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
+            //test to see if it exists
+            Assert.AreEqual(OK, "");
+        }
+
+        [TestMethod]
+        public void EmployeeJoinDateMaxBoundary()
+        {
+            //create a new instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string variable to store result of validation
+            string OK = "";
+            //create some test data to assign to property
+            string EmployeeAddress = "dddd";
+            string EmployeeContactNumber = "333333333333";
+            string EmployeeDOB = DateTime.Now.Date.AddYears(-19).ToString();
+            string EmployeeEmail = "ddddd@hotmail.com";
+            //create variable to store the data
+            DateTime SomeDate;
+            //set date to todays date
+            SomeDate = DateTime.Now.Date;
+            //change date to -17 years & -364 days
+
+            string EmployeeJoinDate = SomeDate.ToString();
+            string EmployeeName = "";
+            EmployeeName = EmployeeName.PadRight(10, 'a');
+            string EmployeeRole = "aaaaaa";
+            string EmployeeSalary = "1234";
+
             //invoke method
             OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
             //test to see if it exists
@@ -1318,4 +1723,3 @@ namespace MyTesting
         }
     }
 }
-
