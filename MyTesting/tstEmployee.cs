@@ -16,6 +16,8 @@ namespace MyTesting
             Assert.IsNotNull(AnEmployee);
         }
 
+
+
         [TestMethod]
         public void FindMethodOK()
         {
@@ -56,6 +58,64 @@ namespace MyTesting
             Assert.IsTrue(OK);
 
         }
+
+        [TestMethod]
+        public void TestEmployeeNameFound()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 EmployeeNo = 21;
+            Found = AnEmployee.Find(EmployeeNo);
+            if (AnEmployee.EmployeeName != "Test Employee Name")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestEmployeeDOBFound()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 EmployeeNo = 21;
+            Found = AnEmployee.Find(EmployeeNo);
+            if (AnEmployee.EmployeeDOB != Convert.ToDateTime("11/04/2002"))
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestEmployeeContactNumberFound()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            string TestData = "07666666666";
+            AnEmployee.EmployeeContactNumber = TestData;
+            Assert.AreEqual(AnEmployee.EmployeeContactNumber, TestData);
+        }
+
+        [TestMethod]
+        public void TestAddressFound()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            string TestData = "31 London road";
+            AnEmployee.Address = TestData;
+            Assert.AreEqual(AnEmployee.Address, TestData);
+        }
+
+        [TestMethod]
+        public void TestEmployeeEmailFound()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            string TestData = "ff@hotmail.com";
+            AnEmployee.EmployeeEmail = TestData;
+            Assert.AreEqual(AnEmployee.EmployeeEmail, TestData);
+        }
+
         [TestMethod]
         public void EmployeeAddressOK()
         {
@@ -68,6 +128,8 @@ namespace MyTesting
             //test to see that the two values are the same
             Assert.AreEqual(AnEmployee.Address, TestData);
         }
+
+
 
         [TestMethod]
         public void EmployeeContactNumberOK()
@@ -1689,7 +1751,7 @@ namespace MyTesting
             //invoke method
             OK = AnEmployee.Valid(EmployeeAddress, EmployeeContactNumber, EmployeeDOB, EmployeeEmail, EmployeeJoinDate, EmployeeName, EmployeeRole, EmployeeSalary);
             //test to see if it exists
-            Assert.AreEqual(OK, "");
+            Assert.AreNotEqual(OK, "");
         }
 
         [TestMethod]
