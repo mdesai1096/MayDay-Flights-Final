@@ -154,6 +154,7 @@ namespace MyClassLibrary
             DB.AddParameter("@HouseNo", mThisCustomer.HouseNo);
             DB.AddParameter("@FlatNo", mThisCustomer.FlatNo);
             DB.AddParameter("@ContactNo", mThisCustomer.ContactNumber);
+            DB.AddParameter("@UserName", mUserName);
             //execute the query returning primary key of new record
             return DB.Execute("Sproc_tblCustomer_Insert");
 
@@ -186,10 +187,12 @@ namespace MyClassLibrary
             DB.AddParameter("@HouseNo", mThisCustomer.HouseNo);
             DB.AddParameter("@FlatNo", mThisCustomer.FlatNo);
             DB.AddParameter("@ContactNo", mThisCustomer.ContactNumber);
+            DB.AddParameter("@UserName", mUserName);
             //execute the query returning primary key of new record
             DB.Execute("sproc_tblCustomer_Update");
 
         }
+        
 
         public void FilterbyPostCode(string PostCode) //string UserName)
         {
@@ -198,7 +201,7 @@ namespace MyClassLibrary
             clsDataConnection DB = new clsDataConnection();
             //send the PostCode parameter to the database
             DB.AddParameter("@PostCode", PostCode);
-            //DB.AddParameter("@username", UserName);
+            DB.AddParameter("@username", mUserName);
             // execute the stored procedure 
             DB.Execute("sproc_tblCustomer_FilterByPostcode");
             //populate the array list with the data table
@@ -245,6 +248,7 @@ namespace MyClassLibrary
             clsDataConnection DB = new clsDataConnection();
             //send the PostCode parameter to the database
             DB.AddParameter("@surName", surName);
+            DB.AddParameter("@username", mUserName);
             // execute the stored procedure 
             DB.Execute("sproc_tblCustomer_FilterBysurName");
             //populate the array list with the data table
