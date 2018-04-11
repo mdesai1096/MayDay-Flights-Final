@@ -15,7 +15,7 @@ public partial class admin_customer : System.Web.UI.Page
         //display their user name
         lblUserInfo.Text = "The current user is " + User.Identity.Name;
         //if this is the first time the page is displayed
-        if (User.IsInRole("admins"))
+        if (User.IsInRole("admin"))
         {
             //display the delete button 
             btnDelete.Visible = true;
@@ -24,7 +24,7 @@ public partial class admin_customer : System.Web.UI.Page
         {
             // hide the delete button
             btnDelete.Visible = false;
-
+           
         }
         //clear any existing error messages 
         lblError.Text = "";
@@ -137,7 +137,7 @@ public partial class admin_customer : System.Web.UI.Page
     void FilterPostCode(string PostCode)
     {
         //create an instance of the booking collection
-        clsCustomerCollection C = new clsCustomerCollection();
+        clsCustomerCollection C = new clsCustomerCollection(User.Identity.Name);
         C.FilterbyPostCode(PostCode);
         //set the data source to the list of bookings in the collection
         lstCust.DataSource = C.CustomerList;

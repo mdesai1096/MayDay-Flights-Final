@@ -36,7 +36,7 @@ namespace MyClassLibrary
 
             }
         }
-        
+
         //public property for Arrival Date
         public DateTime Arrival
         {
@@ -99,15 +99,38 @@ namespace MyClassLibrary
             }
         }
 
+        //public property for Arrival Airport
+        public string ArrivalAirport
+        {
+            get
+            {
+                //return the private data
+                return mArrivalAirport;
+
+            }
+            set
+            {
+                //set the private data
+                mArrivalAirport = value;
+            }
+        }
+        //public property for Departure Airport
+        public string DepartureAirport
+        {
+            get
+            {
+                //return the private data
+                return mDepartureAirport;
+
+            }
+            set
+            {
+                //set the private data
+                mDepartureAirport = value;
+            }
+        }
 
 
-
-
-
-
-
-        public string ArrivalAirport { get; set; }
-        public string DepartureAirport { get; set; }
 
         public string Valid(string flightNo, string airline, string destination, string arrival, string arrivalAirport, string departure, string departureAirport)
         {
@@ -195,17 +218,49 @@ namespace MyClassLibrary
 
         public bool Find(int flightNo)
         {
-            //set the private data member to the test data value
-            mFlight_No = 21;
-            mAirline = "Air India";
-            mDestination = "India";
-            mArrivalDate = Convert.ToDateTime("21/06/2018");
-            mDepartureDate = Convert.ToDateTime("21/06/2018");
-            mArrivalAirport = "BHX";
-            mDepartureAirport = "BHX";
-            //always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parmeter for the Flight No to search for
+            DB.AddParameter("@FlightNo", flightNo);
+            //Execute the stored procedure
+            DB.Execute("sproc_tblFlights_FilterByFlightNo");
+            //if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mFlight_No = Convert.ToInt32(DB.DataTable.Rows[0]["Flight_No"]);
+                mAirline = Convert.ToString(DB.DataTable.Rows[0]["Airline"]);
+                mDestination = Convert.ToString(DB.DataTable.Rows[0]["Destination"]);
+                mArrivalDate = Convert.ToDateTime(DB.DataTable.Rows[0]["ArrivalDate"]);
+                mDepartureDate = Convert.ToDateTime(DB.DataTable.Rows[0]["DepartureDate"]);
+                mArrivalAirport = Convert.ToString(DB.DataTable.Rows[0]["ArrivalAirport"]);
+                mDepartureAirport = Convert.ToString(DB.DataTable.Rows[0]["DepartureAirport"]);
+                //return that everything worked OK
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
         }
+
+
+
+
+
+        //    //set the private data member to the test data value
+        //    mFlight_No = 21;
+        //    mAirline = "Air India";
+        //    mDestination = "India";
+        //    mArrivalDate = Convert.ToDateTime("21/06/2018");
+        //    mDepartureDate = Convert.ToDateTime("21/06/2018");
+        //    mArrivalAirport = "BHX";
+        //    mDepartureAirport = "BHX";
+        //    //always return true
+        //    return true;
+        //}
 
 
 

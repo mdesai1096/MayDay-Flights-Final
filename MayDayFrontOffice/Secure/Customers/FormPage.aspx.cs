@@ -8,14 +8,11 @@ using MyClassLibrary;
 
 public partial class EditCustomer : System.Web.UI.Page
 {
-    //variable to store the primary key "Customer ID" with page level scope
     Int32 CustomerID;
-
-    //event handler for the page load event
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        //get the pk of the Customer to be processed which is "Customer ID"
+        //get the pk of the booking to be processed
         CustomerID = Convert.ToInt32(Session["CustomerID"]);
         if (IsPostBack == false)
         {
@@ -28,7 +25,7 @@ public partial class EditCustomer : System.Web.UI.Page
 
             }
         }
-    }
+        }
 
     protected void btnBackToAdminHomePage_Click(object sender, EventArgs e)
     {
@@ -66,14 +63,15 @@ public partial class EditCustomer : System.Web.UI.Page
     //function for Adding records
     void Add()
     {
-        //create an instance of the Customer list
+        //create an instance of the booking list
         clsCustomerCollection CList = new clsCustomerCollection();
         //validate the data on the web form
+        //string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode
         String Error = CList.ThisCustomer.Valid(txtForename.Text, txtSurname.Text, txtDateOfBirth.Text, txtGender.Text, txtContactNumber.Text, txtEmail.Text, txtFlatNo.Text, txtHouseNumber.Text, txtPostCode.Text);
         //if the data is OK then add it to the object
         if (Error == "")
         {
-
+         
             //get the data entered by the user
             CList.ThisCustomer.Surname = txtSurname.Text;
             CList.ThisCustomer.ForeName = txtForename.Text;
@@ -82,9 +80,9 @@ public partial class EditCustomer : System.Web.UI.Page
             CList.ThisCustomer.FlatNo = txtFlatNo.Text;
             CList.ThisCustomer.PostCode = txtPostCode.Text;
             CList.ThisCustomer.Gender = txtGender.Text;
-            CList.ThisCustomer.ContactNumber = txtContactNumber.Text;
+            CList.ThisCustomer.ContactNumber =txtContactNumber.Text;
             CList.ThisCustomer.EMail = txtEmail.Text;
-            //Add the record
+            //update the record
             CList.Add();
             //all done so redirect back to the main page
             Response.Redirect("AdminHomepage.aspx");
@@ -98,9 +96,10 @@ public partial class EditCustomer : System.Web.UI.Page
     //function for updating records
     void Update()
     {
-        //create an instance of the Customer list
+        //create an instance of the booking list
         clsCustomerCollection CList = new clsCustomerCollection();
         //validate the data on the web form
+                                                 //string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode
         String Error = CList.ThisCustomer.Valid(txtForename.Text, txtSurname.Text, txtDateOfBirth.Text, txtGender.Text, txtContactNumber.Text, txtEmail.Text, txtFlatNo.Text, txtHouseNumber.Text, txtPostCode.Text);
         //if the data is OK then add it to the object
         if (Error == "")
@@ -131,7 +130,7 @@ public partial class EditCustomer : System.Web.UI.Page
 
     void DisplayCust()
     {
-        //create an instance of the Customer list
+        //create an instance of the booking list
         clsCustomerCollection CList = new clsCustomerCollection();
         //find the record to update
         CList.ThisCustomer.Find(CustomerID);
