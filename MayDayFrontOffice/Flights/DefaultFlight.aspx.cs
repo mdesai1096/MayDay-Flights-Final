@@ -13,10 +13,11 @@ public partial class DefaultFlight : System.Web.UI.Page
     }
 
 
-    
+
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
+        Session["FlightNo"] = -1;
         Response.Redirect("AddFlight.aspx");
     }
 
@@ -25,7 +26,7 @@ public partial class DefaultFlight : System.Web.UI.Page
         Response.Redirect("Update.aspx");
     }
 
-    
+
 
     protected void btnDelete_Click1(object sender, EventArgs e)
     {
@@ -33,4 +34,3 @@ public partial class DefaultFlight : System.Web.UI.Page
     }
 }
 
-    
