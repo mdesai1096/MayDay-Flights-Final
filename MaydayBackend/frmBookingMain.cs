@@ -77,7 +77,7 @@ namespace MaydayBackend
         Int32 FilterBookingsDateRange(string StartDate, string EndDate)
         {
             //create an instance of the booking collection
-            clsBookingsCollection Bookings = new clsBookingsCollection();
+            clsBookingsCollection Bookings = new clsBookingsCollection(" ");
             Bookings.FilterbyDateBooked(StartDate, EndDate);
             //set the data source to the list of bookings in the collection
             lstBookings.DataSource = Bookings.BookingsList;
@@ -92,7 +92,7 @@ namespace MaydayBackend
         private void btnDFilter_Click(object sender, EventArgs e)
         {
                 //create an instance of the booking list
-                clsBookingsCollection BookingsList = new clsBookingsCollection();
+                clsBookingsCollection BookingsList = new clsBookingsCollection(" ");
                 //validate the data on the web form
                 String Error = BookingsList.ThisBookings.ValidDateFilter(txtStartDate.Text, txtEndDate.Text);
                 //if the data is OK then add it to the object
