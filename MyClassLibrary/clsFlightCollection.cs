@@ -99,7 +99,8 @@ namespace MyClassLibrary
                 //create a blank flight
                 clsFlights AnFlight = new clsFlights();
                 //read in the fields from the current record
-                AnFlight.Flight_No = Convert.ToInt32(DB.DataTable.Rows[0]["Flight_No"]);
+                AnFlight.FlightID = Convert.ToInt32(DB.DataTable.Rows[0]["FlightID"]);
+                AnFlight.FlightNo = Convert.ToString(DB.DataTable.Rows[0]["FlightNo"]);
                 AnFlight.Airline = Convert.ToString(DB.DataTable.Rows[0]["Airline"]);
                 AnFlight.Destination = Convert.ToString(DB.DataTable.Rows[0]["Destination"]);
                 AnFlight.Arrival = Convert.ToDateTime(DB.DataTable.Rows[0]["ArrivalDate"]);
@@ -119,7 +120,7 @@ namespace MyClassLibrary
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            //DB.AddParameter("@FlightNo", mThisFlight.Flight_No);
+            DB.AddParameter("@FlightNo", mThisFlight.FlightNo);
             DB.AddParameter("@Airline", mThisFlight.Airline);
             DB.AddParameter("@ArrivalAirport", mThisFlight.ArrivalAirport);
             DB.AddParameter("@Arrival", mThisFlight.Arrival);

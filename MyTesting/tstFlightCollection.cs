@@ -29,7 +29,8 @@ namespace MyTesting
             //create the item of test data
             clsFlights TestItem = new clsFlights();
             //set its properties
-            TestItem.Flight_No = 1;
+            TestItem.FlightID = 1;
+            TestItem.FlightNo = "A114";
             TestItem.Airline = "Air India";
             TestItem.ArrivalAirport = "BHX";
             TestItem.Arrival = DateTime.Now.Date;
@@ -54,7 +55,8 @@ namespace MyTesting
             //create some test data to assign to the property
             clsFlights TestFlights = new clsFlights();
             //set the properties of the test object
-            TestFlights.Flight_No = 1;
+            TestFlights.FlightID = 1;
+            TestFlights.FlightNo = "A114";
             TestFlights.Airline = "Air India";
             TestFlights.ArrivalAirport = "BHX";
             TestFlights.Arrival = DateTime.Now.Date;
@@ -79,7 +81,8 @@ namespace MyTesting
             //create the item of test data
             clsFlights TestItem = new clsFlights();
             //set its properties
-            TestItem.Flight_No = 1;
+            TestItem.FlightID = 1;
+            TestItem.FlightNo = "A114";
             TestItem.Airline = "Air India";
             TestItem.ArrivalAirport = "BHX";
             TestItem.Arrival = DateTime.Now.Date;
@@ -106,7 +109,8 @@ namespace MyTesting
             Int32 PrimaryKey = 0;
             //set its properties
             //set its properties
-            //TestFlights.Flight_No = 1;
+            //TestFlights.FlightID = 1;
+            TestFlights.FlightNo = "AA11";
             TestFlights.Airline = "Air India";
             TestFlights.ArrivalAirport = "DXB";
             TestFlights.Arrival = DateTime.Now.Date;
@@ -118,7 +122,7 @@ namespace MyTesting
             //add the record
             PrimaryKey = AllFlights.Add();
             //set the primary key of the test data
-            TestFlights.Flight_No = PrimaryKey;
+            TestFlights.FlightID = PrimaryKey;
             //find the record
             AllFlights.ThisFlight.Find(PrimaryKey);
             //test to see that the two values are the same
