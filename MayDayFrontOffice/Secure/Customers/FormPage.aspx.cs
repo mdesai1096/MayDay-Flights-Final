@@ -64,7 +64,7 @@ public partial class EditCustomer : System.Web.UI.Page
     void Add()
     {
         //create an instance of the booking list
-        clsCustomerCollection CList = new clsCustomerCollection();
+        clsCustomerCollection CList = new clsCustomerCollection(User.Identity.Name);
         //validate the data on the web form
         //string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode
         String Error = CList.ThisCustomer.Valid(txtForename.Text, txtSurname.Text, txtDateOfBirth.Text, txtGender.Text, txtContactNumber.Text, txtEmail.Text, txtFlatNo.Text, txtHouseNumber.Text, txtPostCode.Text);
@@ -82,6 +82,7 @@ public partial class EditCustomer : System.Web.UI.Page
             CList.ThisCustomer.Gender = txtGender.Text;
             CList.ThisCustomer.ContactNumber =txtContactNumber.Text;
             CList.ThisCustomer.EMail = txtEmail.Text;
+            //CList.ThisCustomer.UserName = User.Identity.Name;
             //update the record
             CList.Add();
             //all done so redirect back to the main page
@@ -97,7 +98,7 @@ public partial class EditCustomer : System.Web.UI.Page
     void Update()
     {
         //create an instance of the booking list
-        clsCustomerCollection CList = new clsCustomerCollection();
+        clsCustomerCollection CList = new clsCustomerCollection(User.Identity.Name);
         //validate the data on the web form
                                                  //string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode
         String Error = CList.ThisCustomer.Valid(txtForename.Text, txtSurname.Text, txtDateOfBirth.Text, txtGender.Text, txtContactNumber.Text, txtEmail.Text, txtFlatNo.Text, txtHouseNumber.Text, txtPostCode.Text);
@@ -116,6 +117,7 @@ public partial class EditCustomer : System.Web.UI.Page
             CList.ThisCustomer.Gender = Convert.ToString(txtGender.Text);
             CList.ThisCustomer.ContactNumber = Convert.ToString(txtContactNumber.Text);
             CList.ThisCustomer.EMail = Convert.ToString(txtEmail.Text);
+            //CList.ThisCustomer.UserName = User.Identity.Name;
             //update the record
             CList.Update();
             //all done so redirect back to the main page
@@ -128,7 +130,7 @@ public partial class EditCustomer : System.Web.UI.Page
         }
     }
 
-    void DisplayCust()
+    void DisplayCust( )
     {
         //create an instance of the booking list
         clsCustomerCollection CList = new clsCustomerCollection();
