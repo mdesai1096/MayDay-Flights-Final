@@ -15,7 +15,7 @@ public partial class admin_customer : System.Web.UI.Page
         //display their user name
         lblUserInfo.Text = "The current user is " + User.Identity.Name;
         //if this is the first time the page is displayed
-        if (User.IsInRole("admin"))
+        if (User.IsInRole("admins"))
         {
             //display the delete button 
             btnDelete.Visible = true;
@@ -24,7 +24,7 @@ public partial class admin_customer : System.Web.UI.Page
         {
             // hide the delete button
             btnDelete.Visible = false;
-           
+
         }
         //clear any existing error messages 
         lblError.Text = "";
