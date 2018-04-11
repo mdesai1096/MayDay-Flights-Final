@@ -7,6 +7,12 @@ namespace MyClassLibrary
     public class clsCustomerCollection
     {
 
+        private string mUserName;
+        public clsCustomerCollection(string UserName)
+        {
+            mUserName = UserName;
+
+        }
         private List<clsCustomer> mCustomerList = new List<clsCustomer>();
         //private member thisCustomer
         private clsCustomer mThisCustomer = new clsCustomer();
@@ -241,6 +247,20 @@ namespace MyClassLibrary
             DB.AddParameter("@surName", surName);
             // execute the stored procedure 
             DB.Execute("sproc_tblCustomer_FilterBysurName");
+            //populate the array list with the data table
+            PopulateArray(DB);
+        }
+
+
+        public void FilterbyUserName()
+        {
+            //filters the records based on a full or partial code
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //send the PostCode parameter to the database
+            DB.AddParameter("@UserName", mUserName);
+            // execute the stored procedure 
+            DB.Execute("sproc_tblCustomer_FilterByUserName");
             //populate the array list with the data table
             PopulateArray(DB);
         }

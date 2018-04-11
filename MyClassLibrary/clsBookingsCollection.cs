@@ -7,8 +7,18 @@ using System.Text;
 
 namespace MyClassLibrary
 {
+
+
+   
     public class clsBookingsCollection
     {
+
+   private string mUserName;
+    public clsBookingsCollection (string UserName)
+    {
+        mUserName = UserName;
+
+    }
         //prive data memeber for the list
         List<clsBookings> mBookingsList = new List<clsBookings>();
         //private member thisAddress
@@ -215,6 +225,7 @@ namespace MyClassLibrary
             //send the bookref to the database
             DB.AddParameter("@StartDate", Convert.ToDateTime(StartDate));
             DB.AddParameter("@EndDate",Convert.ToDateTime(EndDate));
+            DB.AddParameter("@UserNAame", mUserName);
             //execute the stored procedure
             DB.Execute("sproc_tblBookings_FilterbyDate");
             //populate the array list with the data table
