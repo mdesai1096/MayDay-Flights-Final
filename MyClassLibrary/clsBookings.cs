@@ -130,6 +130,7 @@ namespace MyClassLibrary
             }
         }
 
+        //private string to store customer details
         private string mAllCDetails;
         public string AllCDetails
         {
@@ -144,12 +145,14 @@ namespace MyClassLibrary
             }
         }
 
+        //private string to store all details
         private string mAllDetails;
         public string AllDetails
         {
             get
             {
-                return "BookRef " + mBookRef + "  Payment: " + mPaymentType + "  DateBooked: " + mDateBooked.ToString() + "  Ammount: " + mAmmount;
+                //
+                return "BookRef " + mBookRef + "  Payment: " + mPaymentType + "  DateBooked: " + mDateBooked.ToString("dd/MM/yyyy") + "  Ammount: " + mAmmount;
             }
 
             set
