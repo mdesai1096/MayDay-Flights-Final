@@ -5,35 +5,107 @@ namespace MyClassLibrary
 {
     public class clsFlights
     {
-        public clsFlights()
-        {
+        //private data member for the FlightNo property
+        private Int32 mFlight_No;
+        //private data member for Airline
+        private string mAirline;
+        //private data member for Destination
+        private string mDestination;
+        //private data member for Arrival
+        private DateTime mArrivalDate;
+        //private data member for Departure
+        private DateTime mDepartureDate;
+        //private data member for Arrival Airport
+        private string mArrivalAirport;
+        //private data memeber for Departure Airport
+        private string mDepartureAirport;
 
-        }
-        //private data member for FlightNo property
-        private Int32 mFlightNo;
-        public string Airline { get; set; }
-        public DateTime ArrivalDate { get; set; }
-        public DateTime DepartureDate { get; set; }
-        public string FlightNo { get; set; }
+
+        //public property for FlightNo
         public int Flight_No
         {
             get
             {
                 //return the private data
-                return mFlightNo;
+                return mFlight_No;
             }
             set
             {
                 //set the value of the private data member 
-                mFlightNo = value;
+                mFlight_No = value;
 
             }
         }
+        
+        //public property for Arrival Date
+        public DateTime Arrival
+        {
+            get
+            {
+                //return the private data
+                return mArrivalDate;
 
-        public bool Active { get; set; }
-        public string Departure { get; set; }
-        public string Arrival { get; set; }
-        public string Destination { get; set; }
+            }
+            set
+            {
+                //set the private data
+                mArrivalDate = value;
+            }
+        }
+
+        //public property for Departure Date
+        public DateTime Departure
+        {
+            get
+            {
+                //return the private data
+                return mDepartureDate;
+
+            }
+            set
+            {
+                //set the private data
+                mDepartureDate = value;
+            }
+        }
+        //public property for Airline 
+        public string Airline
+        {
+            get
+            {
+                //return the private data
+                return mAirline;
+
+            }
+            set
+            {
+                //set the private data
+                mAirline = value;
+            }
+        }
+        //public property for Destination 
+        public string Destination
+        {
+            get
+            {
+                //return the private data
+                return mDestination;
+
+            }
+            set
+            {
+                //set the private data
+                mDestination = value;
+            }
+        }
+
+
+
+
+
+
+
+
         public string ArrivalAirport { get; set; }
         public string DepartureAirport { get; set; }
 
@@ -124,7 +196,13 @@ namespace MyClassLibrary
         public bool Find(int flightNo)
         {
             //set the private data member to the test data value
-            mFlightNo = 21;
+            mFlight_No = 21;
+            mAirline = "Air India";
+            mDestination = "India";
+            mArrivalDate = Convert.ToDateTime("21/06/2018");
+            mDepartureDate = Convert.ToDateTime("21/06/2018");
+            mArrivalAirport = "BHX";
+            mDepartureAirport = "BHX";
             //always return true
             return true;
         }
