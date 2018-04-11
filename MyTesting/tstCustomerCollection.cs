@@ -125,7 +125,7 @@ namespace MyTesting
         public void AddMethodOK()
         {
             //create an instance of the class we want to create
-            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            clsCustomerCollection AllCustomer = new clsCustomerCollection("FBloggs");
             //create an instance of test data
             clsCustomer TestItem = new clsCustomer();
             //var to store primary key
@@ -141,6 +141,7 @@ namespace MyTesting
             TestItem.FlatNo = "1";
             TestItem.HouseNo = "2";
             TestItem.PostCode = "LE56HP";
+            //TestItem.UserName = "FBloggs";
             //set ThisCustomer to validate test data
             AllCustomer.ThisCustomer = TestItem;
             //add the record
@@ -157,7 +158,7 @@ namespace MyTesting
         public void DeleteMethodOK()
         {
             //create an instance of the class we want to create
-            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            clsCustomerCollection AllCustomer = new clsCustomerCollection("FBloggs");
             //create an instance of test data
             clsCustomer TestItem = new clsCustomer();
             //var to store primary key
@@ -193,7 +194,7 @@ namespace MyTesting
         public void UpdateMethodOK()
         {
             //create an instance of the class we want to create
-            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            clsCustomerCollection AllCustomer = new clsCustomerCollection("FBloggs");
             //create an instance of test data
             clsCustomer TestItem = new clsCustomer();
             //var to store primary key
@@ -241,7 +242,7 @@ namespace MyTesting
             //create an instance of the class we want to create
             clsCustomerCollection AllCustomer = new clsCustomerCollection();
             //create an instance of the filtered data
-            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection("FBloggs");
             //apply a blank string (should return all records)
             FilteredCustomers.FilterbyPostCode("");
             //test to see the two values are the same
@@ -252,7 +253,7 @@ namespace MyTesting
         public void FilterbyPostCodeNoneFound()
         {
             //create an instance of the filtered data
-            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection("FBloggs");
             //apply a blank string (should return all records)
             FilteredCustomers.FilterbyPostCode("xxx xxx");
             //test to see the two values are the same
@@ -263,7 +264,7 @@ namespace MyTesting
         public void FilterbyPostcodeTestDataFound()
         {
             //create an instance of the filtered data
-            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection("FBloggs");
             //var to store outcome
             Boolean OK = true;
             //apply a primary key value 
@@ -297,7 +298,7 @@ namespace MyTesting
             //create an instance of the class we want to create
             clsCustomerCollection AllCustomer = new clsCustomerCollection();
             //create an instance of the filtered data
-            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection("FBloggs");
             //apply a blank string (should return all records)
             FilteredCustomers.FilterbysurName("");
             //test to see the two values are the same
@@ -308,7 +309,7 @@ namespace MyTesting
         public void FilterbysurNameNoneFound()
         {
             //create an instance of the filtered data
-            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection("FBloggs");
             //apply a blank string (should return all records)
             FilteredCustomers.FilterbysurName("xxx xxx");
             //test to see the two values are the same
@@ -319,7 +320,7 @@ namespace MyTesting
         public void FilterbysurNameTestDataFound()
         {
             //create an instance of the filtered data
-            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection("FBloggs");
             //var to store outcome
             Boolean OK = true;
             //apply a primary key value 
