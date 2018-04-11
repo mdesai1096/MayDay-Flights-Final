@@ -24,11 +24,11 @@ namespace MyTesting
             //create instance of class we want to create
             clsFlights AnFlight = new clsFlights();
             //create some test data to assign to the property
-            string TestData = "AI 114";
+            Int32 TestData = 114;
             //assign the data to the property
-            AnFlight.FlightNo = TestData;
+            AnFlight.Flight_No = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(AnFlight.FlightNo, TestData);
+            Assert.AreEqual(AnFlight.Flight_No, TestData);
         }
 
         [TestMethod]
@@ -52,9 +52,9 @@ namespace MyTesting
             clsFlights AFlight = new clsFlights();
             //create some test data
             DateTime ArrivalDate = DateTime.Now.Date;
-            AFlight.ArrivalDate = ArrivalDate;
+            AFlight.Arrival = ArrivalDate;
             //test to see if it exists
-            Assert.AreEqual(AFlight.ArrivalDate, ArrivalDate);
+            Assert.AreEqual(AFlight.Arrival, ArrivalDate);
         }
 
         [TestMethod]
@@ -64,9 +64,9 @@ namespace MyTesting
             clsFlights AFlight = new clsFlights();
             //create some test data
             DateTime DepartureDate = DateTime.Now.Date;
-            AFlight.DepartureDate = DepartureDate;
+            AFlight.Departure = DepartureDate;
             //test to see if it exists
-            Assert.AreEqual(AFlight.DepartureDate, DepartureDate);
+            Assert.AreEqual(AFlight.Departure, DepartureDate);
         }
 
         [TestMethod]
@@ -1386,11 +1386,33 @@ namespace MyTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 FlightNo = 21;
+            Int32 Flight_No = 21;
             //invoke the method
-            Found = AnFlight.Find(FlightNo);
+            Found = AnFlight.Find(Flight_No);
             //check the flight no
             if (AnFlight.Flight_No != 21)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestAirlineFound()
+        {
+            //create an instance of the class we want to create
+            clsFlights AnFlight = new clsFlights();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 Flight_No = 21;
+            //invoke the method
+            Found = AnFlight.Find(Flight_No);
+            //check the flight no
+            if (AnFlight.Airline !="Air India")
             {
                 OK = false;
             }
