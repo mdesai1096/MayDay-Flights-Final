@@ -207,7 +207,7 @@ namespace MyTesting
             //create an instance of the class we want to create
             clsBookingsCollection AllBookings = new clsBookingsCollection();
             //create an instance of the filtered data
-            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection(" ");
             //apply a blank string (should return all records)
             FilteredBookings.FilterbyDateBooked( DateTime.Now.Date.AddYears(-50).ToString(), DateTime.Now.Date.ToString());
             //test to see the two values are the same
@@ -218,7 +218,7 @@ namespace MyTesting
         public void FilterbyDateBookedNotFound()
         {
             //create an instance of the filtered data
-            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection(" ");
             //apply a filter (should return no records)
             FilteredBookings.FilterbyDateBooked(DateTime.Now.Date.ToString(), DateTime.Now.Date.AddYears(-50).ToString());
             //test to see the two values are the same
@@ -229,7 +229,7 @@ namespace MyTesting
         public void FilterbyDateBookedTestDataFoundBoundry()
         {
             //create an instance of the filtered data
-            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection(" ");
             //var to store outcome
             Boolean OK = true;
             //apply a filter string (should return some records)
@@ -261,7 +261,7 @@ namespace MyTesting
         public void FilterbyDateBookedTestDataFoundMin()
         {
             //create an instance of the filtered data
-            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection(" ");
             //var to store outcome
             Boolean OK = true;
             //apply a filter string (should return some records)
@@ -293,7 +293,7 @@ namespace MyTesting
         public void FilterbyDateBookedTestDataFoundMax()
         {
             //create an instance of the filtered data
-            clsBookingsCollection FilteredBookings = new clsBookingsCollection();
+            clsBookingsCollection FilteredBookings = new clsBookingsCollection(" ");
             //var to store outcome
             Boolean OK = true;
             //apply a filter string (should return some records)
