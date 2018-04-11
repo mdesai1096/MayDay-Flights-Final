@@ -41,7 +41,8 @@ namespace MyTesting
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
-            AllCustomer.CustomerList = TestList;//test to see that it exists
+            AllCustomer.CustomerList = TestList;
+            //test to see that it exists
             Assert.AreEqual(AllCustomer.CustomerList, TestList);
         }
 
@@ -65,7 +66,7 @@ namespace MyTesting
             clsCustomerCollection AllCustomer = new clsCustomerCollection();
             //create some test data to assign to the property
             //add an item to the list
-            clsCustomer TestCustomer = new clsCustomer();
+            clsCustomer TestCustomer = new clsCustomer( );
             //set its properties
             TestCustomer.ForeName = "fred";
             TestCustomer.Surname = "bloggs";
@@ -77,7 +78,8 @@ namespace MyTesting
             TestCustomer.HouseNo = "2";
             TestCustomer.PostCode = "LE5 6HP";
             //assign the data to the property
-            AllCustomer.ThisCustomer = TestCustomer;//test to see that it exists
+            AllCustomer.ThisCustomer = TestCustomer;
+            //test to see that it exists
             Assert.AreEqual(AllCustomer.ThisCustomer, TestCustomer);
         }
 
@@ -105,7 +107,8 @@ namespace MyTesting
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
-            AllCustomer.CustomerList = TestList;//test to see that it exists
+            AllCustomer.CustomerList = TestList;
+            //test to see that it exists
             Assert.AreEqual(AllCustomer.Count, TestList.Count);
         }
 
@@ -196,7 +199,6 @@ namespace MyTesting
             //var to store primary key
             Int32 PK = 0;
             //set the properties
-            //TestItem.BookRef = 3;
             TestItem.ForeName = "fred";
             TestItem.Surname = "bloggs";
             TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
@@ -206,14 +208,13 @@ namespace MyTesting
             TestItem.FlatNo = "1";
             TestItem.HouseNo = "2";
             TestItem.PostCode = "LE56HP";
-            //set ThisBooking to validate test data
+            //set ThisCustomer to validate test data
             AllCustomer.ThisCustomer = TestItem;
             //add the record
             PK = AllCustomer.Add();
             //set primary key of test data
             TestItem.CustomerID = PK;
             //modify the record
-            //TestItem.BookRef = 3;
             TestItem.ForeName = "Lisa";
             TestItem.Surname = "Smith";
             TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-20);
@@ -347,8 +348,3 @@ namespace MyTesting
         }
     }
 }
-
-
-
-
-

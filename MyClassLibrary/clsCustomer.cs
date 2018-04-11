@@ -1,19 +1,25 @@
 ﻿using System;
 
+
+//Author Ayub Osman
 namespace MyClassLibrary
 {
     public class clsCustomer
     {
 
         private string mContactNumber;
+
+        //public property for ContactNumber
         public string ContactNumber
         {
             get
             {
+                //return private data
                 return mContactNumber;
             }
             set
             {
+                //set the the value of the private memeber
                 mContactNumber = value;
             }
 
@@ -21,29 +27,37 @@ namespace MyClassLibrary
 
 
         private DateTime mdateOfBirth;
+
+        //public property for dateOfBirth
         public DateTime dateOfBirth
         {
             get
             {
+                //return private data
                 return mdateOfBirth;
             }
             set
             {
+                //set the the value of the private memeber
                 mdateOfBirth = value;
             }
 
         }
 
         private string mEmail;
+
+        //public property for eMail
         public string EMail
         {
 
             get
             {
+                //return private data
                 return mEmail;
             }
             set
             {
+                //set the the value of the private memeber
                 mEmail = value;
             }
 
@@ -51,28 +65,36 @@ namespace MyClassLibrary
 
 
         private string mFlatNo;
+
+        //public property for FlatNo
         public string FlatNo
         {
             get
             {
+                //return private data
                 return mFlatNo;
             }
             set
             {
+                //set the the value of the private memeber
                 mFlatNo = value;
             }
 
         }
 
         private string mForeName;
+
+        //public property for ForeName
         public string ForeName
         {
             get
             {
+                //return private data
                 return mForeName;
             }
             set
             {
+                //set the the value of the private memeber
                 mForeName = value;
             }
 
@@ -80,84 +102,105 @@ namespace MyClassLibrary
 
 
         private string mGender;
+        //public property for Gender
         public string Gender
         {
             get
             {
+                //return private data
                 return mGender;
             }
             set
             {
+                //set the the value of the private memeber
                 mGender = value;
             }
 
         }
 
         private string mHouseNo;
+        //public property for HouseNo
         public string HouseNo
         {
             get
             {
+                //return private data
                 return mHouseNo;
             }
             set
             {
+                //set the the value of the private memeber
                 mHouseNo = value;
             }
 
         }
 
         private string mPassword;
+        //public property for Password
         public string Password
         {
             get
             {
+                //return private data
                 return mPassword;
             }
             set
             {
+                //set the the value of the private memeber
                 mPassword = value;
             }
 
         }
 
         private string mPostCode;
+
+        //public property for Postcode
         public string PostCode
         {
             get
             {
+                //return private data
                 return mPostCode;
             }
             set
             {
+                //set the the value of the private memeber
                 mPostCode = value;
             }
 
         }
 
         private string mSurname;
+
+        //public property for Surname
         public string Surname
         {
             get
             {
+                //return private data
                 return mSurname;
             }
             set
             {
+                //set the the value of the private memeber
                 mSurname = value;
             }
 
         }
 
         private string mUserName;
+
+        //public property for UserName
         public string UserName
         {
             get
             {
+                //return private data
                 return mUserName;
             }
             set
             {
+                //set the the value of the private memeber
                 mUserName = value;
             }
 
@@ -168,38 +211,48 @@ namespace MyClassLibrary
         {
             get
             {
+                //return private data
                 return mCustomerID;
             }
             set
             {
+                //set the the value of the private memeber
                 mCustomerID = value;
             }
 
         }
 
         private string mName;
+
+        //public property for Name
         public string Name
         {
             get
             {
+                //return private data
                 return mSurname + " " + mForeName;
             }
             set
             {
+                //set the the value of the private memeber
                 mName = value;
             }
 
         }
 
         private string mAllDetails;
+
+        //public property for AllDetails
         public string AllDetails
         {
             get
             {
-                return mForeName  + " " + mSurname + " " + mPostCode;
+                //return private data
+                return mForeName + " " + mSurname + " " + mPostCode;
             }
             set
             {
+                //set the the value of the private memeber
                 mAllDetails = value;
             }
 
@@ -207,6 +260,7 @@ namespace MyClassLibrary
 
         public string Valid(string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode)
         {
+            //temp variable to store start date
             DateTime DateTemp;
             string OK = "";
 
@@ -253,7 +307,7 @@ namespace MyClassLibrary
                 OK = OK + "Incorrect date entered";
             }
 
-
+            // if statement for Gender
 
             if (gender.Length < 1)
             {
@@ -264,6 +318,7 @@ namespace MyClassLibrary
                 OK = OK + "gender is too long";
             }
 
+            // if statement for contactNo
 
             if (contactNumber.Length < 3)
             {
@@ -274,7 +329,7 @@ namespace MyClassLibrary
                 OK = OK + "Contact Number is too long";
             }
 
-
+            // if statement for email 
 
             if (eMail.Length < 6)
             {
@@ -285,6 +340,7 @@ namespace MyClassLibrary
                 OK = OK + "eMail is too long";
             }
 
+            // if statement for FlatNo
 
             if (flatNo.Length < 1)
             {
@@ -295,6 +351,7 @@ namespace MyClassLibrary
                 OK = OK + "flatNo is too long";
             }
 
+            // if statement for houseno
 
             if (houseNo.Length < 1)
             {
@@ -305,6 +362,7 @@ namespace MyClassLibrary
                 OK = OK + "houseNo is too long";
             }
 
+            // if statement for postcode
 
             if (postCode.Length < 5)
             {
@@ -341,6 +399,7 @@ namespace MyClassLibrary
                 mHouseNo = Convert.ToString(DB.DataTable.Rows[0]["HouseNo"]);
                 mFlatNo = Convert.ToString(DB.DataTable.Rows[0]["FlatNo"]);
                 mContactNumber = Convert.ToString(DB.DataTable.Rows[0]["ContactNo"]);
+                //mUserName = Convert.ToString(DB.DataTable.Rows[0]["UserName"]);
 
                 //return an record has been found
                 return true;
