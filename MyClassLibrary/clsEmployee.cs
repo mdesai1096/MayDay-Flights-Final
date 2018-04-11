@@ -4,22 +4,104 @@ namespace MyClassLibrary
 {
     public class clsEmployee
     {
-        private string mAddrss;
-        public string Address { get; set; }
+        private string mAddress;
+        public string Address
+        {
+            get
+            {
+                return mAddress;
+
+            }
+            set
+            {
+                mAddress = value;
+            }
+        }
         private string mEmployeeContactNumber;
-        public string EmployeeContactNumber { get; set; }
+        public string EmployeeContactNumber
+        {
+            get
+            {
+                return mEmployeeContactNumber;
+            }
+            set
+            {
+                mEmployeeContactNumber = value;
+            }
+        }
         private DateTime mEmployeeDOB;
-        public DateTime EmployeeDOB { get; set; }
+        public DateTime EmployeeDOB
+        {
+            get
+            {
+                return mEmployeeDOB;
+            }
+            set
+            {
+                mEmployeeDOB = value;
+            }
+        }
+
         private string mEmployeeEmail;
-        public string EmployeeEmail { get; set; }
+        public string EmployeeEmail
+        {
+            get
+            {
+                return mEmployeeEmail;
+            }
+            set
+            {
+                mEmployeeEmail = value;
+            }
+        }
         private DateTime mEmployeeJoinDate;
-        public DateTime EmployeeJoinDate { get; set; }
+        public DateTime EmployeeJoinDate
+        {
+            get
+            {
+                return mEmployeeJoinDate;
+            }
+            set
+            {
+                mEmployeeJoinDate = value;
+            }
+        }
         private string mEmployeeName;
-        public string EmployeeName { get; set; }
+        public string EmployeeName
+        {
+            get
+            {
+                return mEmployeeName;
+            }
+            set
+            {
+                mEmployeeName = value;
+            }
+        }
         private string mEmployeeRole;
-        public string EmployeeRole { get; set; }
+        public string EmployeeRole
+        {
+            get
+            {
+                return mEmployeeRole;
+            }
+            set
+            {
+                mEmployeeRole = value;
+            }
+        }
         private string mEmployeeSalary;
-        public string EmployeeSalary { get; set; }
+        public string EmployeeSalary
+        {
+            get
+            {
+                return mEmployeeSalary;
+            }
+            set
+            {
+                mEmployeeSalary = value;
+            }
+        }
 
         private Int32 mEmployeeNo;
         public int EmployeeNo
@@ -162,9 +244,29 @@ namespace MyClassLibrary
 
         public bool Find(int EmployeeNo)
         {
-            mEmployeeNo = 21;
-            //always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add parameter for the employee number to search for
+            DB.AddParameter("@EmployeeNo", EmployeeNo);
+            //execute procedure
+            DB.Execute("sproc_tblEmployees_FilterByEmployeeNo");
+            if (DB.Count == 1)
+            {
+                //copy data from datbaase to private data members
+                mEmployeeNo = Convert.ToInt32(DB.DataTable.Rows[0]["EmployeeNo"]);
+                mEmployeeName = Convert.ToString(DB.DataTable.Rows[0]["EmployeeName"]);
+                mEmployeeJoinDate = Convert.ToDateTime(DB.DataTable.Rows[0]["EmployeeJoinDate"]);
+                mEmployeeRole = Convert.ToString(DB.DataTable.Rows[0]["EmployeeRole"]);
+                mEmployeeSalary = Convert.ToString(DB.DataTable.Rows[0]["EmployeeSalary"]);
+                mEmployeeEmail = Convert.ToString(DB.DataTable.Rows[0]["EmployeeEmail"]);
+                mEmployeeDOB = Convert.ToDateTime(DB.DataTable.Rows[0]["EmployeeDOB"]);
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
         }
     }
 }

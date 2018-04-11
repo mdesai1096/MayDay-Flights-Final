@@ -23,8 +23,7 @@ namespace MyTesting
         {
             //create instance of class we want to create
             clsEmployee AnEmployee = new clsEmployee();
-            AnEmployee.Find(2);
-            string EmployeeName = AnEmployee.EmployeeName;
+
             //boolean variable to store result of validation
             Boolean Found = false;
             //create some test to use with data
@@ -67,7 +66,7 @@ namespace MyTesting
             Boolean OK = true;
             Int32 EmployeeNo = 21;
             Found = AnEmployee.Find(EmployeeNo);
-            if (AnEmployee.EmployeeName != "Test Employee Name")
+            if (AnEmployee.EmployeeName != "Vinay")
             {
                 OK = false;
             }
@@ -99,7 +98,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void TestAddressFound()
+        public void TestEmployeeAddressFound()
         {
             clsEmployee AnEmployee = new clsEmployee();
             string TestData = "31 London road";
@@ -146,7 +145,7 @@ namespace MyTesting
 
 
         [TestMethod]
-        public void EmployeeEmail()
+        public void EmployeeEmailOK()
         {
             //create instance of class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -159,7 +158,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void EmployeeName()
+        public void EmployeeNameOK()
         {
             //create instance of class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -174,7 +173,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void EmployeeRole()
+        public void EmployeeRoleOK()
         {
             //create instance of class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -187,7 +186,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void EmployeeDOB()
+        public void EmployeeDOBOK()
         {
             //create instance of class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -200,7 +199,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void EmployeeJoinDate()
+        public void EmployeeJoinDateOK()
         {
             //create instance of class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -213,7 +212,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void EmployeeSalary()
+        public void EmployeeSalaryOK()
         {
             //create instance of class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -248,7 +247,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void AddressMinLessOne()
+        public void EmployeeAddressMinLessOne()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -270,7 +269,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void AddressMinBoundary()
+        public void EmployeeAddressMinBoundary()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -293,7 +292,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void AddressMinPlusOne()
+        public void EmployeeAddressMinPlusOne()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -316,7 +315,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void AddressMaxMinusOne()
+        public void EmployeeAddressMaxMinusOne()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -340,7 +339,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void AddressMaxBoundary()
+        public void EmployeeAddressMaxBoundary()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -364,7 +363,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void AddressMaxPlusOne()
+        public void EmployeeAddressMaxPlusOne()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -387,7 +386,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void AddressMid()
+        public void EmployeeAddressMid()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -410,7 +409,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void AddressExtremeMax()
+        public void EmployeeAddressExtremeMax()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -433,7 +432,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void ContactNumberExtremeMin()
+        public void EmployeeContactNumberExtremeMin()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -455,7 +454,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void ContactNumberMinMinusOne()
+        public void EmployeeContactNumberMinMinusOne()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -477,7 +476,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void ContactNumberMinBoundary()
+        public void EmployeeContactNumberMinBoundary()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -499,7 +498,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void ContactNumberMinPlusOne()
+        public void EmployeeContactNumberMinPlusOne()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -521,7 +520,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void ContactNumberMaxPlusOne()
+        public void EmployeeContactNumberMaxPlusOne()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -544,7 +543,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void ContactNumberMaxMinusOne()
+        public void EmployeeContactNumberMaxMinusOne()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -567,7 +566,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void ContactNumberMaxBoundary()
+        public void EmployeeContactNumberMaxBoundary()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -590,7 +589,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void ContactNumberMaxBoundaryPlusOne()
+        public void EmployeeContactNumberMaxBoundaryPlusOne()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -613,7 +612,7 @@ namespace MyTesting
         }
 
         [TestMethod]
-        public void ContactNumberMid()
+        public void EmployeeContactNumberMid()
         {
             //create a new instance of the class we want to create
             clsEmployee AnEmployee = new clsEmployee();
@@ -1633,6 +1632,8 @@ namespace MyTesting
             //test to see if it exists
             Assert.AreNotEqual(OK, "");
         }
+
+
 
         [TestMethod]
         public void EmployeeJoinDateExMin()
