@@ -95,12 +95,41 @@ namespace MyTesting
 
         }
 
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsFlightCollection AllFlights = new clsFlightCollection();
+            //create the item of test data
+            clsFlights TestFlights = new clsFlights();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            //set its properties
+            //TestFlights.Flight_No = 1;
+            TestFlights.Airline = "Air India";
+            TestFlights.ArrivalAirport = "DXB";
+            TestFlights.Arrival = DateTime.Now.Date;
+            TestFlights.Departure = DateTime.Now.Date;
+            TestFlights.DepartureAirport = "MCR";
+            TestFlights.Destination = "Dubai";
+            //set ThisFlights to the test data
+            AllFlights.ThisFlight = TestFlights;
+            //add the record
+            PrimaryKey = AllFlights.Add();
+            //set the primary key of the test data
+            TestFlights.Flight_No = PrimaryKey;
+            //find the record
+            AllFlights.ThisFlight.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllFlights.ThisFlight, TestFlights);
+        }
+
+
+
 
 
 
     }
 }
-
-       
-    
 

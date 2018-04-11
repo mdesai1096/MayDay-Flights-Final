@@ -132,17 +132,17 @@ namespace MyClassLibrary
 
 
 
-        public string Valid(string flightNo, string airline, string destination, string arrival, string arrivalAirport, string departure, string departureAirport)
+        public string Valid(string airline, string destination, string arrival, string arrivalAirport, string departure, string departureAirport)
         {
             string OK = "";
-            if (flightNo.Length == 0)
-            {
-                return OK = OK + "Flight no is blank";
-            }
-            if (flightNo.Length != 5)
-            {
-                return OK = OK + "Flight no must be less than 5 characters";
-            }
+            //if (flightNo.Length == 0)
+            //{
+            //    return OK = OK + "Flight no is blank";
+            //}
+            //if (flightNo.Length != 5)
+            //{
+            //    return OK = OK + "Flight no must be less than 5 characters";
+            //}
 
             //if (flightNo.Length < 1)
             //{

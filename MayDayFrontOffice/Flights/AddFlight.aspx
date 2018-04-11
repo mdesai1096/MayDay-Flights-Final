@@ -13,6 +13,7 @@
     <asp:Label ID="lblDestination" runat="server" style="z-index: 1; left: 374px; top: 328px; position: absolute; width: 65px; height: 3px;" Text="Destination"></asp:Label>
     <asp:Button ID="btnReturn" runat="server" OnClick="Button1_Click" style="z-index: 1; left: 718px; top: 343px; position: absolute" Text="Return to Homepage" />
     <br />
+    <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 770px; top: 286px; position: absolute"></asp:Label>
     <br />
     <asp:Label ID="lblArrival" runat="server" style="z-index: 1; left: 374px; top: 364px; position: absolute" Text="Arrival"></asp:Label>
     <asp:TextBox ID="txtArrival" runat="server" style="z-index: 1; left: 488px; top: 364px; position: absolute; width: 105px"></asp:TextBox>
@@ -39,4 +40,3 @@
 <br />
     <br />
 </asp:Content>
-

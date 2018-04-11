@@ -113,7 +113,22 @@ namespace MyClassLibrary
             }
         }
 
+        public int Add()
+        {
+            //adds a new record to the database based on the values of mThisFlights
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            //DB.AddParameter("@FlightNo", mThisFlight.Flight_No);
+            DB.AddParameter("@Airline", mThisFlight.Airline);
+            DB.AddParameter("@ArrivalAirport", mThisFlight.ArrivalAirport);
+            DB.AddParameter("@Arrival", mThisFlight.Arrival);
+            DB.AddParameter("@Departure", mThisFlight.Departure);
+            DB.AddParameter("@DepartureAirport", mThisFlight.DepartureAirport);
+            DB.AddParameter("@Destination", mThisFlight.Destination);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblFlights_Insert");
 
-        
+        }
     }
 }

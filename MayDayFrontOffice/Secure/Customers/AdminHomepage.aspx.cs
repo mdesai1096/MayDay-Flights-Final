@@ -19,12 +19,14 @@ public partial class admin_customer : System.Web.UI.Page
         {
             //display the delete button 
             btnDelete.Visible = true;
+            btnDisplayAll.Visible = true;
         }
         else
         {
             // hide the delete button
             btnDelete.Visible = false;
-           
+            btnDisplayAll.Visible = false;
+
         }
         //clear any existing error messages 
         lblError.Text = "";
@@ -32,7 +34,7 @@ public partial class admin_customer : System.Web.UI.Page
         if (IsPostBack == false)
         {
             //update the list box
-            DisplayCustomers();
+            FilterPostCode("");
         }
 
     }
@@ -118,12 +120,12 @@ public partial class admin_customer : System.Web.UI.Page
     protected void btnDisplayAll_Click(object sender, EventArgs e)
     {
         DisplayCustomers();
-        
+
     }
     void FilterSname(string sname)
     {
         //create an instance of the booking collection
-        clsCustomerCollection C = new clsCustomerCollection();
+        clsCustomerCollection C = new clsCustomerCollection(User.Identity.Name);
         C.FilterbysurName(sname);
         //set the data source to the list of bookings in the collection
         lstCust.DataSource = C.CustomerList;
