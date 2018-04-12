@@ -25,7 +25,7 @@ public partial class DefaultFlight : System.Web.UI.Page
         //store -1 into the session object to indicate this is a new record
         Session["FlightID"] = -1;
         //redirect to the data entry page
-        Response.Redirect("AnAddress.aspx");
+        Response.Redirect("AddFlight.aspx");
 
     }
 
