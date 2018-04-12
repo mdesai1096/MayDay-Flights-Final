@@ -10,7 +10,11 @@ public partial class DefaultFlight : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        DisplayBookings();
+        if (IsPostBack == false)
+        {
+            DisplayBookings();
+        }
+        
     }
 
 
@@ -61,7 +65,7 @@ public partial class DefaultFlight : System.Web.UI.Page
             //get the primary key value of the record to delete
             FlightNo = Convert.ToInt32(lstFlights.SelectedValue);
             //store the data in the session object
-            Session["FlightNo"] = FlightNo;
+            Session["FlightID"] = FlightNo;
             //redirect to the delete page
             Response.Redirect("DeleteFlight.aspx");
         }
