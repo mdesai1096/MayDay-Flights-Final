@@ -46,7 +46,7 @@ namespace MaydayBackend
         Int32 FilterPostCode(string PostCode)
         {
             //create an instance of the booking collection
-            clsCustomerCollection C = new clsCustomerCollection();
+            clsCustomerCollection C = new clsCustomerCollection(" ");
             C.FilterbyPostCode(PostCode);
             //set the data source to the list of bookings in the collection
             lstCust.DataSource = C.CustomerList;
@@ -106,7 +106,7 @@ namespace MaydayBackend
         Int32 FilterSname(string sname)
         {
             //create an instance of the booking collection
-            clsCustomerCollection C = new clsCustomerCollection();
+            clsCustomerCollection C = new clsCustomerCollection(" ");
             C.FilterbysurName(sname);
             //set the data source to the list of bookings in the collection
             lstCust.DataSource = C.CustomerList;
