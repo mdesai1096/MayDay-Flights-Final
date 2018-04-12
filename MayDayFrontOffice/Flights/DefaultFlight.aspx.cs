@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using MyClassLibrary;
 
 public partial class DefaultFlight : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+        DisplayBookings();
     }
 
 
@@ -42,7 +43,7 @@ public partial class DefaultFlight : System.Web.UI.Page
         else // if no record has been selected
         {
             //display an error
-            lblError.Text = "Please select a record to delete from the list";
+            lblError.Text = "Please select a record to update from the list";
 
         }
     }
@@ -69,7 +70,23 @@ public partial class DefaultFlight : System.Web.UI.Page
             //display an error
             lblError.Text = "Plese select a record to delete from the list";
         }
-        
+
+
+
+    }
+
+    void DisplayBookings()
+    {
+        //create an instance of the booking collection
+        clsFlightCollection Bookings = new clsFlightCollection();
+        //set the data source to the list of bookings in the collection
+        lstFlights.DataSource = Bookings.FlightList;
+        //set the name of the primary key
+        lstFlights.DataValueField = "FlightID";
+        //set the data field to display
+        lstFlights.DataTextField = "FlightNo";
+        //bind the data to the list
+        lstFlights.DataBind();
     }
 }
 

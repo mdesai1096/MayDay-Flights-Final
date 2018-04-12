@@ -84,34 +84,35 @@ namespace MyClassLibrary
         public clsFlightCollection()
         {
             //var for the index
-            Int32 Index = 0;
-            //var to store the record count
-            Int32 RecordCount = 0;
+            //Int32 Index = 0;
+            ////var to store the record count
+            //Int32 RecordCount = 0;
             //object for data connection
             clsDataConnection DB = new clsDataConnection();
             //execute the stored procedure
             DB.Execute("sproc_tblFlights_SelectAll");
+            PopulateArray(DB);
             //get the count of records
-            RecordCount = DB.Count;
-            //while there are records to process
-            while (Index < RecordCount)
-            {
-                //create a blank flight
-                clsFlights AnFlight = new clsFlights();
-                //read in the fields from the current record
-                AnFlight.FlightID = Convert.ToInt32(DB.DataTable.Rows[0]["FlightID"]);
-                AnFlight.FlightNo = Convert.ToString(DB.DataTable.Rows[0]["FlightNo"]);
-                AnFlight.Airline = Convert.ToString(DB.DataTable.Rows[0]["Airline"]);
-                AnFlight.Destination = Convert.ToString(DB.DataTable.Rows[0]["Destination"]);
-                AnFlight.Arrival = Convert.ToDateTime(DB.DataTable.Rows[0]["ArrivalDate"]);
-                AnFlight.Departure = Convert.ToDateTime(DB.DataTable.Rows[0]["DepartureDate"]);
-                AnFlight.ArrivalAirport = Convert.ToString(DB.DataTable.Rows[0]["ArrivalAirport"]);
-                AnFlight.DepartureAirport = Convert.ToString(DB.DataTable.Rows[0]["DepartureAirport"]);
-                //add the record to the private data member
-                mFlightsList.Add(AnFlight);
-                //point at the next record
-                Index++;
-            }
+            //RecordCount = DB.Count;
+            ////while there are records to process
+            //while (Index < RecordCount)
+            //{
+            //    //create a blank flight
+            //    clsFlights AnFlight = new clsFlights();
+            //    //read in the fields from the current record
+            //    AnFlight.FlightID = Convert.ToInt32(DB.DataTable.Rows[0]["FlightID"]);
+            //    AnFlight.FlightNo = Convert.ToString(DB.DataTable.Rows[0]["FlightNo"]);
+            //    AnFlight.Airline = Convert.ToString(DB.DataTable.Rows[0]["Airline"]);
+            //    AnFlight.Destination = Convert.ToString(DB.DataTable.Rows[0]["Destination"]);
+            //    AnFlight.Arrival = Convert.ToDateTime(DB.DataTable.Rows[0]["ArrivalDate"]);
+            //    AnFlight.Departure = Convert.ToDateTime(DB.DataTable.Rows[0]["DepartureDate"]);
+            //    AnFlight.ArrivalAirport = Convert.ToString(DB.DataTable.Rows[0]["ArrivalAirport"]);
+            //    AnFlight.DepartureAirport = Convert.ToString(DB.DataTable.Rows[0]["DepartureAirport"]);
+            //    //add the record to the private data member
+            //    mFlightsList.Add(AnFlight);
+            //    //point at the next record
+            //    Index++;
+            //}
         }
 
         public int Add()
@@ -160,6 +161,51 @@ namespace MyClassLibrary
             //execute the stored procedure
             DB.Execute("sproc_tblFlights_Update");
 
+        }
+
+        public void FilterByDestination(string Destination)
+        {
+            //filters the records based on a fill or partial airline
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //send the Destination parameter to the database
+            DB.AddParameter("@Destination", Destination);
+            //execute the stored procedure
+            DB.Execute("sproc_tblFlights_FilterByDestination");
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            //populates the array list based on the data table in the parameter DB
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount;
+            //get the count of records
+            RecordCount = DB.Count;
+            //clear the private array list
+            mFlightsList = new List<clsFlights>();
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank flight
+                clsFlights AnFlight = new clsFlights();
+                //read in the fields from the current record
+                AnFlight.FlightID = Convert.ToInt32(DB.DataTable.Rows[Index]["FlightID"]);
+                AnFlight.FlightNo = Convert.ToString(DB.DataTable.Rows[Index]["FlightNo"]);
+                AnFlight.Airline = Convert.ToString(DB.DataTable.Rows[Index]["Airline"]);
+                AnFlight.ArrivalAirport = Convert.ToString(DB.DataTable.Rows[Index]["ArrivalAirport"]);
+                AnFlight.DepartureAirport = Convert.ToString(DB.DataTable.Rows[Index]["DepartureAirport"]);
+                AnFlight.Arrival = Convert.ToDateTime(DB.DataTable.Rows[Index]["ArrivalDate"]);
+                AnFlight.Departure = Convert.ToDateTime(DB.DataTable.Rows[Index]["DepartureDate"]);
+                AnFlight.Destination = Convert.ToString(DB.DataTable.Rows[Index]["Destination"]);
+                //add the record to the private data member
+                mFlightsList.Add(AnFlight);
+                //point at the next record
+                Index++;
+
+            }
         }
     }
 }

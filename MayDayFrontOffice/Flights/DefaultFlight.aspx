@@ -4,8 +4,8 @@
     <asp:Label ID="lblFlightHomePage" runat="server" style="z-index: 1; left: 842px; top: 217px; position: absolute; text-align: center; font-size: xx-large" Text="Flight Homepage"></asp:Label>
 <br />
 <br />
+    <asp:ListBox ID="lstFlights" runat="server" style="z-index: 1; left: 364px; top: 314px; position: absolute; height: 114px; width: 575px"></asp:ListBox>
 <br />
-<asp:ListBox ID="lstFlights" runat="server" style="z-index: 1; left: 450px; top: 260px; position: absolute; height: 184px; width: 999px"></asp:ListBox>
 <br />
 <br />
 <br />
