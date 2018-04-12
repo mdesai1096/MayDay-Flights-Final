@@ -25,7 +25,7 @@ public partial class EditCustomer : System.Web.UI.Page
 
             }
         }
-        }
+    }
 
     protected void btnBackToAdminHomePage_Click(object sender, EventArgs e)
     {
@@ -71,7 +71,7 @@ public partial class EditCustomer : System.Web.UI.Page
         //if the data is OK then add it to the object
         if (Error == "")
         {
-         
+
             //get the data entered by the user
             CList.ThisCustomer.Surname = txtSurname.Text;
             CList.ThisCustomer.ForeName = txtForename.Text;
@@ -80,7 +80,7 @@ public partial class EditCustomer : System.Web.UI.Page
             CList.ThisCustomer.FlatNo = txtFlatNo.Text;
             CList.ThisCustomer.PostCode = txtPostCode.Text;
             CList.ThisCustomer.Gender = txtGender.Text;
-            CList.ThisCustomer.ContactNumber =txtContactNumber.Text;
+            CList.ThisCustomer.ContactNumber = txtContactNumber.Text;
             CList.ThisCustomer.EMail = txtEmail.Text;
             //CList.ThisCustomer.UserName = User.Identity.Name;
             //update the record
@@ -100,7 +100,7 @@ public partial class EditCustomer : System.Web.UI.Page
         //create an instance of the booking list
         clsCustomerCollection CList = new clsCustomerCollection(User.Identity.Name);
         //validate the data on the web form
-                                                 //string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode
+        //string foreName, string surname, string dateOfBirth, string gender, string contactNumber, string eMail, string flatNo, string houseNo, string postCode
         String Error = CList.ThisCustomer.Valid(txtForename.Text, txtSurname.Text, txtDateOfBirth.Text, txtGender.Text, txtContactNumber.Text, txtEmail.Text, txtFlatNo.Text, txtHouseNumber.Text, txtPostCode.Text);
         //if the data is OK then add it to the object
         if (Error == "")
@@ -130,7 +130,7 @@ public partial class EditCustomer : System.Web.UI.Page
         }
     }
 
-    void DisplayCust( )
+    void DisplayCust()
     {
         //create an instance of the booking list
         clsCustomerCollection CList = new clsCustomerCollection();
@@ -139,7 +139,7 @@ public partial class EditCustomer : System.Web.UI.Page
         //display the data for this record
         txtSurname.Text = CList.ThisCustomer.Surname;
         txtForename.Text = CList.ThisCustomer.ForeName;
-        txtDateOfBirth.Text = CList.ThisCustomer.dateOfBirth.ToString();
+        txtDateOfBirth.Text = CList.ThisCustomer.dateOfBirth.ToString("dd/MM/yyyy");
         txtHouseNumber.Text = CList.ThisCustomer.HouseNo;
         txtFlatNo.Text = CList.ThisCustomer.FlatNo;
         txtPostCode.Text = CList.ThisCustomer.PostCode;
