@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MyClassLibrary;
 
+//author Mohammad Desai
+
 public partial class Bookings_Delete : System.Web.UI.Page
 {
     //var to store the primary key value of the record to be deleted
