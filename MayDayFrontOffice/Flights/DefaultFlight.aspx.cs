@@ -18,7 +18,7 @@ public partial class DefaultFlight : System.Web.UI.Page
     protected void btnAdd_Click(object sender, EventArgs e)
     {
         //store -1 into the session object to indicate this is a new record
-        Session["FlightNo"] = -1;
+        Session["FlightID"] = -1;
         //redirect to the data entry page
         Response.Redirect("AnAddress.aspx");
 
@@ -35,7 +35,7 @@ public partial class DefaultFlight : System.Web.UI.Page
             //get the primary key value of the record to edit
             FlightNo = Convert.ToInt32(lstFlights.SelectedValue);
             //store the data in the session object
-            Session["FlightNo"] = FlightNo;
+            Session["FlightID"] = FlightNo;
             //redirect to the edit page
             Response.Redirect("AddFlight.aspx");
         }

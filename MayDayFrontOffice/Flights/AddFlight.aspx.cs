@@ -12,7 +12,7 @@ public partial class AddFlight : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //that bit goes here
-       flightid = Convert.ToInt32(Session["flightid"]);
+       flightid = Convert.ToInt32(Session["flightID"]);
         if (IsPostBack == false)
         {
             DisplayCustomer();

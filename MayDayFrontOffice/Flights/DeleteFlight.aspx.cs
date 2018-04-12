@@ -14,7 +14,7 @@ public partial class Flights_DelteFlight : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //get the number of the flights to be deleted from the session object
-        FlightNo = Convert.ToInt32(Session["FlightNo"]); 
+        FlightNo = Convert.ToInt32(Session["FlightID"]); 
 
     }
 
