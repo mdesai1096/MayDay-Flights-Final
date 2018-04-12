@@ -9,7 +9,7 @@ public partial class DefaultFlight : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+       
     }
 
 
@@ -17,8 +17,11 @@ public partial class DefaultFlight : System.Web.UI.Page
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
+        //store -1 into the session object to indicate this is a new record
         Session["FlightNo"] = -1;
-        Response.Redirect("AddFlight.aspx");
+        //redirect to the data entry page
+        Response.Redirect("AnAddress.aspx");
+
     }
 
     //event handler for the update/edit button
