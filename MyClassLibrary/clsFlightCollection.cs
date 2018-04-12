@@ -150,7 +150,7 @@ namespace MyClassLibrary
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            
+            DB.AddParameter("@FlightID", mThisFlight.FlightID);
             DB.AddParameter("@FlightNo", mThisFlight.FlightNo);
             DB.AddParameter("@Airline", mThisFlight.Airline);
             DB.AddParameter("@ArrivalAirport", mThisFlight.ArrivalAirport);

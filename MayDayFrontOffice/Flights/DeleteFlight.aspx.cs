@@ -28,6 +28,7 @@ public partial class Flights_DelteFlight : System.Web.UI.Page
     {
         //delete the record
         DeleteFlight();
+        txtFlightNo.Text = FlightNo.ToString();
         //redirect back to the main page
         Response.Redirect("DefaultFlight.Aspx");
 
