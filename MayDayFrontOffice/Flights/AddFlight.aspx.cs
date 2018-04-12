@@ -13,31 +13,46 @@ public partial class AddFlight : System.Web.UI.Page
 
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Add();
-        Response.Redirect("DefaultFlight.aspx");
-    }
+    
 
+    //function for adding new records
     void Add()
     {
-        clsFlightCollection Flights = new clsFlightCollection();
-        string Error = Flights.ThisFlight.Valid(txtFlightNo.Text, txtAirline.Text, txtDestination.Text, txtArrivalTime.Text, txtArrival.Text, txtDepartureTime.Text, txtDeparture.Text);
+        //create an instance of the flight book
+        MyClassLibrary.clsFlightCollection Flights = new clsFlightCollection();
+        //validate the data on the web form
+        string Error = Flights.ThisFlight.Valid(txtFlightNo.Text, txtAirline.Text, txtDestination.Text, txtArrivalTime.Text, txtArrivalAirport.Text, txtDepartureTime.Text, txtDepartureAirport.Text);
+        //if the data is OK then add it to the object
         if (Error == "")
         {
+            //get the data entered by the user
             Flights.ThisFlight.FlightNo = txtFlightNo.Text;
             Flights.ThisFlight.Airline = txtAirline.Text;
             Flights.ThisFlight.Destination = txtDestination.Text;
-            Flights.ThisFlight.ArrivalAirport = txtArrival.Text;
+            Flights.ThisFlight.ArrivalAirport = txtArrivalAirport.Text;
             Flights.ThisFlight.Arrival = Convert.ToDateTime(txtArrivalTime.Text);
             Flights.ThisFlight.Departure = Convert.ToDateTime(txtDepartureTime.Text);
-            Flights.ThisFlight.DepartureAirport = txtDeparture.Text;
+            Flights.ThisFlight.DepartureAirport = txtDepartureAirport.Text;
             Flights.ThisFlight.Destination = txtDestination.Text;
+            //add the record
             Flights.Add();
+            //all done so redirect back to the main page
+            Response.Redirect("DefaultFlight.aspx");
+
         }
         else
         {
-            lblError.Text = Error;
+            //report an error
+            lblError.Text = "There were problems with the data entered" + Error;
         }
+    }
+
+    //event handler for the ok button
+    protected void btnOk_Click(object sender, EventArgs e)
+    {
+        //add the new record
+        Add();
+        //all done so redirect back to the main page
+        //Response.Redirect("DefaultFlight.aspx");
     }
 }

@@ -131,5 +131,35 @@ namespace MyClassLibrary
             return DB.Execute("sproc_tblFlights_Insert");
 
         }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by thisFlights
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@FlightID", mThisFlight.FlightID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblFLights_Delete");
+        }
+
+        public void Update()
+        {
+            //update an existing record based on the values of thisFlights
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            
+            DB.AddParameter("@FlightNo", mThisFlight.FlightNo);
+            DB.AddParameter("@Airline", mThisFlight.Airline);
+            DB.AddParameter("@ArrivalAirport", mThisFlight.ArrivalAirport);
+            DB.AddParameter("@Arrival", mThisFlight.Arrival);
+            DB.AddParameter("@Departure", mThisFlight.Departure);
+            DB.AddParameter("@DepartureAirport", mThisFlight.DepartureAirport);
+            DB.AddParameter("@Destination", mThisFlight.Destination);
+            //execute the stored procedure
+            DB.Execute("sproc_tblFlights_Update");
+
+        }
     }
 }
