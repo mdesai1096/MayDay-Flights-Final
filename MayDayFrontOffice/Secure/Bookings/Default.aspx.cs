@@ -13,12 +13,31 @@ public partial class Bookings_Default : System.Web.UI.Page
         //if this is the first time the page is displayed
         if (IsPostBack == false)
         {
-            //update the list box
-            FilterBookingsDateRange(DateTime.Today.Date.AddYears(-5).ToString(), DateTime.Today.Date.ToString());
+            //display their user name
+            lblUser.Text = "The current user is " + User.Identity.Name;
             //write whatever the date was is 1 year in the past in the start date text box
             txtStartDate.Text = DateTime.Today.Date.AddYears(-1).ToString("dd/MM/yyyy");
             //write whatever the date was is today in the end date text box
             txtEndDate.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
+            //if an admin has loggedin
+            if (User.IsInRole("admin"))
+            {
+                //populate the text box with all boooking
+                DisplayBookings();
+                //show the buttons
+                btnFilter.Visible = true;
+                txtFilter.Visible = true;
+                btnDelete.Visible = true;
+            }
+            else //if any other user
+            {               
+                //update the list box
+                FilterBookingsDateRange(DateTime.Today.Date.AddYears(-5).ToString(), DateTime.Today.Date.ToString());
+                //hide the buttons
+                btnFilter.Visible = false;
+                txtFilter.Visible = false;
+                btnDelete.Visible = false;
+            }
 
         }
     }
@@ -31,19 +50,19 @@ public partial class Bookings_Default : System.Web.UI.Page
         Response.Redirect("AEBookings.aspx");
     }
 
-    //void DisplayBookings()
-    //{
-    //    //create an instance of the booking collection
-    //    clsBookingsCollection Bookings = new clsBookingsCollection();
-    //    //set the data source to the list of bookings in the collection
-    //    lstBookings.DataSource = Bookings.BookingsList;
-    //    //set the name of the primary key
-    //    lstBookings.DataValueField = "BookRef";
-    //    //set the data field to display
-    //    lstBookings.DataTextField = "AllDetails";
-    //    //bind the data to the list
-    //    lstBookings.DataBind();
-    //}
+    void DisplayBookings()
+    {
+        //create an instance of the booking collection
+        clsBookingsCollection Bookings = new clsBookingsCollection();
+        //set the data source to the list of bookings in the collection
+        lstBookings.DataSource = Bookings.BookingsList;
+        //set the name of the primary key
+        lstBookings.DataValueField = "BookRef";
+        //set the data field to display
+        lstBookings.DataTextField = "AllDetails";
+        //bind the data to the list
+        lstBookings.DataBind();
+    }
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
@@ -90,7 +109,7 @@ public partial class Bookings_Default : System.Web.UI.Page
     protected void btnFilter_Click(object sender, EventArgs e)
     {
     
-        //FilterSurname(txtFilter.Text);
+        FilterSurname(txtFilter.Text);
     }
 
     void FilterBookingsRef(string BookRef)
@@ -108,20 +127,20 @@ public partial class Bookings_Default : System.Web.UI.Page
         lstBookings.DataBind();
     }
 
-    //void FilterSurname (string Surname)
-    //{
-    //    //create an instance of the booking collection
-    //    clsBookingsCollection Bookings = new clsBookingsCollection();
-    //    Bookings.FilterSurname(Surname);
-    //    //set the data source to the list of bookings in the collection
-    //    lstBookings.DataSource = Bookings.BookingsList;
-    //    //set the name of the primary key
-    //    lstBookings.DataValueField = "BookRef";
-    //    //set the data field to display
-    //    lstBookings.DataTextField = "AllCDetails";
-    //    //bind the data to the list
-    //    lstBookings.DataBind();
-    //}
+    void FilterSurname (string Surname)
+    {
+        //create an instance of the booking collection
+        clsBookingsCollection Bookings = new clsBookingsCollection();
+        Bookings.FilterSurname(Surname);
+        //set the data source to the list of bookings in the collection
+        lstBookings.DataSource = Bookings.BookingsList;
+        //set the name of the primary key
+        lstBookings.DataValueField = "BookRef";
+        //set the data field to display
+        lstBookings.DataTextField = "AllCDetails";
+        //bind the data to the list
+        lstBookings.DataBind();
+    }
 
     protected void btnFDate_Click(object sender, EventArgs e)
     {
