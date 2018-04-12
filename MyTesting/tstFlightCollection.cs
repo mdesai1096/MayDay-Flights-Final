@@ -203,6 +203,63 @@ namespace MyTesting
             Assert.AreEqual(AllFlights.ThisFlight, TestItem);
         }
 
+        [TestMethod]
+        public void FilterByDestinationMethodOK()
+        {
+            //create an instance of the class containing unfiltred results
+            clsFlightCollection AllFlights = new clsFlightCollection();
+            //create an instance of the filtered data
+            clsFlightCollection FilteredFlights = new clsFlightCollection();
+            //apply a blank string (should return all records);
+            FilteredFlights.FilterByDestination("");
+            //test to see that the two values are the same
+            Assert.AreEqual(AllFlights.Count, FilteredFlights.Count);
+
+        }
+
+        [TestMethod]
+        public void FilterByDestinationNoneFound()
+        {
+            //create an instance of the filtered data
+            clsFlightCollection FilteredFlights = new clsFlightCollection();
+            //apply a airline that doesn't exist
+            FilteredFlights.FilterByDestination("@@@");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredFlights.Count);
+                 
+        }
+
+        [TestMethod]
+        public void FilterByDestinationTestDataFound()
+        {
+            //create an instance of the filtered data
+            clsFlightCollection FilteredFlights = new clsFlightCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a destination that doesn't exist
+            FilteredFlights.FilterByDestination("XXXXX");
+            //check that the correct number of records are found
+            if (FilteredFlights.Count == 2)
+            {
+                //check that the first record is ID 36
+                if (FilteredFlights.FlightList[0].FlightID != 30)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 37
+                if (FilteredFlights.FlightList[1].FlightID != 31)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
+        }
+        
 
 
 
