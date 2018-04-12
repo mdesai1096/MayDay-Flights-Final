@@ -69,7 +69,8 @@ namespace MaydayBackend
             //create an instance of the flight book
             MyClassLibrary.clsFlightCollection Flights = new clsFlightCollection();
             //validate the data on the web form
-            string Error = Flights.ThisFlight.Valid(txtFlightNo.Text, txtAirline.Text, txtDestination.Text, txtArrivalTime.Text, txtArrivalTime.Text, txtDepartureTime.Text, txtDepartureTime.Text);
+                                        //Valid(string flightNo, string airline, string destination, string arrival, string arrivalAirport, string departure, string departureAirport)
+            string Error = Flights.ThisFlight.Valid(txtFlightNo.Text, txtAirline.Text, txtDestination.Text, txtArrivalTime.Text, txtArrival.Text, txtDepartureTime.Text, txtDeparture.Text);
             //if the data is OK then add it to the object
             if (Error == "")
 
@@ -124,6 +125,8 @@ namespace MaydayBackend
                 Update40();
             }
         }
+
+ 
     }
 }
 

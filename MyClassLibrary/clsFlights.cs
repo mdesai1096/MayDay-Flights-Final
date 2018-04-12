@@ -156,9 +156,9 @@ namespace MyClassLibrary
             {
                 return OK = OK + "Flight no is blank";
             }
-            if (flightNo.Length >= 5)
+            if (flightNo.Length > 5)
             {
-                return OK = OK + "Flight no must be less than 5 characters";
+                return OK = OK + "Flight number must be  5 characters";
             }
 
             //if (flightNo.Length < 1)
@@ -173,7 +173,7 @@ namespace MyClassLibrary
 
             if (airline.Length <= 2)
             {
-                return OK = OK + "Airline is blank";
+                return OK = OK + "Airline must be min 2 char";
             }
             if (airline.Length > 10)
             {
@@ -192,7 +192,7 @@ namespace MyClassLibrary
             {
                 return OK = OK + "Arrival Airport is blank";
             }
-            if (arrivalAirport.Length > 4)
+            if (arrivalAirport.Length > 3)
             {
                 return OK = OK + "Arrival Airport must be less than 4 characters";
             }
@@ -201,7 +201,7 @@ namespace MyClassLibrary
             {
                 return OK = OK + "dep Airport is blank";
             }
-            if (departureAirport.Length > 4)
+            if (departureAirport.Length > 3)
             {
                 return OK = OK + "dep Airport must be less than 4 characters";
             }
@@ -210,7 +210,10 @@ namespace MyClassLibrary
             {
                 DateTime DateTemp1;
                 DateTemp1 = Convert.ToDateTime(departure);
-
+                if (DateTemp1 < DateTime.Now.Date)
+                {
+                    OK = OK + "Flight cannot be in the past";
+                }
 
             }
             catch

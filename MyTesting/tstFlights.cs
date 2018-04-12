@@ -126,7 +126,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -149,7 +149,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -171,7 +171,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -193,7 +193,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -215,7 +215,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -237,7 +237,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -259,7 +259,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -281,7 +281,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -304,7 +304,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -326,7 +326,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -351,7 +351,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -373,7 +373,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -396,7 +396,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "Bhx";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -419,7 +419,7 @@ namespace MyTesting
             string ArrivalAirport = "DBX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "Bhx";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -442,7 +442,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -464,7 +464,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "Bhx";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -487,7 +487,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -509,7 +509,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "A";
             //Boolean Active = true;
             //invoke method
@@ -532,7 +532,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "DG";
             //Boolean Active = true;
             //invoke method
@@ -554,7 +554,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "BAL";
             //Boolean Active = true;
             //invoke method
@@ -577,7 +577,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubaiiiii";
             //Boolean Active = true;
             //invoke method
@@ -599,7 +599,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubaiiiiii";
             //Boolean Active = true;
             //invoke method
@@ -620,7 +620,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubaiiiiiii";
             //Boolean Active = true;
             //invoke method
@@ -641,7 +641,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -663,7 +663,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -686,7 +686,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.AddYears(-1).ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -709,7 +709,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = "";
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -732,7 +732,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -755,7 +755,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.AddYears(-364).ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -778,7 +778,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.AddYears(+365).ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -801,7 +801,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.AddYears(+366).ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -824,7 +824,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = "";
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -847,7 +847,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.AddYears(+730).ToString(); ;
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -870,7 +870,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.AddYears(-1).ToString();
             string Departure = DateTime.Now.Date.AddYears(-1).ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -893,7 +893,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = "";
             string Departure = "";
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -916,7 +916,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -939,7 +939,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = DateTime.Now.Date.AddYears(-364).ToString();
             string Departure = DateTime.Now.Date.AddYears(-364).ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -962,7 +962,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.AddYears(+365).ToString();
             string Departure = DateTime.Now.Date.AddYears(+365).ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -985,7 +985,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.AddYears(+366).ToString();
             string Departure = DateTime.Now.Date.AddYears(+366).ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -1008,7 +1008,7 @@ namespace MyTesting
             string ArrivalAirport = "Dubai Airport";
             string Arrival = "";
             string Departure = "";
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -1031,7 +1031,7 @@ namespace MyTesting
             string ArrivalAirport = "BHX";
             string Arrival = DateTime.Now.Date.AddYears(+730).ToString();
             string Departure = DateTime.Now.Date.AddYears(+730).ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -1054,7 +1054,7 @@ namespace MyTesting
             string ArrivalAirport = "A";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -1077,7 +1077,7 @@ namespace MyTesting
             string ArrivalAirport = "AA";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -1100,7 +1100,7 @@ namespace MyTesting
             string ArrivalAirport = "AA";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -1123,7 +1123,7 @@ namespace MyTesting
             string ArrivalAirport = "AAA";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -1146,7 +1146,7 @@ namespace MyTesting
             string ArrivalAirport = "AAAA";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -1169,7 +1169,7 @@ namespace MyTesting
             string ArrivalAirport = "AA";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method
@@ -1192,7 +1192,7 @@ namespace MyTesting
             string ArrivalAirport = "AAAAA";
             string Arrival = DateTime.Now.Date.ToString();
             string Departure = DateTime.Now.Date.ToString();
-            string DepartureAirport = "Birmingham Airport";
+            string DepartureAirport = "BHX";
             string Destination = "Dubai";
             //Boolean Active = true;
             //invoke method

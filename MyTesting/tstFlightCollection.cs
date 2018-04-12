@@ -242,7 +242,7 @@ namespace MyTesting
             if (FilteredFlights.Count == 2)
             {
                 //check that the first record is ID 36
-                if (FilteredFlights.FlightList[0].FlightID != 30)
+                if (FilteredFlights.FlightList[0].FlightID != 24)
                 {
                     OK = false;
                 }
