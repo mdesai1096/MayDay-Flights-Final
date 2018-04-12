@@ -73,6 +73,9 @@
             this.bookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayBookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.displayCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -85,9 +88,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.displayCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.displayFlightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFlightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -103,11 +106,12 @@
             this.windowsMenu,
             this.helpMenu,
             this.bookingsToolStripMenuItem,
-            this.customersToolStripMenuItem});
+            this.customersToolStripMenuItem,
+            this.flightsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1177, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1020, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -136,7 +140,7 @@
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
@@ -458,6 +462,29 @@
             this.newBookingToolStripMenuItem.Text = "&New Booking";
             this.newBookingToolStripMenuItem.Click += new System.EventHandler(this.newBookingToolStripMenuItem_Click);
             // 
+            // customersToolStripMenuItem
+            // 
+            this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.displayCustomersToolStripMenuItem,
+            this.newCustomerToolStripMenuItem});
+            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.customersToolStripMenuItem.Text = "&Customers";
+            // 
+            // displayCustomersToolStripMenuItem
+            // 
+            this.displayCustomersToolStripMenuItem.Name = "displayCustomersToolStripMenuItem";
+            this.displayCustomersToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.displayCustomersToolStripMenuItem.Text = "&Display Customers";
+            this.displayCustomersToolStripMenuItem.Click += new System.EventHandler(this.displayCustomersToolStripMenuItem_Click);
+            // 
+            // newCustomerToolStripMenuItem
+            // 
+            this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.newCustomerToolStripMenuItem.Text = "&New Customer";
+            this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click);
+            // 
             // toolStrip
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -471,7 +498,7 @@
             this.helpToolStripButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1177, 25);
+            this.toolStrip.Size = new System.Drawing.Size(1020, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -547,7 +574,7 @@
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 567);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1177, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1020, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -557,34 +584,35 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // customersToolStripMenuItem
+            // flightsToolStripMenuItem
             // 
-            this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.displayCustomersToolStripMenuItem,
-            this.newCustomerToolStripMenuItem});
-            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.customersToolStripMenuItem.Text = "&Customers";
+            this.flightsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.displayFlightsToolStripMenuItem,
+            this.addFlightsToolStripMenuItem});
+            this.flightsToolStripMenuItem.Name = "flightsToolStripMenuItem";
+            this.flightsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.flightsToolStripMenuItem.Text = "&Flights";
+            this.flightsToolStripMenuItem.Click += new System.EventHandler(this.flightsToolStripMenuItem_Click);
             // 
-            // displayCustomersToolStripMenuItem
+            // displayFlightsToolStripMenuItem
             // 
-            this.displayCustomersToolStripMenuItem.Name = "displayCustomersToolStripMenuItem";
-            this.displayCustomersToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.displayCustomersToolStripMenuItem.Text = "&Display Customers";
-            this.displayCustomersToolStripMenuItem.Click += new System.EventHandler(this.displayCustomersToolStripMenuItem_Click);
+            this.displayFlightsToolStripMenuItem.Name = "displayFlightsToolStripMenuItem";
+            this.displayFlightsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.displayFlightsToolStripMenuItem.Text = "&Display Flights";
+            this.displayFlightsToolStripMenuItem.Click += new System.EventHandler(this.displayFlightsToolStripMenuItem_Click);
             // 
-            // newCustomerToolStripMenuItem
+            // addFlightsToolStripMenuItem
             // 
-            this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.newCustomerToolStripMenuItem.Text = "&New Customer";
-            this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click);
+            this.addFlightsToolStripMenuItem.Name = "addFlightsToolStripMenuItem";
+            this.addFlightsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addFlightsToolStripMenuItem.Text = "&Add Flights";
+            this.addFlightsToolStripMenuItem.Click += new System.EventHandler(this.addFlightsToolStripMenuItem_Click);
             // 
             // mdiBackend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 589);
+            this.ClientSize = new System.Drawing.Size(1020, 589);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -665,6 +693,9 @@
         private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem displayCustomersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem flightsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem displayFlightsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addFlightsToolStripMenuItem;
     }
 }
 
