@@ -129,6 +129,79 @@ namespace MyTesting
             Assert.AreEqual(AllFlights.ThisFlight, TestFlights);
         }
 
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsFlightCollection AllFlights = new clsFlightCollection();
+            //create the item of test data
+            clsFlights TestItem = new clsFlights();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.FlightNo = "AA11";
+            TestItem.Airline = "Air India";
+            TestItem.ArrivalAirport = "DXB";
+            TestItem.Arrival = DateTime.Now.Date;
+            TestItem.Departure = DateTime.Now.Date;
+            TestItem.DepartureAirport = "MCR";
+            TestItem.Destination = "Dubai";
+            //set ThisFlights to the test data
+            AllFlights.ThisFlight = TestItem;
+            //add the record
+            PrimaryKey = AllFlights.Add();
+            //set the primary key of the test data
+            TestItem.FlightID =PrimaryKey;
+            //find the record
+            AllFlights.ThisFlight.Find(PrimaryKey);
+            //delete the record
+            AllFlights.Delete();
+            //now find the record
+            Boolean Found = AllFlights.ThisFlight.Find(PrimaryKey);
+            //test to see that the record was not found
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsFlightCollection AllFlights = new clsFlightCollection();
+            //create the item of test data
+            clsFlights TestItem = new clsFlights();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.FlightNo = "AA11";
+            TestItem.Airline = "Air India";
+            TestItem.ArrivalAirport = "DXB";
+            TestItem.Arrival = DateTime.Now.Date;
+            TestItem.Departure = DateTime.Now.Date;
+            TestItem.DepartureAirport = "MCR";
+            TestItem.Destination = "Dubai";
+            //set ThisFlights to the test data
+            AllFlights.ThisFlight = TestItem;
+            //add the record
+            PrimaryKey = AllFlights.Add();
+            //set the primary key of the test data
+            TestItem.FlightID = PrimaryKey;
+            //modify the test data
+            TestItem.FlightNo = "AA12";
+            TestItem.Airline = "Air France";
+            TestItem.ArrivalAirport = "LHR";
+            TestItem.Arrival = DateTime.Now.Date;
+            TestItem.Departure = DateTime.Now.Date;
+            TestItem.DepartureAirport = "DHL";
+            TestItem.Destination = "Germany";
+            //set the record based on the new test data
+            AllFlights.ThisFlight = TestItem;
+            //update the record
+            AllFlights.Update();
+            //find the record
+            AllFlights.ThisFlight.Find(PrimaryKey);
+            //test to see ThisFlights matches the test data
+            Assert.AreEqual(AllFlights.ThisFlight, TestItem);
+        }
 
 
 

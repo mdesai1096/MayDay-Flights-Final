@@ -11,32 +11,31 @@
     <br />
     <br />
     <asp:Label ID="lblDestination" runat="server" style="z-index: 1; left: 374px; top: 328px; position: absolute; width: 65px; height: 3px;" Text="Destination"></asp:Label>
-    <asp:Button ID="btnReturn" runat="server" OnClick="Button1_Click" style="z-index: 1; left: 718px; top: 343px; position: absolute" Text="Return to Homepage" />
+    <asp:Button ID="btnReturn" runat="server"  style="z-index: 1; left: 718px; top: 343px; position: absolute" Text="Return to Homepage" />
     <br />
     <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 770px; top: 286px; position: absolute"></asp:Label>
     <br />
-    <asp:Label ID="lblArrival" runat="server" style="z-index: 1; left: 374px; top: 364px; position: absolute" Text="Arrival"></asp:Label>
-    <asp:TextBox ID="txtArrival" runat="server" style="z-index: 1; left: 488px; top: 364px; position: absolute; width: 105px"></asp:TextBox>
+    <asp:Label ID="lblArrivalAirport" runat="server" style="z-index: 1; left: 374px; top: 364px; position: absolute; width: 97px;" Text="Arrival Airport"></asp:Label>
+    <asp:TextBox ID="txtArrivalAirport" runat="server" style="z-index: 1; left: 488px; top: 364px; position: absolute; width: 105px"></asp:TextBox>
     <br />
     <asp:TextBox ID="txtArrivalTime" runat="server" style="z-index: 1; left: 489px; top: 396px; position: absolute; width: 105px"></asp:TextBox>
     <br />
-    <asp:Label ID="lblArrivalTime" runat="server" style="z-index: 1; left: 373px; top: 396px; position: absolute; right: -1352px" Text="Arrival Airport"></asp:Label>
+    <asp:Label ID="lblArrivalTime" runat="server" style="z-index: 1; left: 373px; top: 396px; position: absolute; right: -1352px" Text="Arrival Time"></asp:Label>
     <br />
-    <asp:TextBox ID="txtDeparture" runat="server" style="z-index: 1; left: 490px; top: 428px; position: absolute; width: 105px; margin-bottom: 0px"></asp:TextBox>
+    <asp:TextBox ID="txtDepartureAirport" runat="server" style="z-index: 1; left: 491px; top: 464px; position: absolute; width: 105px; margin-bottom: 0px"></asp:TextBox>
     <br />
-    <asp:Label ID="lblDeparture" runat="server" style="z-index: 1; left: 374px; top: 432px; position: absolute" Text="Departure "></asp:Label>
+    <asp:Label ID="lblDeparture" runat="server" style="z-index: 1; left: 374px; top: 432px; position: absolute" Text="Departure Time"></asp:Label>
     <br />
     <br />
     <asp:Label ID="lblDepartureAirport" runat="server" style="z-index: 1; left: 372px; top: 467px; position: absolute; right: -1246px" Text="Departure Airport"></asp:Label>
-    <asp:TextBox ID="txtDepartureTime" runat="server" style="z-index: 1; left: 490px; top: 464px; position: absolute; width: 105px;"></asp:TextBox>
+    <asp:TextBox ID="txtDepartureTime" runat="server" style="z-index: 1; left: 490px; top: 431px; position: absolute; width: 105px;"></asp:TextBox>
     <br />
     <br />
-<asp:Label ID="Label1" runat="server" style="z-index: 1; left: 375px; top: 525px; position: absolute" Text="lblError"></asp:Label>
     <br />
     <asp:Label ID="lblActiveFlight" runat="server" style="z-index: 1; left: 373px; top: 496px; position: absolute" Text="Active Flight"></asp:Label>
     <asp:CheckBox ID="chkActiveFlight" runat="server" style="z-index: 1; left: 497px; top: 496px; position: absolute" />
 <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 548px; top: 550px; position: absolute; right: 877px" Text="Cancel" />
-<asp:Button ID="btnOk" runat="server" style="z-index: 1; left: 388px; top: 555px; position: absolute; " Text="OK" />
+<asp:Button ID="btnOk" runat="server" style="z-index: 1; left: 388px; top: 555px; position: absolute; " Text="OK" OnClick="btnOk_Click" />
 <br />
     <br />
 </asp:Content>

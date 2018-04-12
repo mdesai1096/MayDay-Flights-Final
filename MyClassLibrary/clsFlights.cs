@@ -156,7 +156,7 @@ namespace MyClassLibrary
             {
                 return OK = OK + "Flight no is blank";
             }
-            if (flightNo.Length != 5)
+            if (flightNo.Length >= 5)
             {
                 return OK = OK + "Flight no must be less than 5 characters";
             }
@@ -192,7 +192,16 @@ namespace MyClassLibrary
             {
                 return OK = OK + "Arrival Airport is blank";
             }
-            if (arrivalAirport.Length > 3)
+            if (arrivalAirport.Length > 4)
+            {
+                return OK = OK + "Arrival Airport must be less than 4 characters";
+            }
+
+            if (departureAirport.Length == 0)
+            {
+                return OK = OK + "Arrival Airport is blank";
+            }
+            if (departureAirport.Length > 4)
             {
                 return OK = OK + "Arrival Airport must be less than 4 characters";
             }
