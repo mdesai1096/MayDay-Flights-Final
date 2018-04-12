@@ -50,7 +50,7 @@ namespace MyClassLibrary
             {
                 //set the value of the private data member 
                 mFlightNo = value;
-            
+
             }
         }
 
@@ -199,11 +199,11 @@ namespace MyClassLibrary
 
             if (departureAirport.Length == 0)
             {
-                return OK = OK + "Arrival Airport is blank";
+                return OK = OK + "dep Airport is blank";
             }
             if (departureAirport.Length > 4)
             {
-                return OK = OK + "Arrival Airport must be less than 4 characters";
+                return OK = OK + "dep Airport must be less than 4 characters";
             }
 
             try

@@ -52,6 +52,12 @@
     <Compile Include="frmAddEditCust.Designer.cs">
       <DependentUpon>frmAddEditCust.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddEditFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEditFlight.Designer.cs">
+      <DependentUpon>frmAddEditFlight.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAEBookings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="frmCustomerMain.Designer.cs">
       <DependentUpon>frmCustomerMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFlightsMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFlightsMain.Designer.cs">
+      <DependentUpon>frmFlightsMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="mdiBackend.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,9 @@
     <EmbeddedResource Include="frmAddEditCust.resx">
       <DependentUpon>frmAddEditCust.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEditFlight.resx">
+      <DependentUpon>frmAddEditFlight.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAEBookings.resx">
       <DependentUpon>FrmAEBookings.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerMain.resx">
       <DependentUpon>frmCustomerMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFlightsMain.resx">
+      <DependentUpon>frmFlightsMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mdiBackend.resx">
       <DependentUpon>mdiBackend.cs</DependentUpon>

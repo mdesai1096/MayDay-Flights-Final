@@ -148,5 +148,26 @@ namespace MaydayBackend
             CList.MdiParent = this;
             CList.Visible = true;
         }
+
+        private void flightsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            
+
+        }
+
+        private void displayFlightsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFlightsMain Flights = new frmFlightsMain();
+            Flights.MdiParent = this;
+            Flights.Visible = true;
+        }
+
+        private void addFlightsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditFlight Flights = new frmAddEditFlight(-1);
+            Flights.MdiParent = this;
+            Flights.Visible = true;
+        }
     }
 }

@@ -151,7 +151,7 @@ namespace MyTesting
             //add the record
             PrimaryKey = AllFlights.Add();
             //set the primary key of the test data
-            TestItem.FlightID =PrimaryKey;
+            TestItem.FlightID = PrimaryKey;
             //find the record
             AllFlights.ThisFlight.Find(PrimaryKey);
             //delete the record
@@ -186,7 +186,7 @@ namespace MyTesting
             //set the primary key of the test data
             TestItem.FlightID = PrimaryKey;
             //modify the test data
-            TestItem.FlightNo = "AA12";
+            TestItem.FlightNo = "AA30";
             TestItem.Airline = "Air France";
             TestItem.ArrivalAirport = "LHR";
             TestItem.Arrival = DateTime.Now.Date;
@@ -226,7 +226,7 @@ namespace MyTesting
             FilteredFlights.FilterByDestination("@@@");
             //test to see that there are no records
             Assert.AreEqual(0, FilteredFlights.Count);
-                 
+
         }
 
         [TestMethod]
@@ -242,7 +242,7 @@ namespace MyTesting
             if (FilteredFlights.Count == 2)
             {
                 //check that the first record is ID 36
-                if (FilteredFlights.FlightList[0].FlightID != 24)
+                if (FilteredFlights.FlightList[0].FlightID != 30)
                 {
                     OK = false;
                 }
@@ -259,7 +259,7 @@ namespace MyTesting
             //test to see that there are no records
             Assert.IsTrue(OK);
         }
-        
+
 
 
 
