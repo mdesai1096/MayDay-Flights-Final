@@ -20,22 +20,27 @@ public partial class admin_customer : System.Web.UI.Page
             //display the delete button 
             btnDelete.Visible = true;
             btnDisplayAll.Visible = true;
+            if (IsPostBack == false)
+            {
+                //update the list box
+                DisplayCustomers();
+            }
         }
         else
         {
             // hide the delete button
             btnDelete.Visible = false;
             btnDisplayAll.Visible = false;
-
+            //if this is the first time the page has been displayed 
+            if (IsPostBack == false)
+            {
+                //update the list box
+                FilterPostCode("");
+            }
         }
         //clear any existing error messages 
         lblError.Text = "";
-        //if this is the first time the page has been displayed 
-        if (IsPostBack == false)
-        {
-            //update the list box
-            FilterPostCode("");
-        }
+
 
     }
 
@@ -146,7 +151,7 @@ public partial class admin_customer : System.Web.UI.Page
         //set the name of the primary key
         lstCust.DataValueField = "CustomerID";
         //set the data field to display
-        lstCust.DataTextField = "PostCode";
+        lstCust.DataTextField = "AllDetails";
         //bind the data to the list
         lstCust.DataBind();
     }
