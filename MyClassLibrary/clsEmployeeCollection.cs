@@ -45,7 +45,7 @@ namespace MyClassLibrary
             DB.AddParameter("@EmployeeJoinDate", mThisEmployee.EmployeeJoinDate);
             DB.AddParameter("@EmployeeEmail", mThisEmployee.EmployeeEmail);
             DB.AddParameter("@EmployeeContactNumber", mThisEmployee.EmployeeContactNumber);
-            DB.AddParameter("@Address", mThisEmployee.Address);
+            DB.AddParameter("@EmployeeAddress", mThisEmployee.Address);
             DB.AddParameter("@EmployeeSalary", mThisEmployee.EmployeeSalary);
             DB.AddParameter("@EmployeeRole", mThisEmployee.EmployeeRole);
             DB.AddParameter("@EmployeeDOB", mThisEmployee.EmployeeDOB);
