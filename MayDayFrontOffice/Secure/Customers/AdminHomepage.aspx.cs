@@ -20,6 +20,8 @@ public partial class admin_customer : System.Web.UI.Page
             //display the delete button 
             btnDelete.Visible = true;
             btnDisplayAll.Visible = true;
+            btnSurname.Visible = false;
+            btnPCFilter1.Visible = false;
             if (IsPostBack == false)
             {
                 //update the list box
@@ -31,6 +33,8 @@ public partial class admin_customer : System.Web.UI.Page
             // hide the delete button
             btnDelete.Visible = false;
             btnDisplayAll.Visible = false;
+            btnFilterSurnameAdmin.Visible = false;
+            btnFilterPostcodeAdmin.Visible = false;
             //if this is the first time the page has been displayed 
             if (IsPostBack == false)
             {
@@ -112,7 +116,7 @@ public partial class admin_customer : System.Web.UI.Page
         else//if no record has been selected
         {
             //display an error
-            lblError.Text = "Please select a record to delete from the list";
+            lblError.Text = "Please select a record to edit from the list";
         }
     }
 
@@ -151,7 +155,7 @@ public partial class admin_customer : System.Web.UI.Page
         //set the name of the primary key
         lstCust.DataValueField = "CustomerID";
         //set the data field to display
-        lstCust.DataTextField = "AllDetails";
+        lstCust.DataTextField = "PostCode";
         //bind the data to the list
         lstCust.DataBind();
     }
@@ -161,5 +165,45 @@ public partial class admin_customer : System.Web.UI.Page
     protected void btnSurname_Click(object sender, EventArgs e)
     {
         FilterSname(txtFilter.Text);
+    }
+
+    protected void btnFilterSurnameAdmin_Click(object sender, EventArgs e)
+    {
+        FilterSnameadmin(txtFilter.Text);
+    }
+
+    void FilterSnameadmin(string sname)
+    {
+        //create an instance of the booking collection
+        clsCustomerCollection C = new clsCustomerCollection(" ");
+        C.FilterbysurName(sname);
+        //set the data source to the list of bookings in the collection
+        lstCust.DataSource = C.CustomerList;
+        //set the name of the primary key
+        lstCust.DataValueField = "CustomerID";
+        //set the data field to display
+        lstCust.DataTextField = "surName";
+        //bind the data to the list
+        lstCust.DataBind();
+    }
+
+    protected void btnFilterPostcodeAdmin_Click(object sender, EventArgs e)
+    {
+        FilterPostCodade(txtFilter.Text);
+    }
+
+    void FilterPostCodade(string PostCode)
+    {
+        //create an instance of the booking collection
+        clsCustomerCollection C = new clsCustomerCollection(" ");
+        C.FilterbyPostCode(PostCode);
+        //set the data source to the list of bookings in the collection
+        lstCust.DataSource = C.CustomerList;
+        //set the name of the primary key
+        lstCust.DataValueField = "CustomerID";
+        //set the data field to display
+        lstCust.DataTextField = "PostCode";
+        //bind the data to the list
+        lstCust.DataBind();
     }
 }

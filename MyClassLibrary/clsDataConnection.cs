@@ -27,7 +27,7 @@ public class clsDataConnection
 
     public clsDataConnection()
     {
-        GetConString("D:\\Users\\mdesa\\Source\\Repos\\MayDay-Flights-TDD-C-SQL-ASP4\\App_Data\\mayday2.mdf");
+        GetConString("C:\\Users\\mdesa\\Desktop\\MayDay-Flights-TDD-C-SQL-ASP4\\App_Data\\mayday2.mdf");
 
 
     }

@@ -7,7 +7,7 @@
         <asp:Label ID="lblDeleted" runat="server" Text="The Customer Has Now Been Deleted "></asp:Label>
     </h3>
     <p>
-        <asp:Button ID="Button1" runat="server" Height="46px" OnClick="Button1_Click" Text="Back to Admin Home Page" Width="253px" />
+        <asp:Button ID="btnBackToAdminHomePage" runat="server" Height="30px" OnClick="Button1_Click" Text="Back to Admin Home Page" Width="289px" style="margin-top: 0px" />
 &nbsp;</p>
 </asp:Content>
 
