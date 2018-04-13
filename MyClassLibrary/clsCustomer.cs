@@ -248,7 +248,7 @@ namespace MyClassLibrary
             get
             {
                 //return private data
-                return mForeName + " " + mSurname + " " + mPostCode;
+                return mCustomerID + " " + mForeName + " " + mSurname + " " + mPostCode;
             }
             set
             {
@@ -267,22 +267,22 @@ namespace MyClassLibrary
 
             if (foreName.Length < 1)
             {
-                OK = OK + "foreName is too short";
+                OK = OK + " ForeName is too short :     ";
             }
             if (foreName.Length > 25)
             {
-                OK = OK + "foreName is too long";
+                OK = OK + " ForeName is too long :      ";
             }
 
             /////////////////////////////
 
             if (surname.Length < 1)
             {
-                OK = OK + "surname is too short";
+                OK = OK + " Surname is too short :      ";
             }
             if (surname.Length > 25)
             {
-                OK = OK + "surname is too long";
+                OK = OK + " Surname is too long :       ";
             }
 
 
@@ -293,84 +293,84 @@ namespace MyClassLibrary
 
                 if (DateTemp >= DateTime.Now.Date.AddYears(-18))
                 {
-                    OK = OK + "You must be over 18 years old";
+                    OK = OK + " You must be over 18 years old :      ";
                 }
 
                 if (DateTemp <= DateTime.Now.Date.AddYears(-150))
                 {
-                    OK = OK + "You must be under 150 years old";
+                    OK = OK + " You must be under 150 years old :       ";
                 }
 
             }
             catch
             {
-                OK = OK + "Incorrect date entered";
+                OK = OK + " Incorrect date entered :  ";
             }
 
             // if statement for Gender
 
             if (gender.Length < 1)
             {
-                OK = OK + "gender is too short";
+                OK = OK + " Gender is too short : ";
             }
             if (gender.Length > 6)
             {
-                OK = OK + "gender is too long";
+                OK = OK + " Gender is too long : ";
             }
 
             // if statement for contactNo
 
             if (contactNumber.Length < 3)
             {
-                OK = OK + "Contact Number is too short";
+                OK = OK + " Contact Number is too short : ";
             }
             if (contactNumber.Length > 11)
             {
-                OK = OK + "Contact Number is too long";
+                OK = OK + " Contact Number is too long :  ";
             }
 
             // if statement for email 
 
             if (eMail.Length < 6)
             {
-                OK = OK + "eMail is too short";
+                OK = OK + " Email is too short :  ";
             }
             if (eMail.Length > 30)
             {
-                OK = OK + "eMail is too long";
+                OK = OK + " Email is too long :    ";
             }
 
             // if statement for FlatNo
 
             if (flatNo.Length < 1)
             {
-                OK = OK + "flatNo is too short";
+                OK = OK + " FlatNo is too short : ";
             }
             if (flatNo.Length > 6)
             {
-                OK = OK + "flatNo is too long";
+                OK = OK + " FlatNo is too long  : ";
             }
 
             // if statement for houseno
 
             if (houseNo.Length < 1)
             {
-                OK = OK + "houseNo is too short";
+                OK = OK + " HouseNo is too short :";
             }
             if (houseNo.Length > 6)
             {
-                OK = OK + "houseNo is too long";
+                OK = OK + " HouseNo is too long :";
             }
 
             // if statement for postcode
 
             if (postCode.Length < 5)
             {
-                OK = OK + "postCode is too short";
+                OK = OK + " PostCode is too short :";
             }
             if (postCode.Length > 9)
             {
-                OK = OK + "postCode is too long";
+                OK = OK + " PostCode is too long :";
             }
 
             return OK;

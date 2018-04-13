@@ -142,7 +142,7 @@ namespace MyClassLibrary
         public int Add()
         {
             //adds a new record in to the database depending on the values of mThisBooking
-            //connect to the database
+            //connect to the database.
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
             DB.AddParameter("@surname", mThisCustomer.Surname);
@@ -192,7 +192,6 @@ namespace MyClassLibrary
             DB.Execute("sproc_tblCustomer_Update");
 
         }
-        
 
         public void FilterbyPostCode(string PostCode) //string UserName)
         {
@@ -248,7 +247,7 @@ namespace MyClassLibrary
             clsDataConnection DB = new clsDataConnection();
             //send the PostCode parameter to the database
             DB.AddParameter("@surName", surName);
-            DB.AddParameter("@username", mUserName);
+            DB.AddParameter("@UserName", mUserName);
             // execute the stored procedure 
             DB.Execute("sproc_tblCustomer_FilterBysurName");
             //populate the array list with the data table
