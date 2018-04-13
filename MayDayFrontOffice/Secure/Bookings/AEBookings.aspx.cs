@@ -6,47 +6,103 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MyClassLibrary;
 
+//author Mohammad Desai
+
 public partial class Bookings_AEBookings : System.Web.UI.Page
 {
     //variable to store the primary key with page level scope
     Int32 BookRef;
-    
+
     //event handler for the page load event
     protected void Page_Load(object sender, EventArgs e)
     {
-        //get the pk of the booking to be processed
-        BookRef = Convert.ToInt32(Session["BookRef"]);
-        if (IsPostBack == false)
+        if (User.IsInRole("admin"))
         {
-            FilterUsername();
+            //show all custs 
+            DisplayCustomers();
 
-            //if this is not a new record
-            if (BookRef != -1)
+            //get the pk of the booking to be processed
+            BookRef = Convert.ToInt32(Session["BookRef"]);
+            if (IsPostBack == false)
             {
-                //change the title of the page
-                lblTitle.Text = "Edit Booking";
-                //display the current data for the record
-                DisplayBookings();
-                //make the text box read only so it the pk cannot be changed.
-                txtRef.ReadOnly = true;
-                //display the PK of record to be edited
-                txtRef.Text = BookRef.ToString();
-                
+                //if this is not a new record
+                if (BookRef != -1)
+                {
+                    //change the title of the page
+                    lblTitle.Text = "Edit Booking";
+                    //display the current data for the record
+                    DisplayBookings();
+                    //make the text box read only so it the pk cannot be changed.
+                    txtRef.ReadOnly = true;
+                    //display the PK of record to be edited
+                    txtRef.Text = BookRef.ToString();
 
-            }
-            else //this is a new record
-            {
-                //change the title of the page
-                lblTitle.Text = "New Booking";
-                //set todays date
-                txtDateBooked.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
-                //hide the reference label and box
-                lblRef.Visible = false;
-                txtRef.Visible = false;
-                
+
+                }
+                else //this is a new record
+                {
+                    //change the title of the page
+                    lblTitle.Text = "New Booking";
+                    //set todays date
+                    txtDateBooked.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
+                    //hide the reference label and box
+                    lblRef.Visible = false;
+                    txtRef.Visible = false;
+
+                }
             }
         }
+
+        else
+        {
+            //hide controls from user
+            txtFilterCust.Visible = false;
+            txtFilterTourOps.Visible = false;
+            txtFilterFlights.Visible = false;
+            btnFilterFlights.Visible = false;
+            btnFilterTourOps.Visible = false;
+            btnFilterCust.Visible = false;
+            //show only users details
+            FilterUsername();
+            //get the pk of the booking to be processed
+            BookRef = Convert.ToInt32(Session["BookRef"]);
+            if (IsPostBack == false)
+            {
+                //if this is not a new record
+                if (BookRef != -1)
+                {
+                    //change the title of the page
+                    lblTitle.Text = "Edit Booking";
+                    //display the current data for the record
+                    DisplayBookings();
+                    //make the text box read only so it the pk cannot be changed.
+                    txtRef.ReadOnly = true;
+                    //display the PK of record to be edited
+                    txtRef.Text = BookRef.ToString();
+
+
+                }
+                else //this is a new record
+                {
+                    //change the title of the page
+                    lblTitle.Text = "New Booking";
+                    //set todays date
+                    txtDateBooked.Text = DateTime.Today.Date.ToString("dd/MM/yyyy");
+                    //hide the reference label and box
+                    lblRef.Visible = false;
+                    txtRef.Visible = false;
+
+                }
+            }
+
+        }
     }
+
+
+
+
+
+
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
@@ -148,28 +204,43 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
         Response.Redirect("Default.aspx");
     }
 
-    //void DisplayCustomers()
-    //{
-    //    //create an instancew of the Customer Collection
-    //    clsCustomerCollection Customers = new clsCustomerCollection(User.Identity.Name);
-    //    // set the data source to the list of countries in the collection
-    //    lstCust.DataSource = Customers.CustomerList;
-    //    // set the name of the primary key
-    //    lstCust.DataValueField = "CustomerID";
-    //    // set the data field to display
-    //    lstCust.DataTextField = "Name";
-    //    //bind the data to the list 
-    //    lstCust.DataBind();
+    void DisplayCustomers()
+    {
+        //create an instancew of the Customer Collection
+        clsCustomerCollection Customers = new clsCustomerCollection();
+        // set the data source to the list of countries in the collection
+        lstCust.DataSource = Customers.CustomerList;
+        // set the name of the primary key
+        lstCust.DataValueField = "CustomerID";
+        // set the data field to display
+        lstCust.DataTextField = "Name";
+        //bind the data to the list 
+        lstCust.DataBind();
 
-    //}
+    }
 
     protected void btnFilterCust_Click(object sender, EventArgs e)
     {
-        //apply will filter by surname and/or postcode 
-        //FilterSurname(txtFilterCust.Text);
+        //apply will filter by surname and/ or postcode
+        Filtersurname(txtFilterCust.Text);
     }
 
-    void FilterUsername()
+    void Filtersurname(string sname)
+    {
+        //create an instance of the booking collection
+        clsCustomerCollection C = new clsCustomerCollection();
+        C.FilterbysurName(sname);
+        //set the data source to the list of bookings in the collection
+        lstCust.DataSource = C.CustomerList;
+        //set the name of the primary key
+        lstCust.DataValueField = "CustomerID";
+        //set the data field to display
+        lstCust.DataTextField = "Name";
+        //bind the data to the list
+        lstCust.DataBind();
+    }
+
+        void FilterUsername()
     {
         //create an instance of the booking collection
         clsCustomerCollection C = new clsCustomerCollection(User.Identity.Name);
