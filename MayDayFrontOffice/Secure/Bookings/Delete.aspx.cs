@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MyClassLibrary;
 
-//author Mohammad Desai
+//author Mohammad Desai 
 
 public partial class Bookings_Delete : System.Web.UI.Page
 {
