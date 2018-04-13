@@ -406,21 +406,21 @@ namespace MyTesting
         public void FilterbysurNameTestDataFound()
         {
             //create an instance of the filtered data
-            clsBookingsCollection FilteredCustomers = new clsBookingsCollection();
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection(" ");
             //var to store outcome
             Boolean OK = true;
             //apply a primary key value 
-            FilteredCustomers.FilterSurname("yyyyyy");
+            FilteredCustomers.FilterbysurName("yyyyyy");
             //check the correct number of records are found
             if (FilteredCustomers.Count == 2)
             {
                 //check the first record is ID 2
-                if (FilteredCustomers.BookingsList[0].BookRef != 18)
+                if (FilteredCustomers.CustomerList[0].CustomerID != 46)
                 {
                     OK = false;
                 }
                 // check that the first record is ID
-                if (FilteredCustomers.BookingsList[1].BookRef != 27)
+                if (FilteredCustomers.CustomerList[1].CustomerID != 73)
                 {
                     OK = false;
                 }
@@ -433,7 +433,8 @@ namespace MyTesting
             //test to see there are records
             Assert.IsTrue(OK);
         }
-
     }
 
 }
+
+

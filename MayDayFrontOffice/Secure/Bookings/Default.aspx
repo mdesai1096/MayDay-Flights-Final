@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <p>
     <br />
+        <asp:Label ID="lblUser" runat="server" style="z-index: 1; left: 1156px; top: 259px; position: absolute"></asp:Label>
 </p>
 <asp:TextBox ID="txtFilter" runat="server" style="z-index: 1; left: 406px; top: 291px; position: absolute; width: 187px"></asp:TextBox>
 <asp:Button ID="btnFilter" runat="server" style="z-index: 1; left: 618px; top: 290px; position: absolute; width: 53px;" Text="Filter" OnClick="btnFilter_Click" />

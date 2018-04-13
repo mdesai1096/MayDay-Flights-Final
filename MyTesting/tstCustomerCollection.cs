@@ -132,8 +132,8 @@ namespace MyTesting
             Int32 PK = 0;
             //set the properties
             //TestItem.CustomerID = 3;
-            TestItem.ForeName = "fred";
-            TestItem.Surname = "bloggs";
+            TestItem.ForeName = "Lisas";
+            TestItem.Surname = "smith";
             TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
             TestItem.Gender = "male";
             TestItem.ContactNumber = "12314";
@@ -165,8 +165,8 @@ namespace MyTesting
             Int32 PK = 0;
             //set the properties
             //TestItem.CustomerID = 3;
-            TestItem.ForeName = "fred";
-            TestItem.Surname = "bloggs";
+            TestItem.ForeName = "Lisa";
+            TestItem.Surname = "John";
             TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
             TestItem.Gender = "male";
             TestItem.ContactNumber = "12314";
@@ -200,8 +200,8 @@ namespace MyTesting
             //var to store primary key
             Int32 PK = 0;
             //set the properties
-            TestItem.ForeName = "fred";
-            TestItem.Surname = "bloggs";
+            TestItem.ForeName = "lisa";
+            TestItem.Surname = "smith";
             TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-19);
             TestItem.Gender = "male";
             TestItem.ContactNumber = "12314";
@@ -216,10 +216,10 @@ namespace MyTesting
             //set primary key of test data
             TestItem.CustomerID = PK;
             //modify the record
-            TestItem.ForeName = "Lisa";
-            TestItem.Surname = "Smith";
+            TestItem.ForeName = "Fred";
+            TestItem.Surname = "Bloggs";
             TestItem.dateOfBirth = DateTime.Now.Date.AddYears(-20);
-            TestItem.Gender = "Female";
+            TestItem.Gender = "male";
             TestItem.ContactNumber = "000010";
             TestItem.EMail = "you@you.com";
             TestItem.FlatNo = "2";
@@ -320,7 +320,7 @@ namespace MyTesting
         public void FilterbysurNameTestDataFound()
         {
             //create an instance of the filtered data
-            clsCustomerCollection FilteredCustomers = new clsCustomerCollection("FBloggs");
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection(" ");
             //var to store outcome
             Boolean OK = true;
             //apply a primary key value 
@@ -329,12 +329,12 @@ namespace MyTesting
             if (FilteredCustomers.Count == 2)
             {
                 //check the first record is ID 2
-                if (FilteredCustomers.CustomerList[0].CustomerID != 22)
+                if (FilteredCustomers.CustomerList[0].CustomerID !=46)
                 {
                     OK = false;
                 }
                 // check that the first record is ID
-                if (FilteredCustomers.CustomerList[1].CustomerID != 26)
+                if (FilteredCustomers.CustomerList[1].CustomerID != 73)
                 {
                     OK = false;
                 }
