@@ -37,4 +37,12 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        //store -1 into session ojbect to indicate this ias a new record
+        Session["EmployeeNo"] = -1;
+        //redirect to data entry page
+        Response.Redirect("AnEmployee.aspx");
+    }
 }

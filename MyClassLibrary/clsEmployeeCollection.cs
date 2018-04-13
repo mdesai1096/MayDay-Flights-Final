@@ -7,6 +7,8 @@ namespace MyClassLibrary
     {
         //private data member for the list
         List<clsEmployee> mEmployeesList = new List<clsEmployee>();
+        //private data member thisemployee
+        clsEmployee mThisEmployee = new clsEmployee();
         public List<clsEmployee> EmployeesList
         {
             get
@@ -32,7 +34,40 @@ namespace MyClassLibrary
                 //worry bout later
             }
         }
-        public clsEmployee ThisEmployee { get; set; }
+
+        public int Add()
+        {
+            //adds new record to database based on value of thisEmployee
+            //connect to database
+            clsDataConnection DB = new clsDataConnection();
+            //set parameters for stored procedure
+            DB.AddParameter("@EmployeeName", mThisEmployee.EmployeeName);
+            DB.AddParameter("@EmployeeJoinDate", mThisEmployee.EmployeeJoinDate);
+            DB.AddParameter("@EmployeeEmail", mThisEmployee.EmployeeEmail);
+            DB.AddParameter("@EmployeeContactNumber", mThisEmployee.EmployeeContactNumber);
+            DB.AddParameter("@Address", mThisEmployee.Address);
+            DB.AddParameter("@EmployeeSalary", mThisEmployee.EmployeeSalary);
+            DB.AddParameter("@EmployeeRole", mThisEmployee.EmployeeRole);
+            DB.AddParameter("@EmployeeDOB", mThisEmployee.EmployeeDOB);
+            return DB.Execute("sproc_tblEmployees_Insert");
+        }
+        public clsEmployee ThisEmployee
+
+        {
+            get
+            {
+                //return the private data
+                return mThisEmployee;
+            }
+            set
+            {
+                //set the private data
+                mThisEmployee = value;
+            }
+        }
+
+
+
 
         public clsEmployeeCollection()
         {
@@ -53,6 +88,7 @@ namespace MyClassLibrary
                 AnEmployee.EmployeeSalary = Convert.ToString(DB.DataTable.Rows[Index]["EmployeeSalary"]);
                 AnEmployee.EmployeeEmail = Convert.ToString(DB.DataTable.Rows[Index]["EmployeeEmail"]);
                 AnEmployee.EmployeeDOB = Convert.ToDateTime(DB.DataTable.Rows[Index]["EmployeeDOB"]);
+                AnEmployee.Address = Convert.ToString(DB.DataTable.Rows[Index]["EmployeeAddress"]);
                 //add record to private data member
                 mEmployeesList.Add(AnEmployee);
                 //point to next record

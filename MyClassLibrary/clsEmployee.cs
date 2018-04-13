@@ -242,6 +242,8 @@ namespace MyClassLibrary
             return Error;
         }
 
+
+
         public bool Find(int EmployeeNo)
         {
             //create an instance of the data connection
@@ -267,6 +269,8 @@ namespace MyClassLibrary
                 return false;
 
             }
+
+
         }
     }
 }

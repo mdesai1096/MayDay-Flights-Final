@@ -19,7 +19,7 @@
 <br />
 <asp:Label ID="lblSearch" runat="server" style="z-index: 1; left: 672px; top: 472px; position: absolute; height: 22px;" Text="Search By Destination"></asp:Label>
 <br />
-    <asp:Button ID="btnApply" runat="server" style="z-index: 1; left: 1076px; top: 467px; position: absolute" Text="Apply" />
+    <asp:Button ID="btnApply" runat="server" style="z-index: 1; left: 1076px; top: 467px; position: absolute" Text="Apply" OnClick="btnApply_Click" />
 <br />
     <asp:Button ID="btnDisplayAll" runat="server" style="z-index: 1; left: 1141px; top: 467px; position: absolute" Text="Display All" />
 <br />
