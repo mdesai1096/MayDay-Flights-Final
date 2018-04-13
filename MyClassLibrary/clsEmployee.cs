@@ -4,17 +4,17 @@ namespace MyClassLibrary
 {
     public class clsEmployee
     {
-        private string mAddress;
+        private string mEmployeeAddress;
         public string Address
         {
             get
             {
-                return mAddress;
+                return mEmployeeAddress;
 
             }
             set
             {
-                mAddress = value;
+                mEmployeeAddress = value;
             }
         }
         private string mEmployeeContactNumber;
@@ -262,6 +262,7 @@ namespace MyClassLibrary
                 mEmployeeSalary = Convert.ToString(DB.DataTable.Rows[0]["EmployeeSalary"]);
                 mEmployeeEmail = Convert.ToString(DB.DataTable.Rows[0]["EmployeeEmail"]);
                 mEmployeeDOB = Convert.ToDateTime(DB.DataTable.Rows[0]["EmployeeDOB"]);
+
                 return true;
             }
             else
