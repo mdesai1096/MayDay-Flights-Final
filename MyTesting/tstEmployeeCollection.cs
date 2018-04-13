@@ -103,11 +103,44 @@ namespace MyTesting
 
         }
 
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create instance of class we want to create
+            clsEmployeeCollection AllEmployees = new clsEmployeeCollection();
+            //create item of test data
+            clsEmployee TestItem = new clsEmployee();
+            //var to store primary key
+            Int32 PrimaryKey = 0;
+            //set properties
+            TestItem.Address = "london road";
+            TestItem.EmployeeContactNumber = "07777777880";
+            TestItem.EmployeeDOB = Convert.ToDateTime("12/01/1997");
+            TestItem.EmployeeEmail = "gun@mayday.com";
+            TestItem.EmployeeJoinDate = Convert.ToDateTime("11/04/2018");
+            TestItem.EmployeeName = "Sandeep";
+           // TestItem.EmployeeNo = 1;
+            TestItem.EmployeeRole = "Accountant";
+            TestItem.EmployeeSalary = "1000";
+            //set ThisAddress to test data
+            AllEmployees.ThisEmployee = TestItem;
+            //add record
+            PrimaryKey = AllEmployees.Add();
+            //set primary key of test data
+            TestItem.EmployeeNo = PrimaryKey;
+            //find record
+            AllEmployees.ThisEmployee.Find(PrimaryKey);
+            //test to see two values are same
+            Assert.AreEqual(AllEmployees.ThisEmployee, TestItem);
+        }
+
+
 
 
 
     }
 }
+
 
 
 

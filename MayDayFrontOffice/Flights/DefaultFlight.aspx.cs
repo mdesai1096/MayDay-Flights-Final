@@ -79,6 +79,21 @@ public partial class DefaultFlight : System.Web.UI.Page
 
     }
 
+    void FilterByDestination(string Destination)
+    {
+        //create an instance of the booking collection
+        clsFlightCollection C = new clsFlightCollection();
+        C.FilterByDestination(Destination);
+        //set the data source to the list of bookings in the collection
+        lstFlights.DataSource = C.FlightList;
+        //set the name of the primary key
+        lstFlights.DataValueField = "FlightID";
+        //set the data field to display
+        lstFlights.DataTextField = "Destination";
+        //bind the data to the list
+        lstFlights.DataBind();
+    }
+
     void DisplayBookings()
     {
         //create an instance of the booking collection
@@ -91,6 +106,11 @@ public partial class DefaultFlight : System.Web.UI.Page
         lstFlights.DataTextField = "FlightNo";
         //bind the data to the list
         lstFlights.DataBind();
+    }
+
+    protected void btnApply_Click(object sender, EventArgs e)
+    {
+        FilterByDestination(txtSearch.Text);
     }
 }
 
