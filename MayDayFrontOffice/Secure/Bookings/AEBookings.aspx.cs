@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MyClassLibrary;
 
-//author Mohammad Desai 
+//author Mohammad Desai
 
 public partial class Bookings_AEBookings : System.Web.UI.Page
 {
@@ -18,13 +18,13 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
     {
         if (User.IsInRole("admin"))
         {
-            //show all custs 
-            DisplayCustomers();
-
             //get the pk of the booking to be processed
             BookRef = Convert.ToInt32(Session["BookRef"]);
             if (IsPostBack == false)
             {
+            //show all custs 
+            DisplayCustomers();
+
                 //if this is not a new record
                 if (BookRef != -1)
                 {
@@ -36,8 +36,6 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
                     txtRef.ReadOnly = true;
                     //display the PK of record to be edited
                     txtRef.Text = BookRef.ToString();
-
-
                 }
                 else //this is a new record
                 {
@@ -48,7 +46,6 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
                     //hide the reference label and box
                     lblRef.Visible = false;
                     txtRef.Visible = false;
-
                 }
             }
         }
@@ -62,12 +59,13 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
             btnFilterFlights.Visible = false;
             btnFilterTourOps.Visible = false;
             btnFilterCust.Visible = false;
-            //show only users details
-            FilterUsername();
             //get the pk of the booking to be processed
             BookRef = Convert.ToInt32(Session["BookRef"]);
+
             if (IsPostBack == false)
             {
+                //show only users details
+                FilterUsername();
                 //if this is not a new record
                 if (BookRef != -1)
                 {
@@ -79,8 +77,6 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
                     txtRef.ReadOnly = true;
                     //display the PK of record to be edited
                     txtRef.Text = BookRef.ToString();
-
-
                 }
                 else //this is a new record
                 {
@@ -91,7 +87,6 @@ public partial class Bookings_AEBookings : System.Web.UI.Page
                     //hide the reference label and box
                     lblRef.Visible = false;
                     txtRef.Visible = false;
-
                 }
             }
 
